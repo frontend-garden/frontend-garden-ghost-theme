@@ -1,11 +1,12 @@
-image: node:8.12.0
+image: node:8
 
 pipelines:
     default:
-    - step:
-        caches:
-        - node
-        script:
-        - npm install
-        - npm test
-        - npm run build
+        - step:
+            caches:
+                - node
+            script:
+                - npm install --global gscan
+                - npm install
+                - npm run build
+                - npm test
