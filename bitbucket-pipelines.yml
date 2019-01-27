@@ -1,0 +1,11 @@
+image: node:8.12.0
+
+pipelines:
+    default:
+    - step:
+        caches:
+        - node
+        script:
+        - npm install
+        - npm test
+        - npm run build
