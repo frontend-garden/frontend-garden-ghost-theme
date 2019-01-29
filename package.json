@@ -2,17 +2,6 @@
   "name": "frontend-garden-ghost-theme",
   "description": "Frontend Garden Ghost theme",
   "version": "0.1.0",
-  "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2",
-    "node": ">=8"
-  },
-  "scripts": {
-    "build": "npm run css:lint && npm run css:compile",
-    "css:lint": "stylelint \"assets/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
-    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 assets/scss/main.scss assets/built/css/main.css",
-    "test": "gscan ."
-  },
   "license": "MIT",
   "author": {
     "name": "Adam Kudrna",
@@ -24,6 +13,35 @@
     "theme",
     "ghost-theme"
   ],
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2",
+    "node": ">=8"
+  },
+  "scripts": {
+    "build": "npm run css",
+    "css": "npm run css:lint && npm run css:compile && npm run css:prefix && npm run css:minify",
+    "css:lint": "stylelint \"assets/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 assets/scss/main.scss assets/built/css/main.css",
+    "css:prefix": "postcss --config postcss.config.js --replace \"assets/built/css/*.css\" \"!assets/built/css/*.min.css\"",
+    "css:minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output assets/built/css/main.min.css assets/built/css/main.css",
+    "test": "gscan .",
+    "watch": "npm run watch:css",
+    "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm run css\""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@visionappscz/stylelint-config-visionapps": "^1.0.0",
+    "@visionappscz/stylelint-config-visionapps-order": "^1.0.0",
+    "autoprefixer": "^9.4.6",
+    "clean-css-cli": "^4.2.1",
+    "modularscale-sass": "^3.0.8",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.1",
+    "stylelint": "^9.10.1",
+    "stylelint-order": "^2.0.0",
+    "stylelint-scss": "^3.5.1"
+  },
   "config": {
     "posts_per_page": 24
   },
@@ -46,13 +64,5 @@
     "xl": {
       "width": 2000
     }
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.4.6",
-    "node-sass": "^4.11.0",
-    "stylelint": "^9.10.1",
-    "stylelint-config-visionapps": "~0.5.0",
-    "stylelint-config-visionapps-order": "~0.3.1",
-    "stylelint-order": "^2.0.0"
   }
 }
