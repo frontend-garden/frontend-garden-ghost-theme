@@ -8,43 +8,49 @@
 
 {{#post}}
 
-    <main id="site-main" class="site-main outer">
-        <div class="inner">
+    <main>
+        <div class="container">
 
-            <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+            <article class="article {{post_class}} {{#unless feature_image}}article--no-image{{/unless}}">
 
-                <header class="post-full-header">
-                    <section class="post-full-meta">
-                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                <header class="article__header">
+                    <section class="article__meta">
+                        <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
+                            {{date format="D MMMM YYYY"}}
+                        </time>
                         {{#primary_tag}}
-                            <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+                            <span class="article__meta__divider">/</span>
+                            <a href="{{url}}" class="article__meta__link">{{name}}</a>
                         {{/primary_tag}}
                     </section>
-                    <h1 class="post-full-title">{{title}}</h1>
+                    <h1 class="article__title">{{title}}</h1>
                 </header>
 
                 {{#if feature_image}}
-                    <figure class="post-full-image">
+                    <figure class="article__featured-image">
                         {{!-- This is a responsive image, it loads different sizes depending on device
                         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                         <img
-                            srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 600w,
-                            {{img_url feature_image size="l"}} 1000w,
-                            {{img_url feature_image size="xl"}} 2000w"
-                            sizes="(max-width: 800px) 400px,
-                            (max-width: 1170px) 700px,
-                            1400px"
                             src="{{img_url feature_image size="xl"}}"
+                            srcset="
+                                {{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w
+                            "
+                            sizes="
+                                (max-width: 800px) 400px,
+                                (max-width: 1170px) 700px,
+                                1400px
+                            "
+                            class="article__featured-image__image"
                             alt="{{title}}"
                         />
                     </figure>
                 {{/if}}
 
-                <section class="post-full-content">
-                    <div class="post-content">
-                        {{content}}
-                    </div>
+                <section class="article__content">
+                    {{content}}
                 </section>
 
                 {{!-- Email subscribe form at the bottom of the page --}}
@@ -56,7 +62,7 @@
                     </section>
                 {{/if}}
 
-                <footer class="post-full-footer">
+                <footer class="article__footer">
 
                     {{!-- There are two options for how we display the byline/author-info.
                     If the post has more than one author, we load a specific template

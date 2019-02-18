@@ -1,0 +1,7 @@
+.article__title {
+    @include typography(headline1);
+}
+
+.article__featured-image {
+    display: none;
+}
