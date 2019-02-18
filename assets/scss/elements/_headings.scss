@@ -1,0 +1,11 @@
+h2 {
+    @include typography(headline2);
+}
+
+h3 {
+    @include typography(headline3);
+}
+
+h4 {
+    @include typography(headline4);
+}

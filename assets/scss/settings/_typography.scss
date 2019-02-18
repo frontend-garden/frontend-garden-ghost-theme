@@ -1,0 +1,62 @@
+$typography-font-family-serif: 'More Pro', Georgia, Times, serif;
+
+$typography-font-weight-values: (
+    thin: 100,
+    light: 300,
+    regular: 400,
+    bold: 700,
+    black: 900,
+);
+
+$typography-font-size-browser-default-px: 16;
+$typography-font-size-base-px: 20;
+$typography-line-height-base-px: 32;
+
+$typography-font-size-base: 100% * $typography-font-size-base-px / $typography-font-size-browser-default-px;
+$typography-line-height-base: 1rem * $typography-line-height-base-px / $typography-font-size-base-px;
+
+$typography-list-padding-left: 2rem;
+
+$typography-styles: (
+    headline1: (
+        default: (
+            font-weight: map-get($typography-font-weight-values, bold),
+            font-size: ms(4),
+            line-height: spacing(1),
+            font-family: $typography-font-family-serif,
+        ),
+    ),
+    headline2: (
+        default: (
+            font-weight: map-get($typography-font-weight-values, bold),
+            font-size: ms(2),
+            line-height: spacing(1),
+            font-family: $typography-font-family-serif,
+        ),
+    ),
+    headline3: (
+        default: (
+            font-weight: map-get($typography-font-weight-values, bold),
+            font-size: ms(1),
+            line-height: spacing(1),
+            font-family: $typography-font-family-serif,
+        ),
+    ),
+    headline4: (
+        default: (
+            font-weight: map-get($typography-font-weight-values, bold),
+            font-size: ms(0),
+            line-height: spacing(1),
+            font-family: $typography-font-family-serif,
+        ),
+    ),
+    body: (
+        default: (
+            margin-bottom: spacing(1),
+            font-weight: map-get($typography-font-weight-values, regular),
+            font-size: ms(0),
+            line-height: spacing(1),
+            font-family: $typography-font-family-serif,
+        ),
+    ),
+);

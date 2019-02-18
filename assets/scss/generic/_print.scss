@@ -1,0 +1,36 @@
+@media print {
+    // stylelint-disable selector-max-universal
+    *,
+    *::before,
+    *::after {
+        color: black; // black prints faster
+        background: transparent;
+    }
+    // stylelint-enable
+
+    html,
+    body {
+        font-size: 14pt;
+    }
+
+    body {
+        min-width: 800px; // intentionally using pixels
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+}

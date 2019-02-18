@@ -1,0 +1,25 @@
+html {
+    font-size: $typography-font-size-base;
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    color: map-get($colors-grays, gray-darker);
+    background-color: map-get($colors-grays, white);
+}
+
+p,
+ul,
+ol,
+dl {
+    @include typography(body);
+
+    max-width: 64ch;
+}
+
+ol,
+ul {
+    padding-left: $typography-list-padding-left;
+}
