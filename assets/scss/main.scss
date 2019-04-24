@@ -5,14 +5,18 @@
 
 // 2. Settings
 // Global variables, config switches. Not producing any CSS.
+@import "settings/borders";
 @import "settings/breakpoints";
 @import "settings/colors";
+@import "settings/container";
+@import "settings/grid";
 @import "settings/modularscale";
 @import "settings/typography";
 
 // 3. Tools
 // Default mixins and functions. Still not producing any CSS.
 @import "tools/breakpoints";
+@import "tools/container";
 @import "tools/transitions";
 @import "tools/typography";
 
@@ -22,19 +26,26 @@
 @import "generic/ie11";
 @import "generic/print";
 @import "generic/reset";
+@import "generic/selection";
 @import "generic/shared";
 
 // 5. Elements
 // Unclassed HTML elements (type selectors).
+@import "elements/code";
+@import "elements/content";
 @import "elements/headings";
+@import "elements/links";
 @import "elements/page";
 
 // 6. Objects
 // Cosmetic-free design patterns.
+@import "objects/author-card";
 @import "objects/container";
 @import "objects/section";
 
 // 7. Components
+// Reusable UI components.
 @import "components/article";
+@import "components/avatar";
 @import "components/icon";
 @import "components/koenig";

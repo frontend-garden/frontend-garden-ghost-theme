@@ -1,0 +1,9 @@
+$_avatar-size: 3em * $typography-line-height-base;
+
+.avatar {
+    display: block;
+    width: $_avatar-size;
+    height: $_avatar-size;
+    overflow: hidden;
+    border-radius: 50%;
+}

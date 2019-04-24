@@ -1,25 +1,16 @@
+// 1. Root font size is defined in % to reflect user settings.
+// 2. On body we use fluid typography.
+
 html {
-    font-size: $typography-font-size-base;
+    font-size: $typography-font-size-root; // 1.
     text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 body {
+    @include typography(body); // 2.
+
     color: map-get($colors-grays, gray-darker);
     background-color: map-get($colors-grays, white);
-}
-
-p,
-ul,
-ol,
-dl {
-    @include typography(body);
-
-    max-width: 64ch;
-}
-
-ol,
-ul {
-    padding-left: $typography-list-padding-left;
 }

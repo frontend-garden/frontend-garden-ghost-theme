@@ -1,3 +1,7 @@
+// 1. Reset margin and padding on all elements.
+// 2. Reset trailing margin on nested lists.
+// 3. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;` on `fieldset`s.
+
 body,
 h1,
 h2,
@@ -16,24 +20,13 @@ figure,
 hr,
 fieldset,
 legend {
-    padding: 0;
-    margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: inherit;
-    font-size: 1rem;
-    line-height: inherit;
+    padding: 0; // 1.
+    margin: 0; // 1.
 }
 
 li > ol,
 li > ul {
-    margin-bottom: 0;
+    margin-bottom: 0; // 2.
 }
 
 table {
@@ -42,6 +35,6 @@ table {
 }
 
 fieldset {
-    min-width: 0; //Reset Chrome and Firefox behaviour which sets a `min-width: min-content;` on fieldsets.
+    min-width: 0; // 3.
     border: 0;
 }

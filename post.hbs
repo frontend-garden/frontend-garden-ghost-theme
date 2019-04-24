@@ -1,17 +1,16 @@
 {{!< default}}
 
-<header>
+<!--<header>
     {{> "site-nav"}}
-</header>
+</header>-->
 
 <div class="kg-width-wide"></div>
 
 {{#post}}
 
     <main>
-        <div class="container">
-
-            <article class="article {{post_class}} {{#unless feature_image}}article--no-image{{/unless}}">
+        <article class="article {{post_class}} {{#unless feature_image}}article--no-image{{/unless}}">
+            <div class="container">
 
                 <header class="article__header">
                     <section class="article__meta">
@@ -19,17 +18,20 @@
                             {{date format="D MMMM YYYY"}}
                         </time>
                         {{#primary_tag}}
-                            <span class="article__meta__divider">/</span>
+                            <span class="article__meta__divider">—</span>
                             <a href="{{url}}" class="article__meta__link">{{name}}</a>
                         {{/primary_tag}}
                     </section>
                     <h1 class="article__title">{{title}}</h1>
+                    {{#has author="count:>1"}}
+                        {{> "byline-multiple"}}
+                    {{else}}
+                        {{> "byline-single"}}
+                    {{/has}}
                 </header>
 
                 {{#if feature_image}}
                     <figure class="article__featured-image">
-                        {{!-- This is a responsive image, it loads different sizes depending on device
-                        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                         <img
                             src="{{img_url feature_image size="xl"}}"
                             srcset="
@@ -48,12 +50,13 @@
                         />
                     </figure>
                 {{/if}}
+            </div>
+            <div class="container container--article">
 
                 <section class="article__content">
                     {{content}}
                 </section>
 
-                {{!-- Email subscribe form at the bottom of the page --}}
                 {{#if @labs.subscribers}}
                     <section class="subscribe-form">
                         <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
@@ -62,38 +65,16 @@
                     </section>
                 {{/if}}
 
-                <footer class="article__footer">
-
-                    {{!-- There are two options for how we display the byline/author-info.
-                    If the post has more than one author, we load a specific template
-                    from includes/byline-multiple.hbs, otherwise, we just use the
-                    default byline. --}}
-
-                    {{#has author="count:>1"}}
-                        {{> "byline-multiple"}}
-                    {{else}}
-                        {{> "byline-single"}}
-                    {{/has}}
-
-                </footer>
-
-                {{!--
-                <section class="post-full-comments">
-                    If you want to embed comments, this is a good place to do it!
-                </section>
-                --}}
-
-            </article>
-
-        </div>
+            </div>
+        </article>
     </main>
 
     {{!-- Links to Previous/Next posts --}}
-    <aside class="read-next outer">
+    {{!-- <aside class="read-next outer">
         <div class="inner">
             <div class="read-next-feed">
                 {{#if primary_tag}}
-                    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
                         {{#if related_posts}}
                             <article class="read-next-card"
                                 {{#if ../primary_tag.feature_image}}
@@ -125,17 +106,15 @@
                     {{/get}}
                 {{/if}}
 
-                {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
                 {{#next_post}}
                     {{> "post-card"}}
                 {{/next_post}}
 
-                {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
                 {{#prev_post}}
                     {{> "post-card"}}
                 {{/prev_post}}
 
             </div>
         </div>
-    </aside>
+    </aside>--}}
 {{/post}}

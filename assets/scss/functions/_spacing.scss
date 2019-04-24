@@ -1,9 +1,18 @@
+@import "../settings/typography";
+
 @function spacing($value) {
     @if ($value % 1 != 0) {
         @error "Only whole numbers can be used for spacing, #{$value} given.";
     }
 
     @else {
-        @return $value * $typography-line-height-base;
+        @return calc(
+            #{$value}
+            * (
+                #{$typography-line-height-base}
+                * (#{$typography-font-size-root} + #{$typography-font-size-fluid-factor})
+                + #{$typography-line-height-fluid-factor}
+            )
+        );
     }
 }

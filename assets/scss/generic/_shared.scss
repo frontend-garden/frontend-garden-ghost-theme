@@ -1,4 +1,5 @@
-// Always declare margins in the same direction.
+// 1. Always declare margins in the same direction.
+
 address,
 h1,
 h2,
@@ -16,5 +17,5 @@ figure,
 hr,
 table,
 fieldset {
-    margin-bottom: spacing(1);
+    margin-bottom: spacing(1); // 1.
 }

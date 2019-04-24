@@ -1,0 +1,26 @@
+// 1. Content of Containers can be expanded to whole screen width.
+
+@mixin container() {
+    max-width: $container-width;
+    padding-right: $container-padding;
+    padding-left: $container-padding;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint-up(sm) {
+        padding-right: $container-padding-sm;
+        padding-left: $container-padding-sm;
+    }
+}
+
+@mixin container-article() {
+    max-width: $container-article-width;
+}
+
+// 1.
+@mixin container-expand() {
+    $_offset: calc(-1 * ((100vw - 100%) / 2));
+
+    margin-right: $_offset;
+    margin-left: $_offset;
+}

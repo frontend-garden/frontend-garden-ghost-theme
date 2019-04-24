@@ -1,0 +1,11 @@
+p,
+ul,
+ol,
+dl {
+    max-width: 64ch;
+}
+
+ol,
+ul {
+    padding-left: $typography-list-padding-left;
+}

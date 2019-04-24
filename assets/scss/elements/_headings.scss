@@ -1,11 +1,21 @@
+h1 {
+    @include typography(headline1);
+}
+
 h2 {
     @include typography(headline2);
+
+    &:not(:first-child) {
+        margin-top: spacing(2);
+    }
 }
 
 h3 {
     @include typography(headline3);
 }
 
-h4 {
+h4,
+h5,
+h6 {
     @include typography(headline4);
 }

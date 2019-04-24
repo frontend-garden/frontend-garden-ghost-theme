@@ -1,7 +1,35 @@
-.article__title {
-    @include typography(headline1);
+// 1. First line of perex needs more space, let's adjust it manually this time.
+
+.article__header {
+    padding-top: spacing(2);
+    padding-bottom: spacing(2);
+
+    @include breakpoint-up(lg) {
+        padding-top: spacing(3);
+        padding-bottom: spacing(3);
+    }
 }
 
-.article__featured-image {
-    display: none;
+.article__meta {
+    @include typography(small-caps);
+
+    margin-bottom: spacing(1);
+}
+
+.article__content p:first-child {
+    margin-bottom: spacing(2);
+
+    &::first-line {
+        @include typography(small-caps);
+
+        font-weight: map-get($typography-font-weight-values, bold);
+        line-height: 1.7; // 1.
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        margin: spacing(1) auto;
+        border-bottom: $border-width solid map-get($colors-grays, gray);
+    }
 }

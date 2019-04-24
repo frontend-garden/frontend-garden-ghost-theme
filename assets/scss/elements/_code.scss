@@ -1,0 +1,54 @@
+// 1. Code blocks are highlighted with prism.js.
+// 2. Font size of `<code>` has already been set for parent `<pre>`. Just keep it, no chaining.
+// 3. Custom styling of inline `<code>` fragments matches prism.js Okaidia theme.
+//
+// https://prismjs.com
+
+// stylelint-disable selector-no-qualifying-type
+
+// 1.
+code,
+pre,
+code[class*="language-"],
+pre[class*="language-"] {
+    @include typography(code);
+}
+
+pre[class*="language-"] {
+    @include container-expand();
+
+    padding: spacing(1) 0;
+    margin-top: spacing(1);
+    margin-bottom: spacing(1);
+    border-radius: 0;
+
+    @include breakpoint-up(md) {
+        padding-top: spacing(2);
+        padding-bottom: spacing(2);
+        margin-top: spacing(2);
+        margin-bottom: spacing(2);
+    }
+}
+
+code[class*="language-"] {
+    @include container();
+    @include container-article();
+
+    display: block;
+    font-size: 1em; // 2.
+}
+
+// stylelint-enable
+
+// 3.
+p code,
+ul code,
+ol code {
+    padding: 0.2em 0.4em;
+    font-family: $typography-font-family-monospace;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    color: map-get($colors-grays, gray-lighter);
+    border-radius: $border-radius;
+    background-color: map-get($colors-grays, gray-darker);
+}

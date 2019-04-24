@@ -2,22 +2,26 @@
 {{#primary_author}}
 
 <section class="author-card">
-    {{#if profile_image}}
-        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-    {{else}}
-        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
-    {{/if}}
-    <section class="author-card-content">
-        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-        {{#if bio}}
-            <p>{{bio}}</p>
+    <div class="author-card__media">
+        {{#if profile_image}}
+            <img src="{{profile_image}}" class="avatar" alt="{{name}}" />
         {{else}}
-            <p><a href="{{url}}">Další články</a> od autora</p>
+            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
         {{/if}}
-    </section>
+    </div>
+    <div class="author-card__content">
+        <h4 class="author-card__name">{{name}}</h4>
+        <p class="author-card__bio">
+            {{#if bio}}
+                <span class="author-card__bio__text">
+                    {{bio}}
+                </span>
+            {{/if}}
+            <a href="{{url}}" class="author-card__link">
+                Více o&nbsp;autorovi
+            </a>
+        </p>
+    </div>
 </section>
-<div class="post-full-footer-right">
-    <a class="author-card-button" href="{{url}}">Více o&nbsp;autorovi</a>
-</div>
 
 {{/primary_author}}

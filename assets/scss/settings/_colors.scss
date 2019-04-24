@@ -1,9 +1,8 @@
 $colors-grays: (
-    black: #000,
-    gray-darker: lighten(#000, 15%),
+    gray-darker: #272822,
+    gray: #afaf9c,
+    gray-lighter: #f8f8f2,
     white: #fff,
 );
 
-$colors-brand: (
-    primary: green,
-);
+$color-primary: #008eaa;
