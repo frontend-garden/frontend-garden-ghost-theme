@@ -50,5 +50,5 @@ ol code {
     white-space: nowrap;
     color: map-get($colors-grays, gray-lighter);
     border-radius: $border-radius;
-    background-color: map-get($colors-grays, gray-darker);
+    background-color: map-get($colors-grays, gray-darkest);
 }

@@ -4,10 +4,6 @@ h1 {
 
 h2 {
     @include typography(headline2);
-
-    &:not(:first-child) {
-        margin-top: spacing(2);
-    }
 }
 
 h3 {

@@ -9,10 +9,11 @@
 {{#post}}
 
     <main>
-        <article class="article {{post_class}} {{#unless feature_image}}article--no-image{{/unless}}">
-            <div class="container">
+        <article class="article {{#unless feature_image}}article--no-image{{/unless}}">
 
-                <header class="article__header">
+            <header class="article__header">
+                <div class="container container--article">
+
                     <section class="article__meta">
                         <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
                             {{date format="D MMMM YYYY"}}
@@ -22,50 +23,55 @@
                             <a href="{{url}}" class="article__meta__link">{{name}}</a>
                         {{/primary_tag}}
                     </section>
+
                     <h1 class="article__title">{{title}}</h1>
+                    <h2 class="article__summary">{{excerpt}}</h2>
+
                     {{#has author="count:>1"}}
                         {{> "byline-multiple"}}
                     {{else}}
                         {{> "byline-single"}}
                     {{/has}}
-                </header>
 
-                {{#if feature_image}}
-                    <figure class="article__featured-image">
-                        <img
-                            src="{{img_url feature_image size="xl"}}"
-                            srcset="
-                                {{img_url feature_image size="s"}} 300w,
-                                {{img_url feature_image size="m"}} 600w,
-                                {{img_url feature_image size="l"}} 1000w,
-                                {{img_url feature_image size="xl"}} 2000w
-                            "
-                            sizes="
-                                (max-width: 800px) 400px,
-                                (max-width: 1170px) 700px,
-                                1400px
-                            "
-                            class="article__featured-image__image"
-                            alt="{{title}}"
-                        />
-                    </figure>
-                {{/if}}
-            </div>
-            <div class="container container--article">
+                    {{#if feature_image}}
+                        <figure class="article__featured-image">
+                            <img
+                                src="{{img_url feature_image size="xl"}}"
+                                srcset="
+                                    {{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 600w,
+                                    {{img_url feature_image size="l"}} 1000w,
+                                    {{img_url feature_image size="xl"}} 2000w
+                                "
+                                sizes="
+                                    (max-width: 800px) 400px,
+                                    (max-width: 1170px) 700px,
+                                    1400px
+                                "
+                                class="article__featured-image__image"
+                                alt="{{title}}"
+                            />
+                        </figure>
+                    {{/if}}
 
-                <section class="article__content">
+                </div>
+            </header>
+            <section class="article__content">
+                <div class="container container--article">
+
                     {{content}}
+
+                </div>
+            </section>
+
+            {{!-- {{#if @labs.subscribers}}
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    {{subscribe_form placeholder="youremail@example.com"}}
                 </section>
+            {{/if}} --}}
 
-                {{#if @labs.subscribers}}
-                    <section class="subscribe-form">
-                        <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                        <p>Get the latest posts delivered right to your inbox</p>
-                        {{subscribe_form placeholder="youremail@example.com"}}
-                    </section>
-                {{/if}}
-
-            </div>
         </article>
     </main>
 

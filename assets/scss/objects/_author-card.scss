@@ -16,6 +16,8 @@
 }
 
 .author-card__name {
+    @include typography(headline4);
+
     margin-bottom: 0;
 }
 
@@ -25,7 +27,7 @@
 
 .author-card__bio {
     margin-bottom: 0;
-    font-size: 0.9em;
+    font-size: ms(-1);
 }
 
 .author-card__bio__text {

@@ -1,19 +1,28 @@
 // 1. First line of perex needs more space, let's adjust it manually this time.
 
-.article__header {
+.article__header,
+.article__content {
     padding-top: spacing(2);
     padding-bottom: spacing(2);
+}
 
-    @include breakpoint-up(lg) {
-        padding-top: spacing(3);
-        padding-bottom: spacing(3);
-    }
+.article__header {
+    background-color: map-get($colors-grays, gray-light);
+}
+
+.article__title {
+    margin-top: 0.15em;
+    margin-bottom: 0.25em;
+}
+
+.article__summary {
+    @include typography(summary);
 }
 
 .article__meta {
     @include typography(small-caps);
 
-    margin-bottom: spacing(1);
+    font-size: ms(-1);
 }
 
 .article__content p:first-child {
@@ -32,4 +41,8 @@
         margin: spacing(1) auto;
         border-bottom: $border-width solid map-get($colors-grays, gray);
     }
+}
+
+.article__content h2:not(:first-child) {
+    margin-top: spacing(2);
 }

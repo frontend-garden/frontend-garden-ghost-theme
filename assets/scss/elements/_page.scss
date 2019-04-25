@@ -11,6 +11,6 @@ html {
 body {
     @include typography(body); // 2.
 
-    color: map-get($colors-grays, gray-darker);
-    background-color: map-get($colors-grays, white);
+    color: map-get($colors-grays, gray-darkest);
+    background-color: $color-white;
 }

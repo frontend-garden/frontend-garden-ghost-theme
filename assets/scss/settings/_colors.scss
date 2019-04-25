@@ -1,8 +1,20 @@
 $colors-grays: (
-    gray-darker: #272822,
-    gray: #afaf9c,
-    gray-lighter: #f8f8f2,
-    white: #fff,
+    gray-darkest: #272822,
+    gray-darker: lighten(#272822, 20%),
+    gray-dark: lighten(#272822, 40%),
+    gray: lighten(#272822, 60%),
+    gray-light: lighten(#272822, 80%),
+    gray-lighter: lighten(#272822, 90%),
+    gray-lightest: lighten(#272822, 95%),
+);
+
+$color-white: #fff;
+
+$colors-brand: (
+    blue: #71bbe9,
+    blue-dark: #629bc3,
+    green: #88a827,
+    green-dark: #738d2a,
 );
 
 $color-primary: #008eaa;
