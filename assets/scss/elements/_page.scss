@@ -2,6 +2,7 @@
 // 2. On body we use fluid typography.
 
 html {
+    height: 100%;
     font-size: $typography-font-size-root; // 1.
     text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
@@ -11,6 +12,7 @@ html {
 body {
     @include typography(body); // 2.
 
+    min-height: 100%;
     color: map-get($colors-grays, gray-darkest);
     background-color: $color-white;
 }

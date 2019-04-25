@@ -19,3 +19,14 @@
         }
     }
 }
+
+@mixin list-unstyled() {
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin link-unstyled() {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 0;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>{{meta_title}}</title>
@@ -12,7 +12,35 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" />
 </head>
-<body>
+<body class="site">
+
+<header class="header site__header">
+    <div class="container">
+        <div class="header__layout">
+
+            <a href="{{@site.url}}" class="header__title">
+                {{#if @site.logo}}
+                    <img
+                        src="{{img_url @site.logo size="l"}}"
+                        class="header__logo"
+                        alt="{{@site.title}}"
+                    />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+
+            {{! Since we are unable to detect if there is shomething to show in Handlebars, comment
+                the following block entirely to hide it until we need it. }}
+            {{!--
+            <div class="header__navigation">
+                {{> "site-nav"}}
+            </div>
+             --}}
+
+        </div>
+    </div>
+</header>
 
 {{{body}}}
 

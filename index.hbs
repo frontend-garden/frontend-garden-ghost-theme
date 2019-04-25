@@ -1,29 +1,17 @@
 {{!< default}}
 
-<header>
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {{#if @site.logo}}
-                    <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </h1>
-            <h2 class="site-description">{{@site.description}}</h2>
+<main class="site__content background-gray-light">
+    <section class="section">
+        <div class="container">
+
+            <div class="post-feed">
+                {{#foreach posts}}
+                    <div class="post-feed__item">
+                        {{> "post-card"}}
+                    </div>
+                {{/foreach}}
+            </div>
+
         </div>
-        {{> "site-nav"}}
-    </div>
-</header>
-
-<main>
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-                {{> "post-card"}}
-            {{/foreach}}
-        </div>
-
-    </div>
+    </section>
 </main>

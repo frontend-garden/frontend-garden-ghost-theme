@@ -1,0 +1,9 @@
+<ul class="navigation__list">
+    {{#foreach navigation}}
+        <li class="navigation__item {{#if current}}navigation__item--current{{/if}}">
+            <a href="{{url absolute="true"}}" class="navigation__link">
+                {{label}}
+            </a>
+        </li>
+    {{/foreach}}
+</ul>

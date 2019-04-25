@@ -1,0 +1,30 @@
+.header {
+    padding-top: spacing(1);
+    padding-bottom: spacing(1);
+}
+
+.header__layout {
+    @include breakpoint-up(md) {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.header__title {
+    @include link-unstyled();
+    @include typography(header-title);
+}
+
+.header__navigation {
+    &:not(:empty) {
+        padding-top: spacing(1);
+    }
+
+    @include breakpoint-up(md) {
+        margin-left: auto;
+
+        &:not(:empty) {
+            padding-top: 0;
+        }
+    }
+}

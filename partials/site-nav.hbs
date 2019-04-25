@@ -1,39 +1,15 @@
-<nav class="site-nav">
-    <div class="site-nav-left">
-        {{^is "home"}}
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="{{@site.url}}">
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                </a>
-            {{else}}
-                <a class="site-nav-logo" href="{{@site.url}}">
-                    {{@site.title}}
-                </a>
-            {{/if}}
-        {{/is}}
-        {{#if @site.navigation}}
-            {{navigation}}
-        {{/if}}
-    </div>
-    <div class="site-nav-right">
-        <div class="social-links">
-            {{#if @site.facebook}}
-                <a
-                    href="{{facebook_url @site.facebook}}"
-                    class="social-link social-link-fb"
-                    target="_blank"
-                    rel="noopener"
-                    title="Facebook"
-                >
-                    <span class="icon">
-                        {{> "icons/facebook"}}
-                    </span>
-                </a>
-            {{/if}}
-            {{#if @site.twitter}}
+<nav class="navigation">
+
+    {{#if @site.navigation}}
+        {{navigation}}
+    {{/if}}
+
+    <ul class="navigation__list">
+        {{#if @site.twitter}}
+            <li class="navigation__item">
                 <a
                     href="{{twitter_url @site.twitter}}"
-                    class="social-link social-link-tw"
+                    class="navigation__icon-link"
                     target="_blank"
                     rel="noopener"
                     title="Twitter"
@@ -42,16 +18,33 @@
                         {{> "icons/twitter"}}
                     </span>
                 </a>
-            {{/if}}
-        </div>
-        {{#if @labs.subscribers}}
-            <a href="#subscribe">Subscribe</a>
-        {{else}}
-            <a class="rss-button" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">
-                <span class="icon">
-                    {{> "icons/rss"}}
-                </span>
-            </a>
+            </li>
         {{/if}}
-    </div>
+        {{#if @site.facebook}}
+            <li class="navigation__item">
+                <a
+                    href="{{facebook_url @site.facebook}}"
+                    class="navigation__icon-link"
+                    target="_blank"
+                    rel="noopener"
+                    title="Facebook"
+                >
+                    <span class="icon">
+                        {{> "icons/facebook"}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+    </ul>
+
+    {{#if @labs.subscribers}}
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a href="#subscribe" class="navigation__link">
+                    Subscribe
+                </a>
+            </li>
+        </ul>
+    {{/if}}
+
 </nav>
