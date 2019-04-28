@@ -3,7 +3,7 @@
 
 <section class="author-card">
     <div class="author-card__media">
-        <span class="avatar">
+        <a href="{{url}}" class="avatar avatar--link">
             {{#if profile_image}}
                 <img src="{{profile_image}}" class="avatar__image" alt="{{name}}" />
             {{else}}
@@ -11,7 +11,7 @@
                     {{> "icons/avatar"}}
                 </span>
             {{/if}}
-        </span>
+        </a>
     </div>
     <div class="author-card__content">
         <h3 class="author-card__name">{{name}}</h3>

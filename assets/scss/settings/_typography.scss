@@ -67,6 +67,13 @@ $typography-styles: (
             font-family: $typography-font-family-serif,
         ),
     ),
+    blockquote: (
+        default: (
+            font-family: $typography-font-family-serif,
+            font-size: ms(1),
+            font-style: italic,
+        ),
+    ),
     small-caps: (
         default: (
             font-family: $typography-font-family-sans-serif,

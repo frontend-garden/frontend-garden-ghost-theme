@@ -1,7 +1,5 @@
 {{!< default}}
 
-<div class="kg-width-wide"></div>
-
 {{#post}}
     <main class="site__content">
         <article class="article {{#unless feature_image}}article--no-image{{/unless}}">
@@ -59,7 +57,9 @@
             <section class="article__content">
                 <div class="container container--article">
 
-                    {{content}}
+                    <div class="editor">
+                        {{content}}
+                    </div>
 
                 </div>
             </section>

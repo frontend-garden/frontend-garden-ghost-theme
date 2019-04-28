@@ -1,0 +1,28 @@
+// 1. Code blocks are highlighted with prism.js.
+//
+// https://prismjs.com
+
+// stylelint-disable selector-no-qualifying-type
+
+// 1.
+pre[class*="language-"] {
+    @include container-expand();
+    @include content-block();
+
+    padding: spacing(1) 0;
+    border-radius: 0;
+
+    @include breakpoint-up(md) {
+        padding-top: spacing(2);
+        padding-bottom: spacing(2);
+    }
+}
+
+// 1.
+code[class*="language-"] {
+    @include container();
+    @include container-article();
+    @include typography(code);
+
+    display: block;
+}

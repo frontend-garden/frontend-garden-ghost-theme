@@ -9,3 +9,11 @@ ol,
 ul {
     padding-left: $typography-list-padding-left;
 }
+
+hr {
+    @include content-block();
+    @include horizontal-ruler();
+
+    height: 0;
+    border-style: none none solid none;
+}

@@ -1,0 +1,62 @@
+// Koenig card
+.kg-card {
+    @include content-block();
+}
+
+.kg-card figcaption {
+    @include breakpoint-up(md) {
+        margin-top: spacing(1);
+    }
+}
+
+// Sizes
+.kg-width-wide {
+    margin-right: -1 * $container-padding;
+    margin-left: -1 * $container-padding;
+
+    @include breakpoint-up(sm) {
+        margin-right: -1 * $container-padding-sm;
+        margin-left: -1 * $container-padding-sm;
+    }
+}
+
+.kg-width-full {
+    @include container-expand();
+}
+
+.kg-width-wide figcaption,
+.kg-width-full figcaption {
+    @include container();
+}
+
+.kg-width-full figcaption {
+    @include container-article();
+}
+
+// Galleries
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: $container-article-width;
+}
+
+.kg-gallery-row {
+    display: flex;
+    justify-content: center;
+
+    &:not(:first-of-type) {
+        margin: $grid-gap-small 0 0 0;
+    }
+}
+
+.kg-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 $grid-gap-small;
+}

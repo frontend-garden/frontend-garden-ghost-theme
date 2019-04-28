@@ -1,0 +1,3 @@
+@mixin horizontal-ruler() {
+    border-bottom: $border-width solid map-get($colors-grays, gray);
+}

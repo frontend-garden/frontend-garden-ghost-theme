@@ -1,4 +1,9 @@
-$container-width: 96rem;
+// 1. Set container width in `em` so line length doesn't get shorter while viewport grows bigger.
+//    As a side effect, code blocks are a bit narrower than body text because their font size is
+//    smaller. However it doesn't look bad s let's not worry about it and promote it to a design
+//    decision.
+
+$container-width: 80em; // 1.
 $container-padding: 1.25rem;
 $container-padding-sm: 4vw;
 

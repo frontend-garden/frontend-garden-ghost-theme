@@ -1,0 +1,72 @@
+// 1. First line of perex optically needs more space, let's adjust it manually this time.
+// 2. Separate perex with horizontal line.
+// 3. Break vertical rhythm inside blockquote (but get it back immediately after).
+// 4. Custom styling of inline `<code>` fragments matches prism.js Okaidia theme.
+// 5. Increase specificity to paragraphs and lists to avoid unwanted leaks to code blocks styled by
+//    prism.js.
+
+// Perex
+.editor p:first-child {
+    &::first-line {
+        @include typography(small-caps);
+
+        font-weight: map-get($typography-font-weight-values, bold);
+        line-height: 1.7; // 1.
+    }
+
+    // 2.
+    &::after {
+        @include content-block();
+        @include horizontal-ruler();
+
+        content: '';
+        display: block;
+    }
+}
+
+// Headlines
+.editor h2:not(:first-child) {
+    margin-top: spacing(2);
+}
+
+// Images
+.editor figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.editor figcaption {
+    @include typography(small-caps);
+
+    font-size: ms(-1);
+
+    &::before {
+        content: '↑';
+        margin-right: 1ex;
+    }
+}
+
+// Quotes
+.editor blockquote {
+    @include content-block();
+    @include typography(blockquote);
+
+    padding: spacing(0.5) 0 spacing(0.5) spacing(1); // 3.
+    border-left: $border-width-thick solid $color-primary;
+}
+
+// Code
+// 4., 5.
+.editor p code,
+.editor ol code,
+.editor ul code {
+    @include typography(code);
+
+    padding: 0.2em 0.4em;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    color: map-get($colors-grays, gray-lighter);
+    border-radius: $border-radius;
+    background-color: map-get($colors-grays, gray-darkest);
+}

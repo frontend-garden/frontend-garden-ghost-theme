@@ -1,0 +1,9 @@
+@mixin content-block() {
+    margin-top: spacing(1);
+    margin-bottom: spacing(1);
+
+    @include breakpoint-up(md) {
+        margin-top: spacing(2);
+        margin-bottom: spacing(2);
+    }
+}

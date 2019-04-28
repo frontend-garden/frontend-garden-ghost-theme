@@ -1,4 +1,4 @@
-// 1. First line of perex needs more space, let's adjust it manually this time.
+// 1. Article title needs manual margin.
 
 .article__header,
 .article__content {
@@ -7,8 +7,8 @@
 }
 
 .article__title {
-    margin-top: 0.15em;
-    margin-bottom: 0.25em;
+    margin-top: 0.15em; // 1.
+    margin-bottom: 0.25em; // 1.
 }
 
 .article__summary {
@@ -19,31 +19,4 @@
     @include typography(small-caps);
 
     font-size: ms(-1);
-}
-
-.article__content p:first-child {
-    &::first-line {
-        @include typography(small-caps);
-
-        font-weight: map-get($typography-font-weight-values, bold);
-        line-height: 1.7; // 1.
-    }
-
-    &::after {
-        content: '';
-        display: block;
-        margin-top: spacing(1);
-        margin-bottom: spacing(1);
-        border-bottom: $border-width solid map-get($colors-grays, gray);
-    }
-
-    @include breakpoint-up(md) {
-        &::after {
-            margin-top: spacing(2);
-        }
-    }
-}
-
-.article__content h2:not(:first-child) {
-    margin-top: spacing(2);
 }
