@@ -10,6 +10,10 @@ ul {
     padding-left: $typography-list-padding-left;
 }
 
+small {
+    @include typography(small);
+}
+
 hr {
     @include content-block();
     @include horizontal-ruler();

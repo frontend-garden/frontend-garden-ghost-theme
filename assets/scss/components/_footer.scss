@@ -1,0 +1,8 @@
+.footer {
+    padding-top: spacing(2);
+    padding-bottom: spacing(2);
+}
+
+.footer__title {
+    @include typography(footer-title);
+}
