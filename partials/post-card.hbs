@@ -2,69 +2,87 @@
     class="
         post-card
         {{post_class}}
-        {{#unless feature_image}}no-image{{else}}
-            {{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}
-        {{/unless}}
+        {{#unless feature_image}}no-image{{/unless}}
     "
 >
 
+    {{!-- We don't need cover images yet. --}}
+    {{!--
     {{#if feature_image}}
-        <a class="post-card-image-link" href="{{url}}">
+        <a class="post-card__image-link" href="{{url}}">
             <img
-                class="post-card-image"
-                srcset="{{img_url feature_image size="s"}} 300w,
+                class="post-card__image"
+                src="{{img_url feature_image size="m"}}"
+                srcset="
+                    {{img_url feature_image size="s"}} 300w,
                     {{img_url feature_image size="m"}} 600w,
                     {{img_url feature_image size="l"}} 1000w,
-                    {{img_url feature_image size="xl"}} 2000w"
+                    {{img_url feature_image size="xl"}} 2000w
+                "
                 sizes="(max-width: 1000px) 400px, 700px"
-                src="{{img_url feature_image size="m"}}"
                 alt="{{title}}"
             />
         </a>
     {{/if}}
+    --}}
 
-    <div class="post-card-content">
+    <div class="post-card__content">
 
-        <a class="post-card-content-link" href="{{url}}">
-
-            <header class="post-card-header">
+        <header class="post-card__header">
+            <section class="post-card__meta">
                 {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
+                    <a href="{{primary_tag.url}}" class="post-card__link">{{primary_tag.name}}</a>
+                    —
                 {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
+                {{reading_time}}
             </section>
+            <h2 class="post-card__title">
+                <a href="{{url}}" class="post-card__title__link link-unstyled">
+                    {{title}}
+                </a>
+            </h2>
+        </header>
 
-        </a>
+        <section class="post-card__summary">
+            <p>{{excerpt words="33"}}</p>
+        </section>
 
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
+        <footer>
+            <ul class="list-unstyled">
                 {{#foreach authors}}
-                    <li class="author-list-item">
+                    <li>
 
-                        <div class="author-name-tooltip">
-                            {{name}}
+                        <div class="author-card">
+                            <div class="author-card__media">
+                                {{#if profile_image}}
+                                    <a href="{{url}}" class="avatar avatar--small avatar--link">
+                                        <img
+                                            class="avatar__image"
+                                            src="{{img_url profile_image size="xs"}}"
+                                            alt="{{name}}"
+                                        />
+                                    </a>
+                                {{else}}
+                                    <a href="{{url}}" class="avatar avatar--small avatar--link">
+                                        <span class="avatar__image">
+                                            {{> "icons/avatar"}}
+                                        </span>
+                                    </a>
+                                {{/if}}
+                            </div>
+                            <div class="author-card__content">
+                                <h3 class="author-card__name">
+                                    <a href="{{url}}" class="post-card__link link-unstyled">
+                                        {{name}}
+                                    </a>
+                                </h3>
+                            </div>
                         </div>
 
-                        {{#if profile_image}}
-                            <a href="{{url}}" class="static-avatar">
-                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                            </a>
-                        {{else}}
-                            <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                        {{/if}}
                     </li>
                 {{/foreach}}
             </ul>
-
-            <span class="reading-time">{{reading_time}}</span>
-
         </footer>
 
     </div>
-
 </article>

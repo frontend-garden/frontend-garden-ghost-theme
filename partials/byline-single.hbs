@@ -3,11 +3,15 @@
 
 <section class="author-card">
     <div class="author-card__media">
-        {{#if profile_image}}
-            <img src="{{profile_image}}" class="avatar" alt="{{name}}" />
-        {{else}}
-            <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
-        {{/if}}
+        <span class="avatar">
+            {{#if profile_image}}
+                <img src="{{profile_image}}" class="avatar__image" alt="{{name}}" />
+            {{else}}
+                <span class="avatar__image">
+                    {{> "icons/avatar"}}
+                </span>
+            {{/if}}
+        </span>
     </div>
     <div class="author-card__content">
         <h3 class="author-card__name">{{name}}</h3>

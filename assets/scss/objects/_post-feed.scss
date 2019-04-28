@@ -1,0 +1,5 @@
+.post-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    grid-gap: $grid-gap;
+}

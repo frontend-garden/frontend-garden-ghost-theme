@@ -13,10 +13,12 @@
                         <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
                             {{date format="D MMMM YYYY"}}
                         </time>
-                        {{#primary_tag}}
-                            <span class="article__meta__divider">—</span>
-                            <a href="{{url}}" class="article__meta__link">{{name}}</a>
-                        {{/primary_tag}}
+                        —
+                        {{#if primary_tag}}
+                            <a href="{{primary_tag.url}}" class="article__meta__link">{{primary_tag.name}}</a>
+                            —
+                        {{/if}}
+                        {{reading_time}}
                     </section>
 
                     <h1 class="article__title">{{title}}</h1>
@@ -28,6 +30,8 @@
                         {{> "byline-single"}}
                     {{/has}}
 
+                    {{!-- We don't need cover images yet. --}}
+                    {{!--
                     {{#if feature_image}}
                         <figure class="article__featured-image">
                             <img
@@ -48,6 +52,7 @@
                             />
                         </figure>
                     {{/if}}
+                    --}}
 
                 </div>
             </header>

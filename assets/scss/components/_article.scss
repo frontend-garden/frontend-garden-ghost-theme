@@ -22,8 +22,6 @@
 }
 
 .article__content p:first-child {
-    margin-bottom: spacing(2);
-
     &::first-line {
         @include typography(small-caps);
 
@@ -34,8 +32,15 @@
     &::after {
         content: '';
         display: block;
-        margin: spacing(1) auto;
+        margin-top: spacing(1);
+        margin-bottom: spacing(1);
         border-bottom: $border-width solid map-get($colors-grays, gray);
+    }
+
+    @include breakpoint-up(md) {
+        &::after {
+            margin-top: spacing(2);
+        }
     }
 }
 
