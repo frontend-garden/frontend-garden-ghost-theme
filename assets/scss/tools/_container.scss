@@ -13,6 +13,10 @@
     }
 }
 
+@mixin container-narrow() {
+    max-width: $container-narrow-width;
+}
+
 @mixin container-article() {
     max-width: $container-article-width;
 }

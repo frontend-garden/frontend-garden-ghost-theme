@@ -6,6 +6,10 @@
     @include container-expand();
 }
 
+.container--narrow {
+    @include container-narrow();
+}
+
 .container--article {
     @include container-article();
 }
