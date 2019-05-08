@@ -13,6 +13,6 @@ body {
     @include typography(body); // 2.
 
     min-height: 100%;
-    color: map-get($colors-grays, gray-darkest);
-    background-color: $color-white;
+    color: var(--page-text-color);
+    background-color: var(--page-background-color);
 }

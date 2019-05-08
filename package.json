@@ -38,8 +38,8 @@
     "modularscale-sass": "^3.0.8",
     "node-sass": "^4.11.0",
     "postcss-cli": "^6.1.1",
-    "stylelint": "^9.10.1",
-    "stylelint-order": "^2.0.0",
+    "stylelint": "^10.0.1",
+    "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.5.1"
   },
   "config": {

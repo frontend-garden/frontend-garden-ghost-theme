@@ -4,8 +4,9 @@
     position: relative;
     z-index: 1;
     height: 100%;
+    color: var(--post-card-text-color);
     border-radius: $border-radius;
-    background-color: $color-white;
+    background-color: var(--post-card-background-color);
 
     @media (hover: hover) {
         will-change: box-shadow, transform;

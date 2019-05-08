@@ -1,0 +1,21 @@
+:root {
+    --page-background-color: #{$color-white};
+    --page-text-color: #{map-get($colors-grays, gray-darkest)};
+    --post-card-background-color: #{$color-white};
+    --post-card-text-color: inherit;
+    --alternate-background-color: #{map-get($colors-grays, gray-lighter)};
+    --footer-text-color: inherit;
+    --ruler-color: #{map-get($colors-grays, gray-light)};
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-background-color: #{map-get($colors-grays, gray-darker)};
+        --page-text-color: #{map-get($colors-grays, gray-light)};
+        --post-card-background-color: #{map-get($colors-grays, gray-darker)};
+        --post-card-text-color: inherit;
+        --alternate-background-color: #{map-get($colors-grays, gray-darkest)};
+        --footer-text-color: #{map-get($colors-grays, gray)};
+        --ruler-color: #{map-get($colors-grays, gray-dark)};
+    }
+}
