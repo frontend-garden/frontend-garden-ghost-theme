@@ -11,6 +11,7 @@ pre[class*="language-"] {
 
     padding: spacing(1) 0;
     border-radius: 0;
+    -webkit-overflow-scrolling: touch;
 
     @include breakpoint-up(md) {
         padding-top: spacing(2);

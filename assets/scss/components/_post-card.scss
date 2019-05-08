@@ -40,6 +40,8 @@
 
 .post-card__title {
     @include typography(headline3);
+
+    margin-top: 0.15em;
 }
 
 .post-card__title__link {

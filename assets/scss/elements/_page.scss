@@ -1,5 +1,6 @@
 // 1. Root font size is defined in % to reflect user settings.
 // 2. On body we use fluid typography.
+// 3. Ensure that full-width content doesn't overflow.
 
 html {
     height: 100%;
@@ -13,6 +14,7 @@ body {
     @include typography(body); // 2.
 
     min-height: 100%;
+    overflow-x: hidden; // 3.
     color: var(--page-text-color);
     background-color: var(--page-background-color);
 }

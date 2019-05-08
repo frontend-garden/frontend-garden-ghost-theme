@@ -1,3 +1,6 @@
+// 1. Workaround for IE min-height bug.
+// https://github.com/philipwalton/flexbugs/issues/75
+
 // Koenig card
 .kg-card {
     @include content-block();
@@ -44,6 +47,8 @@
 .kg-gallery-row {
     display: flex;
     justify-content: center;
+    height: auto; // 1.
+    min-height: 1px; // 1.
 
     &:not(:first-of-type) {
         margin: $grid-gap-small 0 0 0;

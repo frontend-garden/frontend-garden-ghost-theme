@@ -2,10 +2,12 @@
 //    As a side effect, code blocks are a bit narrower than body text because their font size is
 //    smaller. However it doesn't look bad s let's not worry about it and promote it to a design
 //    decision.
+// 2. We also use `em` for container padding so the line length doesn't get shorter when viewport is
+//    growing (like it would with `vw` for example).
 
-$container-width: 80em; // 1.
-$container-padding: 1.25rem;
-$container-padding-sm: 4vw;
+$container-width: 76em; // 1.
+$container-padding: 1.25rem; // 2.
+$container-padding-sm: 1.5em; // 2.
 
 $container-narrow-width: $container-width * 2/3;
 $container-article-width: $container-width / 2;

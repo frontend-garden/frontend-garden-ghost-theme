@@ -9,24 +9,26 @@
 
                     <section class="article__meta">
                         <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
-                            {{date format="D MMMM YYYY"}}
+                            {{date format="D. MMMM YYYY"}}
                         </time>
                         —
                         {{#if primary_tag}}
                             <a href="{{primary_tag.url}}" class="article__meta__link">{{primary_tag.name}}</a>
                             —
                         {{/if}}
-                        {{reading_time}}
+                        {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                     </section>
 
                     <h1 class="article__title">{{title}}</h1>
                     <h2 class="article__summary">{{excerpt}}</h2>
 
-                    {{#has author="count:>1"}}
-                        {{> "byline-multiple"}}
-                    {{else}}
-                        {{> "byline-single"}}
-                    {{/has}}
+                    <div class="article__author">
+                        {{#has author="count:>1"}}
+                            {{> "byline-multiple"}}
+                        {{else}}
+                            {{> "byline-single"}}
+                        {{/has}}
+                    </div>
 
                     {{!-- We don't need cover images yet. --}}
                     {{!--

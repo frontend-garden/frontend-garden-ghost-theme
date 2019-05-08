@@ -1,6 +1,6 @@
 :root {
     --page-background-color: #{$color-white};
-    --page-text-color: #{map-get($colors-grays, gray-darkest)};
+    --page-text-color: #{map-get($colors-grays, gray-darker)};
     --post-card-background-color: #{$color-white};
     --post-card-text-color: inherit;
     --alternate-background-color: #{map-get($colors-grays, gray-lighter)};

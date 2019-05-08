@@ -34,7 +34,7 @@
                     <a href="{{primary_tag.url}}" class="post-card__link">{{primary_tag.name}}</a>
                     —
                 {{/if}}
-                {{reading_time}}
+                {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
             </section>
             <h2 class="post-card__title">
                 <a href="{{url}}" class="post-card__title__link link-unstyled">

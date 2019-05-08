@@ -1,14 +1,19 @@
 // 1. Article title needs manual margin.
+// 2. Optically align rounded avatar with text.
 
 .article__header,
 .article__content {
-    padding-top: spacing(2);
+    padding-top: spacing(1);
     padding-bottom: spacing(2);
+
+    @include breakpoint-up(sm) {
+        padding-top: spacing(2);
+    }
 }
 
 .article__title {
-    margin-top: 0.15em; // 1.
-    margin-bottom: 0.25em; // 1.
+    margin-top: 0.25em; // 1.
+    margin-bottom: 0.5em; // 1.
 }
 
 .article__summary {
@@ -19,4 +24,8 @@
     @include typography(small-caps);
 
     font-size: ms(-1);
+}
+
+.article__author {
+    margin-left: -0.15em; // 2.
 }
