@@ -1,0 +1,101 @@
+{{!< default}}
+
+<main class="site__content background-alternate">
+    <section class="section section--dense-top">
+        <div class="container">
+
+            {{#author}}
+                <div class="article">
+                    <div class="article__meta">Autor</div>
+                    <h1 class="article__title">{{name}}</h1>
+                    <div class="author-card">
+                        {{#if profile_image}}
+                            <div class="author-card__media">
+                                <div class="avatar">
+                                    <img src="{{profile_image}}" class="avatar__image" alt="{{name}}" />
+                                </div>
+                            </div>
+                        {{/if}}
+                        {{#if bio}}
+                            <div class="author-card__content">
+                                <div class="author-card__bio">
+                                    <p class="author-card__bio__text">
+                                        {{bio}}
+                                    </p>
+                                    <div class="author-card__bio__links">
+                                        {{#if location}}
+                                            {{location}}
+                                            —
+                                        {{/if}}
+                                        {{plural
+                                            ../pagination.total
+                                            empty='Žádné články'
+                                            singular='% článek'
+                                            plural='% článků'
+                                        }}
+                                        —
+                                        {{#if website}}
+                                            <a
+                                                href="{{website}}"
+                                                class="icon link-unstyled"
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                {{> "icons/website"}}
+                                            </a>
+                                            —
+                                        {{/if}}
+                                        {{#if twitter}}
+                                            <a
+                                                href="{{twitter_url}}"
+                                                class="icon link-unstyled"
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                {{> "icons/twitter"}}
+                                            </a>
+                                            —
+                                        {{/if}}
+                                        {{#if facebook}}
+                                            <a
+                                                href="{{facebook_url}}"
+                                                class="icon link-unstyled"
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                {{> "icons/facebook"}}
+                                            </a>
+                                            —
+                                        {{/if}}
+                                        <a
+                                            href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/"
+                                            class="icon link-unstyled"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            {{> "icons/rss"}}
+                                        </a>
+                                    </div>
+                                </p>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/author}}
+
+        </div>
+    </section>
+    <section class="section section--dense">
+        <div class="container">
+
+            <div class="post-feed">
+                {{#foreach posts}}
+                    <div class="post-feed__item">
+                        {{> "post-card"}}
+                    </div>
+                {{/foreach}}
+            </div>
+
+        </div>
+    </section>
+</main>

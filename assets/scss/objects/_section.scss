@@ -2,3 +2,21 @@
     padding-top: spacing(2);
     padding-bottom: spacing(2);
 }
+
+.section--dense {
+    padding-top: spacing(1);
+    padding-bottom: spacing(2);
+
+    @include breakpoint-up(sm) {
+        padding-top: spacing(2);
+    }
+}
+
+.section--dense-top {
+    padding-top: spacing(1);
+    padding-bottom: 0;
+
+    @include breakpoint-up(sm) {
+        padding-top: spacing(2);
+    }
+}

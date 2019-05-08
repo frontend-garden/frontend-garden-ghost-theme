@@ -1,0 +1,36 @@
+{{!< default}}
+
+<main class="site__content background-alternate">
+    <section class="section section--dense-top">
+        <div class="container">
+
+            {{#tag}}
+                <div class="article">
+                    <div class="article__meta">Téma</div>
+                    <h1 class="article__title">{{name}}</h1>
+                    <h2 class="article__summary">
+                        {{#if description}}
+                            {{description}}
+                        {{else}}
+                            Sbírka {{plural ../pagination.total empty='článků' singular='% článku' plural='% článků'}}
+                        {{/if}}
+                    </h2>
+                </div>
+            {{/tag}}
+
+        </div>
+    </section>
+    <section class="section section--dense">
+        <div class="container">
+
+            <div class="post-feed">
+                {{#foreach posts}}
+                    <div class="post-feed__item">
+                        {{> "post-card"}}
+                    </div>
+                {{/foreach}}
+            </div>
+
+        </div>
+    </section>
+</main>
