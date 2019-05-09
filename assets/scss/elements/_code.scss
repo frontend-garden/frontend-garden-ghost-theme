@@ -1,4 +1,13 @@
+// 1. Avoid cascading font size.
+
 code,
 pre {
     @include typography(code);
+
+    color: map-get($colors-grays, gray-lighter);
+    background-color: map-get($colors-grays, gray-darkest);
+}
+
+pre code {
+    font-size: 1em; // 1.
 }

@@ -16,6 +16,8 @@ $typography-font-weight-values: (
 
 $typography-list-padding-left: 2em;
 
+$typography-code-font-size: 0.85em;
+
 $typography-styles: (
     headline1: (
         default: (
@@ -92,7 +94,7 @@ $typography-styles: (
         default: (
             font-family: $typography-font-family-monospace,
             // Only optical adjustment, no modular scale involved:
-            font-size: 0.85em,
+            font-size: $typography-code-font-size,
         ),
     ),
     header-title: (

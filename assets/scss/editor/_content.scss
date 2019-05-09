@@ -89,7 +89,5 @@ _:future,
     padding: 0.2em 0.4em;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
-    color: map-get($colors-grays, gray-lightest);
     border-radius: $border-radius;
-    background-color: map-get($colors-grays, gray-darkest);
 }
