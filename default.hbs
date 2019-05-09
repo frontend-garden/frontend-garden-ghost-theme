@@ -53,11 +53,22 @@
 
         <small>
             <strong class="footer__title">Frontend Garden</strong>
-            zasil, zastřihuje a&nbsp;okopává (s ♥️!) Adam&nbsp;Kudrna.
+            zasil, zastřihuje a&nbsp;okopává (s&nbsp;♥️!) Adam&nbsp;Kudrna.
         </small>
 
     </div>
 </footer>
+
+<script>
+    // Insert non-breaking space after single-character words.
+    const elementsToReplace = document.querySelectorAll('.js-nbsp');
+
+    if (elementsToReplace.length) {
+        elementsToReplace.forEach((element) => {
+            element.innerHTML = element.innerHTML.replace(/ ([a-z]) /gi, ' $1&nbsp;');
+        });
+    }
+</script>
 
 {{ghost_foot}}
 

@@ -19,8 +19,8 @@
                         {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                     </section>
 
-                    <h1 class="article__title">{{title}}</h1>
-                    <h2 class="article__summary">{{excerpt}}</h2>
+                    <h1 class="article__title js-nbsp">{{title}}</h1>
+                    <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
 
                     <div class="article__author">
                         {{#has author="count:>1"}}
@@ -59,7 +59,7 @@
             <section class="section section--dense">
                 <div class="container container--article">
 
-                    <div class="editor">
+                    <div class="editor js-nbsp">
                         {{content}}
                     </div>
 
