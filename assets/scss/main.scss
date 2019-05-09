@@ -16,6 +16,7 @@
 // 3. Tools
 // Default mixins and functions. Still not producing any CSS.
 @import "tools/breakpoints";
+@import "tools/browser-hacks";
 @import "tools/container";
 @import "tools/content-block";
 @import "tools/horizontal-ruler";

@@ -3,3 +3,16 @@
     grid-template-columns: repeat(auto-fit, minmax(14.75em, 1fr));
     grid-gap: $grid-gap;
 }
+
+@include ie-only() {
+    .post-feed {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .post-feed__item {
+        flex: 1 1 30%;
+        margin-right: $grid-gap;
+        margin-bottom: $grid-gap;
+    }
+}

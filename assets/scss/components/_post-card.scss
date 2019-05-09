@@ -1,3 +1,5 @@
+// 1. Fallback for IE which doesn't support CSS custom properties.
+
 .post-card {
     @include transition(#{box-shadow, transform});
 
@@ -6,6 +8,7 @@
     height: 100%;
     color: var(--post-card-text-color);
     border-radius: $border-radius;
+    background-color: $color-white; // 1.
     background-color: var(--post-card-background-color);
 
     @media (hover: hover) {
@@ -62,7 +65,7 @@
 .post-card__summary {
     @include typography(summary);
 
-    flex: 1;
+    flex: 1 0 auto;
     font-size: ms(-1);
 }
 
