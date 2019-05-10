@@ -25,6 +25,8 @@
     "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 assets/scss/main.scss assets/built/css/main.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"assets/built/css/*.css\" \"!assets/built/css/*.min.css\"",
     "css:minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output assets/built/css/main.min.css assets/built/css/main.css",
+    "predist": "npm test && npm run build && mkdirp ./dist",
+    "dist": "zip --recurse-paths -X ./dist/frontend-garden.zip . --exclude \"node_modules/*\" --include \"*.hbs\" \"assets/built/*\" \"locales/*\" \"partials/*\"",
     "test": "gscan .",
     "watch": "npm run watch:css",
     "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm run css\""
@@ -35,6 +37,7 @@
     "@visionappscz/stylelint-config-visionapps-order": "^1.0.0",
     "autoprefixer": "^9.4.6",
     "clean-css-cli": "^4.2.1",
+    "mkdirp": "~0.5.1",
     "modularscale-sass": "^3.0.8",
     "node-sass": "^4.11.0",
     "postcss-cli": "^6.1.1",

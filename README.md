@@ -23,3 +23,11 @@ In Ghost theme directory:
 ```bash
 $ npm run watch
 ```
+
+## Theme Release
+
+Prepare distribution ZIP package into the `dist` directory:
+
+```bash
+$ npm run dist
+```
