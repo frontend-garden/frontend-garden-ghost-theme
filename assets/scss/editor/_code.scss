@@ -12,8 +12,9 @@ pre[class*="language-"] {
     @include content-block();
 
     padding: spacing(1) 0;
-    border-radius: 0;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
+    border-radius: 0;
 
     @include breakpoint-up(md) {
         padding-top: spacing(2);
@@ -22,6 +23,7 @@ pre[class*="language-"] {
 }
 
 // 1.
+pre code,
 code[class*="language-"] {
     @include container();
     @include container-article();
@@ -30,6 +32,7 @@ code[class*="language-"] {
     display: block;
 }
 
+pre code,
 pre code[class*="language-"] {
     font-size: 1em; // 2.
     line-height: 1.5;

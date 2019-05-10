@@ -13,6 +13,10 @@
     }
 }
 
+@mixin container-fluid() {
+    max-width: none;
+}
+
 @mixin container-narrow() {
     max-width: $container-narrow-width;
 }

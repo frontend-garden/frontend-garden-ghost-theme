@@ -5,7 +5,7 @@
     --post-card-text-color: inherit;
     --alternate-background-color: #{map-get($colors-grays, gray-lighter)};
     --footer-text-color: inherit;
-    --ruler-color: #{map-get($colors-grays, gray-light)};
+    --ruler-color: #{map-get($colors-grays, gray-lighter)};
 }
 
 @media (prefers-color-scheme: dark) {

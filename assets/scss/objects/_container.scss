@@ -6,6 +6,10 @@
     @include container-expand();
 }
 
+.container--fluid {
+    @include container-fluid();
+}
+
 .container--narrow {
     @include container-narrow();
 }

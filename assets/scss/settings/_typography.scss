@@ -5,7 +5,7 @@ $typography-font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono
 $typography-font-size-root: 18px;
 $typography-font-size-fluid-factor: 0.2vw;
 $typography-font-size-base: calc(#{$typography-font-size-root} + #{$typography-font-size-fluid-factor});
-$typography-line-height-base: 1.55;
+$typography-line-height-base: 1.68;
 $typography-line-height-fluid-factor: 0.2vw;
 
 $typography-font-weight-values: (
@@ -23,7 +23,7 @@ $typography-styles: (
         default: (
             font-weight: map-get($typography-font-weight-values, black),
             // Faster growing font size:
-            font-size: calc(1.625em + 1.5vw),
+            font-size: calc(1.65em + 1.25vw),
             line-height: 1.1,
             font-family: $typography-font-family-sans-serif,
         ),
@@ -31,8 +31,9 @@ $typography-styles: (
     headline2: (
         default: (
             font-weight: map-get($typography-font-weight-values, black),
-            font-size: ms(4),
-            line-height: 1.2,
+            // Faster growing font size:
+            font-size: calc(1.5rem + 0.333vw),
+            line-height: spacing(1),
             font-family: $typography-font-family-sans-serif,
         ),
     ),

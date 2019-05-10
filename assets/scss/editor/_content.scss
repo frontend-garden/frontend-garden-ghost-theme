@@ -12,16 +12,17 @@
         @include typography(small-caps);
 
         font-weight: map-get($typography-font-weight-values, bold);
-        line-height: 1.7;
+        line-height: 1.8;
     }
 
     // 2.
     &::after {
-        @include content-block();
         @include horizontal-ruler();
 
         content: '';
         display: block;
+        margin-top: spacing(1);
+        margin-bottom: spacing(1);
     }
 }
 
@@ -39,11 +40,10 @@
 // Headlines
 .editor h2:not(:first-child) {
     margin-top: spacing(1);
-    margin-bottom: 0.6em;
+    margin-bottom: spacing(1);
 
     @include breakpoint-up(md) {
         margin-top: spacing(2);
-        margin-bottom: spacing(1);
     }
 }
 

@@ -17,7 +17,7 @@
         &:hover {
             z-index: 2;
             box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
-            transform: scale(1.04, 1.04);
+            transform: scale(1.03, 1.03);
         }
     }
 }
@@ -63,10 +63,8 @@
 }
 
 .post-card__summary {
-    @include typography(summary);
-
     flex: 1 0 auto;
-    font-size: ms(-1);
+    line-height: 1.6;
 }
 
 .post-card__link {
