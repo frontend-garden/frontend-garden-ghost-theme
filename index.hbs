@@ -1,17 +1,32 @@
 {{!< default}}
 
-<main class="site__content background-alternate">
-    <section class="section">
-        <div class="container">
+{{#if posts.length}}
+    <main class="site__content background-alternate">
+        <section class="section">
+            <div class="container">
 
-            <div class="post-feed">
-                {{#foreach posts}}
-                    <div class="post-feed__item">
-                        {{> "post-card"}}
-                    </div>
-                {{/foreach}}
+                <div class="post-feed">
+                    {{#foreach posts}}
+                        <div class="post-feed__item">
+                            {{> "post-card"}}
+                        </div>
+                    {{/foreach}}
+                </div>
+
             </div>
+        </section>
+    </main>
+{{else}}
+    <main class="site__content background-alternate">
+        <div class="aligner">
+            <div class="aligner__item">
+                <div class="container container--article">
 
+                    <h1 class="js-nbsp">{{@site.description}}</h1>
+                    <h2>od 15. května 2019</h2>
+
+                </div>
+            </div>
         </div>
-    </section>
-</main>
+    </main>
+{{/if}}
