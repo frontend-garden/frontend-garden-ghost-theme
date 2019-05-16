@@ -8,7 +8,7 @@ $_navigation-item-padding-md: 1em;
     margin: -1 * $_navigation-item-padding;
 
     @include breakpoint-up(md) {
-        margin: -1 * $_navigation-item-padding-md;
+        margin: -0.82em (-1 * $_navigation-item-padding-md) (-1 * $_navigation-item-padding-md);
     }
 }
 
@@ -33,7 +33,7 @@ $_navigation-item-padding-md: 1em;
 
     &:hover,
     &:focus {
-        color: map-get($colors-grays, gray-dark);
+        color: map-get($colors-brand, blue);
     }
 
     @include breakpoint-up(md) {
@@ -42,9 +42,16 @@ $_navigation-item-padding-md: 1em;
 }
 
 .navigation__icon-link {
+    @include link-unstyled();
+
     display: inline-flex;
     align-items: baseline;
     justify-content: center;
+    padding: $_navigation-item-padding;
+
+    @include breakpoint-up(md) {
+        margin-top: -1 * $_navigation-item-padding;
+    }
 }
 
 .navigation__list + .navigation__list {

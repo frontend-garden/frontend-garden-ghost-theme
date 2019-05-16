@@ -6,12 +6,24 @@
 .header__layout {
     @include breakpoint-up(md) {
         display: flex;
-        align-items: baseline;
+        align-items: center;
     }
 }
 
-.header__title {
+.header__logotype {
     @include link-unstyled();
+
+    display: inline-flex;
+    align-items: flex-start;
+}
+
+.header__logo {
+    width: 2em;
+    height: 2em;
+    margin-right: 1em;
+}
+
+.header__title {
     @include typography(header-title);
 }
 

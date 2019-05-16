@@ -71,7 +71,7 @@
     @include typography(blockquote);
 
     padding: spacing(0.5) 0 spacing(0.5) spacing(1); // 3.
-    border-left: $border-width-thick solid $color-primary;
+    border-left: $border-width-thick solid map-get($colors-brand, blue);
 }
 
 // Code

@@ -22,25 +22,22 @@
     <div class="container container--fluid">
         <div class="header__layout">
 
-            <a href="{{@site.url}}" class="header__title">
+            <a href="{{@site.url}}" class="header__logotype">
                 {{#if @site.logo}}
                     <img
-                        src="{{img_url @site.logo size="l"}}"
+                        src="{{img_url @site.logo size="xs"}}"
                         class="header__logo"
                         alt="{{@site.title}}"
                     />
-                {{else}}
-                    {{@site.title}}
                 {{/if}}
+                <span class="header__title">
+                    {{@site.title}}
+                </span>
             </a>
 
-            {{! Since we are unable to detect if there is shomething to show in Handlebars, comment
-                the following block entirely to hide it until we need it. }}
-            {{!--
             <div class="header__navigation">
                 {{> "site-nav"}}
             </div>
-            --}}
 
         </div>
     </div>

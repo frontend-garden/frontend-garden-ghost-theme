@@ -13,10 +13,9 @@ $color-black: #000;
 $color-white: #fff;
 
 $colors-brand: (
-    blue: #71bbe9,
-    blue-dark: #629bc3,
-    green: #88a827,
-    green-dark: #738d2a,
+    blue: #008eaa,
+    green: #40bf4f,
+    green-dark: #308d3b,
 );
 
-$color-primary: #008eaa;
+$color-primary: map-get($colors-brand, green);
