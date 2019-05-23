@@ -8,6 +8,10 @@
 
 .article__summary {
     @include typography(summary);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .article__meta {

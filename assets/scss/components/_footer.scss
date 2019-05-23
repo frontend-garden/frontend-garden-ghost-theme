@@ -8,3 +8,14 @@
 .footer__title {
     @include typography(footer-title);
 }
+
+.footer__section {
+    @include typography(small);
+
+    max-width: none;
+    margin-bottom: spacing(1);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

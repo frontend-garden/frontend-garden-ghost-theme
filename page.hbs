@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{#post}}
+    <main class="site__content">
+        <article class="article">
+
+            <header class="section section--dense background-alternate">
+                <div class="container container--article">
+
+                    <h1 class="article__title js-nbsp">{{title}}</h1>
+                    <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
+
+                </div>
+            </header>
+            <section class="section section--dense">
+                <div class="container container--article">
+
+                    <div class="editor js-nbsp">
+                        {{content}}
+                    </div>
+
+                </div>
+            </section>
+
+            {{!-- {{#if @labs.subscribers}}
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    {{subscribe_form placeholder="youremail@example.com"}}
+                </section>
+            {{/if}} --}}
+
+        </article>
+        <div class="container container--article">
+            <hr class="spacing-0" />
+        </div>
+    </main>
+{{/post}}
