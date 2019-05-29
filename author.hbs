@@ -12,14 +12,18 @@
                         {{#if profile_image}}
                             <div class="author-card__media">
                                 <div class="avatar">
-                                    <img src="{{profile_image}}" class="avatar__image" alt="{{name}}" />
+                                    <img
+                                        src="{{profile_image}}"
+                                        class="avatar__image"
+                                        alt="{{name}}"
+                                    />
                                 </div>
                             </div>
                         {{/if}}
                         {{#if bio}}
                             <div class="author-card__content">
                                 <div class="author-card__bio">
-                                    <p class="author-card__bio__text js-nbsp">
+                                    <p class="author-card__bio__text js-nbsp js-external-links">
                                         {{bio}}
                                     </p>
                                     <div class="author-card__bio__links">
@@ -76,7 +80,7 @@
                                             {{> "icons/rss"}}
                                         </a>
                                     </div>
-                                </p>
+                                </div>
                             </div>
                         {{/if}}
                     </div>

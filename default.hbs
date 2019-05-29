@@ -69,6 +69,16 @@
             element.innerHTML = element.innerHTML.replace(/ ([a-z]) /gi, ' $1&nbsp;');
         });
     }
+
+    // Safely open external links in a new tab.
+    const externalLinks = document.querySelectorAll('.js-external-links a[href^=http]');
+
+    if (externalLinks.length) {
+        externalLinks.forEach((element) => {
+            element.setAttribute('target', '_blank');
+            element.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
 </script>
 
 {{ghost_foot}}
