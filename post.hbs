@@ -63,6 +63,31 @@
                         {{content}}
                     </div>
 
+                    <hr />
+
+                    <div class="share">
+                        <span class="icon icon--in-text spacing-right-1">
+                            {{> "icons/twitter"}}
+                        </span>
+                        <span class="icon icon--in-text spacing-right-2">
+                            {{> "icons/facebook"}}
+                        </span>
+                        Líbí se vám článek? Sdílejte ho na
+                        <a
+                            href="https://twitter.com/intent/tweet?text={{title}}&url={{url absolute="true"}}&via=FrontendGarden"
+                            target="_blank"
+                            rel="noopener"
+                            onlick="gtag('event', 'share', { method : 'Twitter' });"
+                        >Twitteru</a>
+                        nebo
+                        <a
+                            href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"
+                            target="_blank"
+                            rel="noopener"
+                            onlick="gtag('event', 'share', { method : 'Facebook' });"
+                        >Facebooku</a>.
+                    </div>
+
                 </div>
             </section>
 
