@@ -90,11 +90,10 @@
             element.setAttribute('rel', 'noopener noreferrer');
 
             if (typeof gtag !== 'undefined') {
-                element.addEventListener('click', function (e) {
-                    gtag('event', 'Navigate', {
+                element.addEventListener('click', function () {
+                    gtag('event', 'navigate', {
                         'event_category': 'Outbound links',
-                        'event_label': e.target.innerText,
-                        'value': e.target.getAttribute('href'),
+                        'event_label': element.getAttribute('href'),
                     });
                 });
             }
@@ -104,19 +103,30 @@
     // Track events in GA.
     const trackedItems = document.querySelectorAll('[data-track]');
 
-    if (trackedItems.length) {
+    if (trackedItems.length && typeof gtag !== 'undefined') {
         trackedItems.forEach((element) => {
-            if (typeof gtag !== 'undefined') {
-                element.addEventListener('click', function () {
-                    const action = element.getAttribute('data-track');
+            element.addEventListener('click', function () {
+                const action = element.getAttribute('data-track');
 
-                    if (action === 'share') {
-                        gtag('event', 'share', {
-                            method: element.getAttribute('data-method'),
-                        });
+                if (action === 'share') {
+                    gtag('event', 'share', {
+                        method: element.getAttribute('data-method'),
+                    });
+                } else {
+                    let label;
+
+                    if (element.getAttribute('data-label')) {
+                        label = element.getAttribute('data-label');
+                    } else {
+                        label = element.getAttribute('href');
                     }
-                });
-            }
+
+                    gtag('event', action, {
+                        'event_category': element.getAttribute('data-category'),
+                        'event_label': label,
+                    });
+                }
+            });
         });
     }
 </script>
