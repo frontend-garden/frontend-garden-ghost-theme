@@ -88,6 +88,35 @@
         externalLinks.forEach((element) => {
             element.setAttribute('target', '_blank');
             element.setAttribute('rel', 'noopener noreferrer');
+
+            if (typeof gtag !== 'undefined') {
+                element.addEventListener('click', function (e) {
+                    gtag('event', 'Navigate', {
+                        'event_category': 'Outbound links',
+                        'event_label': e.target.innerText,
+                        'value': e.target.getAttribute('href'),
+                    });
+                });
+            }
+        });
+    }
+
+    // Track events in GA.
+    const trackedItems = document.querySelectorAll('[data-track]');
+
+    if (trackedItems.length) {
+        trackedItems.forEach((element) => {
+            if (typeof gtag !== 'undefined') {
+                element.addEventListener('click', function () {
+                    const action = element.getAttribute('data-track');
+
+                    if (action === 'share') {
+                        gtag('event', 'share', {
+                            method: element.getAttribute('data-method'),
+                        });
+                    }
+                });
+            }
         });
     }
 </script>
