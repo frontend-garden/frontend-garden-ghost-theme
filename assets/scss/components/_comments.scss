@@ -1,0 +1,5 @@
+// 1. Set minimum height to prevent page jump once Facebook comments are loaded.
+
+.comments {
+    min-height: 190px; // 1.
+}

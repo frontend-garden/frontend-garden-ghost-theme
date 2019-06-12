@@ -92,6 +92,21 @@
 
                 </div>
             </section>
+            <section class="section section--dense">
+                <div class="container container--article">
+
+                    <h2>
+                        Komentáře
+                        <span class="badge">
+                            <span class="fb-comments-count" data-href="{{url absolute="true"}}">0</span>
+                        </span>
+                    </h2>
+                    <div class="comments">
+                        <div class="fb-comments" data-href="{{url absolute="true"}}" data-numposts="5"></div>
+                    </div>
+
+                </div>
+            </section>
 
             {{!-- {{#if @labs.subscribers}}
                 <section class="subscribe-form">
@@ -157,3 +172,7 @@
         </aside>
     </main>
 {{/post}}
+
+{{!-- Facebook SDK for comments --}}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v3.3"></script>

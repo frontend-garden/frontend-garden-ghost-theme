@@ -1,0 +1,17 @@
+$_size: 1.5rem;
+
+.badge {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    width: $_size;
+    height: $_size;
+    font-weight: map-get($typography-font-weight-values, bold);
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+    color: $color-white;
+    border-radius: 50%;
+    background-color: map-get($colors-grays, gray-dark);
+}
