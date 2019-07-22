@@ -47,6 +47,44 @@
     }
 }
 
+.editor h2 a,
+.editor h3 a,
+.editor h4 a,
+.editor h5 a,
+.editor h6 a {
+    @include link-unstyled();
+    @include transition(color);
+
+    @include breakpoint-up(sm) {
+        @media (hover: hover) {
+            position: relative;
+
+            &::before {
+                @include transition('opacity, transform');
+
+                content: '#';
+                position: absolute;
+                right: 100%;
+                bottom: 0.14em;
+                opacity: 0;
+                color: map-get($colors-grays, gray);
+                transform: translateX(-0.25rem);
+            }
+
+            &:hover,
+            &:focus {
+                color: map-get($colors-brand, blue);
+            }
+
+            &:hover::before,
+            &:focus::before {
+                opacity: 1;
+                transform: translateX(-0.5rem);
+            }
+        }
+    }
+}
+
 // Images
 .editor figure img {
     display: block;

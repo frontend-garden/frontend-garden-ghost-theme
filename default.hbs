@@ -102,6 +102,24 @@
         });
     }
 
+    // Add clickable anchors to headings with ID.
+    const headingsWithId = document.querySelectorAll(
+        '.js-heading-anchors h2[id],' +
+        '.js-heading-anchors h3[id]' +
+        '.js-heading-anchors h4[id]' +
+        '.js-heading-anchors h5[id]' +
+        '.js-heading-anchors h6[id]'
+    );
+
+    if (headingsWithId.length) {
+        headingsWithId.forEach((element) => {
+            const headingId = element.getAttribute('id');
+            const headingText = element.innerHTML;
+
+            element.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
+        });
+    }
+
     // Track events in GA.
     const trackedItems = document.querySelectorAll('[data-track]');
 
