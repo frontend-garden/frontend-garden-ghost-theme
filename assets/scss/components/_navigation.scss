@@ -1,5 +1,6 @@
 $_navigation-item-padding: 0.5em;
-$_navigation-item-padding-md: 1em;
+$_navigation-item-padding-sm: 1em;
+$_navigation-item-icon-padding: 0.5em;
 
 .navigation {
     display: flex;
@@ -7,8 +8,8 @@ $_navigation-item-padding-md: 1em;
     justify-content: space-between;
     margin: -1 * $_navigation-item-padding;
 
-    @include breakpoint-up(md) {
-        margin: -0.82em (-1 * $_navigation-item-padding-md) (-1 * $_navigation-item-padding-md);
+    @include breakpoint-up($header-linear-breakpoint) {
+        margin: -0.82em (-1 * $_navigation-item-icon-padding) (-1 * $_navigation-item-padding-sm) 0;
     }
 }
 
@@ -36,8 +37,8 @@ $_navigation-item-padding-md: 1em;
         color: map-get($colors-brand, blue);
     }
 
-    @include breakpoint-up(md) {
-        padding: $_navigation-item-padding-md;
+    @include breakpoint-up($header-linear-breakpoint) {
+        padding: $_navigation-item-padding-sm;
     }
 }
 
@@ -47,15 +48,15 @@ $_navigation-item-padding-md: 1em;
     display: inline-flex;
     align-items: baseline;
     justify-content: center;
-    padding: $_navigation-item-padding;
+    padding: $_navigation-item-icon-padding;
 
-    @include breakpoint-up(md) {
-        margin-top: -1 * $_navigation-item-padding;
+    @include breakpoint-up($header-linear-breakpoint) {
+        margin-top: -1 * $_navigation-item-icon-padding;
     }
 }
 
 .navigation__list + .navigation__list {
-    @include breakpoint-up(md) {
+    @include breakpoint-up($header-linear-breakpoint) {
         margin-left: spacing(1);
     }
 }
