@@ -1,5 +1,5 @@
 // 1. Workaround for IE min-height bug.
-// https://github.com/philipwalton/flexbugs/issues/75
+//    https://github.com/philipwalton/flexbugs/issues/75
 
 // Koenig card
 .kg-card {
@@ -38,20 +38,30 @@
 
 // Galleries
 .kg-gallery-container {
+    @include container-expand();
+
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    max-width: $container-article-width;
+
+    @include breakpoint-up(md) {
+        padding-right: $grid-gap-small;
+        padding-left: $grid-gap-small;
+    }
 }
 
 .kg-gallery-row {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: auto; // 1.
     min-height: 1px; // 1.
 
-    &:not(:first-of-type) {
-        margin: $grid-gap-small 0 0 0;
+    @include breakpoint-up(md) {
+        flex-direction: row;
+
+        &:not(:first-of-type) {
+            margin: $grid-gap-small 0 0 0;
+        }
     }
 }
 
@@ -62,8 +72,16 @@
     margin: 0;
 }
 
-.kg-gallery-image:not(:first-of-type) {
-    margin: 0 0 0 $grid-gap-small;
+.kg-gallery-image {
+    margin-bottom: $grid-gap-small;
+
+    @include breakpoint-up(md) {
+        margin-bottom: 0;
+
+        &:not(:first-of-type) {
+            margin-left: $grid-gap-small;
+        }
+    }
 }
 
 // Bookmarks
