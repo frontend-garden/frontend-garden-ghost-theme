@@ -41,6 +41,11 @@
     font-size: ms(-2);
 }
 
+.post-card__title,
+.post-card__summary {
+    max-width: 30rem;
+}
+
 .post-card__title {
     @include typography(headline3);
 

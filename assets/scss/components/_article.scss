@@ -1,6 +1,11 @@
 // 1. Article title needs manual margin.
 // 2. Optically align rounded avatar with text.
 
+.article__title,
+.article__summary {
+    max-width: 50rem;
+}
+
 .article__title {
     margin-top: 0.25em; // 1.
     margin-bottom: 0.4em; // 1.
@@ -21,5 +26,6 @@
 }
 
 .article__author {
+    max-width: 42rem;
     margin-left: -0.15em; // 2.
 }

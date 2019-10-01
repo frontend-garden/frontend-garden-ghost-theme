@@ -6,7 +6,7 @@
 
             <header class="section section--dense {{#has tag="#cover"}}cover{{/has}} background-alternate">
                 <div class="{{#has tag="#cover"}}cover__text{{/has}}">
-                    <div class="container container--article">
+                    <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
                         <section class="article__meta">
                             <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
