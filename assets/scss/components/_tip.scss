@@ -1,0 +1,20 @@
+.tip {
+    @include content-block();
+    @include typography(tip);
+
+    padding-top: spacing(1);
+    padding-bottom: spacing(1);
+    border-top: $border-width-thick solid var(--ruler-color);
+    border-bottom: $border-width-thick solid var(--ruler-color);
+
+    &:last-child {
+        margin-bottom: spacing(-1);
+        border-bottom: 0;
+    }
+
+    @include breakpoint-up(md) {
+        &:last-child {
+            margin-bottom: spacing(-2);
+        }
+    }
+}

@@ -112,4 +112,10 @@ $typography-styles: (
             font-family: $typography-font-family-sans-serif,
         ),
     ),
+    tip: (
+        default: (
+            font-size: ms(-2),
+            line-height: 1.8,
+        )
+    )
 );
