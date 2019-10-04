@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>{{meta_title}}</title>
+    <title>{{meta_title}}{{^is "home"}} | {{@site.title}}{{/is}}</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.min.css" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" />
