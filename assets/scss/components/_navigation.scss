@@ -1,6 +1,6 @@
 $_navigation-item-padding: 0.5em;
-$_navigation-item-padding-sm: 1em;
-$_navigation-item-icon-padding: 0.5em;
+$_navigation-item-padding-big: 1em;
+$_navigation-icon-padding: 0.5em;
 
 .navigation {
     display: flex;
@@ -8,8 +8,12 @@ $_navigation-item-icon-padding: 0.5em;
     justify-content: space-between;
     margin: -1 * $_navigation-item-padding;
 
-    @include breakpoint-up($header-linear-breakpoint) {
-        margin: -0.82em (-1 * $_navigation-item-icon-padding) (-1 * $_navigation-item-padding-sm) 0;
+    @include breakpoint-up($header-linear-breakpoint-with-navigation) {
+        margin:
+            -1 * $_navigation-item-padding-big
+            -1 * $_navigation-icon-padding
+            -1 * $_navigation-item-padding-big
+            -1 * $_navigation-item-padding;
     }
 }
 
@@ -24,39 +28,60 @@ $_navigation-item-icon-padding: 0.5em;
     flex: none;
 }
 
-.navigation__link {
+.navigation__link,
+.navigation__icon-link {
     @include link-unstyled();
-    @include typography(small-caps);
     @include transition(color);
+}
+
+.navigation__link {
+    @include typography(small-caps);
 
     padding: $_navigation-item-padding;
     font-weight: map-get($typography-font-weight-values, bold);
 
-    &:hover,
-    &:focus {
-        color: map-get($colors-brand, blue);
+    @include breakpoint-up(sm) {
+        padding: $_navigation-item-padding-big $_navigation-item-padding;
     }
 
-    @include breakpoint-up($header-linear-breakpoint) {
-        padding: $_navigation-item-padding-sm;
+    @include breakpoint-up(lg) {
+        padding: $_navigation-item-padding-big;
     }
 }
 
 .navigation__icon-link {
-    @include link-unstyled();
-
     display: inline-flex;
     align-items: baseline;
     justify-content: center;
-    padding: $_navigation-item-icon-padding;
+    padding: $_navigation-icon-padding;
+    line-height: 1;
+}
 
-    @include breakpoint-up($header-linear-breakpoint) {
-        margin-top: -1 * $_navigation-item-icon-padding;
+.navigation__link:hover,
+.navigation__link:focus,
+.navigation__icon-link:hover,
+.navigation__icon-link:focus {
+    color: map-get($colors-brand, blue);
+}
+
+.navigation__item--current .navigation__link {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% + 1.2em);
+        left: 50%;
+        width: 0.2em;
+        height: 0.2em;
+        border-radius: 50%;
+        background-color: map-get($colors-grays, gray);
+        transform: translateX(-50%);
     }
 }
 
 .navigation__list + .navigation__list {
-    @include breakpoint-up($header-linear-breakpoint) {
+    @include breakpoint-up(sm) {
         margin-left: spacing(1);
     }
 }

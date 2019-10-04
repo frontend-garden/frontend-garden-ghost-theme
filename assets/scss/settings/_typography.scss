@@ -104,6 +104,7 @@ $typography-styles: (
             font-size: ms(2),
             line-height: spacing(1),
             font-family: $typography-font-family-sans-serif,
+            white-space: nowrap,
         ),
     ),
     footer-title: (

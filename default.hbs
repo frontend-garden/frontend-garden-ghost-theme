@@ -17,11 +17,11 @@
 </head>
 <body class="site">
 
-<header class="header site__header">
+<header class="site__header header {{^if @site.navigation}}header--without-navigation{{/if}}">
     <div class="container container--fluid">
         <div class="header__layout">
 
-            <a href="{{@site.url}}" class="header__logotype">
+            <a href="/" class="header__logotype">
                 {{#if @site.logo}}
                     <img
                         src="{{img_url @site.logo size="xs"}}"
@@ -44,7 +44,7 @@
 
 {{{body}}}
 
-<footer class="footer site__footer">
+<footer class="site__footer footer">
     <div class="container">
 
         <p class="footer__section">
