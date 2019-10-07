@@ -11,6 +11,8 @@ $_avatar-small-size: 2em * $typography-line-height-base;
     height: $_avatar-size;
     overflow: hidden;
     border-radius: 50%;
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .avatar__image {
