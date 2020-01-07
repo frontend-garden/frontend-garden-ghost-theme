@@ -4,6 +4,7 @@
     --post-card-background-color: #{$color-white};
     --post-card-text-color: inherit;
     --alternate-background-color: #{map-get($colors-grays, gray-lighter)};
+    --dark-background-color: #{map-get($colors-grays, gray-darker)};
     --footer-text-color: inherit;
     --ruler-color: #{map-get($colors-grays, gray-lighter)};
 }
@@ -15,6 +16,7 @@
         --post-card-background-color: #{map-get($colors-grays, gray-darker)};
         --post-card-text-color: inherit;
         --alternate-background-color: #{map-get($colors-grays, gray-darkest)};
+        --dark-background-color: #{map-get($colors-grays, gray-darkest)};
         --footer-text-color: #{map-get($colors-grays, gray)};
         --ruler-color: #{map-get($colors-grays, gray-dark)};
     }

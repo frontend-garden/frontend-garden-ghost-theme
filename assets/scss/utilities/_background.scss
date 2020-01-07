@@ -4,3 +4,8 @@
     background-color: map-get($colors-grays, gray-lighter); // 1.
     background-color: var(--alternate-background-color);
 }
+
+.background-dark {
+    background-color: map-get($colors-grays, gray-darker); // 1.
+    background-color: var(--dark-background-color);
+}

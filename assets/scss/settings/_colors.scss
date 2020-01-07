@@ -1,9 +1,9 @@
 $_gray-base: #272822;
 
 $colors-grays: (
-    gray-darkest: $_gray-base,
-    gray-darker: lighten($_gray-base, 7%),
-    gray-dark: lighten($_gray-base, 40%),
+    gray-darkest: desaturate($_gray-base, 10%),
+    gray-darker: desaturate(lighten($_gray-base, 7%), 7.5%),
+    gray-dark: desaturate(lighten($_gray-base, 40%), 5%),
     gray: lighten($_gray-base, 60%),
     gray-light: lighten($_gray-base, 70%),
     gray-lighter: lighten($_gray-base, 80%),

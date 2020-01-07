@@ -4,7 +4,18 @@
     <main class="site__content">
         <article class="article">
 
-            <header class="section section--dense {{#has tag="#cover"}}cover{{/has}} background-alternate">
+            <header
+                class="
+                    section
+                    section--dense
+                    {{#has tag="#cover"}}
+                        cover
+                        background-dark
+                    {{else}}
+                        background-alternate
+                    {{/has}}
+                "
+            >
                 <div class="{{#has tag="#cover"}}cover__text{{/has}}">
                     <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
