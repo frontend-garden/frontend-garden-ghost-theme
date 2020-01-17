@@ -1,105 +1,140 @@
 {{!< default}}
 
-<main class="site__content background-alternate">
-    <section class="section section--dense-top">
-        <div class="container">
+{{#author}}
+    {{#get "posts"
+        include="authors,tags"
+        filter="primary_author:{{slug}}+primary_tag:skoleni"
+        limit="all"
+        as |workshops|
+    }}
 
-            {{#author}}
-                <div class="article">
-                    <div class="article__meta">Autor</div>
-                    <h1 class="article__title">{{name}}</h1>
-                    <div class="author-card">
-                        {{#if profile_image}}
-                            <div class="author-card__media">
-                                <div class="avatar">
-                                    <img
-                                        src="{{profile_image}}"
-                                        class="avatar__image"
-                                        alt="{{name}}"
-                                    />
-                                </div>
-                            </div>
-                        {{/if}}
-                        {{#if bio}}
-                            <div class="author-card__content">
-                                <div class="author-card__bio">
-                                    <p class="author-card__bio__text js-nbsp js-external-links">
-                                        {{bio}}
-                                    </p>
-                                    <div class="author-card__bio__links">
-                                        {{#if location}}
-                                            {{location}}
-                                            —
-                                        {{/if}}
-                                        {{plural
-                                            ../pagination.total
-                                            empty='Žádné články'
-                                            singular='% článek'
-                                            plural='% článků'
-                                        }}
-                                        —
-                                        {{#if website}}
-                                            <a
-                                                href="{{website}}"
-                                                class="icon link-unstyled"
-                                                target="_blank"
-                                                rel="noopener"
-                                            >
-                                                {{> "icons/website"}}
-                                            </a>
-                                            —
-                                        {{/if}}
-                                        {{#if twitter}}
-                                            <a
-                                                href="{{twitter_url}}"
-                                                class="icon link-unstyled"
-                                                target="_blank"
-                                                rel="noopener"
-                                            >
-                                                {{> "icons/twitter"}}
-                                            </a>
-                                            —
-                                        {{/if}}
-                                        {{#if facebook}}
-                                            <a
-                                                href="{{facebook_url}}"
-                                                class="icon link-unstyled"
-                                                target="_blank"
-                                                rel="noopener"
-                                            >
-                                                {{> "icons/facebook"}}
-                                            </a>
-                                            —
-                                        {{/if}}
-                                        <a
-                                            href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/"
-                                            class="icon link-unstyled"
-                                            target="_blank"
-                                            rel="noopener"
-                                        >
-                                            {{> "icons/rss"}}
-                                        </a>
+        <main class="site__content background-alternate">
+            <section class="section section--dense-top">
+                <div class="container">
+
+                    <div class="article">
+                        <div class="article__meta">
+                            Autor
+                            {{#if workshops}}a&nbsp;lektor{{/if}}
+                        </div>
+                        <h1 class="article__title">{{../name}}</h1>
+                        <div class="author-card">
+                            {{#if ../profile_image}}
+                                <div class="author-card__media">
+                                    <div class="avatar">
+                                        <img
+                                            src="{{../profile_image}}"
+                                            class="avatar__image"
+                                            alt="{{../name}}"
+                                        />
                                     </div>
                                 </div>
-                            </div>
-                        {{/if}}
+                            {{/if}}
+                            {{#if ../bio}}
+                                <div class="author-card__content">
+                                    <div class="author-card__bio">
+                                        <p class="author-card__bio__text js-nbsp js-external-links">
+                                            {{../bio}}
+                                        </p>
+                                        <div class="author-card__bio__links">
+                                            {{#if ../location}}
+                                                {{../location}}
+                                                —
+                                            {{/if}}
+                                            {{#if workshops}}
+                                                {{plural
+                                                    ../../pagination.total
+                                                    empty="Žádné články ani školení"
+                                                    singular="% školení"
+                                                    plural="% článků a školení"
+                                                }}
+                                            {{else}}
+                                                {{plural
+                                                    ../../pagination.total
+                                                    empty="Žádné články"
+                                                    singular="% článek"
+                                                    plural="% článků"
+                                                }}
+                                            {{/if}}
+                                            —
+                                            {{#if ../website}}
+                                                <a
+                                                    href="{{../website}}"
+                                                    class="icon link-unstyled"
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                >
+                                                    {{> "icons/website"}}
+                                                </a>
+                                                —
+                                            {{/if}}
+                                            {{#if ../twitter}}
+                                                <a
+                                                    href="{{../twitter_url}}"
+                                                    class="icon link-unstyled"
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                >
+                                                    {{> "icons/twitter"}}
+                                                </a>
+                                                —
+                                            {{/if}}
+                                            {{#if ../facebook}}
+                                                <a
+                                                    href="{{../facebook_url}}"
+                                                    class="icon link-unstyled"
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                >
+                                                    {{> "icons/facebook"}}
+                                                </a>
+                                                —
+                                            {{/if}}
+                                            <a
+                                                href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/"
+                                                class="icon link-unstyled"
+                                                target="_blank"
+                                                rel="noopener"
+                                            >
+                                                {{> "icons/rss"}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        </div>
                     </div>
+
                 </div>
-            {{/author}}
+            </section>
+            <section class="section section--dense">
+                <div class="container">
 
-        </div>
-    </section>
-    <section class="section section--dense">
-        <div class="container">
+                    {{#if workshops}}
+                        <h2>Školení</h2>
+                        <div class="post-feed spacing-bottom">
+                            {{#foreach workshops}}
+                                <div class="post-feed__item">
+                                    {{> "workshop-card"}}
+                                </div>
+                            {{/foreach}}
+                        </div>
+                    {{/if}}
 
-            <div class="post-feed">
-                {{#foreach posts}}
-                    <div class="post-feed__item">
-                        {{> "post-card"}}
+                    <h2>Články</h2>
+                    <div class="post-feed">
+                        {{#foreach ../../posts}}
+                            {{^has tag="školení"}}
+                                <div class="post-feed__item">
+                                    {{> "post-card"}}
+                                </div>
+                            {{/has}}
+                        {{/foreach}}
                     </div>
-                {{/foreach}}
-            </div>
 
-        </div>
-    </section>
-</main>
+                </div>
+            </section>
+        </main>
+
+    {{/get}}
+{{/author}}
