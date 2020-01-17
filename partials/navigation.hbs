@@ -1,9 +1,24 @@
 <ul class="navigation__list">
     {{#foreach navigation}}
-        <li class="navigation__item {{#if current}}navigation__item--current{{/if}}">
+        <li
+            class="
+                navigation__item
+                {{#if current}}
+                    navigation__item--current
+                {{else}}
+                    {{!-- Is rendered as `navigation__item--current-parent`: --}}
+                    {{link_class for=slug activeClass="navigation__item--current"}}
+                {{/if}}
+            "
+        >
             <a href="{{url absolute="true"}}" class="navigation__link">
                 {{label}}
             </a>
+            {{#has slug="skoleni"}}
+                <span class="navigation__tag">
+                    <span class="tag tag--new">Nové</span>
+                </span>
+            {{/has}}
         </li>
     {{/foreach}}
 </ul>

@@ -21,6 +21,7 @@ $_navigation-icon-padding: 0.5em;
     @include list-unstyled();
 
     display: flex;
+    max-width: none;
     margin-bottom: 0;
 }
 
@@ -64,7 +65,8 @@ $_navigation-icon-padding: 0.5em;
     color: map-get($colors-brand, blue);
 }
 
-.navigation__item--current .navigation__link {
+.navigation__item--current .navigation__link,
+.navigation__item--current-parent .navigation__link {
     position: relative;
 
     &::after {
@@ -78,6 +80,30 @@ $_navigation-icon-padding: 0.5em;
         background-color: map-get($colors-grays, gray);
         transform: translateX(-50%);
     }
+}
+
+.navigation__tag {
+    display: inline-block;
+    font-size: ms(-1);
+    transform: translateX(-0.5em) rotateZ(8deg);
+
+    @include breakpoint-up(lg) {
+        transform: translateX(-0.8em) rotateZ(8deg);
+    }
+}
+
+.navigation--secondary {
+    margin-bottom: spacing(1);
+}
+
+.navigation--secondary .navigation__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.navigation--secondary .navigation__item {
+    margin-bottom: spacing(0.5);
 }
 
 .navigation__list + .navigation__list {
