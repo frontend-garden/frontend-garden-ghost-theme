@@ -12,6 +12,7 @@
 
                 </div>
             </header>
+
             <section class="section section--dense">
                 <div class="container container--article">
 
@@ -22,17 +23,31 @@
                 </div>
             </section>
 
-            {{!-- {{#if @labs.subscribers}}
-                <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                    <p>Get the latest posts delivered right to your inbox</p>
-                    {{subscribe_form placeholder="youremail@example.com"}}
-                </section>
-            {{/if}} --}}
-
         </article>
-        <div class="container container--article">
-            <hr class="spacing-0" />
-        </div>
+
+        {{#get "posts"
+            include="authors,tags"
+            filter="primary_tag:clanek"
+            limit="3"
+            as |recent|
+        }}
+            {{#if recent}}
+                <aside class="section section--dense background-alternate">
+                    <div class="container">
+
+                        <h2>Poslední články</h2>
+                        <div class="post-feed">
+                            {{#foreach recent}}
+                                <div class="post-feed__item">
+                                    {{> "post-card"}}
+                                </div>
+                            {{/foreach}}
+                        </div>
+
+                    </div>
+                </aside>
+            {{/if}}
+        {{/get}}
+
     </main>
 {{/post}}
