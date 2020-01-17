@@ -1,7 +1,7 @@
 {
   "name": "frontend-garden-ghost-theme",
   "description": "Frontend Garden Ghost theme",
-  "version": "0.1.0",
+  "version": "1.0.0-rc1",
   "license": "MIT",
   "author": {
     "name": "Adam Kudrna",
@@ -14,9 +14,9 @@
     "ghost-theme"
   ],
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2",
-    "node": ">=8"
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3",
+    "node": ">=10"
   },
   "scripts": {
     "build": "npm run css",
@@ -35,37 +35,18 @@
   "devDependencies": {
     "@visionappscz/stylelint-config-visionapps": "^1.1.0",
     "@visionappscz/stylelint-config-visionapps-order": "^1.1.0",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.7.4",
     "clean-css-cli": "^4.3.0",
     "mkdirp": "~0.5.1",
     "modularscale-sass": "^3.0.10",
-    "node-sass": "^4.12.0",
-    "postcss-cli": "^6.1.3",
-    "stylelint": "^10.1.0",
-    "stylelint-order": "^3.1.1",
-    "stylelint-scss": "^3.11.1"
+    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
+    "stylelint": "^13.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.13.0"
   },
   "config": {
+    "image_sizes": {},
     "posts_per_page": 24
-  },
-  "image_sizes": {
-    "xxs": {
-      "width": 30
-    },
-    "xs": {
-      "width": 100
-    },
-    "s": {
-      "width": 300
-    },
-    "m": {
-      "width": 600
-    },
-    "l": {
-      "width": 1000
-    },
-    "xl": {
-      "width": 2000
-    }
   }
 }
