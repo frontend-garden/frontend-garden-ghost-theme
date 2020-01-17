@@ -1,10 +1,15 @@
 // 1. Fallback for IE which doesn't support CSS custom properties.
 
+$_post-card-padding-x: 10%;
+$_post-card-padding-y: spacing(1);
+
 .post-card {
     @include transition(#{box-shadow, transform});
 
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     color: var(--post-card-text-color);
     border-radius: $border-radius;
@@ -24,9 +29,18 @@
 
 .post-card__content {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
-    height: 100%;
-    padding: spacing(1) 10%;
+    padding: $_post-card-padding-y $_post-card-padding-x;
+}
+
+.post-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+    padding: spacing(0.5) $_post-card-padding-x;
+    border-top: $border-width solid currentColor;
 }
 
 .post-card__image {

@@ -23,13 +23,15 @@
     @include breakpoint-up(md) {
         max-width: 50%;
     }
+}
 
+.post-feed--articles .post-feed__item:only-child {
     @include breakpoint-up(lg) {
         max-width: 33%;
     }
 }
 
-.post-feed__item:first-child {
+.post-feed--articles .post-feed__item:first-child {
     @include breakpoint-up(md) {
         grid-column: span 2;
     }
@@ -42,8 +44,12 @@
     }
 
     .post-feed__item {
-        flex: 1 1 30%;
+        flex: 1 1 45%;
         margin-right: $grid-gap;
         margin-bottom: $grid-gap;
+    }
+
+    .post-feed--articles .post-feed__item {
+        flex: 1 1 30%;
     }
 }

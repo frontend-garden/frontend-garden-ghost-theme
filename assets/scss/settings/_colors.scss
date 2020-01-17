@@ -15,7 +15,12 @@ $color-white: #fff;
 $colors-brand: (
     blue: #008eaa,
     green: #40bf4f,
-    green-dark: #308d3b,
+    green-dark: #38a645,
+    green-darker: #308d3b,
+    green-darkest: #2b8035,
+    yellow: #f6db53,
 );
 
 $color-primary: map-get($colors-brand, green);
+
+$color-brand-vd: #174622;

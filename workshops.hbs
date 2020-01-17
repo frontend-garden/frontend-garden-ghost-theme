@@ -1,0 +1,54 @@
+{{!< default}}
+
+{{#if posts.length}}
+    <main class="site__content">
+        <section class="section background-alternate">
+            <div class="container">
+
+                <h1>Firemní školení</h1>
+                <p class="spacing-bottom">
+                    <strong class="text-small-caps">Získejte náskok v&nbsp;těch nejnáročnějších frontendových disciplínách.</strong>
+                    <br />
+                    Objednejte si školení přímo k&nbsp;vám do firmy.
+                </p>
+
+                <div class="post-feed">
+                    {{#foreach posts}}
+                        <div class="post-feed__item">
+                            {{> "workshop-card"}}
+                        </div>
+                    {{/foreach}}
+                </div>
+
+            </div>
+        </section>
+
+        {{! Currently not used. }}
+        {{!> "workshop-logos"}}
+
+        {{#get "posts"
+            include="authors,tags"
+            filter="primary_tag:clanek"
+            limit="3"
+            as |recent|
+        }}
+            {{#if recent}}
+                <aside class="section section--dense background-alternate">
+                    <div class="container">
+
+                        <h2>Poslední články</h2>
+                        <div class="post-feed">
+                            {{#foreach recent}}
+                                <div class="post-feed__item">
+                                    {{> "post-card"}}
+                                </div>
+                            {{/foreach}}
+                        </div>
+
+                    </div>
+                </aside>
+            {{/if}}
+        {{/get}}
+
+    </main>
+{{/if}}

@@ -1,0 +1,25 @@
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.logo-grid__item {
+    margin: spacing(0.5);
+}
+
+.logo-grid__image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 3em;
+}
+
+.logo-grid__item--square .logo-grid__image {
+    height: 5em;
+}

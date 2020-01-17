@@ -1,0 +1,13 @@
+// stylelint-disable declaration-no-important
+@media (prefers-color-scheme: dark) {
+    .invert-shapes-in-dark-mode circle,
+    .invert-shapes-in-dark-mode ellipse,
+    .invert-shapes-in-dark-mode line,
+    .invert-shapes-in-dark-mode path,
+    .invert-shapes-in-dark-mode polygon,
+    .invert-shapes-in-dark-mode polyline,
+    .invert-shapes-in-dark-mode rect {
+        fill: map-get($colors-grays, gray-light) !important;
+    }
+}
+//stylelint-enable

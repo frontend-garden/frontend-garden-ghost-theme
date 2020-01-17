@@ -1,0 +1,24 @@
+.button {
+    @include typography(button);
+
+    display: inline-flex;
+    justify-content: center;
+    padding: spacing(0.5) spacing(1);
+    text-align: center;
+    text-decoration: none;
+    color: $color-white;
+    border: $border-width solid transparent;
+    border-radius: $border-radius;
+    background: $color-primary;
+    background-color: var(--button-background);
+    box-shadow: none;
+    appearance: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.button--outline {
+    color: currentColor;
+    border-color: currentColor;
+    background-color: transparent;
+}

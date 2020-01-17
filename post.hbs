@@ -24,10 +24,8 @@
                                 {{date format="D. MMMM YYYY"}}
                             </time>
                             —
-                            {{#if primary_tag}}
-                                <a href="{{primary_tag.url}}" class="article__meta__link">{{primary_tag.name}}</a>
-                                —
-                            {{/if}}
+                            {{tags from=2}}
+                            —
                             {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                         </section>
 
@@ -118,68 +116,32 @@
                 </div>
             </section>
 
-            {{!-- {{#if @labs.subscribers}}
-                <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
-                    <p>Get the latest posts delivered right to your inbox</p>
-                    {{subscribe_form placeholder="youremail@example.com"}}
-                </section>
-            {{/if}} --}}
-
         </article>
 
-        <aside class="section background-alternate">
-            <div class="container container--narrow">
+        {{#get "posts"
+            include="authors,tags"
+            filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}"
+            limit="3"
+            as |recent|
+        }}
+            {{#if recent}}
+                <aside class="section section--dense background-alternate">
+                    <div class="container">
 
-                {{!-- Tag feed is currently not needed. --}}
-                {{!--
-                <div class="read-next-feed">
-                    {{#if primary_tag}}
-                        {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
-                            {{#if related_posts}}
-                                <article class="read-next-card"
-                                    {{#if ../primary_tag.feature_image}}
-                                         style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                                    {{else}}
-                                        {{#if @site.cover_image}}
-                                         style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
-                                    {{/if}}
-                                >
-                                    <header class="read-next-card-header">
-                                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
-                                        {{#../primary_tag}}
-                                            <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                                        {{/../primary_tag}}
-                                    </header>
-                                    <div class="read-next-divider">{{> "icons/infinity"}}</div>
-                                    <div class="read-next-card-content">
-                                        <ul>
-                                            {{#foreach related_posts}}
-                                                <li><a href="{{url}}">{{title}}</a></li>
-                                            {{/foreach}}
-                                        </ul>
-                                    </div>
-                                    <footer class="read-next-card-footer">
-                                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
-                                    </footer>
-                                </article>
-                            {{/if}}
-                        {{/get}}
-                    {{/if}}
-                </div>
-                --}}
+                        <h2>Poslední články</h2>
+                        <div class="post-feed">
+                            {{#foreach recent}}
+                                <div class="post-feed__item">
+                                    {{> "post-card"}}
+                                </div>
+                            {{/foreach}}
+                        </div>
 
-                <div class="post-feed">
-                    {{#next_post}}
-                        {{> "post-card"}}
-                    {{/next_post}}
-                    {{#prev_post}}
-                        {{> "post-card"}}
-                    {{/prev_post}}
-                </div>
+                    </div>
+                </aside>
+            {{/if}}
+        {{/get}}
 
-            </div>
-        </aside>
     </main>
 {{/post}}
 

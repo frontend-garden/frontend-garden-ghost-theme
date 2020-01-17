@@ -6,37 +6,36 @@
     </div>
 
     <ul class="author-list">
-    {{#foreach authors}}
-        <li class="author-list-item">
+        {{#foreach authors}}
+            <li class="author-list-item">
 
-            <div class="author-card">
-                <div class="basic-info">
-                    {{#if profile_image}}
-                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-                    {{else}}
-                        <div class="author-profile-image">{{> "icons/avatar"}}</div>
-                    {{/if}}
-                    <h2>{{name}}</h2>
+                <div class="author-card">
+                    <div class="basic-info">
+                        {{#if profile_image}}
+                            <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                        {{else}}
+                            <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                        {{/if}}
+                        <h2>{{name}}</h2>
+                    </div>
+                    <div class="bio">
+                        {{#if bio}}
+                            <p>{{bio}}</p>
+                            <p><a href="{{url}}">Další články</a> od autora {{name}}.</p>
+                        {{else}}
+                            <p><a href="{{url}}">Další články</a> od autora</p>
+                        {{/if}}
+                    </div>
                 </div>
-                <div class="bio">
-                    {{#if bio}}
-                        <p>{{bio}}</p>
-                        <p><a href="{{url}}">Další články</a> od autora {{name}}.</p>
-                    {{else}}
-                        <p><a href="{{url}}">Další články</a> od autora</p>
-                    {{/if}}
-                </div>
-            </div>
 
-            {{#if profile_image}}
-                <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
-            {{else}}
-                <a href="{{url}}" class="moving-avatar author-profile-image">{{> "icons/avatar"}}</a>
-            {{/if}}
+                {{#if profile_image}}
+                    <a href="{{url}}" class="moving-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
+                {{else}}
+                    <a href="{{url}}" class="moving-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                {{/if}}
 
-        </li>
-    {{/foreach}}
-
+            </li>
+        {{/foreach}}
     </ul>
 
 </section>

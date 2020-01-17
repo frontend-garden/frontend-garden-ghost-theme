@@ -1,6 +1,8 @@
 <article
     class="
         post-card
+        background-primary
+        color-white
         {{post_class}}
         {{#has tag="#cover"}}cover{{/has}}
     "
@@ -9,11 +11,9 @@
 
         <header>
             <section class="post-card__meta">
-                {{#has tag="count:>1"}}
-                    {{tags from=2 to=2}}
-                    —
+                {{#has tag="#new"}}
+                    <span class="tag tag--new">nové</span>
                 {{/has}}
-                {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
             </section>
             <h2 class="post-card__title">
                 <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
@@ -52,7 +52,7 @@
                             <div class="author-card__content">
                                 <h3 class="author-card__name">
                                     <a href="{{url}}" class="post-card__link link-unstyled">
-                                        {{name}}
+                                        Lektor: {{name}}
                                     </a>
                                 </h3>
                             </div>
@@ -61,8 +61,15 @@
                     </li>
                 {{/foreach}}
             </ul>
+
         </footer>
 
+    </div>
+
+    <div class="post-card__footer {{#has tag="#cover"}}cover__text{{/has}}">
+        <a href="{{url}}" class="button button--outline">
+            Více o&nbsp;školení
+        </a>
     </div>
 
     {{#has tag="#cover"}}

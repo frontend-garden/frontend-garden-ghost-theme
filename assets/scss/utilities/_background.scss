@@ -9,3 +9,8 @@
     background-color: map-get($colors-grays, gray-darker); // 1.
     background-color: var(--dark-background-color);
 }
+
+.background-primary {
+    background-color: map-get($colors-brand, green-darker);
+    background-color: var(--primary-background-color);
+}
