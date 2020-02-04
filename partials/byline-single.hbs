@@ -1,19 +1,15 @@
 {{#primary_author}}
 
     <section class="author-card">
-        <div class="author-card__media">
 
-            <a href="{{url}}" class="avatar avatar--link">
-                {{#if profile_image}}
+        {{#if profile_image}}
+            <div class="author-card__media">
+                <a href="{{url}}" class="avatar avatar--link">
                     <img src="{{profile_image}}" class="avatar__image" alt="{{name}}" />
-                {{else}}
-                    <span class="avatar__image">
-                        {{> "icons/avatar"}}
-                    </span>
-                {{/if}}
-            </a>
+                </a>
+            </div>
+        {{/if}}
 
-        </div>
         <div class="author-card__content">
 
             <h3 class="author-card__name">{{name}}</h3>
