@@ -25,6 +25,14 @@ $_post-card-padding-y: spacing(1);
             transform: scale(1.015, 1.015);
         }
     }
+
+    @media (hover: hover) and (prefers-reduced-motion: reduce) {
+        will-change: box-shadow;
+
+        &:hover {
+            transform: none;
+        }
+    }
 }
 
 .post-card__content {

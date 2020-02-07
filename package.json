@@ -1,7 +1,7 @@
 {
   "name": "frontend-garden-ghost-theme",
   "description": "Frontend Garden Ghost theme",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Adam Kudrna",

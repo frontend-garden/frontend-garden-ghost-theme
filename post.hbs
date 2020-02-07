@@ -125,20 +125,7 @@
             as |recent|
         }}
             {{#if recent}}
-                <aside class="section section--dense background-alternate">
-                    <div class="container">
-
-                        <h2>Poslední články</h2>
-                        <div class="post-feed">
-                            {{#foreach recent}}
-                                <div class="post-feed__item">
-                                    {{> "post-card"}}
-                                </div>
-                            {{/foreach}}
-                        </div>
-
-                    </div>
-                </aside>
+                {{> "related-posts" posts=recent}}
             {{/if}}
         {{/get}}
 

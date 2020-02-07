@@ -108,20 +108,7 @@
             as |related|
         }}
             {{#if related}}
-                <aside class="section section--dense background-alternate">
-                    <div class="container">
-
-                        <h2>Poslední články od lektora</h2>
-                        <div class="post-feed">
-                            {{#foreach related}}
-                                <div class="post-feed__item">
-                                    {{> "post-card"}}
-                                </div>
-                            {{/foreach}}
-                        </div>
-
-                    </div>
-                </aside>
+                {{> "related-posts" posts=related headline="Poslední články od lektora"}}
             {{/if}}
         {{/get}}
 
