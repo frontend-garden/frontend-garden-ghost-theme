@@ -9,8 +9,9 @@
                     section
                     section--dense
                     {{#has tag="#cover"}}
-                        cover
                         background-dark
+                        cover
+                        {{#has tag="#cover-precomposed"}}cover--precomposed{{/has}}
                     {{else}}
                         background-alternate
                     {{/has}}

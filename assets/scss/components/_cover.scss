@@ -36,3 +36,7 @@
     object-fit: cover;
     object-position: center center;
 }
+
+.cover--precomposed .cover__canvas::after {
+    display: none;
+}
