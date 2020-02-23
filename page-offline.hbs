@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{meta_title}} | {{@site.title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" />
+    <link rel="stylesheet" type="text/css" href="https://use.typekit.net/kwm0ygm.css" />
+
+    {{ghost_head}}
+
+    <meta property="fb:admins" content="10212662066139495" />
+</head>
+<body class="site">
+
+{{> "header"}}
+
+<main class="site__content">
+
+    <header class="section section--dense background-alternate">
+        <div class="container container--narrow">
+
+            <h1 class="js-nbsp">
+                {{#post}}
+                    {{title}}
+                {{/post}}
+            </h1>
+
+        </div>
+    </header>
+
+    <section class="section section--dense">
+        <div class="container container--narrow">
+
+            <h2 class="js-nbsp">
+                {{#post}}
+                    {{excerpt}}
+                {{/post}}
+            </h2>
+
+        </div>
+    </section>
+
+</main>
+
+{{> "footer"}}
+
+{{ghost_foot}}
+
+</body>
+</html>
