@@ -14,9 +14,9 @@
     "ghost-theme"
   ],
   "engines": {
-    "ghost": ">=3.0.0",
+    "ghost": ">=3.9.0",
     "ghost-api": "v3",
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "build": "npm run css",
@@ -37,13 +37,13 @@
     "@visionappscz/stylelint-config-visionapps-order": "^1.1.0",
     "autoprefixer": "^9.7.4",
     "clean-css-cli": "^4.3.0",
-    "mkdirp": "~0.5.1",
+    "mkdirp": "^1.0.3",
     "modularscale-sass": "^3.0.10",
     "node-sass": "^4.13.1",
     "postcss-cli": "^7.1.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.2.0",
     "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.13.0"
+    "stylelint-scss": "^3.14.2"
   },
   "config": {
     "image_sizes": {},

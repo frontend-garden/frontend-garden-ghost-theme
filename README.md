@@ -21,7 +21,7 @@ Follow the official [Ghost setup guide](https://ghost.org/docs/setup/).
 
 ## Theme Development with Live Reload
 
-Requirements: [node](https://nodejs.org) v10 or newer.
+Requirements: [node](https://nodejs.org) v12 or newer.
 
 Install [Gscan](https://gscan.ghost.org) and [nodemon](https://nodemon.io):
 
