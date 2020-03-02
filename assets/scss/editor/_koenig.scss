@@ -12,6 +12,11 @@
     }
 }
 
+.kg-embed-card {
+    display: flex;
+    justify-content: center;
+}
+
 // Sizes
 .kg-width-wide {
     margin-right: -1 * $container-padding;
