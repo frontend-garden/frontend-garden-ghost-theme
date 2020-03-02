@@ -41,6 +41,11 @@
     @include container-article();
 }
 
+.kg-width-full .kg-image {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 // Galleries
 .kg-gallery-container {
     @include container-expand();
