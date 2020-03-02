@@ -1,4 +1,4 @@
-.tag {
+.label {
     @include typography(small-caps);
 
     display: inline-flex;
@@ -12,6 +12,6 @@
     user-select: none;
 }
 
-.tag--new {
+.label--new {
     background-color: map-get($colors-brand, yellow);
 }
