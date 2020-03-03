@@ -14,4 +14,7 @@ h4,
 h5,
 h6 {
     @include typography(headline4);
+
+    margin-top: spacing(1.5);
+    margin-bottom: spacing(0.5);
 }

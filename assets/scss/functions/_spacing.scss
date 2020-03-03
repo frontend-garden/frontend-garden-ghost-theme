@@ -3,7 +3,7 @@
 @import "../settings/typography";
 
 @function spacing($value) {
-    @if ($value != 0.5 and $value % 1 != 0) {
+    @if ($value != 0.5 and $value != 1.5 and $value % 1 != 0) {
         @error "Only whole numbers and 0.5 can be used for spacing, #{$value} given.";
     }
 
