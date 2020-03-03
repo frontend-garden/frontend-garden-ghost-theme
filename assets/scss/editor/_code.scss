@@ -9,7 +9,7 @@
 pre,
 pre[class*="language-"] {
     @include container-expand();
-    @include content-block();
+    @include content-block-vertical-offset();
 
     padding: spacing(1) 0;
     overflow: auto;

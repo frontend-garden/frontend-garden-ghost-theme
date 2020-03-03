@@ -1,9 +1,27 @@
-@mixin content-block() {
+@mixin content-block-vertical-offset() {
     margin-top: spacing(1);
     margin-bottom: spacing(1);
 
     @include breakpoint-up(md) {
         margin-top: spacing(2);
         margin-bottom: spacing(2);
+    }
+}
+
+@mixin content-block-wide($declare-width: false) {
+    margin-right: -1 * $container-padding;
+    margin-left: -1 * $container-padding;
+
+    @if ($declare-width) {
+        width: calc(100% + 2 * #{$container-padding});
+    }
+
+    @include breakpoint-up(sm) {
+        margin-right: -1 * $container-padding-sm;
+        margin-left: -1 * $container-padding-sm;
+
+        @if ($declare-width) {
+            width: calc(100% + 2 * #{$container-padding-sm});
+        }
     }
 }

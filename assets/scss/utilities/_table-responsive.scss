@@ -1,15 +1,10 @@
 .table-responsive {
+    @include content-block-vertical-offset();
+    @include content-block-wide($declare-width: true);
+
     display: block;
-    width: calc(100% + 2 * #{$container-padding});
-    margin: 0 (-1 * $container-padding) spacing(1);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-
-    @include breakpoint-up(sm) {
-        width: calc(100% + 2 * #{$table-cell-padding-horizontal});
-        margin-right: -1 * $table-cell-padding-horizontal;
-        margin-left: -1 * $table-cell-padding-horizontal;
-    }
 }
 
 .table-responsive table {

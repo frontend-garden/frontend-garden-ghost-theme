@@ -15,7 +15,7 @@ small {
 }
 
 hr {
-    @include content-block();
+    @include content-block-vertical-offset();
     @include horizontal-ruler();
 
     height: 0;

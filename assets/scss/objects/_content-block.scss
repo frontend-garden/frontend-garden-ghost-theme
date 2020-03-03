@@ -1,0 +1,11 @@
+.content-block {
+    @include content-block-vertical-offset();
+}
+
+.content-block--wide {
+    @include content-block-wide();
+}
+
+.content-block--full {
+    @include container-expand();
+}

@@ -3,7 +3,7 @@
 
 // Koenig card
 .kg-card {
-    @include content-block();
+    @include content-block-vertical-offset();
 }
 
 .kg-card figcaption {
@@ -19,13 +19,7 @@
 
 // Sizes
 .kg-width-wide {
-    margin-right: -1 * $container-padding;
-    margin-left: -1 * $container-padding;
-
-    @include breakpoint-up(sm) {
-        margin-right: -1 * $container-padding-sm;
-        margin-left: -1 * $container-padding-sm;
-    }
+    @include content-block-wide();
 }
 
 .kg-width-full {
