@@ -3,17 +3,18 @@ const elementsToReplace = document.querySelectorAll('.js-nbsp');
 
 if (elementsToReplace.length) {
   elementsToReplace.forEach((element) => {
+    const el = element;
 
     // First pass to handle single and odd occurrences.
-    element.innerHTML = element.innerHTML.replace(
+    el.innerHTML = el.innerHTML.replace(
       /( |&nbsp;)([a-z])( |&nbsp;)/gi,
-      '$1$2&nbsp;'
+      '$1$2&nbsp;',
     );
 
     // Second pass to handle even occurrences in multiple matches.
-    element.innerHTML = element.innerHTML.replace(
+    el.innerHTML = el.innerHTML.replace(
       /&nbsp;([a-z]) /gi,
-      '&nbsp;$1&nbsp;'
+      '&nbsp;$1&nbsp;',
     );
   });
 }
@@ -27,10 +28,10 @@ if (externalLinks.length) {
     element.setAttribute('rel', 'noopener noreferrer');
 
     if (typeof gtag !== 'undefined') {
-      element.addEventListener('click', function () {
+      element.addEventListener('click', () => {
         gtag('event', 'navigate', {
-          'event_category': 'Outbound links',
-          'event_label': element.getAttribute('href'),
+          event_category: 'Outbound links',
+          event_label: element.getAttribute('href'),
         });
       });
     }
@@ -39,26 +40,27 @@ if (externalLinks.length) {
 
 // Add clickable anchors to headings with ID.
 const headingsWithId = document.querySelectorAll(
-  '.js-heading-anchors h2[id],' +
-  '.js-heading-anchors h3[id]' +
-  '.js-heading-anchors h4[id]' +
-  '.js-heading-anchors h5[id]' +
-  '.js-heading-anchors h6[id]'
+  '.js-heading-anchors h2[id],'
+  + '.js-heading-anchors h3[id]'
+  + '.js-heading-anchors h4[id]'
+  + '.js-heading-anchors h5[id]'
+  + '.js-heading-anchors h6[id]',
 );
 
 if (headingsWithId.length) {
   headingsWithId.forEach((element) => {
+    const el = element;
     const headingId = element.getAttribute('id');
     const headingText = element.innerHTML;
 
-    element.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
+    el.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
   });
 }
 
 // Automatically size Koenig gallery images
 const galleryImages = document.querySelectorAll('.kg-gallery-image img');
 
-galleryImages.forEach(function(image) {
+galleryImages.forEach((image) => {
   const container = image.closest('.kg-gallery-image');
   const width = image.attributes.width.value;
   const height = image.attributes.height.value;
@@ -71,7 +73,7 @@ const trackedItems = document.querySelectorAll('[data-track]');
 
 if (trackedItems.length && typeof gtag !== 'undefined') {
   trackedItems.forEach((element) => {
-    element.addEventListener('click', function () {
+    element.addEventListener('click', () => {
       const action = element.getAttribute('data-track');
 
       if (action === 'share') {
@@ -88,8 +90,8 @@ if (trackedItems.length && typeof gtag !== 'undefined') {
         }
 
         gtag('event', action, {
-          'event_category': element.getAttribute('data-category'),
-          'event_label': label,
+          event_category: element.getAttribute('data-category'),
+          event_label: label,
         });
       }
     });

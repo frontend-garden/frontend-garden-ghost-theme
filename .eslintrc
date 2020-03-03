@@ -1,0 +1,29 @@
+{
+  "extends": ["eslint-config-airbnb-base"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "gtag": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "sourceType": "module"
+  },
+  "rules": {
+    "func-names": ["error", "as-needed"],
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+    }],
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-undef-init": ["error"],
+    "object-curly-newline": ["error", {
+      "consistent": true,
+      "minProperties": 2,
+      "multiline": true
+    }],
+    "object-curly-spacing": ["error", "always"],
+    "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": false }],
+    "sort-keys": ["error", "asc"]
+  }
+}
