@@ -1,0 +1,25 @@
+<header class="site__header header header--without-navigation">
+    <div class="container container--fluid">
+        <div class="header__layout">
+
+            <a href="/" class="header__logotype">
+                {{#if @site.logo}}
+                    <img
+                        src="{{img_url @site.logo size="xs"}}"
+                        class="header__logo"
+                        alt="{{@site.title}}"
+                    />
+                {{/if}}
+                <span class="header__title">
+                    {{@site.title}}
+                </span>
+            </a>
+
+            {{#if showLinks}}
+                <div class="header__navigation">
+                    {{> "site-nav"}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</header>
