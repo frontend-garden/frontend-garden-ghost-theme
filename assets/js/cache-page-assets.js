@@ -1,5 +1,5 @@
 /**
- * Code inspired by https://github.com/ireade/offline-first-tutorial/blob/extra-local-storage/src/js/post/save-page.js
+ * Code inspired by https://github.com/ireade/offline-first-tutorial/blob/extra-local-storage/src/js/post/save-article.js
  */
 
 /**
