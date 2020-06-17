@@ -1,7 +1,7 @@
 {
   "name": "frontend-garden-ghost-theme",
   "description": "Frontend Garden Ghost theme",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "license": "MIT",
   "author": {
     "name": "Adam Kudrna",
@@ -28,7 +28,7 @@
     "js": "npm run js:lint",
     "js:lint": "eslint *.js \"assets/js/**/*.js\"",
     "predist": "npm test && npm run build && mkdirp ./dist",
-    "dist": "zip --recurse-paths -X ./dist/frontend-garden.zip . --exclude \"node_modules/*\" --include \"*.hbs\" \"package.json\" \"sw.js\" \"manifest.webmanifest\" \"assets/built/*\" \"assets/icons/*\" \"assets/js/*\" \"locales/*\" \"partials/*\"",
+    "dist": "zip --recurse-paths -X ./dist/$npm_package_name-v$npm_package_version.zip . --exclude \"node_modules/*\" --include \"*.hbs\" \"package.json\" \"sw.js\" \"manifest.webmanifest\" \"assets/built/*\" \"assets/icons/*\" \"assets/js/*\" \"locales/*\" \"partials/*\"",
     "test": "concurrently \"gscan .\" \"npm run css:lint\" \"npm run js:lint\"",
     "watch": "concurrently --kill-others \"npm run watch:css\" \"npm run watch:js\"",
     "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm run css\"",
