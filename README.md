@@ -39,7 +39,7 @@ nodemon current/index.js --watch content/themes/frontend-garden-ghost-theme --ex
 In Ghost theme directory:
 
 ```bash
-npm run watch
+npm start
 ```
 
 ## Theme Release
