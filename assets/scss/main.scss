@@ -1,89 +1,89 @@
 // 1. Functions
 // Functions used in settings must be loaded first. Not producing any CSS.
 @import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "functions/spacing";
+@import "01-functions/spacing";
 
 // 2. Settings
 // Global variables, config switches. Not producing any CSS.
-@import "settings/borders";
-@import "settings/breakpoints";
-@import "settings/colors";
-@import "settings/container";
-@import "settings/grid";
-@import "settings/header";
-@import "settings/modularscale";
-@import "settings/tables";
-@import "settings/typography";
+@import "02-settings/borders";
+@import "02-settings/breakpoints";
+@import "02-settings/colors";
+@import "02-settings/container";
+@import "02-settings/grid";
+@import "02-settings/header";
+@import "02-settings/modularscale";
+@import "02-settings/tables";
+@import "02-settings/typography";
 
 // 3. Tools
 // Default mixins and functions. Still not producing any CSS.
-@import "tools/breakpoints";
-@import "tools/browser-hacks";
-@import "tools/container";
-@import "tools/content-block";
-@import "tools/horizontal-ruler";
-@import "tools/transitions";
-@import "tools/typography";
+@import "03-tools/breakpoints";
+@import "03-tools/browser-hacks";
+@import "03-tools/container";
+@import "03-tools/content-block";
+@import "03-tools/horizontal-ruler";
+@import "03-tools/transitions";
+@import "03-tools/typography";
 
 // 4. Generic
 // Ground-zero styles.
-@import "generic/box-sizing";
-@import "generic/ie11";
-@import "generic/print";
-@import "generic/reset";
-@import "generic/selection";
-@import "generic/shared";
-@import "generic/theme";
+@import "04-generic/box-sizing";
+@import "04-generic/ie11";
+@import "04-generic/print";
+@import "04-generic/reset";
+@import "04-generic/selection";
+@import "04-generic/shared";
+@import "04-generic/theme";
 
 // 5. Elements
 // Unclassed HTML elements (type selectors).
-@import "elements/code";
-@import "elements/content";
-@import "elements/headings";
-@import "elements/links";
-@import "elements/page";
+@import "05-elements/code";
+@import "05-elements/content";
+@import "05-elements/headings";
+@import "05-elements/links";
+@import "05-elements/page";
 
 // 6. Objects
 // Cosmetic-free design patterns.
-@import "objects/author-card";
-@import "objects/aligner";
-@import "objects/container";
-@import "objects/content-block";
-@import "objects/post-feed";
-@import "objects/post-row";
-@import "objects/section";
-@import "objects/site";
+@import "06-objects/author-card";
+@import "06-objects/aligner";
+@import "06-objects/container";
+@import "06-objects/content-block";
+@import "06-objects/post-feed";
+@import "06-objects/post-row";
+@import "06-objects/section";
+@import "06-objects/site";
 
 // 7. Components
 // Reusable UI components.
-@import "components/article";
-@import "components/avatar";
-@import "components/badge";
-@import "components/button";
-@import "components/comments";
-@import "components/cover";
-@import "components/footer";
-@import "components/header";
-@import "components/icon";
-@import "components/label";
-@import "components/navigation";
-@import "components/post-card";
-@import "components/share";
-@import "components/tip";
+@import "07-components/article";
+@import "07-components/avatar";
+@import "07-components/badge";
+@import "07-components/button";
+@import "07-components/comments";
+@import "07-components/cover";
+@import "07-components/footer";
+@import "07-components/header";
+@import "07-components/icon";
+@import "07-components/label";
+@import "07-components/navigation";
+@import "07-components/post-card";
+@import "07-components/share";
+@import "07-components/tip";
 
 // 8. Editor
 // User content from CMS.
-@import "editor/code";
-@import "editor/content";
-@import "editor/koenig";
+@import "08-editor/code";
+@import "08-editor/content";
+@import "08-editor/koenig";
 
 // 9. Utilities
 // Helpers and overrides.
-@import "utilities/background";
-@import "utilities/color";
-@import "utilities/invert-shapes-in-dark-mode";
-@import "utilities/links";
-@import "utilities/lists";
-@import "utilities/spacing";
-@import "utilities/table-responsive";
-@import "utilities/text";
+@import "09-utilities/background";
+@import "09-utilities/color";
+@import "09-utilities/invert-shapes-in-dark-mode";
+@import "09-utilities/links";
+@import "09-utilities/lists";
+@import "09-utilities/spacing";
+@import "09-utilities/table-responsive";
+@import "09-utilities/text";
