@@ -30,6 +30,7 @@
     "markdown:lint": "markdownlint **/*.md --ignore .cache --ignore dist --ignore node_modules",
     "predist": "npm test && npm run build && mkdirp ./dist",
     "dist": "zip --recurse-paths -X ./dist/$npm_package_name-v$npm_package_version.zip . --exclude \"node_modules/*\" --include \"*.hbs\" \"package.json\" \"sw.js\" \"manifest.webmanifest\" \"assets/built/*\" \"assets/icons/*\" \"assets/js/*\" \"locales/*\" \"partials/*\"",
+    "start": "npm run watch",
     "test": "concurrently \"gscan .\" \"npm run markdown:lint\" \"npm run css:lint\" \"npm run js:lint\"",
     "watch": "concurrently --kill-others \"npm run watch:css\" \"npm run watch:js\"",
     "watch:css": "nodemon --watch assets/scss/ --ext scss --exec \"npm run css\"",
