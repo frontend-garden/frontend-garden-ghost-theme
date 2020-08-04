@@ -1,6 +1,6 @@
 // 1. Emulate base line height for common spacing (not precise but it works).
 
-@import "../settings/typography";
+@import '../02-settings/typography';
 
 @function spacing($value) {
     @if ($value != 0.5 and $value != 1.5 and $value % 1 != 0) {
