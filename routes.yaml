@@ -6,11 +6,6 @@ collections:
     template: index
     filter: primary_tag:clanek
     data: tag.clanek
-  /skoleni/:
-    permalink: /skoleni/{slug}/
-    template: workshops
-    filter: primary_tag:skoleni
-    data: tag.skoleni
 
 taxonomies:
   tag: /tema/{slug}/
