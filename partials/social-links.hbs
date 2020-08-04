@@ -1,0 +1,70 @@
+<ul class="navigation__list">
+    {{#if @site.twitter}}
+        <li class="navigation__item">
+            <a
+                href="{{twitter_url @site.twitter}}"
+                class="navigation__icon-link"
+                target="_blank"
+                rel="noopener"
+                title="Frontend Garden na Twitteru"
+                data-track="navigate"
+                data-category="Outbound links"
+                data-label="Twitter in {{placement}}"
+            >
+                <span class="icon">
+                    {{> "icons/twitter"}}
+                </span>
+            </a>
+        </li>
+    {{/if}}
+    {{#if @site.facebook}}
+        <li class="navigation__item">
+            <a
+                href="{{facebook_url @site.facebook}}"
+                class="navigation__icon-link"
+                target="_blank"
+                rel="noopener"
+                title="Frontend Garden na Facebooku"
+                data-track="navigate"
+                data-category="Outbound links"
+                data-label="Facebook in {{placement}}"
+            >
+                <span class="icon">
+                    {{> "icons/facebook"}}
+                </span>
+            </a>
+        </li>
+    {{/if}}
+    <li class="navigation__item">
+        <a
+            href="https://www.instagram.com/frontendgarden/"
+            class="navigation__icon-link"
+            target="_blank"
+            rel="noopener"
+            title="Frontend Garden na Instagramu"
+            data-track="navigate"
+            data-category="Outbound links"
+            data-label="Instagram in {{placement}}"
+        >
+            <span class="icon">
+                {{> "icons/instagram"}}
+            </span>
+        </a>
+    </li>
+    <li class="navigation__item">
+        <a
+            href="https://github.com/frontend-garden"
+            class="navigation__icon-link"
+            target="_blank"
+            rel="noopener"
+            title="Frontend Garden na GitHubu"
+            data-track="navigate"
+            data-category="Outbound links"
+            data-label="GitHub in {{placement}}"
+        >
+            <span class="icon">
+                {{> "icons/github"}}
+            </span>
+        </a>
+    </li>
+</ul>
