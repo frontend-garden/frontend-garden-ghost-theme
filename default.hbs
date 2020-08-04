@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>{{meta_title}}{{^is "home"}} | {{@site.title}}{{/is}}</title>
+    <title>{{#is "home"}}{{@site.title}} — První český online magazín o webovém frontendu{{else}}{{meta_title}} | {{@site.title}}{{/is}}</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.min.css" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" class="js-versioned-asset" />
@@ -14,8 +14,8 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="{{asset "icons/apple-touch-icon.png"}}">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Frontend Garden">
-    <meta name="application-name" content="Frontend Garden">
+    <meta name="apple-mobile-web-app-title" content="{{@site.title}}">
+    <meta name="application-name" content="{{@site.title}}">
     <meta name="theme-color" content="#40bf4f"/>
 
     {{ghost_head}}
