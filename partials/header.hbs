@@ -1,4 +1,10 @@
-<header class="site__header header header--without-navigation">
+<header
+    class="
+        site__header
+        header
+        {{^if @site.navigation}}header--without-navigation{{/if}}
+    "
+>
     <div class="container container--fluid">
         <div class="header__layout">
 
