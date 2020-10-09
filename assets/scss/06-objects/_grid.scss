@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: spacing(1.5) $grid-gap-medium;
+
+    @include breakpoint-up(md) {
+        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    }
+}

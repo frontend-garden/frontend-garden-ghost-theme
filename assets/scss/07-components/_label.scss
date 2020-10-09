@@ -1,9 +1,7 @@
 .label {
     @include typography(small-caps);
 
-    display: inline-flex;
     padding: 0 0.5em 0.2em 0.5em;
-    line-height: 1.6;
     white-space: nowrap;
     vertical-align: baseline;
     color: map-get($colors-grays, gray-darker);

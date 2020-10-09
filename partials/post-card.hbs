@@ -30,7 +30,7 @@
         <footer>
             <ul class="list-unstyled">
                 {{#foreach authors}}
-                    <li>
+                    <li {{^if @last}}class="spacing-bottom-small"{{/if}}>
 
                         <div class="author-card">
                             <div class="author-card__media">
