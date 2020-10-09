@@ -8,7 +8,10 @@
                 <div class="article">
 
                     <div class="article__meta">
-                        Autor
+                        <span class="spacing-right-1">
+                            Autor
+                        </span>
+                        {{> "staff-label"}}
                     </div>
 
                     <h1 class="article__title">{{name}}</h1>
@@ -102,11 +105,9 @@
                 <h2>Články</h2>
                 <div class="post-feed">
                     {{#foreach ../posts}}
-                        {{^has tag="školení"}}
-                            <div class="post-feed__item">
-                                {{> "post-card"}}
-                            </div>
-                        {{/has}}
+                        <div class="post-feed__item">
+                            {{> "post-card"}}
+                        </div>
                     {{/foreach}}
                 </div>
 

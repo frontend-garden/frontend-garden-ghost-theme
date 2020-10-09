@@ -1,0 +1,87 @@
+{{!< default}}
+
+{{#post}}
+    <main class="site__content">
+        <article class="article">
+
+            <header class="section section--dense-top background-alternate">
+                <div class="container">
+                    <h1 class="article__title js-nbsp">{{title}}</h1>
+                    <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
+                </div>
+            </header>
+
+            <section class="section background-alternate">
+                <div class="container">
+
+                    {{#get "authors" limit="all" include="count.posts" order="count.posts desc"}}
+                        <div class="grid">
+
+                            {{#foreach authors}}
+                                <div>
+
+                                    {{#if profile_image}}
+                                        <a
+                                            href="{{url}}"
+                                            class="
+                                                avatar
+                                                avatar--responsive
+                                                avatar--square
+                                                avatar--link
+                                                spacing-bottom-small
+                                            "
+                                        >
+                                            <img
+                                                src="{{img_url profile_image size="m"}}"
+                                                srcset="
+                                                    {{img_url profile_image size="l"}} 2x,
+                                                    {{img_url profile_image size="m"}}
+                                                "
+                                                class="avatar__image"
+                                                alt="{{name}}"
+                                            />
+                                        </a>
+                                    {{/if}}
+
+                                    <div class="author-card">
+                                        <div class="author-card__content">
+                                            <h3 class="author-card__name">
+                                                <span class="spacing-right-1">
+                                                    {{name}}
+                                                </span>
+                                                {{> "staff-label"}}
+                                            </h3>
+                                            {{#if bio}}
+                                                <p class="author-card__bio js-nbsp">
+                                                    {{bio}}
+                                                </p>
+                                            {{/if}}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            {{/foreach}}
+
+                        </div>
+                    {{/get}}
+
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container container--article text-center">
+
+                    <div class="js-nbsp js-external-links">
+                        {{content}}
+                    </div>
+
+                    <a href="/napiste-clanek" class="button">
+                        Napsat článek
+                    </a>
+
+                </div>
+            </section>
+
+        </article>
+    </main>
+{{/post}}
