@@ -1,0 +1,7 @@
+.button-link {
+    @include button-reset();
+
+    color: var(--link-color);
+    border-bottom: $border-width solid currentColor;
+    cursor: pointer;
+}

@@ -31,6 +31,12 @@
 </head>
 <body class="site">
 
+{{#if @labs.members}}
+    <div class="site__notifications">
+        {{> "members/notifications"}}
+    </div>
+{{/if}}
+
 {{> "header" showLinks="true"}}
 
 {{{body}}}
@@ -40,6 +46,9 @@
 <script src="{{asset "js/main.js"}}"></script>
 <script src="{{asset "js/register-sw.js"}}"></script>
 <script src="{{asset "js/cache-page-assets.js"}}"></script>
+{{#if @labs.members}}
+    <script src="{{asset "js/members.js"}}"></script>
+{{/if}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
 

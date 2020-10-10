@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.text-small-block {
+    @include typography(small-block);
+}
+
 .text-small-caps {
     @include typography(small-caps);
 }
