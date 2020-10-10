@@ -9,13 +9,13 @@
     <div class="post-card__content {{#has tag="#cover"}}cover__text{{/has}}">
 
         <header>
-            <section class="post-card__meta">
+            <div class="post-card__meta">
                 {{#has tag="count:>1"}}
                     {{tags from=2 to=2}}
                     —
                 {{/has}}
                 {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-            </section>
+            </div>
             <h2 class="post-card__title">
                 <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
                     {{title}}
@@ -23,9 +23,9 @@
             </h2>
         </header>
 
-        <section class="post-card__summary">
+        <div class="post-card__summary">
             <p class="js-nbsp">{{excerpt words=33}}</p>
-        </section>
+        </div>
 
         <footer>
             <ul class="list-unstyled">

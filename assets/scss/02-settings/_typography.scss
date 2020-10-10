@@ -11,7 +11,7 @@ $typography-line-height-fluid-factor: 0.2vw;
 $typography-font-weight-values: (
     regular: 400,
     bold: 700,
-    black: 900,
+    extrabold: 800,
 );
 
 $typography-list-padding-left: 2em;
@@ -21,7 +21,7 @@ $typography-code-font-size: 0.85em;
 $typography-styles: (
     headline1: (
         default: (
-            font-weight: map-get($typography-font-weight-values, black),
+            font-weight: map-get($typography-font-weight-values, extrabold),
             // Faster growing font size:
             font-size: calc(1.65em + 1.25vw),
             line-height: 1.1,
@@ -30,7 +30,7 @@ $typography-styles: (
     ),
     headline2: (
         default: (
-            font-weight: map-get($typography-font-weight-values, black),
+            font-weight: map-get($typography-font-weight-values, extrabold),
             // Faster growing font size:
             font-size: calc(1.5rem + 0.333vw),
             line-height: spacing(1),
@@ -39,7 +39,7 @@ $typography-styles: (
     ),
     headline3: (
         default: (
-            font-weight: map-get($typography-font-weight-values, black),
+            font-weight: map-get($typography-font-weight-values, extrabold),
             font-size: ms(3),
             line-height: spacing(1),
             font-family: $typography-font-family-sans-serif,
