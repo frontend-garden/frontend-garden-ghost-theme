@@ -1,0 +1,13 @@
+.members-form__feedback {
+    display: none;
+}
+
+.members-form.loading .members-form__feedback--loading,
+.members-form.success .members-form__feedback--success,
+.members-form.error .members-form__feedback--error {
+    display: block;
+}
+
+.members-form.loading .members-form__hide-when-loading {
+    visibility: hidden;
+}

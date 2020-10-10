@@ -1,11 +1,14 @@
 .button {
     @include typography(button);
+    @include transition(background-color);
 
+    position: relative;
     display: inline-flex;
     justify-content: center;
-    padding: spacing(0.5) spacing(1);
+    padding: spacing(0.5) 1.5em;
     text-align: center;
     text-decoration: none;
+    white-space: nowrap;
     color: $color-white;
     border: $border-width solid transparent;
     border-radius: $border-radius;
@@ -15,6 +18,20 @@
     appearance: none;
     user-select: none;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: var(--button-hover-background);
+    }
+}
+
+.button__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    line-height: 1;
+    transform: translate(-50%, -50%);
 }
 
 .button--outline {

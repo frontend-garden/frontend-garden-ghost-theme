@@ -1,6 +1,6 @@
 .tip {
     @include content-block-vertical-offset();
-    @include typography(tip);
+    @include typography(small-block);
 
     padding-top: spacing(1);
     padding-bottom: spacing(1);

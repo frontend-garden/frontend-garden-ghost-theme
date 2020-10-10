@@ -14,6 +14,8 @@ $color-white: #fff;
 
 $colors-brand: (
     blue: #008eaa,
+    green-lighter: #80d58a,
+    green-light: #62cb6e,
     green: #40bf4f,
     green-dark: #38a645,
     green-darker: #308d3b,
@@ -22,3 +24,8 @@ $colors-brand: (
 );
 
 $color-primary: map-get($colors-brand, green);
+
+$colors-ui: (
+    success: map-get($colors-brand, green-dark),
+    error: #b70000,
+);

@@ -1,66 +1,52 @@
 // Insert non-breaking space after single-character words.
-const elementsToReplace = document.querySelectorAll('.js-nbsp');
+document.querySelectorAll('.js-nbsp').forEach((element) => {
+  const el = element;
 
-if (elementsToReplace.length) {
-  elementsToReplace.forEach((element) => {
-    const el = element;
+  // First pass to handle single and odd occurrences.
+  el.innerHTML = el.innerHTML.replace(
+    /( |&nbsp;)([a-z])( |&nbsp;)/gi,
+    '$1$2&nbsp;',
+  );
 
-    // First pass to handle single and odd occurrences.
-    el.innerHTML = el.innerHTML.replace(
-      /( |&nbsp;)([a-z])( |&nbsp;)/gi,
-      '$1$2&nbsp;',
-    );
-
-    // Second pass to handle even occurrences in multiple matches.
-    el.innerHTML = el.innerHTML.replace(
-      /&nbsp;([a-z]) /gi,
-      '&nbsp;$1&nbsp;',
-    );
-  });
-}
+  // Second pass to handle even occurrences in multiple matches.
+  el.innerHTML = el.innerHTML.replace(
+    /&nbsp;([a-z]) /gi,
+    '&nbsp;$1&nbsp;',
+  );
+});
 
 // Safely open external links in a new tab.
-const externalLinks = document.querySelectorAll('.js-external-links a[href^=http]');
+document.querySelectorAll('.js-external-links a[href^=http]').forEach((element) => {
+  element.setAttribute('target', '_blank');
+  element.setAttribute('rel', 'noopener noreferrer');
 
-if (externalLinks.length) {
-  externalLinks.forEach((element) => {
-    element.setAttribute('target', '_blank');
-    element.setAttribute('rel', 'noopener noreferrer');
-
-    if (typeof gtag !== 'undefined') {
-      element.addEventListener('click', () => {
-        gtag('event', 'navigate', {
-          event_category: 'Outbound links',
-          event_label: element.getAttribute('href'),
-        });
+  if (typeof gtag !== 'undefined') {
+    element.addEventListener('click', () => {
+      gtag('event', 'navigate', {
+        event_category: 'Outbound links',
+        event_label: element.getAttribute('href'),
       });
-    }
-  });
-}
+    });
+  }
+});
 
 // Add clickable anchors to headings with ID.
-const headingsWithId = document.querySelectorAll(
+document.querySelectorAll(
   '.js-heading-anchors h2[id],'
   + '.js-heading-anchors h3[id]'
   + '.js-heading-anchors h4[id]'
   + '.js-heading-anchors h5[id]'
   + '.js-heading-anchors h6[id]',
-);
+).forEach((element) => {
+  const el = element;
+  const headingId = element.getAttribute('id');
+  const headingText = element.innerHTML;
 
-if (headingsWithId.length) {
-  headingsWithId.forEach((element) => {
-    const el = element;
-    const headingId = element.getAttribute('id');
-    const headingText = element.innerHTML;
-
-    el.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
-  });
-}
+  el.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
+});
 
 // Automatically size Koenig gallery images
-const galleryImages = document.querySelectorAll('.kg-gallery-image img');
-
-galleryImages.forEach((image) => {
+document.querySelectorAll('.kg-gallery-image img').forEach((image) => {
   const container = image.closest('.kg-gallery-image');
   const width = image.attributes.width.value;
   const height = image.attributes.height.value;
@@ -69,10 +55,8 @@ galleryImages.forEach((image) => {
 });
 
 // Track events in GA.
-const trackedItems = document.querySelectorAll('[data-track]');
-
-if (trackedItems.length && typeof gtag !== 'undefined') {
-  trackedItems.forEach((element) => {
+if (typeof gtag !== 'undefined') {
+  document.querySelectorAll('[data-track]').forEach((element) => {
     element.addEventListener('click', () => {
       const action = element.getAttribute('data-track');
 
