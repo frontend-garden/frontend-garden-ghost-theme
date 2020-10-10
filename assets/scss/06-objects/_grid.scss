@@ -3,7 +3,11 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: spacing(1.5) $grid-gap-medium;
 
+    @include breakpoint-up(sm) {
+        grid-template-columns: repeat(auto-fit, minmax(9em, 1fr));
+    }
+
     @include breakpoint-up(md) {
-        grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
     }
 }
