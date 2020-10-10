@@ -1,7 +1,9 @@
 :root {
     --page-background-color: #{$color-white};
     --page-text-color: #{map-get($colors-grays, gray-darker)};
+    --link-color: #{map-get($colors-brand, blue)};
     --button-background: #{map-get($colors-brand, green)};
+    --cover-text-color: #{$color-white};
     --post-card-background-color: #{$color-white};
     --post-card-text-color: inherit;
     --primary-background-color: #{map-get($colors-brand, green-darker)};
@@ -15,7 +17,9 @@
     :root {
         --page-background-color: #{map-get($colors-grays, gray-darker)};
         --page-text-color: #{map-get($colors-grays, gray-light)};
+        --link-color: #{lighten(map-get($colors-brand, blue), 10%)};
         --button-background: #{map-get($colors-brand, green-darkest)};
+        --cover-text-color: #{map-get($colors-grays, gray-light)};
         --post-card-background-color: #{map-get($colors-grays, gray-darker)};
         --post-card-text-color: inherit;
         --primary-background-color: #{map-get($colors-brand, green-darkest)};

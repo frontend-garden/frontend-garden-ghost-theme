@@ -21,3 +21,9 @@ hr {
     height: 0;
     border-style: none none solid none;
 }
+
+img {
+    @media (prefers-color-scheme: dark) {
+        filter: brightness(0.85) contrast(1.1);
+    }
+}

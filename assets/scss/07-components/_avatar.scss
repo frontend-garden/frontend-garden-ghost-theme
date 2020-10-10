@@ -64,7 +64,7 @@ $_avatar-small-size: 2em * $typography-line-height-base;
 
 .avatar--link:hover .avatar__image,
 .avatar--link:focus .avatar__image {
-    filter: brightness(110%);
+    filter: brightness(1.1);
 }
 
 .avatar--square {
