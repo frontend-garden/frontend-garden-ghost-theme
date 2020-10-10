@@ -62,7 +62,7 @@ $_navigation-icon-padding: 0.5em;
 .navigation__link:focus,
 .navigation__icon-link:hover,
 .navigation__icon-link:focus {
-    color: map-get($colors-brand, blue);
+    color: var(--link-color);
 }
 
 .navigation__item--current .navigation__link,

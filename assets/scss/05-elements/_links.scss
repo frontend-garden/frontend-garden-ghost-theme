@@ -1,5 +1,5 @@
 a {
     text-decoration: none;
-    color: map-get($colors-brand, blue);
+    color: var(--link-color);
     border-bottom: $border-width solid currentColor;
 }

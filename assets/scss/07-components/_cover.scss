@@ -6,7 +6,7 @@
 .cover__text {
     position: relative;
     z-index: 2;
-    color: $color-white;
+    color: var(--cover-text-color);
 }
 
 .cover__canvas {
