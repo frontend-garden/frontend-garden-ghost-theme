@@ -20,7 +20,7 @@
                 <div class="{{#has tag="#cover"}}cover__text{{/has}}">
                     <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
-                        <section class="article__meta">
+                        <div class="article__meta">
                             <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
                                 {{date format="D. MMMM YYYY"}}
                             </time>
@@ -28,7 +28,7 @@
                             {{tags from=2}}
                             —
                             {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
-                        </section>
+                        </div>
 
                         <h1 class="article__title js-nbsp">{{title}}</h1>
                         <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
