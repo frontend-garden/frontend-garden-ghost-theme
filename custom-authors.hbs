@@ -34,8 +34,14 @@
                                             <img
                                                 src="{{img_url profile_image size="m"}}"
                                                 srcset="
-                                                    {{img_url profile_image size="l"}} 2x,
-                                                    {{img_url profile_image size="m"}}
+                                                    {{img_url profile_image size="s"}} 300w,
+                                                    {{img_url profile_image size="m"}} 600w,
+                                                    {{img_url profile_image size="l"}} 1000w,
+                                                    {{img_url profile_image size="xl"}} 2000w
+                                                "
+                                                sizes="
+                                                    (min-width: 32em) 330px, <!-- Size is controlled by CSS grid, this value is the approximate biggest size. -->
+                                                    calc((100vw - 2 * 2.25em - 0.666em) / 2)
                                                 "
                                                 class="avatar__image"
                                                 alt="{{name}}"

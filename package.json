@@ -56,7 +56,26 @@
     "stylelint-scss": "^3.18.0"
   },
   "config": {
-    "image_sizes": {},
+    "image_sizes": {
+      "avatar_small_2x": {
+        "width": 150
+      },
+      "avatar_medium_2x": {
+        "width": 220
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
     "posts_per_page": 24
   }
 }
