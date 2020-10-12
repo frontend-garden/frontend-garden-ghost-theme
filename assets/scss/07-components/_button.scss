@@ -23,6 +23,11 @@
     &:focus {
         background-color: var(--button-hover-background);
     }
+
+    &:active,
+    &:active:focus {
+        background-color: var(--button-active-background);
+    }
 }
 
 .button__loader {

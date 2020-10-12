@@ -4,6 +4,8 @@
 }
 
 .cover__text {
+    --link-color: #{map-get($colors-brand, blue-light)};
+
     position: relative;
     z-index: 2;
     color: var(--cover-text-color);

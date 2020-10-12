@@ -37,9 +37,9 @@
 }
 
 .alert--success {
-    background-color: map-get($colors-ui, success);
+    background-color: var(--ui-success-background-color);
 }
 
 .alert--error {
-    background-color: map-get($colors-ui, error);
+    background-color: var(--ui-error-background-color);
 }
