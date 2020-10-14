@@ -1,7 +1,7 @@
 // 1. Fallback for IE which doesn't support CSS custom properties.
 
 .background-alternate {
-    background-color: map-get($colors-grays, gray-lighter); // 1.
+    background-color: map-get($colors-grays, gray-lightest); // 1.
     background-color: var(--alternate-background-color);
 }
 

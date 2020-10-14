@@ -4,10 +4,14 @@ code,
 pre {
     @include typography(code);
 
-    color: map-get($colors-grays, gray-lighter);
+    color: map-get($colors-grays, gray-lightest);
     background-color: map-get($colors-grays, gray-darkest);
 }
 
 pre code {
     font-size: 1em; // 1.
+}
+
+code a {
+    color: map-get($colors-brand, blue-light);
 }

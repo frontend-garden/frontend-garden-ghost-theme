@@ -74,6 +74,9 @@
       },
       "xl": {
         "width": 2000
+      },
+      "xxl": {
+        "width": 4000
       }
     },
     "posts_per_page": 24

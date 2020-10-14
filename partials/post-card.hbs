@@ -4,6 +4,14 @@
         {{post_class}}
         {{#has tag="#cover"}}cover{{/has}}
         {{#has tag="#cover-precomposed"}}cover--precomposed{{/has}}
+        {{#has tag="#cover-object-light"}}
+            cover--object
+            cover--object--light
+        {{/has}}
+        {{#has tag="#cover-object-dark"}}
+            cover--object
+            cover--object--dark
+        {{/has}}
     "
 >
     <div class="post-card__content {{#has tag="#cover"}}cover__text{{/has}}">
