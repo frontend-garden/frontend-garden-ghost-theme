@@ -25,13 +25,20 @@
     }
 }
 
+.post-feed--articles {
+    @include breakpoint-up(md) {
+        grid-auto-flow: dense;
+    }
+}
+
 .post-feed--articles .post-feed__item:only-child {
     @include breakpoint-up(lg) {
         max-width: 33%;
     }
 }
 
-.post-feed--articles .post-feed__item:first-child {
+.post-feed--articles .post-feed__item:first-child,
+.post-feed--articles .post-feed__item--featured:not(:nth-child(2)):not(:nth-child(3)) {
     @include breakpoint-up(md) {
         grid-column: span 2;
     }
