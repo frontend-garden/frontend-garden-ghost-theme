@@ -6,7 +6,8 @@ $colors-grays: (
     gray-dark: desaturate(lighten($_gray-base, 40%), 5%),
     gray: lighten($_gray-base, 60%),
     gray-light: lighten($_gray-base, 70%),
-    gray-lighter: lighten($_gray-base, 80%),
+    gray-lighter: lighten($_gray-base, 75%),
+    gray-lightest: lighten($_gray-base, 80%),
 );
 
 $color-black: #000;

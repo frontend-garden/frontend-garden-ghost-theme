@@ -151,7 +151,7 @@
 }
 
 .editor tbody tr:nth-child(odd) {
-    background-color: map-get($colors-grays, gray-lighter); // 6.
+    background-color: map-get($colors-grays, gray-lightest); // 6.
     background-color: var(--alternate-background-color);
 }
 

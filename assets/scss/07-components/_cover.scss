@@ -28,7 +28,7 @@
         bottom: 0;
         left: 0;
         z-index: 1;
-        background-color: rgba(0, 0, 0, 0.666);
+        background-color: transparentize($color-black, 0.333);
     }
 }
 
@@ -41,4 +41,67 @@
 
 .cover--precomposed .cover__canvas::after {
     display: none;
+}
+
+.cover--object .cover__canvas::after {
+    background:
+        radial-gradient(
+            circle at left 25%,
+            var(--gradient-from),
+            var(--gradient-from) 32rem,
+            var(--gradient-to) calc((46rem - 12vw) * 1.5)
+        );
+}
+
+.cover--full-page.cover--object .cover__canvas::after {
+    background:
+        radial-gradient(
+            circle at left 25%,
+            var(--gradient-from),
+            var(--gradient-from) calc(60rem - 20vw),
+            var(--gradient-to) calc(80rem - 10vw)
+        );
+}
+
+.cover--object--light {
+    $_overlay-color: $color-white;
+
+    --gradient-from: #{transparentize($_overlay-color, 0.06)};
+    --gradient-to: #{transparentize($_overlay-color, 1)};
+
+    @media (prefers-color-scheme: dark) {
+        $_overlay-color: transparentize($color-black, 0.333);
+
+        --gradient-from: #{$_overlay-color};
+        --gradient-to: #{transparentize($_overlay-color, 0.25)};
+    }
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    .cover--object--light .cover__text {
+        --link-color: #{map-get($colors-brand, blue)};
+
+        text-shadow: 0 0 0.4em $color-white;
+        color: inherit;
+    }
+
+    .cover--full-page.cover--object--light {
+        $_overlay-color: map-get($colors-grays, gray-lightest);
+
+        --gradient-from: #{transparentize($_overlay-color, 0.06)};
+        --gradient-to: #{transparentize($_overlay-color, 1)};
+
+        background-color: map-get($colors-grays, gray-lighter);
+    }
+
+    .cover--full-page.cover--object--light .cover__text {
+        text-shadow: none;
+    }
+}
+
+.cover--object--dark {
+    $_overlay-color: transparentize($color-black, 0.333);
+
+    --gradient-from: #{$_overlay-color};
+    --gradient-to: #{transparentize($_overlay-color, 0.25)};
 }

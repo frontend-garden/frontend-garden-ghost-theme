@@ -11,10 +11,10 @@
     --post-card-background-color: #{$color-white};
     --post-card-text-color: inherit;
     --primary-background-color: #{map-get($colors-brand, green-darker)};
-    --alternate-background-color: #{map-get($colors-grays, gray-lighter)};
+    --alternate-background-color: #{map-get($colors-grays, gray-lightest)};
     --dark-background-color: #{map-get($colors-grays, gray-darker)};
     --footer-text-color: inherit;
-    --ruler-color: #{map-get($colors-grays, gray-lighter)};
+    --ruler-color: #{map-get($colors-grays, gray-lightest)};
 }
 
 @media (prefers-color-scheme: dark) {

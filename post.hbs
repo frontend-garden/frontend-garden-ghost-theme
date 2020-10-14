@@ -11,7 +11,16 @@
                     {{#has tag="#cover"}}
                         background-dark
                         cover
+                        cover--full-page
                         {{#has tag="#cover-precomposed"}}cover--precomposed{{/has}}
+                        {{#has tag="#cover-object-light"}}
+                            cover--object
+                            cover--object--light
+                        {{/has}}
+                        {{#has tag="#cover-object-dark"}}
+                            cover--object
+                            cover--object--dark
+                        {{/has}}
                     {{else}}
                         background-alternate
                     {{/has}}
@@ -53,7 +62,8 @@
                                     {{img_url feature_image size="s"}} 300w,
                                     {{img_url feature_image size="m"}} 600w,
                                     {{img_url feature_image size="l"}} 1000w,
-                                    {{img_url feature_image size="xl"}} 2000w
+                                    {{img_url feature_image size="xl"}} 2000w,
+                                    {{img_url feature_image size="xxl"}} 4000w
                                 "
                                 sizes="100vw"
                                 class="cover__image"
