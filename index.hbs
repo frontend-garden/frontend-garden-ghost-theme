@@ -7,7 +7,12 @@
 
                 <div class="post-feed post-feed--articles">
                     {{#foreach posts}}
-                        <div class="post-feed__item">
+                        <div
+                            class="
+                                post-feed__item
+                                {{#if featured}}post-feed__item--featured{{/if}}
+                            "
+                        >
                             {{> "post-card"}}
                         </div>
                     {{/foreach}}
