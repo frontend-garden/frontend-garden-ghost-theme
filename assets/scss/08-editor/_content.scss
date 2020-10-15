@@ -128,21 +128,15 @@
 // Tables
 .editor table {
     @include content-block-vertical-offset();
-    @include content-block-wide();
-    @include typography(small);
-
-    width: calc(100% + 2 * #{$container-padding});
-
-    @include breakpoint-up(sm) {
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-    }
+    @include content-block-wide(true);
 }
 
 .editor th,
 .editor td {
-    padding: 0.35em $table-cell-padding-horizontal;
+    @include typography(small);
+
+    padding: 0.75em $table-cell-padding-horizontal;
+    line-height: 1.6;
 }
 
 .editor th {
