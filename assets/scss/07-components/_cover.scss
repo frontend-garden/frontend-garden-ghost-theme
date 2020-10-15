@@ -4,7 +4,7 @@
 }
 
 .cover__text {
-    --link-color: #{map-get($colors-brand, blue-light)};
+    --link-color: #{map-get($colors-ui, info-light)};
 
     position: relative;
     z-index: 2;
@@ -79,7 +79,7 @@
 
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
     .cover--object--light .cover__text {
-        --link-color: #{map-get($colors-brand, blue)};
+        --link-color: #{map-get($colors-ui, info)};
 
         text-shadow: 0 0 0.4em $color-white;
         color: inherit;

@@ -14,22 +14,22 @@ $color-black: #000;
 $color-white: #fff;
 
 $colors-brand: (
-    blue-light: #00b0f0,
-    blue: #007daa,
     green-lighter: #80d58a,
     green-light: #62cb6e,
     green: #40bf4f,
     green-dark: #38a645,
     green-darker: #308d3b,
     green-darkest: #2b8035,
-    yellow: #f6db53,
 );
 
 $color-primary: map-get($colors-brand, green);
 
 $colors-ui: (
+    info: #007daa,
+    info-light: #00b0f0,
     success: map-get($colors-brand, green-dark),
     success-dark: map-get($colors-brand, green-darkest),
     error: #b70000,
     error-dark: darken(#b70000, 0.15),
+    warning: #f6db53,
 );

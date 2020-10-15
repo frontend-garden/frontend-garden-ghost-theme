@@ -140,4 +140,11 @@ $typography-styles: (
             font-family: $typography-font-family-sans-serif,
         ),
     ),
+    tip-label: (
+        default: (
+            font-size: ms(-3),
+            line-height: 1.6,
+            font-family: $typography-font-family-sans-serif,
+        ),
+    ),
 );
