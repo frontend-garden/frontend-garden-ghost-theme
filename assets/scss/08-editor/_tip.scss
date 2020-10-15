@@ -1,0 +1,72 @@
+.tip {
+    @include content-block-vertical-offset();
+    @include content-block-wide();
+
+    padding: spacing(1) $container-padding;
+    border-left: $border-width-thick solid map-get($colors-ui, warning);
+    background-color: transparentize(map-get($colors-ui, warning), 0.75);
+
+    @include breakpoint-up(sm) {
+        padding-right: $container-padding-sm;
+        padding-left: $container-padding-sm;
+    }
+
+    @include breakpoint-up(md) {
+        border-radius: $border-radius;
+    }
+}
+
+.tip h4:first-child,
+.tip h5:first-child,
+.tip h6:first-child {
+    margin-top: 0;
+}
+
+.tip p:last-child {
+    margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    $_emphasize-color: transparentize($color-white, 0.08);
+
+    .tip a,
+    .tip strong,
+    .tip h2,
+    .tip h3,
+    .tip h4,
+    .tip h5,
+    .tip h6 {
+        color: $_emphasize-color;
+    }
+
+    .tip h2 a,
+    .tip h3 a,
+    .tip h4 a,
+    .tip h5 a,
+    .tip h6 a {
+        &:hover,
+        &:focus {
+            color: $_emphasize-color;
+        }
+    }
+}
+
+.tip--ad {
+    position: relative;
+    margin-top: spacing(2);
+
+    &::before {
+        @include typography(tip-label);
+
+        content: 'Pozor! Nestydatá reklama… ↓';
+        position: absolute;
+        bottom: 100%;
+        left: 0.75em;
+        margin-bottom: 0.75em;
+        color: map-get($colors-grays, gray-dark);
+
+        @include breakpoint-up(lg) {
+            left: 0;
+        }
+    }
+}

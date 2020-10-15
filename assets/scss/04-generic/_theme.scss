@@ -3,7 +3,7 @@
     --ui-error-background-color: #{map-get($colors-ui, error)};
     --page-background-color: #{$color-white};
     --page-text-color: #{map-get($colors-grays, gray-darker)};
-    --link-color: #{map-get($colors-brand, blue)};
+    --link-color: #{map-get($colors-ui, info)};
     --button-background: #{map-get($colors-brand, green-dark)};
     --button-hover-background: #{map-get($colors-brand, green)};
     --button-active-background: #{map-get($colors-brand, green-darker)};
@@ -23,7 +23,7 @@
         --ui-error-background-color: #{map-get($colors-ui, error-dark)};
         --page-background-color: #{map-get($colors-grays, gray-darker)};
         --page-text-color: #{map-get($colors-grays, gray-light)};
-        --link-color: #{map-get($colors-brand, blue-light)};
+        --link-color: #{map-get($colors-ui, info-light)};
         --button-background: #{map-get($colors-brand, green-darkest)};
         --button-hover-background: #{map-get($colors-brand, green-darker)};
         --button-active-background: #{map-get($colors-brand, green-darkest)};
