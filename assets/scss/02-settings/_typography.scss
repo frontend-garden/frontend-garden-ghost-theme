@@ -1,6 +1,8 @@
-$typography-font-family-serif: Georgia, Times, serif;
-$typography-font-family-sans-serif: 'clone-rounded-latin', Helvetica, Arial, serif;
-$typography-font-family-monospace: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+$typography-font-family-serif: Georgia, Times, serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$typography-font-family-sans-serif:
+    'clone-rounded-latin', Helvetica, Arial, serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$typography-font-family-monospace:
+    Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji';
 
 $typography-font-size-root: 18px;
 $typography-font-size-fluid-factor: 0.2vw;
