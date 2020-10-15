@@ -5,7 +5,12 @@
         {{#if profile_image}}
             <div class="author-card__media">
                 <a href="{{url}}" class="avatar avatar--link">
-                    <img src="{{img_url profile_image size="avatar_medium_2x"}}" class="avatar__image" alt="{{name}}" />
+                    <img
+                        src="{{img_url profile_image size="avatar_medium_2x"}}"
+                        loading="lazy"
+                        class="avatar__image"
+                        alt="{{name}}"
+                    />
                 </a>
             </div>
         {{/if}}

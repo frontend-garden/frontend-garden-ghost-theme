@@ -45,8 +45,9 @@
                                 {{#if profile_image}}
                                     <a href="{{url}}" class="avatar avatar--small avatar--link">
                                         <img
-                                            class="avatar__image"
                                             src="{{img_url profile_image size="avatar_small_2x"}}"
+                                            loading="lazy"
+                                            class="avatar__image"
                                             alt="{{name}}"
                                         />
                                     </a>
@@ -90,6 +91,7 @@
                         (min-width: 32em) calc(100vw - 2 * 2.25rem),
                         calc(100vw - 2 * 1.25rem)
                     "
+                    loading="lazy"
                     class="cover__image"
                     alt="{{title}}"
                 />
