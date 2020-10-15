@@ -9,13 +9,9 @@
         <div class="header__layout">
 
             <a href="/" class="header__logotype">
-                {{#if @site.logo}}
-                    <img
-                        src="{{img_url @site.logo}}"
-                        class="header__logo"
-                        alt="{{@site.title}}"
-                    />
-                {{/if}}
+                <span class="header__logo">
+                    {{> "icons/frontend-garden-icon"}}
+                </span>
                 <span class="header__title">
                     {{@site.title}}
                 </span>
