@@ -45,6 +45,16 @@ document.querySelectorAll(
   el.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
 });
 
+// Make tables responsive
+document.querySelectorAll('.editor > table').forEach((element) => {
+  const el = element;
+  const wrapperEl = document.createElement('div');
+
+  wrapperEl.classList.add('table-responsive');
+  el.parentNode.insertBefore(wrapperEl, el);
+  wrapperEl.appendChild(el);
+});
+
 // Automatically size Koenig gallery images
 document.querySelectorAll('.kg-gallery-image img').forEach((image) => {
   const container = image.closest('.kg-gallery-image');
