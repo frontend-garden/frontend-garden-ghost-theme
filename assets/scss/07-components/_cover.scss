@@ -43,6 +43,10 @@
     display: none;
 }
 
+.cover--object .cover__image {
+    object-position: 75% center;
+}
+
 .cover--object .cover__canvas::after {
     background:
         radial-gradient(
