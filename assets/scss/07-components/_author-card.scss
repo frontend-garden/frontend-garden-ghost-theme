@@ -7,7 +7,7 @@
 }
 
 .author-card__content {
-    line-height: 1.4;
+    line-height: map-get($typography-line-height-values, dense);
 }
 
 .author-card__name,

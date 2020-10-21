@@ -16,6 +16,12 @@ $typography-font-weight-values: (
     extrabold: 800,
 );
 
+$typography-line-height-values: (
+    dense: 1.4,
+    medium: 1.6,
+    large: 1.8,
+);
+
 $typography-list-padding-left: 2em;
 
 $typography-code-font-size: 0.85em;
@@ -87,7 +93,7 @@ $typography-styles: (
     small-block: (
         default: (
             font-size: ms(-2),
-            line-height: 1.8,
+            line-height: map-get($typography-line-height-values, large),
         ),
     ),
     small-caps: (
@@ -124,7 +130,7 @@ $typography-styles: (
     alert: (
         default: (
             font-size: ms(-1),
-            line-height: 1.6,
+            line-height: map-get($typography-line-height-values, medium),
         ),
     ),
     header-title: (
@@ -145,7 +151,7 @@ $typography-styles: (
     tip-label: (
         default: (
             font-size: ms(-3),
-            line-height: 1.6,
+            line-height: map-get($typography-line-height-values, medium),
             font-family: $typography-font-family-sans-serif,
         ),
     ),

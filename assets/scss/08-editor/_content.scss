@@ -13,7 +13,7 @@
         @include typography(small-caps);
 
         font-weight: map-get($typography-font-weight-values, bold);
-        line-height: 1.8;
+        line-height: map-get($typography-line-height-values, large);
     }
 
     // 2.
@@ -136,7 +136,7 @@
     @include typography(small);
 
     padding: 0.75em $table-cell-padding-horizontal;
-    line-height: 1.6;
+    line-height: map-get($typography-line-height-values, medium);
     vertical-align: baseline;
 }
 
