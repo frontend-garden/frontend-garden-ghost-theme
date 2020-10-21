@@ -38,6 +38,11 @@
     text-transform: none;
 }
 
+// Links
+.editor a {
+    overflow-wrap: break-word;
+}
+
 // Headlines
 .editor h2:not(:first-child) {
     margin-top: spacing(1);
