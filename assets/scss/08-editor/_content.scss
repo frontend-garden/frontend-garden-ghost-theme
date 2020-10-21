@@ -102,6 +102,7 @@
     @include typography(small-caps);
 
     font-size: ms(-1);
+    line-height: map-get($typography-line-height-values, dense);
 
     &::before {
         content: '↑';
