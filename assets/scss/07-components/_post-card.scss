@@ -91,7 +91,7 @@ $_post-card-padding-y: spacing(1);
 
 .post-card__summary {
     flex: 1 0 auto;
-    line-height: 1.6;
+    line-height: map-get($typography-line-height-values, medium);
 }
 
 .post-card__link {

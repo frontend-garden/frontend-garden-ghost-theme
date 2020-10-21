@@ -8,7 +8,7 @@ $_size: 1.5rem;
     height: $_size;
     font-weight: map-get($typography-font-weight-values, bold);
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: map-get($typography-line-height-values, dense);
     text-align: center;
     vertical-align: middle;
     color: $color-white;
