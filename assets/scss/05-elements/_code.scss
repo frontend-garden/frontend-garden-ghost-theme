@@ -3,7 +3,13 @@
 code,
 pre {
     @include typography(code);
+}
 
+code {
+    background-color: var(--alternate-background-color);
+}
+
+pre {
     color: map-get($colors-grays, gray-lightest);
     background-color: map-get($colors-grays, gray-darkest);
 }
@@ -13,5 +19,6 @@ pre code {
 }
 
 code a {
-    color: map-get($colors-ui, info-light);
+    color: unset;
+    border-bottom-color: map-get($colors-ui, info-light);
 }
