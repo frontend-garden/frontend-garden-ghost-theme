@@ -86,10 +86,16 @@
 
             </header>
 
+            {{^has tag="galerie"}}
+                <div> {{!-- TOC holder for `position: sticky` --}}
+                    <div id="obsah" class="table-of-contents" hidden></div>
+                </div>
+            {{/has}}
+
             <div class="section section--roomy-bottom">
                 <div class="container container--article">
 
-                    <div class="editor editor--long-text js-nbsp js-external-links js-heading-anchors">
+                    <div class="editor editor--long-text js-nbsp js-external-links js-heading-anchors js-table-of-contents-source">
                         {{content}}
                     </div>
 
@@ -179,6 +185,10 @@
 {{/contentFor}}
 
 {{#contentFor "scripts"}}
+    {{> "external/tocbot"}}
+
+    <script src="{{asset "js/table-of-contents.js"}}"></script>
+
     {{> "external/prism-js"}}
 {{/contentFor}}
 

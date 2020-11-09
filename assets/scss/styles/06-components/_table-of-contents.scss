@@ -1,0 +1,42 @@
+@use '../../settings/container';
+@use '../../tools/breakpoint';
+@use '../../tools/spacing';
+@use '../../tools/transition';
+@use '../../tools/typography';
+
+$_breakpoint: xl;
+
+.table-of-contents {
+    @include breakpoint.up($_breakpoint) {
+        @include transition.add('visibility, opacity');
+
+        position: sticky;
+        top: 0;
+        right: 0;
+        display: block;
+        //visibility: hidden;
+        //opacity: 0;
+        width: calc((100vw - #{container.$article-width}) / 2);
+        height: 0;
+        padding: spacing.of(2) container.$padding-sm;
+        line-height: typography.line-height(dense);
+        will-change: visibility, opacity;
+    }
+}
+
+.table-of-contents__list {
+    //@include breakpoint.up($_breakpoint) {
+    @include typography.style(small);
+    //}
+}
+
+.table-of-contents__list .table-of-contents__list {
+    font-size: inherit;
+}
+
+.table-of-contents--active {
+    //@include breakpoint.up($_breakpoint) {
+    //    visibility: visible;
+    //    opacity: 1;
+    //}
+}
