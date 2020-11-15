@@ -1,13 +1,27 @@
 .section {
-    padding-top: spacing(2);
-    padding-bottom: spacing(2);
+    padding-top: spacing(1);
+    padding-bottom: spacing(1);
+
+    @include breakpoint-up(lg) {
+        padding-top: spacing(1.5);
+        padding-bottom: spacing(1.5);
+    }
+
+    @include breakpoint-up(xl) {
+        padding-top: spacing(2);
+        padding-bottom: spacing(2);
+    }
 }
 
 .section--dense {
     padding-top: spacing(1);
     padding-bottom: spacing(2);
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
+        padding-top: spacing(1.5);
+    }
+
+    @include breakpoint-up(xl) {
         padding-top: spacing(2);
     }
 }
@@ -16,7 +30,11 @@
     padding-top: spacing(1);
     padding-bottom: 0;
 
-    @include breakpoint-up(sm) {
+    @include breakpoint-up(lg) {
+        padding-top: spacing(1.5);
+    }
+
+    @include breakpoint-up(xl) {
         padding-top: spacing(2);
     }
 }

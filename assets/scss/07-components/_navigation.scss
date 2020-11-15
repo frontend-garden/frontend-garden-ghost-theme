@@ -8,7 +8,7 @@ $_navigation-icon-padding: 0.5em;
     justify-content: space-between;
     margin: -1 * $_navigation-item-padding;
 
-    @include breakpoint-up($header-linear-breakpoint-with-navigation) {
+    @include breakpoint-up(lg) {
         margin:
             -1 * $_navigation-item-padding-big
             -1 * $_navigation-icon-padding
@@ -108,6 +108,10 @@ $_navigation-icon-padding: 0.5em;
 
 .navigation__list + .navigation__list {
     @include breakpoint-up(sm) {
+        margin-left: spacing(0.5);
+    }
+
+    @include breakpoint-up(xl) {
         margin-left: spacing(1);
     }
 }
