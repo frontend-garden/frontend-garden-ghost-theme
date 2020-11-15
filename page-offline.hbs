@@ -16,14 +16,14 @@
 </head>
 <body class="site">
 
-{{> "header"}}
+{{> "header" hideLinks=true}}
 
 <main class="site__content">
 
     <header class="section section--dense background-alternate">
         <div class="container container--narrow">
 
-            <h1 class="js-nbsp">
+            <h1>
                 {{#post}}
                     {{title}}
                 {{/post}}
@@ -35,7 +35,7 @@
     <section class="section section--dense">
         <div class="container container--narrow">
 
-            <h2 class="js-nbsp">
+            <h2>
                 {{#post}}
                     {{excerpt}}
                 {{/post}}
@@ -46,7 +46,7 @@
 
 </main>
 
-{{> "footer"}}
+{{> "footer" hideLinks=true hideSubscribeForm=true}}
 
 {{ghost_foot}}
 

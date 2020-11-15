@@ -1,0 +1,44 @@
+{{!< ../default}}
+
+<main class="site__content">
+    <section class="section">
+        <div class="container container--article">
+
+            {{#if @member}}
+
+                {{!-- Logged in: Redirect home --}}
+                <script>window.location = '{{@site.url}}';</script>
+
+            {{else}}
+
+                {{!-- Not logged in: Signin form --}}
+                <form class="members-form" data-members-form="signin">
+                    <h1>Vítejte zpět!</h1>
+                    <p>Pro úplný přístup k&nbsp;obsahu se prosím přihlaste.</p>
+
+                    {{> "members/email-box" action="Přihlásit"}}
+
+                    <div class="spacing-bottom">
+                        <small>
+                            Ještě nemáte účet?
+                            <a href="/registrace/">Registrujte se</a>.
+                        </small>
+                    </div>
+
+                    {{> "members/feedback-success"
+                        title="Už jen krůček!"
+                        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte své přihlášení kliknutím na&nbsp;odkaz."
+                    }}
+
+                    {{> "members/feedback-error"
+                        message="Zadejte prosím platnou e-mailovou adresu."
+                    }}
+                </form>
+
+            {{/if}}
+
+        </div>
+    </section>
+</main>
+
+{{> "footer" hideSubscribeForm=true}}

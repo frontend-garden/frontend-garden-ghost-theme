@@ -1,18 +1,20 @@
 <footer class="site__footer footer">
 
-    {{#if @labs.members}}
-        <div class="container container--article spacing-bottom-large">
-            {{> "members/signup-form"}}
-        </div>
-    {{/if}}
+    {{#unless hideSubscribeForm}}
+        {{#if @labs.members}}
+            <div class="container container--article spacing-bottom-large">
+                {{> "members/newsletter-signup-form"}}
+            </div>
+        {{/if}}
+    {{/unless}}
 
     <div class="container">
 
-        {{#if showLinks}}
+        {{#unless hideLinks}}
             <nav class="navigation navigation--secondary">
                 {{navigation type="secondary"}}
             </nav>
-        {{/if}}
+        {{/unless}}
 
         <nav class="navigation navigation--secondary">
             {{> "social-links" placement="footer"}}

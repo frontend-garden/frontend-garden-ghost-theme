@@ -8,13 +8,17 @@
                 <div class="article">
                     <div class="article__meta">Téma</div>
                     <h1 class="article__title">{{name}}</h1>
-                    <h2 class="article__summary js-nbsp">
+                    <div class="article__summary js-nbsp">
                         {{#if description}}
-                            {{description}}
-                        {{else}}
-                            Sbírka {{plural ../pagination.total empty='článků' singular='% článku' plural='% článků'}}
+                            <p class="spacing-bottom-small">
+                                {{description}}
+                            </p>
                         {{/if}}
-                    </h2>
+                        <small>
+                            Sbírka
+                            {{plural ../pagination.total empty='článků' singular='% článku' plural='% článků'}}
+                        </small>
+                    </div>
                 </div>
             {{/tag}}
 
@@ -24,7 +28,7 @@
         <div class="container">
 
             <div class="post-feed">
-                {{#foreach posts}}
+                {{#foreach posts visibility="public"}}
                     <div class="post-feed__item">
                         {{> "post-card"}}
                     </div>
@@ -34,3 +38,5 @@
         </div>
     </section>
 </main>
+
+{{> "footer"}}

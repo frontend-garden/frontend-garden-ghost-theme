@@ -45,7 +45,7 @@ document.querySelectorAll(
   el.innerHTML = `<a href="#${headingId}">${headingText}</a>`;
 });
 
-// Make tables responsive
+// Make tables responsive.
 document.querySelectorAll('.editor > table').forEach((element) => {
   const el = element;
   const wrapperEl = document.createElement('div');
@@ -55,7 +55,7 @@ document.querySelectorAll('.editor > table').forEach((element) => {
   wrapperEl.appendChild(el);
 });
 
-// Automatically size Koenig gallery images
+// Automatically size Koenig gallery images.
 document.querySelectorAll('.kg-gallery-image img').forEach((image) => {
   const container = image.closest('.kg-gallery-image');
   const width = image.attributes.width.value;

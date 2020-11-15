@@ -1,0 +1,47 @@
+{{!< ../default}}
+
+<main class="site__content">
+    <section class="section">
+
+        {{#if @member}}
+
+            {{!-- Logged in: Redirect home --}}
+            <script>window.location = '{{@site.url}}';</script>
+
+        {{else}}
+            <div class="container container--article">
+
+                {{!-- Not logged in: Sign up --}}
+                <form class="members-form" data-members-form="signup">
+                    <h1>Registrace</h1>
+
+                    {{> "members/email-box" action="Pokračovat"}}
+
+                    <div class="spacing-bottom-small">
+                        {{> "members/agreement"}}
+                    </div>
+
+                    <div class="spacing-bottom">
+                        <small>
+                            Již máte svůj účet?
+                            <a href="/prihlaseni/">Přihlaste se</a>.
+                        </small>
+                    </div>
+
+                    {{> "members/feedback-success"
+                        title="Už jen krůček!"
+                        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte registraci kliknutím na&nbsp;odkaz."
+                    }}
+
+                    {{> "members/feedback-error"
+                        message="Zadejte prosím platnou e-mailovou adresu."
+                    }}
+                </form>
+
+            </div>
+        {{/if}}
+
+    </section>
+</main>
+
+{{> "footer" hideSubscribeForm=true}}

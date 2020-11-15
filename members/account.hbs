@@ -1,0 +1,27 @@
+{{!< ../default}}
+
+<main class="site__content">
+    <section class="section">
+        <div class="container container--narrow">
+
+            {{#if @member}}
+
+                {{!-- Logged in --}}
+                <h1>Vítejte!</h1>
+                <p>
+                    Jste přihlášeni pod e-mailovou adresou <strong>{{@member.email}}</strong>.
+                </p>
+                <a href="#signout" data-members-signout>Odhlásit</a>
+
+            {{else}}
+
+                {{!-- Not logged in: Redirect to signin --}}
+                <script>window.location = '{{@site.url}}/prihlaseni/';</script>
+
+            {{/if}}
+
+        </div>
+    </section>
+</main>
+
+{{> "footer" hideSubscribeForm=true}}

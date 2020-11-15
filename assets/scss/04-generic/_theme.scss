@@ -1,4 +1,5 @@
 :root {
+    --ui-info-background-color: #{map-get($colors-ui, info)};
     --ui-success-background-color: #{map-get($colors-ui, success)};
     --ui-error-background-color: #{map-get($colors-ui, error)};
     --page-background-color: #{$color-white};
