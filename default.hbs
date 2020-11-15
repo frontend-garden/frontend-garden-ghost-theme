@@ -27,7 +27,8 @@
         {{/is}}
     </title>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.min.css" />
+    {{{block "styles"}}}
+
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" class="js-versioned-asset" />
     <link rel="stylesheet" type="text/css" href="https://use.typekit.net/kwm0ygm.css" />
 
@@ -57,11 +58,12 @@
 <script src="{{asset "js/main.js"}}"></script>
 <script src="{{asset "js/register-sw.js"}}"></script>
 <script src="{{asset "js/cache-page-assets.js"}}"></script>
+
 {{#if @labs.members}}
     <script src="{{asset "js/members.js"}}"></script>
 {{/if}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
+{{{block "scripts"}}}
 
 {{ghost_foot}}
 
