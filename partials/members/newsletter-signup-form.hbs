@@ -1,0 +1,18 @@
+<form class="members-form" data-members-form="subscribe">
+
+    <h2>Odběr novinek</h2>
+    <p>Zadejte svůj e-mail a&nbsp;nenechte si ujít další nové články!</p>
+
+    {{> "members/email-box" action="Přihlásit k odběru"}}
+
+    <div class="spacing-bottom">
+        {{> "members/agreement"}}
+    </div>
+
+    {{> "members/feedback-success"
+        title="Už jen krůček!"
+        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte své přihlášení kliknutím na&nbsp;odkaz."
+    }}
+    {{> "members/feedback-error"}}
+
+</form>

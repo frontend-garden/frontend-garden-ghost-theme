@@ -36,6 +36,10 @@
     padding-right: 2em;
 }
 
+.alert--info {
+    background-color: var(--ui-info-background-color);
+}
+
 .alert--success {
     background-color: var(--ui-success-background-color);
 }

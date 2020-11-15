@@ -1,4 +1,7 @@
 routes:
+  /registrace/: members/signup
+  /prihlaseni/: members/signin
+  /ucet/: members/account
 
 collections:
   /:

@@ -1,0 +1,24 @@
+<div class="input-group spacing-bottom-small">
+    <label for="signup-email" class="visually-hidden">
+        E-mail
+    </label>
+    <input
+        type="email"
+        id="signup-email"
+        class="text-field"
+        placeholder="Zadejte svůj e-mail"
+        size="25"
+        data-members-email
+        required
+    />
+    <button type="submit" class="button">
+        <span class="button__content members-form__hide-when-loading">
+            {{action}}
+        </span>
+        <span class="button__loader members-form__feedback members-form__feedback--loading">
+                <span class="icon icon--large">
+                    {{> "icons/loader"}}
+                </span>
+            </span>
+    </button>
+</div>

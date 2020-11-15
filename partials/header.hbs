@@ -17,11 +17,12 @@
                 </span>
             </a>
 
-            {{#if showLinks}}
+            {{#unless hideLinks}}
                 <div class="header__navigation">
                     {{> "site-nav"}}
                 </div>
-            {{/if}}
+            {{/unless}}
+
         </div>
     </div>
 </header>
