@@ -31,9 +31,6 @@ jobs:
           ${{ runner.OS }}-node-v${{ matrix.node }}-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.github/workflows/test.yml') }}
           ${{ runner.OS }}-node-v${{ matrix.node }}-
 
-    - name: Install dependencies
-      run: npm install --global gscan
-
     - name: Install
       run: npm ci
 

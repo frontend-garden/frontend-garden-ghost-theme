@@ -12,7 +12,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>{{#is "home"}}{{@site.title}} — První český online magazín o webovém frontendu{{else}}{{meta_title}} | {{@site.title}}{{/is}}</title>
+    <title>
+        {{#is "home"}}
+            {{@site.title}} — {{@site.description}}
+        {{/is}}
+        {{#is "author"}}
+            {{author.name}} | {{@site.title}}
+        {{/is}}
+        {{#is "tag"}}
+            {{tag.name}} | {{@site.title}}
+        {{/is}}
+        {{^is "home, author, tag"}}
+            {{meta_title}} | {{@site.title}}
+        {{/is}}
+    </title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.min.css" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.min.css"}}" class="js-versioned-asset" />
