@@ -13,6 +13,16 @@
     }
 }
 
+@mixin container-dense() {
+    padding-right: $container-padding-dense;
+    padding-left: $container-padding-dense;
+
+    @include breakpoint-up(sm) {
+        padding-right: $container-padding-sm;
+        padding-left: $container-padding-sm;
+    }
+}
+
 @mixin container-fluid() {
     max-width: none;
 }

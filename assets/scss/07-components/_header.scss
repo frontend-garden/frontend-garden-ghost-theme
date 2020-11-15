@@ -1,15 +1,18 @@
 // 1. Optically align logo with other content.
 
 .header {
-    padding-top: spacing(1);
-    padding-bottom: spacing(1);
+    padding-top: spacing(0.5);
+    padding-bottom: spacing(0.5);
+
+    @include breakpoint-up(lg) {
+        padding-top: spacing(1);
+        padding-bottom: spacing(1);
+    }
 }
 
 .header__layout {
-    @include breakpoint-up($header-linear-breakpoint-with-navigation) {
-        display: flex;
-        align-items: center;
-    }
+    display: flex;
+    align-items: center;
 }
 
 .header__logotype {
@@ -19,45 +22,40 @@
     left: -0.15em; // 1.
     display: inline-flex;
     align-items: flex-start;
+    margin-right: 1em;
 }
 
 .header__logo {
     width: 2em;
     height: 2em;
-    margin-right: 1em;
+
+    @include breakpoint-up(lg) {
+        margin-right: 1em;
+    }
 }
 
 .header__title {
     @include typography(header-title);
+
+    display: none;
+
+    @include breakpoint-up(lg) {
+        display: block;
+    }
 }
 
 .header__navigation {
-    &:not(:empty) {
-        padding-top: 1rem;
-    }
+    margin-left: auto;
+}
 
-    @include breakpoint-up($header-linear-breakpoint-with-navigation) {
-        margin-left: auto;
-
-        &:not(:empty) {
-            padding-top: 0;
-        }
+.header--without-navigation .header__logo {
+    @include breakpoint-up(sm) {
+        margin-right: 1em;
     }
 }
 
-.header--without-navigation .header__layout {
-    @include breakpoint-up($header-linear-breakpoint-without-navigation) {
-        display: flex;
-        align-items: center;
-    }
-}
-
-.header--without-navigation .header__navigation {
-    @include breakpoint-up($header-linear-breakpoint-without-navigation) {
-        margin-left: auto;
-
-        &:not(:empty) {
-            padding-top: 0;
-        }
+.header--without-navigation .header__title {
+    @include breakpoint-up(sm) {
+        display: block;
     }
 }
