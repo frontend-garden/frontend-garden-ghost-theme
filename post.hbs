@@ -122,7 +122,12 @@
                         </span>
                     </h2>
                     <div class="comments">
-                        <div class="fb-comments" data-href="{{url absolute="true"}}" data-numposts="5"></div>
+                        <div
+                            class="fb-comments"
+                            data-href="{{url absolute="true"}}"
+                            data-numposts="5"
+                            data-lazy="true"
+                        ></div>
                     </div>
 
                 </div>
@@ -146,6 +151,15 @@
 
 {{> "footer"}}
 
-{{!-- Facebook SDK for comments --}}
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v3.3"></script>
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-okaidia.min.css" />
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    {{!-- Facebook SDK for comments --}}
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v9.0" nonce="tE8SW7Mk"></script>
+{{/contentFor}}
