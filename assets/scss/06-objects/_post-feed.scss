@@ -37,12 +37,14 @@
     }
 }
 
+// stylelint-disable selector-max-specificity
 .post-feed--articles .post-feed__item:first-child,
 .post-feed--articles .post-feed__item--featured:not(:nth-child(2)):not(:nth-child(3)) {
     @include breakpoint-up(md) {
         grid-column: span 2;
     }
 }
+// stylelint-enable
 
 @include ie-only() {
     .post-feed {
