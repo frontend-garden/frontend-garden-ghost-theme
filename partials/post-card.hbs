@@ -24,11 +24,21 @@
                 {{/has}}
                 {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
             </div>
-            <h2 class="post-card__title">
-                <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
-                    {{title}}
-                </a>
-            </h2>
+
+            {{#unless headingLevel}}
+                <h2 class="post-card__title">
+                    <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
+                        {{title}}
+                    </a>
+                </h2>
+            {{else}}
+                <h{{headingLevel}} class="post-card__title">
+                    <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
+                        {{title}}
+                    </a>
+                </h{{headingLevel}}>
+            {{/unless}}
+
         </header>
 
         <div class="post-card__summary">
@@ -60,11 +70,11 @@
                                 {{/if}}
                             </div>
                             <div class="author-card__content">
-                                <h3 class="author-card__name">
+                                <div class="author-card__name">
                                     <a href="{{url}}" class="post-card__link link-unstyled">
                                         {{name}}
                                     </a>
-                                </h3>
+                                </div>
                             </div>
                         </div>
 
