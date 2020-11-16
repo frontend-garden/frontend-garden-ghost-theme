@@ -1,0 +1,50 @@
+// 1. Code blocks are highlighted with prism.js.
+//    https://prismjs.com
+// 2. Avoid cascading font size when prism.js is not applied…
+// 3. … and set it back when prism.js is active.
+
+@use '../../settings/typography' as typography-settings;
+@use '../../tools/breakpoint';
+@use '../../tools/container';
+@use '../../tools/content-block';
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+// stylelint-disable selector-no-qualifying-type
+
+// 1.
+pre,
+pre[class*="language-"] {
+    @include container.expand();
+    @include content-block.vertical-offset();
+
+    padding: spacing.of(1) 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+
+    @include breakpoint.up(md) {
+        padding-top: spacing.of(2);
+        padding-bottom: spacing.of(2);
+    }
+}
+
+// 1.
+pre code,
+code[class*="language-"] {
+    @include container.create();
+    @include container.article();
+    @include typography.style(code);
+
+    display: block;
+}
+
+pre code,
+pre code[class*="language-"] {
+    font-size: 1em; // 2.
+    line-height: 1.5;
+}
+
+pre[class*="language-"] code[class*="language-"] {
+    font-size: typography-settings.$code-font-size; // 3.
+}

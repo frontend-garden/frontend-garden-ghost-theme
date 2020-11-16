@@ -1,0 +1,54 @@
+@use '../settings/typography';
+@use '../settings/typography-styles';
+@use '../tools/breakpoint';
+
+@mixin style($style) {
+    $style-props: map-get(typography-styles.$styles, $style);
+
+    @if not map-has-key(typography-styles.$styles, $style) {
+        @error "Invalid style specified! #{$style} doesn't exist. Choose one of #{map-keys(typography.$styles)}";
+    }
+
+    @each $key, $value in map-get($style-props, default) {
+        #{$key}: $value;
+    }
+
+    @if (map-has-key($style-props, breakpoints)) {
+        @each $breakpoint in map-keys(map-get($style-props, breakpoints)) {
+            @include breakpoint.up($breakpoint) {
+                @each $key, $value in map-get(map-get($style-props, breakpoints), $breakpoint) {
+                    #{$key}: $value;
+                }
+            }
+        }
+    }
+}
+
+// stylelint-disable max-line-length
+@function line-height($value) {
+    @if not map-has-key(typography.$line-height-values, $value) {
+        @error "Invalid line height specified! #{$value} doesn't exist. Choose one of #{map-keys(typography.$line-height-values)}";
+    }
+
+    @return map-get(typography.$line-height-values, $value);
+}
+
+@function font-weight($value) {
+    @if not map-has-key(typography.$font-weight-values, $value) {
+        @error "Invalid font weight specified! #{$value} doesn't exist. Choose one of #{map-keys(typography.$font-weight-values)}";
+    }
+
+    @return map-get(typography.$font-weight-values, $value);
+}
+// stylelint-enable
+
+@mixin list-unstyled() {
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin link-unstyled() {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 0;
+}

@@ -1,0 +1,13 @@
+@use '../../tools/typography';
+
+.text-center {
+    text-align: center;
+}
+
+.text-small-block {
+    @include typography.style(small-block);
+}
+
+.text-small-caps {
+    @include typography.style(small-caps);
+}

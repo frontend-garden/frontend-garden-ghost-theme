@@ -1,0 +1,65 @@
+// 1. Optically align logo with other content.
+
+@use '../../tools/breakpoint';
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+.header {
+    padding-top: spacing.of(0.5);
+    padding-bottom: spacing.of(0.5);
+
+    @include breakpoint.up(lg) {
+        padding-top: spacing.of(1);
+        padding-bottom: spacing.of(1);
+    }
+}
+
+.header__layout {
+    display: flex;
+    align-items: center;
+}
+
+.header__logotype {
+    @include typography.link-unstyled();
+
+    position: relative;
+    left: -0.15em; // 1.
+    display: inline-flex;
+    align-items: flex-start;
+    margin-right: 1em;
+}
+
+.header__logo {
+    width: 2em;
+    height: 2em;
+
+    @include breakpoint.up(lg) {
+        margin-right: 1em;
+    }
+}
+
+.header__title {
+    @include typography.style(header-title);
+
+    display: none;
+
+    @include breakpoint.up(lg) {
+        display: block;
+    }
+}
+
+.header__navigation {
+    margin-left: auto;
+}
+
+.header--without-navigation .header__logo {
+    @include breakpoint.up(sm) {
+        margin-right: 1em;
+    }
+}
+
+.header--without-navigation .header__title {
+    @include breakpoint.up(sm) {
+        display: block;
+    }
+}

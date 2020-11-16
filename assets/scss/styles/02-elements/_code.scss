@@ -1,0 +1,27 @@
+// 1. Avoid cascading font size.
+
+@use '../../settings/colors';
+@use '../../tools/typography';
+
+code,
+pre {
+    @include typography.style(code);
+}
+
+code {
+    background-color: var(--alternate-background-color);
+}
+
+pre {
+    color: map-get(colors.$grays, gray-lightest);
+    background-color: map-get(colors.$grays, gray-darkest);
+}
+
+pre code {
+    font-size: 1em; // 1.
+}
+
+code a {
+    color: unset;
+    border-bottom-color: map-get(colors.$ui, info-light);
+}

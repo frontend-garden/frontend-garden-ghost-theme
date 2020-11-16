@@ -1,7 +1,7 @@
 {
   "extends": [
     "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps-order",
+    "@visionappscz/stylelint-config-visionapps-order"
   ],
   "plugins": [
     "stylelint-order",
@@ -20,11 +20,13 @@
           "error",
           "extend",
           "for",
+          "forward",
           "function",
           "if",
           "include",
           "mixin",
           "return",
+          "use",
           "warn",
           "while"
         ]

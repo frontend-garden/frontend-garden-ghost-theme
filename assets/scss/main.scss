@@ -1,96 +1,74 @@
-// 1. Functions
-// Functions used in settings must be loaded first. Not producing any CSS.
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "01-functions/spacing";
+// This project's CSS is organized using ITCSS methodology.
+// Most importantly, CSS selectors are ordered **by specificity** from lowest to highest.
+//
+// https://frontend.garden/proc-je-itcss-nejpokrocilejsi-metodika-organizace-css/ (in Czech)
 
-// 2. Settings
-// Global variables, config switches. Not producing any CSS.
-@import "02-settings/borders";
-@import "02-settings/breakpoints";
-@import "02-settings/colors";
-@import "02-settings/container";
-@import "02-settings/grid";
-@import "02-settings/modularscale";
-@import "02-settings/tables";
-@import "02-settings/typography";
-
-// 3. Tools
-// Default mixins and functions. Still not producing any CSS.
-@import "03-tools/breakpoints";
-@import "03-tools/browser-hacks";
-@import "03-tools/button-reset";
-@import "03-tools/container";
-@import "03-tools/content-block";
-@import "03-tools/horizontal-ruler";
-@import "03-tools/transitions";
-@import "03-tools/typography";
-
-// 4. Generic
+// 1. Generic
 // Ground-zero styles.
-@import "04-generic/box-sizing";
-@import "04-generic/ie11";
-@import "04-generic/print";
-@import "04-generic/reset";
-@import "04-generic/selection";
-@import "04-generic/shared";
-@import "04-generic/theme";
+@import 'styles/01-generic/box-sizing';
+@import 'styles/01-generic/ie11';
+@import 'styles/01-generic/print';
+@import 'styles/01-generic/reset';
+@import 'styles/01-generic/selection';
+@import 'styles/01-generic/shared';
+@import 'styles/01-generic/theme';
 
-// 5. Elements
+// 2. Elements
 // Unclassed HTML elements (type selectors).
-@import "05-elements/code";
-@import "05-elements/content";
-@import "05-elements/headings";
-@import "05-elements/links";
-@import "05-elements/page";
+@import 'styles/02-elements/code';
+@import 'styles/02-elements/content';
+@import 'styles/02-elements/headings';
+@import 'styles/02-elements/links';
+@import 'styles/02-elements/page';
 
-// 6. Objects
+// 3. Objects
 // Cosmetic-free design patterns.
-@import "06-objects/aligner";
-@import "06-objects/container";
-@import "06-objects/content-block";
-@import "06-objects/grid";
-@import "06-objects/input-group";
-@import "06-objects/post-feed";
-@import "06-objects/post-row";
-@import "06-objects/section";
-@import "06-objects/site";
+@import 'styles/03-objects/aligner';
+@import 'styles/03-objects/container';
+@import 'styles/03-objects/content-block';
+@import 'styles/03-objects/grid';
+@import 'styles/03-objects/input-group';
+@import 'styles/03-objects/post-feed';
+@import 'styles/03-objects/post-row';
+@import 'styles/03-objects/section';
+@import 'styles/03-objects/site';
 
-// 7. Components
+// 4. Components
 // Reusable UI components.
-@import "07-components/alert";
-@import "07-components/article";
-@import "07-components/author-card";
-@import "07-components/avatar";
-@import "07-components/badge";
-@import "07-components/button";
-@import "07-components/button-link";
-@import "07-components/comments";
-@import "07-components/cover";
-@import "07-components/footer";
-@import "07-components/header";
-@import "07-components/icon";
-@import "07-components/label";
-@import "07-components/members-form";
-@import "07-components/navigation";
-@import "07-components/post-card";
-@import "07-components/share";
-@import "07-components/text-field";
+@import 'styles/04-components/alert';
+@import 'styles/04-components/article';
+@import 'styles/04-components/author-card';
+@import 'styles/04-components/avatar';
+@import 'styles/04-components/badge';
+@import 'styles/04-components/button';
+@import 'styles/04-components/button-link';
+@import 'styles/04-components/comments';
+@import 'styles/04-components/cover';
+@import 'styles/04-components/footer';
+@import 'styles/04-components/header';
+@import 'styles/04-components/icon';
+@import 'styles/04-components/label';
+@import 'styles/04-components/members-form';
+@import 'styles/04-components/navigation';
+@import 'styles/04-components/post-card';
+@import 'styles/04-components/share';
+@import 'styles/04-components/text-field';
 
-// 8. Editor
+// 5. Editor
 // User content from CMS.
-@import "08-editor/code";
-@import "08-editor/content";
-@import "08-editor/koenig";
-@import "08-editor/tip";
+@import 'styles/05-editor/code';
+@import 'styles/05-editor/content';
+@import 'styles/05-editor/koenig';
+@import 'styles/05-editor/tip';
 
-// 9. Utilities
+// 6. Utilities
 // Helpers and overrides.
-@import "09-utilities/background";
-@import "09-utilities/color";
-@import "09-utilities/invert-shapes-in-dark-mode";
-@import "09-utilities/links";
-@import "09-utilities/lists";
-@import "09-utilities/spacing";
-@import "09-utilities/table-responsive";
-@import "09-utilities/text";
-@import "09-utilities/visually-hidden";
+@import 'styles/06-utilities/background';
+@import 'styles/06-utilities/color';
+@import 'styles/06-utilities/invert-shapes-in-dark-mode';
+@import 'styles/06-utilities/links';
+@import 'styles/06-utilities/lists';
+@import 'styles/06-utilities/spacing';
+@import 'styles/06-utilities/table-responsive';
+@import 'styles/06-utilities/text';
+@import 'styles/06-utilities/visually-hidden';

@@ -1,0 +1,19 @@
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+.text-field {
+    @include typography.style(form-field);
+
+    padding: spacing.of(0.5) 1em;
+    color: var(--page-text-color);
+    border: borders.$width solid currentColor;
+    border-radius: borders.$radius;
+    background: transparent;
+    appearance: none;
+
+    &::placeholder {
+        color: map-get(colors.$grays, gray-dark);
+    }
+}

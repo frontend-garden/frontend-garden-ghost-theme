@@ -1,0 +1,31 @@
+@use '../settings/container';
+@use 'breakpoint';
+@use 'spacing';
+
+@mixin vertical-offset() {
+    margin-top: spacing.of(1);
+    margin-bottom: spacing.of(1);
+
+    @include breakpoint.up(md) {
+        margin-top: spacing.of(2);
+        margin-bottom: spacing.of(2);
+    }
+}
+
+@mixin wide($declare-width: false) {
+    margin-right: -1 * container.$padding;
+    margin-left: -1 * container.$padding;
+
+    @if ($declare-width) {
+        width: calc(100% + 2 * #{container.$padding});
+    }
+
+    @include breakpoint.up(sm) {
+        margin-right: -1 * container.$padding-sm;
+        margin-left: -1 * container.$padding-sm;
+
+        @if ($declare-width) {
+            width: calc(100% + 2 * #{container.$padding-sm});
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@use '../../settings/colors';
+
+.color-white {
+    color: colors.$white;
+}
