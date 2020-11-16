@@ -1,0 +1,12 @@
+@use '../../tools/spacing';
+
+.aligner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.aligner__item {
+    padding-top: spacing.of(1);
+}

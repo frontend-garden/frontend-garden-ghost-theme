@@ -1,0 +1,52 @@
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../tools/spacing';
+@use '../../tools/transition';
+@use '../../tools/typography';
+
+.button {
+    @include typography.style(button);
+    @include transition.add(background-color);
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    padding: spacing.of(0.5) 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: colors.$white;
+    border: borders.$width solid transparent;
+    border-radius: borders.$radius;
+    background: colors.$primary;
+    background-color: var(--button-background);
+    box-shadow: none;
+    appearance: none;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: var(--button-hover-background);
+    }
+
+    &:active,
+    &:active:focus {
+        background-color: var(--button-active-background);
+    }
+}
+
+.button__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+}
+
+.button--outline {
+    color: currentColor;
+    border-color: currentColor;
+    background-color: transparent;
+}

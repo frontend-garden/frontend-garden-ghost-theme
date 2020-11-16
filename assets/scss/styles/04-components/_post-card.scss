@@ -1,0 +1,109 @@
+// 1. Fallback for IE which doesn't support CSS custom properties.
+
+@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../tools/spacing';
+@use '../../tools/transition';
+@use '../../tools/typography';
+
+$_post-card-padding-x: 10%;
+$_post-card-padding-y: spacing.of(1);
+
+.post-card {
+    @include transition.add(#{box-shadow, transform});
+
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--post-card-text-color);
+    border-radius: borders.$radius;
+    background-color: colors.$white; // 1.
+    background-color: var(--post-card-background-color);
+
+    @media (hover: hover) {
+        will-change: box-shadow, transform;
+
+        &:hover {
+            z-index: 2;
+            box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
+            transform: scale(1.015, 1.015);
+        }
+    }
+
+    @media (hover: hover) and (prefers-reduced-motion: reduce) {
+        will-change: box-shadow;
+
+        &:hover {
+            transform: none;
+        }
+    }
+}
+
+.post-card__content {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    padding: $_post-card-padding-y $_post-card-padding-x;
+}
+
+.post-card__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+    padding: spacing.of(0.5) $_post-card-padding-x;
+    border-top: borders.$width solid currentColor;
+}
+
+.post-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.post-card__meta {
+    @include typography.style(small-caps);
+
+    position: relative;
+    z-index: 2;
+    font-size: modularscale.ms(-2);
+}
+
+.post-card__title,
+.post-card__summary {
+    max-width: 30rem;
+}
+
+.post-card__title {
+    @include typography.style(headline3);
+
+    margin-top: 0.15em;
+}
+
+.post-card__title__link {
+    @include typography.link-unstyled();
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.post-card__summary {
+    flex: 1 0 auto;
+    line-height: typography.line-height(medium);
+}
+
+.post-card__link {
+    position: relative;
+    z-index: 1;
+}

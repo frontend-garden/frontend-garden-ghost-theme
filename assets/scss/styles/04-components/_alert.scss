@@ -1,0 +1,57 @@
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../settings/container';
+@use '../../tools/breakpoint';
+@use '../../tools/reset';
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+.alert {
+    @include typography.style(alert);
+
+    padding: spacing.of(0.5) 1em;
+    color: colors.$white;
+    border-radius: borders.$radius;
+}
+
+.alert__close {
+    @include reset.button();
+
+    position: absolute;
+    top: spacing.of(0.5);
+    right: container.$padding;
+    padding: 0.25em 0.5em;
+    margin-top: -0.25em;
+    margin-right: -0.5em;
+    font-size: 1.5em;
+    line-height: 1;
+    user-select: none;
+
+    @include breakpoint.up(sm) {
+        right: container.$padding-sm;
+        margin-right: -1.25em;
+    }
+}
+
+.alert--in-layout {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+.alert--dismissible {
+    position: relative;
+    padding-right: 2em;
+}
+
+.alert--info {
+    background-color: var(--ui-info-background-color);
+}
+
+.alert--success {
+    background-color: var(--ui-success-background-color);
+}
+
+.alert--error {
+    background-color: var(--ui-error-background-color);
+}

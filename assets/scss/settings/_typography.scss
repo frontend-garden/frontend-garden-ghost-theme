@@ -1,0 +1,26 @@
+$font-family-serif: Georgia, Times, serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$font-family-sans-serif:
+    'clone-rounded-latin', Helvetica, Arial, serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$font-family-monospace:
+    Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+$font-size-root: 18px;
+$font-size-fluid-factor: 0.2vw;
+$font-size-base: calc(#{$font-size-root} + #{$font-size-fluid-factor});
+$line-height-fluid-factor: 0.2vw;
+
+$line-height-values: (
+    dense: 1.4,
+    medium: 1.6,
+    base: 1.68,
+    large: 1.8,
+);
+
+$font-weight-values: (
+    regular: 400,
+    bold: 700,
+    extrabold: 800,
+);
+
+$list-padding-left: 2em;
+$code-font-size: 0.85em;

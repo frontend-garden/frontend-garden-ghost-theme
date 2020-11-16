@@ -1,0 +1,24 @@
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+.footer {
+    padding-top: spacing.of(2);
+    padding-bottom: spacing.of(2);
+    text-align: center;
+    color: var(--footer-text-color);
+}
+
+.footer__title {
+    @include typography.style(footer-title);
+}
+
+.footer__section {
+    @include typography.style(small);
+
+    max-width: none;
+    margin-bottom: spacing.of(1);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

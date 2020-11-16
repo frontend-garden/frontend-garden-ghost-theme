@@ -1,0 +1,5 @@
+@use '../settings/borders';
+
+@mixin create() {
+    border-bottom: borders.$width-thick solid var(--ruler-color);
+}

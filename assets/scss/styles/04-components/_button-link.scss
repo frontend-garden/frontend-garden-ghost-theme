@@ -1,0 +1,10 @@
+@use '../../settings/borders';
+@use '../../tools/reset';
+
+.button-link {
+    @include reset.button();
+
+    color: var(--link-color);
+    border-bottom: borders.$width solid currentColor;
+    cursor: pointer;
+}

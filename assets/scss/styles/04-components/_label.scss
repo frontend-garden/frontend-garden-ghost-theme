@@ -1,0 +1,19 @@
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../tools/typography';
+
+.label {
+    @include typography.style(small-caps);
+
+    padding: 0 0.5em 0.2em 0.5em;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: map-get(colors.$grays, gray-darker);
+    border-radius: borders.$radius;
+    background-color: map-get(colors.$grays, gray-light);
+    user-select: none;
+}
+
+.label--new {
+    background-color: map-get(colors.$ui, warning);
+}

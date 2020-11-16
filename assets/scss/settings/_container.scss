@@ -1,0 +1,14 @@
+// 1. Set container width in `em` so line length doesn't get shorter while viewport grows bigger.
+//    As a side effect, code blocks are a bit narrower than body text because their font size is
+//    smaller. However it doesn't look bad s let's not worry about it and promote it to a design
+//    decision.
+// 2. We also use `em` for container padding so the line length doesn't get shorter when viewport is
+//    growing (like it would with `vw` for example).
+
+$width: 78em; // 1.
+$padding-dense: 0.625rem; // 2.
+$padding: 1.25rem; // 2.
+$padding-sm: 2.25em; // 2.
+
+$narrow-width: $width * 2/3;
+$article-width: $width / 2;

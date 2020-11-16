@@ -1,0 +1,37 @@
+@use '../../settings/container' as container-settings;
+@use '../../settings/tables';
+@use '../../tools/breakpoint';
+@use '../../tools/container';
+@use '../../tools/content-block';
+
+.table-responsive {
+    @include content-block.vertical-offset();
+    @include content-block.wide($declare-width: true);
+
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+    width: 100%;
+    margin: 0 0 1em;
+}
+
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+    padding-left: container-settings.$padding;
+
+    @include breakpoint.up(sm) {
+        padding-left: tables.$cell-padding-horizontal;
+    }
+}
+
+.table-responsive th:last-child,
+.table-responsive td:last-child {
+    padding-right: container-settings.$padding;
+
+    @include breakpoint.up(sm) {
+        padding-right: tables.$cell-padding-horizontal;
+    }
+}

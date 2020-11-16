@@ -1,0 +1,5 @@
+@use '../../tools/typography';
+
+.link-unstyled {
+    @include typography.link-unstyled();
+}

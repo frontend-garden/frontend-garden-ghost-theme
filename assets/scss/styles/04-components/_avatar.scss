@@ -1,0 +1,81 @@
+// 1. Fix overflowing rounded corners bug in Safari.
+
+@use '../../settings/borders';
+@use '../../settings/colors';
+@use '../../tools/typography';
+@use '../../tools/transition';
+
+$_avatar-size: 3em * typography.line-height(base);
+$_avatar-small-size: 2em * typography.line-height(base);
+
+.avatar {
+    position: relative; // 1.
+    z-index: 1; // 1.
+    display: block;
+    width: $_avatar-size;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.avatar__image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar--small {
+    width: $_avatar-small-size;
+}
+
+.avatar--responsive {
+    width: 100%;
+}
+
+.avatar--link {
+    @include typography.link-unstyled();
+
+    position: relative;
+
+    &::after {
+        @include transition.add(opacity);
+
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        opacity: 0;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0.5em rgba(colors.$black, 0.25);
+    }
+
+    &:hover::after,
+    &:focus::after {
+        opacity: 1;
+    }
+}
+
+.avatar--link .avatar__image {
+    @include transition.add(filter);
+}
+
+.avatar--link:hover .avatar__image,
+.avatar--link:focus .avatar__image {
+    filter: brightness(1.1);
+}
+
+.avatar--square {
+    border-radius: borders.$radius;
+
+    &::after {
+        border-radius: borders.$radius;
+    }
+}
