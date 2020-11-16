@@ -1,0 +1,34 @@
+@use '../../settings/typography' as typography-settings;
+@use '../../tools/content-block';
+@use '../../tools/horizontal-ruler';
+@use '../../tools/typography';
+
+p,
+ul,
+ol,
+dl {
+    max-width: 64ch;
+}
+
+ol,
+ul {
+    padding-left: typography-settings.$list-padding-left;
+}
+
+small {
+    @include typography.style(small);
+}
+
+hr {
+    @include content-block.vertical-offset();
+    @include horizontal-ruler.create();
+
+    height: 0;
+    border-style: none none solid none;
+}
+
+img {
+    @media (prefers-color-scheme: dark) {
+        filter: brightness(0.85) contrast(1.1);
+    }
+}

@@ -1,0 +1,21 @@
+// 1. Emulate base line height for common spacing (not precise but it works).
+
+@use '../settings/typography';
+
+@function of($value) {
+    @if ($value != 0.5 and $value != 1.5 and $value % 1 != 0) {
+        @error "Only whole numbers and 0.5 can be used for spacing, #{$value} given.";
+    }
+
+    @else {
+        // 1.
+        @return calc(
+            #{$value}
+            * (
+                #{map-get(typography.$line-height-values, base)}
+                * (#{typography.$font-size-root} + #{typography.$font-size-fluid-factor})
+                + #{typography.$line-height-fluid-factor}
+            )
+        );
+    }
+}

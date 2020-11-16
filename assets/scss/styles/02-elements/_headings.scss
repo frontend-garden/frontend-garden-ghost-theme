@@ -1,0 +1,23 @@
+@use '../../tools/spacing';
+@use '../../tools/typography';
+
+h1 {
+    @include typography.style(headline1);
+}
+
+h2 {
+    @include typography.style(headline2);
+}
+
+h3 {
+    @include typography.style(headline3);
+}
+
+h4,
+h5,
+h6 {
+    @include typography.style(headline4);
+
+    margin-top: spacing.of(1.5);
+    margin-bottom: spacing.of(0.5);
+}

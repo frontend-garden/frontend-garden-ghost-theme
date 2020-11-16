@@ -1,0 +1,20 @@
+@use '../../settings/colors';
+@use '../../tools/typography';
+
+$_size: 1.5rem;
+
+.badge {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    width: $_size;
+    height: $_size;
+    font-weight: typography.font-weight(bold);
+    font-size: 1rem;
+    line-height: typography.line-height(dense);
+    text-align: center;
+    vertical-align: middle;
+    color: colors.$white;
+    border-radius: 50%;
+    background-color: map-get(colors.$grays, gray-dark);
+}

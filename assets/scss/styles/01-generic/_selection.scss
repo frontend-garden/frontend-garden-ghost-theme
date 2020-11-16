@@ -1,0 +1,6 @@
+@use '../../settings/colors';
+
+::selection {
+    color: colors.$white;
+    background-color: rgba(colors.$primary, 0.75);
+}

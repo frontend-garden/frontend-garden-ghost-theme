@@ -1,0 +1,43 @@
+@use '../../tools/breakpoint';
+@use '../../tools/spacing';
+
+.section {
+    padding-top: spacing.of(1);
+    padding-bottom: spacing.of(1);
+
+    @include breakpoint.up(lg) {
+        padding-top: spacing.of(1.5);
+        padding-bottom: spacing.of(1.5);
+    }
+
+    @include breakpoint.up(xl) {
+        padding-top: spacing.of(2);
+        padding-bottom: spacing.of(2);
+    }
+}
+
+.section--dense {
+    padding-top: spacing.of(1);
+    padding-bottom: spacing.of(2);
+
+    @include breakpoint.up(lg) {
+        padding-top: spacing.of(1.5);
+    }
+
+    @include breakpoint.up(xl) {
+        padding-top: spacing.of(2);
+    }
+}
+
+.section--dense-top {
+    padding-top: spacing.of(1);
+    padding-bottom: 0;
+
+    @include breakpoint.up(lg) {
+        padding-top: spacing.of(1.5);
+    }
+
+    @include breakpoint.up(xl) {
+        padding-top: spacing.of(2);
+    }
+}

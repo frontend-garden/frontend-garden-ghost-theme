@@ -1,0 +1,47 @@
+// 1. Content of Containers can be expanded to whole screen width.
+
+@use '../settings/container';
+@use 'breakpoint';
+
+@mixin create() {
+    max-width: container.$width;
+    padding-right: container.$padding;
+    padding-left: container.$padding;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint.up(sm) {
+        padding-right: container.$padding-sm;
+        padding-left: container.$padding-sm;
+    }
+}
+
+@mixin dense() {
+    padding-right: container.$padding-dense;
+    padding-left: container.$padding-dense;
+
+    @include breakpoint.up(sm) {
+        padding-right: container.$padding-sm;
+        padding-left: container.$padding-sm;
+    }
+}
+
+@mixin fluid() {
+    max-width: none;
+}
+
+@mixin narrow() {
+    max-width: container.$narrow-width;
+}
+
+@mixin article() {
+    max-width: container.$article-width;
+}
+
+// 1.
+@mixin expand() {
+    $offset: calc(-1 * ((100vw - 100%) / 2));
+
+    margin-right: $offset;
+    margin-left: $offset;
+}
