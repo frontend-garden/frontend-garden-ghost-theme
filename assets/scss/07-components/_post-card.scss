@@ -60,6 +60,8 @@ $_post-card-padding-y: spacing(1);
 .post-card__meta {
     @include typography(small-caps);
 
+    position: relative;
+    z-index: 2;
     font-size: ms(-2);
 }
 
