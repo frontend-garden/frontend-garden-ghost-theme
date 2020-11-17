@@ -3,8 +3,8 @@
 // 2. Separate perex with horizontal line.
 // 3. Break vertical rhythm inside blockquote (but get it back immediately after).
 // 4. Custom styling of inline `<code>` fragments matches prism.js Okaidia theme.
-// 5. Increase specificity to paragraphs and lists to avoid unwanted leaks to code blocks styled by
-//    prism.js.
+// 5. Increase specificity to headings, paragraphs and lists to avoid unwanted leaks to code blocks
+//    styled by prism.js.
 // 6. Fallback for IE which doesn't support CSS custom properties.
 
 @use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
@@ -137,11 +137,21 @@
 // 4., 5.
 .editor p code,
 .editor ol code,
-.editor ul code {
+.editor ul code,
+.editor h2 code,
+.editor h3 code,
+.editor h4 code,
+.editor h5 code,
+.editor h6 code {
     @include typography.style(code);
 
     padding: 0.2em 0.4em;
     border-radius: borders.$radius;
+}
+
+.editor h2 code,
+.editor h3 code {
+    font-size: 0.8em;
 }
 
 // Tables
