@@ -1,0 +1,10 @@
+BC: bc/*
+feature: feature/*
+bugfix: bugfix/*
+
+dependencies: dependencies/*
+documentation: ['docs/*', 'documentation/*']
+maintenance: maintenance/*
+performance: performance/*
+refactoring: refactoring/*
+'skip changelog': release/*
