@@ -16,18 +16,20 @@ Follow the official [Ghost setup guide](https://ghost.org/docs/setup/).
    a symlink in the said destination. Either way you should end up with this
    structure:
    `<YOUR_GHOST_INSTALLATION>/content/frontend-garden-ghost-theme`.
+
 2. In the theme root there is a `routes.yaml` file. Upload this single file
    using _Routes_ on the _Labs_ administration page.
+
 3. In the Ghost installation directory run `ghost start`.
 
-## Theme Development with Live Reload
+## Development with Live Reload
 
 Requirements: [node](https://nodejs.org) v12 or newer.
 
-Install [Gscan](https://gscan.ghost.org) and [nodemon](https://nodemon.io):
+Install [nodemon](https://nodemon.io):
 
 ```bash
-npm install --global gscan nodemon
+npm install --global nodemon
 ```
 
 In Ghost app directory:
@@ -42,16 +44,30 @@ In Ghost theme directory:
 npm start
 ```
 
-## Theme Release
+## Releasing
 
-The following steps only apply for production environment.
+Release workflow is very similar to the one of the
+[React UI](https://react-ui.io/contribute/releasing) project. A brief summary
+follows.
 
-1. Update theme version in `package.json` and `package-lock.json`.
-2. Prepare distribution ZIP package into the `dist` directory:
+1. Once ready to release, **update theme version** in `package.json` and
+   `package-lock.json`. See release draft on GitHub to get the right version
+   number. **Don't combine this step with any other changes,** they wouldn't be
+   reflected in the changelog.
+
+2. Commit as `Release <VERSION_NUMBER>` to `release/<VERSION_NUMBER>` branch,
+   push, create a pull request to `main`, and finally merge it. The release is
+   now being automatically published.
+
+3. Prepare distribution ZIP package into the `dist` directory:
 
    ```bash
    npm run dist
    ```
 
-3. Upload the ZIP package `dist/frontend-garden-ghost-theme-v<THEME_VERSION>.zip`
-   on the _Design_ administration page.
+4. Upload the ZIP package
+   `dist/frontend-garden-ghost-theme-<VERSION_NUMBER>.zip` on the _Design_
+   administration page.
+
+**Note:** prefix version number with `v` everywhere except in `package.json` and
+`package-lock.json`.
