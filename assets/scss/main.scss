@@ -5,70 +5,70 @@
 
 // 1. Generic
 // Ground-zero styles.
-@import 'styles/01-generic/box-sizing';
-@import 'styles/01-generic/ie11';
-@import 'styles/01-generic/print';
-@import 'styles/01-generic/reset';
-@import 'styles/01-generic/selection';
-@import 'styles/01-generic/shared';
-@import 'styles/01-generic/theme';
+@use 'styles/01-generic/box-sizing';
+@use 'styles/01-generic/ie11';
+@use 'styles/01-generic/print';
+@use 'styles/01-generic/reset';
+@use 'styles/01-generic/selection';
+@use 'styles/01-generic/shared';
+@use 'styles/01-generic/theme';
 
 // 2. Elements
 // Unclassed HTML elements (type selectors).
-@import 'styles/02-elements/code';
-@import 'styles/02-elements/content';
-@import 'styles/02-elements/headings';
-@import 'styles/02-elements/links';
-@import 'styles/02-elements/page';
+@use 'styles/02-elements/code-elements';
+@use 'styles/02-elements/content-elements';
+@use 'styles/02-elements/heading-elements';
+@use 'styles/02-elements/link-elements';
+@use 'styles/02-elements/page-elements';
 
 // 3. Objects
 // Cosmetic-free design patterns.
-@import 'styles/03-objects/aligner';
-@import 'styles/03-objects/container';
-@import 'styles/03-objects/content-block';
-@import 'styles/03-objects/grid';
-@import 'styles/03-objects/input-group';
-@import 'styles/03-objects/post-feed';
-@import 'styles/03-objects/post-row';
-@import 'styles/03-objects/section';
-@import 'styles/03-objects/site';
+@use 'styles/03-objects/aligner';
+@use 'styles/03-objects/container';
+@use 'styles/03-objects/content-block';
+@use 'styles/03-objects/grid';
+@use 'styles/03-objects/input-group';
+@use 'styles/03-objects/post-feed';
+@use 'styles/03-objects/post-row';
+@use 'styles/03-objects/section';
+@use 'styles/03-objects/site';
 
 // 4. Components
 // Reusable UI components.
-@import 'styles/04-components/alert';
-@import 'styles/04-components/article';
-@import 'styles/04-components/author-card';
-@import 'styles/04-components/avatar';
-@import 'styles/04-components/badge';
-@import 'styles/04-components/button';
-@import 'styles/04-components/button-link';
-@import 'styles/04-components/comments';
-@import 'styles/04-components/cover';
-@import 'styles/04-components/footer';
-@import 'styles/04-components/header';
-@import 'styles/04-components/icon';
-@import 'styles/04-components/label';
-@import 'styles/04-components/members-form';
-@import 'styles/04-components/navigation';
-@import 'styles/04-components/post-card';
-@import 'styles/04-components/share';
-@import 'styles/04-components/text-field';
+@use 'styles/04-components/alert';
+@use 'styles/04-components/article';
+@use 'styles/04-components/author-card';
+@use 'styles/04-components/avatar';
+@use 'styles/04-components/badge';
+@use 'styles/04-components/button';
+@use 'styles/04-components/button-link';
+@use 'styles/04-components/comments';
+@use 'styles/04-components/cover';
+@use 'styles/04-components/footer';
+@use 'styles/04-components/header';
+@use 'styles/04-components/icon';
+@use 'styles/04-components/label';
+@use 'styles/04-components/members-form';
+@use 'styles/04-components/navigation';
+@use 'styles/04-components/post-card';
+@use 'styles/04-components/share';
+@use 'styles/04-components/text-field';
 
 // 5. Editor
 // User content from CMS.
-@import 'styles/05-editor/code';
-@import 'styles/05-editor/content';
-@import 'styles/05-editor/koenig';
-@import 'styles/05-editor/tip';
+@use 'styles/05-editor/code';
+@use 'styles/05-editor/content';
+@use 'styles/05-editor/koenig';
+@use 'styles/05-editor/tip';
 
 // 6. Utilities
 // Helpers and overrides.
-@import 'styles/06-utilities/background';
-@import 'styles/06-utilities/color';
-@import 'styles/06-utilities/invert-shapes-in-dark-mode';
-@import 'styles/06-utilities/links';
-@import 'styles/06-utilities/lists';
-@import 'styles/06-utilities/spacing';
-@import 'styles/06-utilities/table-responsive';
-@import 'styles/06-utilities/text';
-@import 'styles/06-utilities/visually-hidden';
+@use 'styles/06-utilities/background';
+@use 'styles/06-utilities/color';
+@use 'styles/06-utilities/invert-shapes-in-dark-mode';
+@use 'styles/06-utilities/links';
+@use 'styles/06-utilities/lists';
+@use 'styles/06-utilities/spacing';
+@use 'styles/06-utilities/table-responsive';
+@use 'styles/06-utilities/text';
+@use 'styles/06-utilities/visually-hidden';
