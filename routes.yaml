@@ -7,8 +7,8 @@ collections:
   /:
     permalink: /{slug}/
     template: index
-    filter: primary_tag:clanek
-    data: tag.clanek
+    filter: primary_tag:clanky
+    data: tag.clanky
 
 taxonomies:
   tag: /tema/{slug}/
