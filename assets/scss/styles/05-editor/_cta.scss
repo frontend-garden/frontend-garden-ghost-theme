@@ -1,0 +1,20 @@
+@use '../../settings/container' as container-settings;
+@use '../../tools/breakpoint';
+@use '../../tools/container';
+@use '../../tools/content-block';
+@use '../../tools/interruption';
+
+.cta {
+    @include content-block.vertical-offset($extra-large: true);
+    @include container.expand();
+}
+
+.cta__label {
+    @include interruption.label('Článek pokračuje níže ↓');
+
+    @include breakpoint.up(lg) {
+        max-width: container-settings.$narrow-width - 2 * container-settings.$padding-sm;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

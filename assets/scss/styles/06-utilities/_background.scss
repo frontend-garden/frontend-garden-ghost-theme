@@ -13,6 +13,6 @@
 }
 
 .background-primary {
-    background-color: map-get(colors.$brand, green-darker);
+    background-color: map-get(colors.$brand, green-darker); // 1.
     background-color: var(--primary-background-color);
 }
