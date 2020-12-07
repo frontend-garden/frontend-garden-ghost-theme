@@ -2,13 +2,20 @@
 @use 'breakpoint';
 @use 'spacing';
 
-@mixin vertical-offset() {
+@mixin vertical-offset($extra-large: false) {
     margin-top: spacing.of(1);
     margin-bottom: spacing.of(1);
 
     @include breakpoint.up(md) {
         margin-top: spacing.of(2);
         margin-bottom: spacing.of(2);
+    }
+
+    @if $extra-large {
+        @include breakpoint.up(lg) {
+            margin-top: spacing.of(3);
+            margin-bottom: spacing.of(3);
+        }
     }
 }
 

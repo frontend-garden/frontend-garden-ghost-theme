@@ -10,6 +10,8 @@
     --button-background: #{map-get(colors.$brand, green-dark)};
     --button-hover-background: #{map-get(colors.$brand, green)};
     --button-active-background: #{map-get(colors.$brand, green-darker)};
+    --input-border-color: currentColor;
+    --input-background-color: #{colors.$white};
     --cover-text-color: #{colors.$white};
     --post-card-background-color: #{colors.$white};
     --post-card-text-color: inherit;
@@ -30,6 +32,8 @@
         --button-background: #{map-get(colors.$brand, green-darkest)};
         --button-hover-background: #{map-get(colors.$brand, green-darker)};
         --button-active-background: #{map-get(colors.$brand, green-darkest)};
+        --input-border-color: #{map-get(colors.$grays, gray-dark)};
+        --input-background-color: #{map-get(colors.$grays, gray-darker)};
         --cover-text-color: #{map-get(colors.$grays, gray-light)};
         --post-card-background-color: #{map-get(colors.$grays, gray-darker)};
         --post-card-text-color: inherit;

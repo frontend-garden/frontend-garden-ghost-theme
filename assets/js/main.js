@@ -91,3 +91,14 @@ if (typeof gtag !== 'undefined') {
     });
   });
 }
+
+// Replace snippets with actual content
+document.querySelectorAll('[data-snippet]').forEach((element) => {
+  const snippetName = element.getAttribute('data-snippet');
+  const snippet = document
+    .getElementById(`snippet_${snippetName}_template`)
+    .content
+    .cloneNode(true);
+
+  element.appendChild(snippet);
+});

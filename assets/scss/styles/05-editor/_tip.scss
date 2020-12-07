@@ -4,6 +4,7 @@
 @use '../../tools/breakpoint';
 @use '../../tools/container';
 @use '../../tools/content-block';
+@use '../../tools/interruption';
 @use '../../tools/spacing';
 @use '../../tools/typography';
 
@@ -61,21 +62,5 @@
 }
 
 .tip--ad {
-    position: relative;
-    margin-top: spacing.of(2);
-
-    &::before {
-        @include typography.style(tip-label);
-
-        content: 'Pozor! Nestydatá reklama… ↓';
-        position: absolute;
-        bottom: 100%;
-        left: 0.75em;
-        margin-bottom: 0.75em;
-        color: map-get(colors.$grays, gray-dark);
-
-        @include breakpoint.up(lg) {
-            left: 0;
-        }
-    }
+    @include interruption.label('Pozor! Nestydatá reklama… ↓');
 }

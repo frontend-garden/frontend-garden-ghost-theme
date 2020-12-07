@@ -6,11 +6,12 @@
 .text-field {
     @include typography.style(form-field);
 
+    min-width: 0;
     padding: spacing.of(0.5) 1em;
     color: var(--page-text-color);
-    border: borders.$width solid currentColor;
+    border: borders.$width solid var(--input-border-color);
     border-radius: borders.$radius;
-    background: transparent;
+    background: var(--input-background-color);
     appearance: none;
 
     &::placeholder {

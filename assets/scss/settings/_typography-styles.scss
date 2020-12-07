@@ -72,7 +72,7 @@ $styles: (
     small-block: (
         default: (
             font-size: modularscale.ms(-2),
-            line-height: map-get(typography.$line-height-values, large),
+            line-height: map-get(typography.$line-height-values, base),
         ),
     ),
     small-caps: (

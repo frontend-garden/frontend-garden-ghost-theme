@@ -1,0 +1,29 @@
+<div class="cta background-alternate">
+    <div class="cta__label"></div>
+    <div class="section">
+        <div class="container container--narrow">
+
+            <form class="members-form" data-members-form="subscribe">
+
+                <h2>Nenechte si ujít nové&nbsp;články</h2>
+                <p>
+                    Líbí se vám článek? Zadejte svůj e-mail a&nbsp;nenechte si ujít ty příští!
+                </p>
+
+                {{> "members/email-box" action="Přihlásit k odběru" id_prefix="signup-in-article" }}
+
+                <div class="text-small-block spacing-bottom-small">
+                    Váš e-mail nebudeme s&nbsp;nikým sdílet. Z&nbsp;odběru se můžete kdykoli odhlásit nebo nechat své údaje zcela vymazat.
+                </div>
+
+                {{> "members/feedback-success"
+                    title="Už jen krůček!"
+                    message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte své přihlášení kliknutím na&nbsp;odkaz."
+                }}
+                {{> "members/feedback-error"}}
+
+            </form>
+
+        </div>
+    </div>
+</div>
