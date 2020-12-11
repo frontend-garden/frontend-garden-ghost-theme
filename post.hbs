@@ -12,7 +12,9 @@
                         background-dark
                         cover
                         cover--full-page
-                        {{#has tag="#cover-precomposed"}}cover--precomposed{{/has}}
+                        {{#has tag="#cover-precomposed"}}
+                            cover--precomposed
+                        {{/has}}
                         {{#has tag="#cover-object-light"}}
                             cover--object
                             cover--object--light
@@ -20,6 +22,9 @@
                         {{#has tag="#cover-object-dark"}}
                             cover--object
                             cover--object--dark
+                        {{/has}}
+                        {{#has tag="bootstrap"}}
+                            cover--bootstrap
                         {{/has}}
                     {{else}}
                         background-alternate
@@ -66,7 +71,6 @@
                                     {{img_url feature_image size="xxl"}} 4000w
                                 "
                                 sizes="100vw"
-                                loading="lazy"
                                 class="cover__image"
                                 alt="{{title}}"
                             />

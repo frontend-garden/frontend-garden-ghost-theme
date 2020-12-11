@@ -3,7 +3,9 @@
         post-card
         {{post_class}}
         {{#has tag="#cover"}}cover{{/has}}
-        {{#has tag="#cover-precomposed"}}cover--precomposed{{/has}}
+        {{#has tag="#cover-precomposed"}}
+            cover--precomposed
+        {{/has}}
         {{#has tag="#cover-object-light"}}
             cover--object
             cover--object--light
@@ -11,6 +13,9 @@
         {{#has tag="#cover-object-dark"}}
             cover--object
             cover--object--dark
+        {{/has}}
+        {{#has tag="bootstrap"}}
+            cover--bootstrap
         {{/has}}
     "
 >
