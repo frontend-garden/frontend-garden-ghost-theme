@@ -14,9 +14,10 @@
     "ghost-theme"
   ],
   "engines": {
-    "ghost": ">=3.9.0",
+    "ghost": ">=3.40.1",
     "ghost-api": "v3",
-    "node": ">=12"
+    "node": ">=14.15.1",
+    "npm": ">=6.14.8"
   },
   "scripts": {
     "build": "concurrently \"npm run css\" \"npm run js\"",
