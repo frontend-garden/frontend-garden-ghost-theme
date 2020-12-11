@@ -51,6 +51,12 @@ jobs:
         if: steps.check_package_version.outputs.changed != 'true'
         run: 'echo "No version change"'
 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: assets
+          path: assets/built
+
   update_release_draft:
     needs: [build_and_test]
     if: needs.build_and_test.outputs.version_changed != 'true'
@@ -82,3 +88,24 @@ jobs:
         run: echo "Released at $RELEASE_URL"
         env:
           RELEASE_URL: ${{ steps.github_release.outputs.release_url }}
+
+  deploy_theme:
+    needs: [build_and_test, publish_release_draft_on_version_bump]
+    if: needs.build_and_test.outputs.version_changed == 'true'
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: assets
+          path: assets/built
+
+      - name: Deploy Ghost theme
+        uses: TryGhost/action-deploy-theme@v1.4.0
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          exclude: '.* assets/scss/* dist/* postcss.config.js'
