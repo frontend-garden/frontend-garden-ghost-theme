@@ -1,4 +1,5 @@
 @use '../../settings/typography' as typography-settings;
+@use '../../settings/colors';
 @use '../../tools/content-block';
 @use '../../tools/horizontal-ruler';
 @use '../../tools/typography';
@@ -17,6 +18,16 @@ ul {
 
 small {
     @include typography.style(small);
+}
+
+del {
+    color: map-get(colors.$grays, gray-dark);
+}
+
+ins {
+    padding: 0.15em 0;
+    text-decoration: none;
+    background-color: transparentize(map-get(colors.$ui, warning), 0.75);
 }
 
 hr {
