@@ -3,7 +3,7 @@ name: Git Checks
 on: [pull_request]
 
 jobs:
-  block-merge-with-autosquash-commits:
+  block_merge_with_autosquash_commits:
     runs-on: ubuntu-18.04
 
     steps:
