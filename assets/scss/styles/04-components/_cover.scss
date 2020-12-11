@@ -111,3 +111,17 @@
     --gradient-from: #{$overlay-color};
     --gradient-to: #{transparentize($overlay-color, 0.25)};
 }
+
+.cover--bootstrap.cover--object--dark {
+    $overlay-color: transparentize(map-get(colors.$tags, bootstrap-purple-800), 0.35);
+
+    --gradient-from: #{$overlay-color};
+    --gradient-to: #{transparentize($overlay-color, 0.7)};
+
+    @media (prefers-color-scheme: dark) {
+        $overlay-color: transparentize(map-get(colors.$tags, bootstrap-purple-900), 0.25);
+
+        --gradient-from: #{$overlay-color};
+        --gradient-to: #{transparentize($overlay-color, 0.4)};
+    }
+}
