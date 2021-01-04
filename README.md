@@ -44,7 +44,7 @@ In Ghost theme directory:
 npm start
 ```
 
-## Releasing
+## Releasing and Deployment to Production
 
 Release workflow is very similar to the one of the
 [React UI](https://react-ui.io/contribute/releasing) project. A brief summary
@@ -57,17 +57,21 @@ follows.
 
 2. Commit as `Release <VERSION_NUMBER>` to `release/<VERSION_NUMBER>` branch,
    push, create a pull request to `main`, and finally merge it. The release is
-   now being automatically published.
+   now being automatically published and deployed to production.
 
-3. Prepare distribution ZIP package into the `dist` directory:
+**Note:** prefix version number with `v` everywhere except in `package.json` and
+`package-lock.json`.
+
+## Manual Deployment
+
+1. Adjust version number in `package.json` to your needs, eg. `3.1.0-rc1`.
+
+2. Prepare distribution ZIP package into the `dist` directory:
 
    ```bash
    npm run dist
    ```
 
-4. Upload the ZIP package
+3. Upload the ZIP package
    `dist/frontend-garden-ghost-theme-<VERSION_NUMBER>.zip` on the _Design_
    administration page.
-
-**Note:** prefix version number with `v` everywhere except in `package.json` and
-`package-lock.json`.
