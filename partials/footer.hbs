@@ -1,11 +1,9 @@
 <footer class="site__footer footer">
 
     {{#unless hideSubscribeForm}}
-        {{#if @labs.members}}
-            <div class="container container--article spacing-bottom-large">
-                {{> "members/newsletter-signup-form"}}
-            </div>
-        {{/if}}
+        <div class="container container--article spacing-bottom-large">
+            {{> "members/newsletter-signup-form"}}
+        </div>
     {{/unless}}
 
     <div class="container">

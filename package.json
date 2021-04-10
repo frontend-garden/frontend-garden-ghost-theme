@@ -14,8 +14,8 @@
     "ghost-theme"
   ],
   "engines": {
-    "ghost": ">=3.40.1",
-    "ghost-api": "v3",
+    "ghost": ">=4.2.0",
+    "ghost-api": "v4",
     "node": ">=14.15.1",
     "npm": ">=6.14.8"
   },

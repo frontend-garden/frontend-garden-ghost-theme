@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}">
+<html lang="{{@site.locale}}">
 <head>
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous" />
@@ -48,11 +48,9 @@
 </head>
 <body class="site">
 
-{{#if @labs.members}}
-    <div class="site__notifications">
-        {{> "members/notifications"}}
-    </div>
-{{/if}}
+<div class="site__notifications">
+    {{> "members/notifications"}}
+</div>
 
 {{> "header"}}
 
@@ -64,9 +62,7 @@
 <script src="{{asset "js/register-sw.js"}}"></script>
 <script src="{{asset "js/cache-page-assets.js"}}"></script>
 
-{{#if @labs.members}}
-    <script src="{{asset "js/members.js"}}"></script>
-{{/if}}
+<script src="{{asset "js/members.js"}}"></script>
 
 {{{block "scripts"}}}
 
