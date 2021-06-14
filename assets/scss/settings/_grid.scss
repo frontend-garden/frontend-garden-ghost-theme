@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $gap: 1em;
 $gap-medium: 0.666em;
-$gap-small: $gap / 2;
+$gap-small: math.div($gap, 2);
