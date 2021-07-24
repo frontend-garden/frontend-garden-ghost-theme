@@ -6,13 +6,13 @@
 .text-field {
     @include typography.style(form-field);
 
+    appearance: none;
     min-width: 0;
     padding: spacing.of(0.5) 1em;
     color: var(--page-text-color);
     border: borders.$width solid var(--input-border-color);
     border-radius: borders.$radius;
     background: var(--input-background-color);
-    appearance: none;
 
     &::placeholder {
         color: map-get(colors.$grays, gray-dark);
