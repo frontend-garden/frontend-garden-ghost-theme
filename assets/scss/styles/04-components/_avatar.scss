@@ -53,9 +53,9 @@ $_avatar-small-size: 2em * typography.line-height(base);
         bottom: 0;
         left: 0;
         display: block;
-        opacity: 0;
         border-radius: 50%;
         box-shadow: inset 0 0 0.5em rgba(colors.$black, 0.25);
+        opacity: 0;
     }
 
     &:hover::after,

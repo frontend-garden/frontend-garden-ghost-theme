@@ -31,8 +31,8 @@
         width: 35vw;
         border-radius: borders.$radius;
         box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.25);
-        will-change: transform;
         transform: translate(0, 0);
+        will-change: transform;
 
         &:hover {
             transform: translateY(-0.75em);
@@ -56,8 +56,8 @@
     @media (prefers-reduced-motion: reduce) {
         .post-row__item:hover,
         .post-row__item:hover ~ .post-row__item {
-            will-change: none;
             transform: translate(0, 0);
+            will-change: none;
         }
     }
 }

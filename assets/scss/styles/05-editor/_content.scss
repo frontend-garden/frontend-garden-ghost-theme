@@ -55,8 +55,8 @@
                 position: absolute;
                 right: 100%;
                 bottom: 0.14em;
-                opacity: 0;
                 color: map-get(colors.$grays, gray);
+                opacity: 0;
                 transform: translateX(-0.25rem);
             }
 

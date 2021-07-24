@@ -52,8 +52,8 @@ $_navigation-layout-breakpoint: md;
     position: relative;
     left: -0.15em; // 1.
     display: inline-flex;
-    column-gap: grid.$gap;
     grid-area: logotype;
+    column-gap: grid.$gap;
     align-items: flex-start;
     justify-self: start;
 }

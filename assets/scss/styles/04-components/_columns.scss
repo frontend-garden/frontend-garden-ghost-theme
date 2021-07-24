@@ -7,8 +7,8 @@
 
     @include breakpoint.up(sm) {
         column-count: 2;
-        column-gap: 2 * grid.$gap;
         column-rule: borders.$width solid var(--ruler-color);
+        column-gap: 2 * grid.$gap;
     }
 
     @include breakpoint.up(md) {
