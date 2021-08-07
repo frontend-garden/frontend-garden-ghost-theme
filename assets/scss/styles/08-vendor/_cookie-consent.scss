@@ -1,5 +1,4 @@
 @use "../../settings/button";
-@use "../../settings/shadows";
 
 // stylelint-disable selector-class-pattern, selector-max-specificity, selector-max-id -- Sorry!
 
@@ -17,5 +16,5 @@
 
 .cc_div #cm,
 .cc_div #s-inr {
-    box-shadow: shadows.$default;
+    box-shadow: var(--medium-shadow);
 }

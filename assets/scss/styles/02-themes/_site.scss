@@ -1,6 +1,7 @@
 @use "sass:color";
 @use "sass:map";
 @use "../../settings/colors";
+@use "../../settings/shadows";
 
 :root {
     --ui-info-background-color: #{map.get(colors.$ui, info)};
@@ -33,6 +34,8 @@
     --text-inverse-color: #{colors.$white};
     --text-muted-color: #{map.get(colors.$grays, gray-dark)};
     --ruler-color: #{map.get(colors.$grays, gray-lightest)};
+    --small-shadow: #{shadows.$small};
+    --medium-shadow: #{shadows.$medium};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,5 +66,7 @@
         --text-inverse-color: #{map.get(colors.$grays, gray-light)};
         --text-muted-color: #{map.get(colors.$grays, gray-dark)};
         --ruler-color: #{color.adjust(map.get(colors.$grays, gray-dark), $alpha: - 0.8)};
+        --small-shadow: #{shadows.$small-dark};
+        --medium-shadow: #{shadows.$medium-dark};
     }
 }
