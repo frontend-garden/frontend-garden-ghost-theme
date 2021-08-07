@@ -1,0 +1,74 @@
+{{!< default}}
+
+<main class="site__content">
+
+    {{#post}}
+        <article class="article">
+
+            <header class="section section--dense background-alternate">
+                <div class="container container--article">
+
+                    <div class="article__meta">
+                        {{tags}}
+                    </div>
+
+                    <h1 class="article__title js-nbsp">{{title}}</h1>
+                    <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
+
+                </div>
+            </header>
+
+            <div class="section section--dense-top">
+                <div class="container container--article">
+
+                    <div class="editor js-nbsp js-external-links">
+                        {{content}}
+                    </div>
+
+                    <hr class="spacing-bottom-none" />
+
+                </div>
+            </div>
+
+            <footer class="section section--dense">
+                <div class="container container--article">
+
+                    <p class="text-small-block text-italic spacing-bottom-none">
+                        Poslední aktualizace:
+                        <time datetime="{{date format="YYYY-MM-DD"}}">
+                            {{date format="D. MMMM YYYY"}}
+                        </time>
+                    </p>
+
+                </div>
+            </footer>
+
+        </article>
+    {{/post}}
+
+    {{#get "posts"
+        filter="primary_tag:clanky+tags:[{{post.tags}}]"
+        include="authors,tags"
+        order="published_at DESC"
+        limit="3"
+        as |related|
+    }}
+        {{#if related}}
+            {{> "related-posts"
+                posts=related
+                headline="Související články"
+            }}
+        {{/if}}
+    {{/get}}
+
+</main>
+
+{{> "footer"}}
+
+{{#contentFor "styles"}}
+    {{> "external/prism-css"}}
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+    {{> "external/prism-js"}}
+{{/contentFor}}
