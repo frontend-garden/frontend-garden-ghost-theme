@@ -1,7 +1,7 @@
-<footer class="site__footer footer">
+<footer class="site__footer footer print-padding-none">
 
     {{#unless hideSubscribeForm}}
-        <div class="container container--article spacing-bottom-large">
+        <div class="container container--article spacing-bottom-large print-hidden">
             {{> "members/newsletter-signup-form"}}
         </div>
     {{/unless}}
@@ -9,14 +9,16 @@
     <div class="container">
 
         {{#unless hideLinks}}
-            <nav class="navigation navigation--secondary">
+            <nav class="navigation navigation--secondary print-hidden">
                 {{navigation type="secondary"}}
             </nav>
         {{/unless}}
 
-        <nav class="navigation navigation--secondary">
+        <nav class="navigation navigation--secondary print-hidden">
             {{> "social-links" placement="footer"}}
         </nav>
+
+        <hr class="print-only" />
 
         <p class="footer__section">
             Obsah na tomto webu je publikován pod&nbsp;licencí

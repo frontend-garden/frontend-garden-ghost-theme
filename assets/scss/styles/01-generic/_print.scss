@@ -1,20 +1,14 @@
-@media print {
-    // stylelint-disable selector-max-universal
-    *,
-    *::before,
-    *::after {
-        color: black; // black prints faster
-        background: transparent;
-    }
-    // stylelint-enable
+// 1. Intentionally using pixels to get similar results across most browsers.
+// 2. Black prints faster.
 
+@media print {
     html,
     body {
         font-size: 14pt;
     }
 
     body {
-        min-width: 800px; // intentionally using pixels
+        min-width: 800px; // 1.
     }
 
     h1,
@@ -33,4 +27,18 @@
         orphans: 3;
         widows: 3;
     }
+
+    img,
+    table {
+        page-break-inside: avoid;
+    }
+
+    // stylelint-disable selector-max-universal, declaration-no-important
+    *,
+    *::before,
+    *::after {
+        color: black !important; // 2.
+        background: transparent !important;
+    }
+    // stylelint-enable
 }
