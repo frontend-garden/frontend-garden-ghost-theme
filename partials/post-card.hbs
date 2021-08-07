@@ -19,7 +19,15 @@
         {{/has}}
     "
 >
-    <div class="post-card__content {{#has tag="#cover"}}cover__text{{/has}}">
+    <div
+        class="
+            post-card__content
+            {{#has tag="#cover"}}
+                cover__text
+            {{/has}}
+            print-padding-none
+        "
+    >
 
         <header>
             <div class="post-card__meta">
@@ -92,7 +100,7 @@
 
     {{#has tag="#cover"}}
         {{#if feature_image}}
-            <figure class="cover__canvas">
+            <figure class="cover__canvas print-hidden">
                 <img
                     src="{{img_url feature_image size="xl"}}"
                     srcset="

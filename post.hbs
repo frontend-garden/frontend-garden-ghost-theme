@@ -30,6 +30,7 @@
                     {{else}}
                         background-alternate
                     {{/has}}
+                    print-padding-none
                 "
             >
                 <div class="{{#has tag="#cover"}}cover__text{{/has}}">
@@ -61,7 +62,7 @@
 
                 {{#has tag="#cover"}}
                     {{#if feature_image}}
-                        <figure class="cover__canvas">
+                        <figure class="cover__canvas print-hidden">
                             <img
                                 src="{{img_url feature_image size="xl"}}"
                                 srcset="
@@ -88,9 +89,9 @@
                         {{content}}
                     </div>
 
-                    <hr />
+                    <hr class="print-hidden" />
 
-                    <div class="share">
+                    <div class="share print-hidden">
                         <span class="icon icon--in-text spacing-right-1">
                             {{> "icons/twitter"}}
                         </span>
@@ -117,7 +118,7 @@
 
                 </div>
             </div>
-            <div class="section section--dense">
+            <div class="section section--dense print-hidden">
                 <div class="container container--article">
 
                     <h2>

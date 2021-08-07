@@ -1,0 +1,16 @@
+// stylelint-disable declaration-no-important
+@media print {
+    .print-hidden {
+        display: none !important;
+    }
+
+    .print-padding-none {
+        padding: 0 !important;
+    }
+}
+
+@media not print {
+    .print-only {
+        display: none !important;
+    }
+}
