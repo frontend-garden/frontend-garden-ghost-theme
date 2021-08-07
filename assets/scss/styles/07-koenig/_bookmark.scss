@@ -1,133 +1,159 @@
-// Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/bookmark.css
+// Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/bookmark.css
 
 @use "sass:map";
+@use "../../settings/borders";
 @use "../../settings/colors";
+@use "../../tools/breakpoint";
+@use "../../tools/spacing";
+@use "../../tools/transition";
 @use "../../tools/typography";
 
-.kg-code-card {
-    min-width: 100%;
-}
-
-.kg-code-card pre {
-    margin: 0;
-}
+$_breakpoint: md;
 
 .kg-bookmark-card {
     width: 100%;
-    background: colors.$white;
+    max-width: 22em;
+    margin-inline: auto;
+    background: var(--page-background-color);
+
+    @include breakpoint.up($_breakpoint) {
+        max-width: none;
+    }
 }
 
-.kg-card + .kg-bookmark-card {
-    margin-top: 0;
-}
-
-.post-full-content .kg-bookmark-container {
+.kg-bookmark-container {
     display: flex;
-    min-height: 148px;
-    text-decoration: none;
-    color: map.get(colors.$grays, gray-dark);
-    border-radius: 3px;
-    box-shadow:
-        0 2px 5px -1px rgb(0 0 0 / 15%),
-        0 0 1px rgb(0 0 0 / 9%);
+    flex-direction: column-reverse;
+    border: borders.$width solid var(--ruler-color);
+    border-radius: borders.$radius;
+    box-shadow: var(--small-shadow);
+
+    @media (hover: hover) {
+        @include transition.add($property: #{box-shadow});
+
+        will-change: box-shadow;
+
+        &:hover {
+            box-shadow: var(--medium-shadow);
+        }
+    }
+
+    @media print {
+        break-inside: avoid;
+        border-width: borders.$width-thick;
+        box-shadow: none;
+    }
+
+    @include breakpoint.up($_breakpoint) {
+        flex-direction: row;
+    }
 }
 
 .kg-bookmark-content {
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
+    row-gap: spacing.of(0.5);
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 20px;
+    padding: spacing.of(0.75);
+    color: var(--page-text-color);
+
+    @include breakpoint.up($_breakpoint) {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+.kg-bookmark-title,
+.kg-bookmark-description {
+    @include typography.line-clamp(2);
 }
 
 .kg-bookmark-title {
-    font-weight: 600;
-    font-size: 1.6rem;
-    line-height: typography.line-height(medium);
-    color: map.get(colors.$grays, gray-dark);
-}
+    @include typography.style(headline4);
 
-.post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-    color: colors.$primary;
+    line-height: typography.line-height(dense);
 }
 
 .kg-bookmark-description {
-    max-height: 48px;
-    margin-top: 12px;
-    overflow-y: hidden;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: typography.line-height(medium);
-    color: map.get(colors.$grays, gray);
-    -webkit-line-clamp: 2;
+    @include typography.style(small-block);
+
+    max-height: spacing.of(1.5);
+    color: var(--text-muted-color);
+}
+
+.kg-bookmark-metadata {
+    @include typography.style(small-block);
+
+    display: flex;
+    column-gap: 0.5em;
+    align-items: center;
+}
+
+.kg-bookmark-icon {
+    width: 2em;
+    height: 2em;
+}
+
+.kg-bookmark-author {
+    white-space: nowrap;
+
+    &::after {
+        content: "•";
+        margin-left: 0.5em;
+    }
+}
+
+.kg-bookmark-publisher {
+    @include typography.line-clamp(1);
+
+    color: var(--text-muted-color);
 }
 
 .kg-bookmark-thumbnail {
     position: relative;
-    min-width: 33%;
-    max-height: 100%;
-}
-
-.kg-bookmark-thumbnail img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 3px 3px 0;
-}
-
-.kg-bookmark-metadata {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 14px;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: map.get(colors.$grays, gray);
-}
-
-.post-full-content .kg-bookmark-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-}
-
-.kg-bookmark-author {
-    line-height: typography.line-height(medium);
-}
-
-.kg-bookmark-author::after {
-    content: "•";
-    margin: 0 6px;
-}
-
-.kg-bookmark-publisher {
-    max-width: 240px;
     overflow: hidden;
-    line-height: typography.line-height(medium);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    border-bottom: borders.$width solid var(--ruler-color);
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: -5em;
+        bottom: 0;
+        left: -5em;
+        display: block;
+        height: 5em;
+        background: radial-gradient(farthest-side at bottom, rgba(0 0 0 / 5%), rgba(0 0 0 / 0%));
+    }
+
+    @media (prefers-color-scheme: dark) {
+        &::after {
+            background: radial-gradient(farthest-side at bottom, rgba(0 0 0 / 15%), rgba(0 0 0 / 0%));
+        }
+    }
+
+    @include breakpoint.up($_breakpoint) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        padding: spacing.of(0.75) spacing.of(0.75) spacing.of(0.75) 0;
+        border-bottom: none;
+
+        &::after {
+            content: unset;
+        }
+    }
 }
 
-@media (max-width: 500px) {
-    .post-full-content .kg-bookmark-container {
-        flex-direction: column;
-    }
+.kg-bookmark-thumbnail > img {
+    width: 100%;
+    border-radius: borders.$radius borders.$radius 0 0;
 
-    .kg-bookmark-thumbnail {
-        order: 1;
-        width: 100%;
-        min-height: 160px;
-    }
-
-    .kg-bookmark-thumbnail img {
-        border-radius: 3px 3px 0 0;
-    }
-
-    .kg-bookmark-content {
-        order: 2;
+    @include breakpoint.up($_breakpoint) {
+        width: auto;
+        max-height: 9em;
+        border: borders.$width solid var(--ruler-color);
+        border-radius: 0;
     }
 }

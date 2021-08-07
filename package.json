@@ -67,7 +67,9 @@
     "stylelint": "^14.3.0"
   },
   "config": {
-    "card_assets": true,
+    "card_assets": {
+      "exclude": ["bookmark"]
+    },
     "image_sizes": {
       "avatar_small_2x": {
         "width": 150

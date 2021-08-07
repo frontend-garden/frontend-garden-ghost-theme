@@ -1,7 +1,6 @@
 @use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
 @use "../../settings/borders";
 @use "../../settings/colors";
-@use "../../settings/shadows";
 @use "../../tools/spacing";
 @use "../../tools/transition";
 @use "../../tools/typography";
@@ -26,7 +25,7 @@ $_post-card-padding-y: spacing.of(1);
 
         &:hover {
             z-index: 2;
-            box-shadow: shadows.$default;
+            box-shadow: var(--medium-shadow);
             transform: scale(1.015, 1.015);
         }
     }
