@@ -1,9 +1,5 @@
 @use '../../tools/spacing';
 
-.spacing-0 {
-    margin: 0;
-}
-
 .spacing-right-1 {
     margin-right: 0.5em;
 }
@@ -14,6 +10,10 @@
 
 .spacing-top-negative {
     margin-top: spacing.of(-1);
+}
+
+.spacing-bottom-none {
+    margin-bottom: 0;
 }
 
 .spacing-bottom {

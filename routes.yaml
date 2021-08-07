@@ -10,6 +10,14 @@ collections:
     filter: primary_tag:clanky
     data: tag.clanky
 
+  /slovnik/:
+    permalink: /slovnik/{slug}/
+    template: glossary
+    filter: primary_tag:slovnik
+    limit: 10000 # `all` is disabled in production, and we need all posts. We hardly ever reach this number of glossary items.
+    order: title ASC
+    data: tag.slovnik
+
 taxonomies:
   tag: /tema/{slug}/
   author: /autor/{slug}/

@@ -12,6 +12,19 @@
     border-radius: borders.$radius;
     background-color: map-get(colors.$grays, gray-light);
     user-select: none;
+
+    &:link,
+    &:visited {
+        border-bottom: 0;
+    }
+
+    &:link:hover,
+    &:link:focus,
+    &:visited:hover,
+    &:visited:focus {
+        color: colors.$white;
+        background-color: var(--link-color);
+    }
 }
 
 .label--new {

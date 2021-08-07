@@ -11,3 +11,7 @@
 .text-small-caps {
     @include typography.style(small-caps);
 }
+
+.text-headline-3 {
+    @include typography.style(headline3);
+}

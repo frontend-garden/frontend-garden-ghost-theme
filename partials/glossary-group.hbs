@@ -1,0 +1,20 @@
+<section id="{{slug}}" aria-labelledby="h_{{slug}}">
+
+    <h2
+        id="h_{{slug}}"
+        class="text-headline-3 text-small-caps spacing-bottom-small"
+    >
+        {{name}}
+    </h2>
+
+    <ol class="list-unstyled">
+        {{#foreach posts visibility="public"}}
+            {{#has tag=../name}}
+                <li>
+                    <a href="{{url}}">{{title}}</a>
+                </li>
+            {{/has}}
+        {{/foreach}}
+    </ol>
+
+</section>
