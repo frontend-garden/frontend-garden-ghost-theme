@@ -1,3 +1,5 @@
+// 1. Account with whitespace.
+
 @use '../../settings/grid';
 @use '../../tools/typography';
 
@@ -9,4 +11,9 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: grid.$gap-small;
+}
+
+.list-item-decorated:not(:first-child)::before {
+    content: '·';
+    margin-right: grid.$gap-small - 0.2em; // 1.
 }

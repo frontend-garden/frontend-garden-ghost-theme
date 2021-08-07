@@ -1,42 +1,88 @@
 {{!< default}}
 
 <main class="site__content background-alternate">
-    <section class="section section--dense-top">
+    <section class="section section--dense-top" aria-labelledby="h_header">
         <div class="container">
 
             {{#tag}}
                 <div class="article">
                     <div class="article__meta">Téma</div>
-                    <h1 class="article__title">{{name}}</h1>
-                    <div class="article__summary js-nbsp">
-                        {{#if description}}
-                            <p class="spacing-bottom-small">
-                                {{description}}
-                            </p>
-                        {{/if}}
-                        <small>
-                            Sbírka
-                            {{plural ../pagination.total empty='článků' singular='% článku' plural='% článků'}}
-                        </small>
-                    </div>
+                    <h1 id="h_header" class="article__title">{{name}}</h1>
+
+                    {{#if description}}
+                        <p class="article__summary spacing-bottom-none js-nbsp">
+                            {{description}}
+                        </p>
+                    {{/if}}
                 </div>
             {{/tag}}
 
         </div>
     </section>
-    <section class="section section--dense">
-        <div class="container">
+
+    {{!
+        Manually get **all** glossary items with current tag because they would be paginated as part
+        of `posts`.
+    }}
+    {{#get "posts"
+        filter="primary_tag:slovnik+tag:{{tag.slug}}"
+        limit="all"
+        as |glossary_items|
+    }}
+        {{#if glossary_items}}
+            <section
+                id="slovnik"
+                class="section section--dense-top"
+                aria-labelledby="h_slovnik"
+            >
+                <div class="container">
+
+                    <h2 id="h_slovnik" class="spacing-bottom-small">Hesla ve slovníku</h2>
+
+                    <ul class="list-unstyled list-inline spacing-bottom-none">
+                        {{#foreach glossary_items visibility="public"}}
+                            <li class="list-item-decorated">
+                                <a href="{{url}}" class="text-nowrap">{{title}}</a>
+                            </li>
+                        {{/foreach}}
+                    </ul>
+
+                </div>
+            </section>
+        {{/if}}
+    {{/get}}
+
+    {{!
+        Use `posts` as the source for **paginated** listing of posts with the "Články" tag (output
+        of `get` helper cannot be paginated.) The tradeoff is that `<section>` is always present in
+        the markup, even when there are no relevant articles.
+    }}
+    <section
+        id="clanky"
+        class="section section--dense"
+        aria-labelledby="h_clanky"
+    >
+        <div class="container container--dense">
+
+            {{!
+                Hide the headline as we cannot be sure if there are some posts or not.
+                (It's visually redundant anyway.)
+            }}
+            <h2 id="h_clanky" class="visually-hidden">Články</h2>
 
             <div class="post-feed">
                 {{#foreach posts visibility="public"}}
-                    <div class="post-feed__item">
-                        {{> "post-card"}}
-                    </div>
+                    {{#has tag="Články"}}
+                        <div class="post-feed__item">
+                            {{> "post-card" headingLevel=3}}
+                        </div>
+                    {{/has}}
                 {{/foreach}}
             </div>
 
         </div>
     </section>
+
 </main>
 
 {{> "footer"}}
