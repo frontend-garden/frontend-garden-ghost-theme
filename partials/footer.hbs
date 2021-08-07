@@ -6,9 +6,22 @@
         </div>
     {{/unless}}
 
-    <div class="container">
+    <div class="container container--narrow">
 
-        {{#unless hideLinks}}
+        {{#unless hideInternalLinks}}
+            {{#get "tags" filter="slug:-[clanky,slovnik]" limit="all"}}
+                <h2 class="print-hidden">Všechna témata</h2>
+                <ul class="footer__list list-unstyled list-inline spacing-bottom-large print-hidden">
+                    {{#foreach tags}}
+                        <li class="list-item-decorated">
+                            <a href="{{url}}" class="text-nowrap">{{name}}</a>
+                        </li>
+                    {{/foreach}}
+                </ul>
+            {{/get}}
+        {{/unless}}
+
+        {{#unless hideInternalLinks}}
             <nav class="navigation navigation--secondary print-hidden">
                 {{navigation type="secondary"}}
             </nav>
@@ -26,6 +39,7 @@
                 href="https://creativecommons.org/licenses/by-nc/4.0/"
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Uveďte původ, neužívejte komerčně 4.0"
             >Creative Commons CC&nbsp;BY-NC&nbsp;4.0</a>.
             <br />
             <a href="/" class="footer__title link-unstyled">{{@site.title}}</a>
