@@ -31,7 +31,10 @@
 
 .section--dense-top {
     padding-top: spacing.of(1);
-    padding-bottom: 0;
+
+    &:not(:last-child) {
+        padding-bottom: 0;
+    }
 
     @include breakpoint.up(lg) {
         padding-top: spacing.of(1.5);
