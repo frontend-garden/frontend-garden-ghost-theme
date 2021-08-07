@@ -1,0 +1,72 @@
+{{!< default}}
+
+<main class="site__content article">
+    <div class="section background-alternate">
+        <div class="container">
+
+            {{#tag}}
+                <h1 class="article__title js-nbsp">{{name}}</h1>
+
+                {{#if description}}
+                    <p class="article__summary js-nbsp">
+                        {{description}}
+                    </p>
+                {{/if}}
+            {{/tag}}
+
+            <ul class="list-unstyled list-inline spacing-bottom-none">
+                <li>
+                    <a href="#jazyky" class="label">Jazyky</a>
+                </li>
+                <li>
+                    <a href="#frameworky" class="label">Frameworky</a>
+                </li>
+                <li>
+                    <a href="#nastroje" class="label">Nástroje</a>
+                </li>
+                <li>
+                    <a href="#testovani" class="label">Testování</a>
+                </li>
+                <li>
+                    <a href="#no-code" class="label">No-code</a>
+                </li>
+                <li>
+                    <a href="#graficky-design" class="label">Grafický design</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="section section--dense">
+        <div class="container">
+            <div class="columns">
+
+                {{!
+                    Loop through the original `posts` and group them.
+                    Pagination of `posts` is made impossible in `routes.yaml`.
+                }}
+                {{>glossary-group slug="jazyky" name="Jazyky"}}
+                {{>glossary-group slug="frameworky" name="Frameworky"}}
+                {{>glossary-group slug="nastroje" name="Nástroje"}}
+                {{>glossary-group slug="testovani" name="Testování"}}
+                {{>glossary-group slug="no-code" name="No-code"}}
+                {{>glossary-group slug="graficky-design" name="Grafický design"}}
+
+            </div>
+        </div>
+    </div>
+
+    {{#get "posts"
+        filter="primary_tag:clanky"
+        include="authors,tags"
+        limit="3"
+        as |recent|
+    }}
+        {{#if recent}}
+            {{> "related-posts" posts=recent}}
+        {{/if}}
+    {{/get}}
+
+</main>
+
+{{> "footer"}}

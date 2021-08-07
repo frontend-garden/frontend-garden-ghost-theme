@@ -1,7 +1,12 @@
+@use '../../settings/grid';
 @use '../../tools/typography';
 
 .list-unstyled {
     @include typography.list-unstyled();
+}
 
-    margin-bottom: 0;
+.list-inline {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: grid.$gap-small;
 }
