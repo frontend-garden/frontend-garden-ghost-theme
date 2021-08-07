@@ -14,7 +14,11 @@
             <section class="section background-alternate">
                 <div class="container">
 
-                    {{#get "authors" limit="all" include="count.posts" order="count.posts desc"}}
+                    {{#get "authors"
+                        include="count.posts"
+                        limit="all"
+                        order="count.posts DESC"
+                    }}
                         <div class="grid">
 
                             {{#foreach authors}}
@@ -83,7 +87,7 @@
                     </div>
 
                     <a href="/napiste-clanek" class="button">
-                        Napsat článek
+                        Jak napsat článek
                     </a>
 
                 </div>

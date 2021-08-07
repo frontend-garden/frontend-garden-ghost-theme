@@ -11,7 +11,7 @@
 @mixin safari-only($selector) {
     _::-webkit-full-page-media,
     _:future,
-    :root .editor #{$selector} {
+    :root #{$selector} {
         @content;
     }
 }

@@ -15,3 +15,7 @@
 .text-headline-3 {
     @include typography.style(headline3);
 }
+
+.text-italic {
+    font-style: italic;
+}

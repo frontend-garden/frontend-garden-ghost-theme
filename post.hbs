@@ -1,7 +1,8 @@
 {{!< default}}
 
-{{#post}}
-    <main class="site__content">
+<main class="site__content">
+
+    {{#post}}
         <article class="article">
 
             <header
@@ -35,7 +36,7 @@
                     <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
                         <div class="article__meta">
-                            <time class="article__meta__date" datetime="{{date format="YYYY-MM-DD"}}">
+                            <time datetime="{{date format="YYYY-MM-DD"}}">
                                 {{date format="D. MMMM YYYY"}}
                             </time>
                             —
@@ -83,7 +84,7 @@
             <div class="section section--dense">
                 <div class="container container--article">
 
-                    <div class="editor js-nbsp js-external-links js-heading-anchors">
+                    <div class="editor editor--long-text js-nbsp js-external-links js-heading-anchors">
                         {{content}}
                     </div>
 
@@ -137,34 +138,30 @@
             </div>
 
         </article>
+    {{/post}}
 
-        {{#get "posts"
-            include="authors,tags"
-            filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}"
-            limit="3"
-            as |recent|
-        }}
-            {{#if recent}}
-                {{> "related-posts" posts=recent}}
-            {{/if}}
-        {{/get}}
+    {{#get "posts"
+        filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"
+        include="authors,tags"
+        limit="3"
+        as |recent|
+    }}
+        {{#if recent}}
+            {{> "related-posts" posts=recent}}
+        {{/if}}
+    {{/get}}
 
-    </main>
-{{/post}}
+</main>
 
 {{> "footer"}}
 
 {{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css" />
+    {{> "external/prism-css"}}
 {{/contentFor}}
 
 {{#contentFor "scripts"}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
-
-    {{!-- Facebook SDK for comments --}}
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v9.0" nonce="tE8SW7Mk"></script>
+    {{> "external/prism-js"}}
+    {{> "external/facebook-comments"}}
 {{/contentFor}}
 
 {{#contentFor "snippets"}}

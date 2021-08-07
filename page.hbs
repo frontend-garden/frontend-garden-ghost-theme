@@ -26,8 +26,8 @@
         </article>
 
         {{#get "posts"
-            include="authors,tags"
             filter="primary_tag:clanky"
+            include="authors,tags"
             limit="3"
             as |recent|
         }}
