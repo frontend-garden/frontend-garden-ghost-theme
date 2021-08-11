@@ -1,70 +1,82 @@
-<ul class="navigation__list">
-    {{#if @site.twitter}}
+<nav
+    class="
+        navigation
+        navigation--icons
+        {{#if in_footer}}
+            navigation--secondary
+            spacing-bottom
+        {{/if}}
+        print-hidden
+    "
+>
+    <ul class="navigation__list">
+        {{#if @site.twitter}}
+            <li class="navigation__item">
+                <a
+                    href="{{twitter_url @site.twitter}}"
+                    class="navigation__icon-link"
+                    target="_blank"
+                    rel="noopener"
+                    title="{{@site.title}} na Twitteru"
+                    data-track="navigate"
+                    data-category="Outbound links"
+                    data-label="Twitter in {{#if in_footer}}footer{{else}}header{{/if}}"
+                >
+                    <span class="icon">
+                        {{> "icons/twitter"}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
+        {{#if @site.facebook}}
+            <li class="navigation__item">
+                <a
+                    href="{{facebook_url @site.facebook}}"
+                    class="navigation__icon-link"
+                    target="_blank"
+                    rel="noopener"
+                    title="{{@site.title}} na Facebooku"
+                    data-track="navigate"
+                    data-category="Outbound links"
+                    data-label="Facebook in {{#if in_footer}}footer{{else}}header{{/if}}"
+                >
+                    <span class="icon">
+                        {{> "icons/facebook"}}
+                    </span>
+                </a>
+            </li>
+        {{/if}}
         <li class="navigation__item">
             <a
-                href="{{twitter_url @site.twitter}}"
+                href="https://www.instagram.com/frontendgarden/"
                 class="navigation__icon-link"
                 target="_blank"
                 rel="noopener"
-                title="{{@site.title}} na Twitteru"
+                title="{{@site.title}} na Instagramu"
                 data-track="navigate"
                 data-category="Outbound links"
-                data-label="Twitter in {{placement}}"
+                data-label="Instagram in {{#if in_footer}}footer{{else}}header{{/if}}"
             >
                 <span class="icon">
-                    {{> "icons/twitter"}}
+                    {{> "icons/instagram"}}
                 </span>
             </a>
         </li>
-    {{/if}}
-    {{#if @site.facebook}}
         <li class="navigation__item">
             <a
-                href="{{facebook_url @site.facebook}}"
+                href="https://github.com/frontend-garden"
                 class="navigation__icon-link"
                 target="_blank"
                 rel="noopener"
-                title="{{@site.title}} na Facebooku"
+                title="{{@site.title}} na GitHubu"
                 data-track="navigate"
                 data-category="Outbound links"
-                data-label="Facebook in {{placement}}"
+                data-label="GitHub in {{#if in_footer}}footer{{else}}header{{/if}}"
             >
                 <span class="icon">
-                    {{> "icons/facebook"}}
+                    {{> "icons/github"}}
                 </span>
             </a>
         </li>
-    {{/if}}
-    <li class="navigation__item">
-        <a
-            href="https://www.instagram.com/frontendgarden/"
-            class="navigation__icon-link"
-            target="_blank"
-            rel="noopener"
-            title="{{@site.title}} na Instagramu"
-            data-track="navigate"
-            data-category="Outbound links"
-            data-label="Instagram in {{placement}}"
-        >
-            <span class="icon">
-                {{> "icons/instagram"}}
-            </span>
-        </a>
-    </li>
-    <li class="navigation__item">
-        <a
-            href="https://github.com/frontend-garden"
-            class="navigation__icon-link"
-            target="_blank"
-            rel="noopener"
-            title="{{@site.title}} na GitHubu"
-            data-track="navigate"
-            data-category="Outbound links"
-            data-label="GitHub in {{placement}}"
-        >
-            <span class="icon">
-                {{> "icons/github"}}
-            </span>
-        </a>
-    </li>
-</ul>
+    </ul>
+</nav>
