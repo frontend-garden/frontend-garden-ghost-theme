@@ -1,26 +1,23 @@
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
 @use '../../settings/colors';
+@use '../../settings/navigation';
 @use '../../tools/breakpoint';
 @use '../../tools/spacing';
 @use '../../tools/transition';
 @use '../../tools/typography';
 
-$_navigation-item-padding: 0.5em;
-$_navigation-item-padding-big: 1em;
 $_navigation-icon-padding: 0.5em;
+$_navigation-padding-breakpoint-1: md;
+$_navigation-padding-breakpoint-2: lg;
 
 .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: -1 * $_navigation-item-padding;
+    margin: -1 * navigation.$item-padding-small;
 
-    @include breakpoint.up(lg) {
+    @include breakpoint.up($_navigation-padding-breakpoint-1) {
         margin:
-            -1 * $_navigation-item-padding-big
-            -1 * $_navigation-icon-padding
-            -1 * $_navigation-item-padding-big
-            -1 * $_navigation-item-padding;
+            -1 * navigation.$item-padding-big
+            -1 * navigation.$item-padding-small
+            -1 * navigation.$item-padding-big
+            -1 * navigation.$item-padding-small;
     }
 }
 
@@ -45,15 +42,17 @@ $_navigation-icon-padding: 0.5em;
 .navigation__link {
     @include typography.style(small-caps);
 
-    padding: $_navigation-item-padding;
+    padding: navigation.$item-padding-small;
     font-weight: typography.font-weight(bold);
 
-    @include breakpoint.up(sm) {
-        padding: $_navigation-item-padding-big $_navigation-item-padding;
+    @include breakpoint.up($_navigation-padding-breakpoint-1) {
+        padding-top: navigation.$item-padding-big;
+        padding-bottom: navigation.$item-padding-big;
     }
 
-    @include breakpoint.up(lg) {
-        padding: $_navigation-item-padding-big;
+    @include breakpoint.up($_navigation-padding-breakpoint-2) {
+        padding-right: navigation.$item-padding-big;
+        padding-left: navigation.$item-padding-big;
     }
 }
 
@@ -61,7 +60,7 @@ $_navigation-icon-padding: 0.5em;
     display: inline-flex;
     align-items: baseline;
     justify-content: center;
-    padding: $_navigation-icon-padding;
+    padding: navigation.$item-padding-small;
     line-height: 1;
 }
 
@@ -74,12 +73,14 @@ $_navigation-icon-padding: 0.5em;
 
 .navigation__item--current .navigation__link,
 .navigation__item--current-parent .navigation__link {
+    --bullet-shift-y: 0.9em;
+
     position: relative;
 
     &::after {
         content: '';
         position: absolute;
-        top: calc(50% + 1.2em);
+        top: calc(50% + var(--bullet-shift-y));
         left: 50%;
         width: 0.2em;
         height: 0.2em;
@@ -87,38 +88,32 @@ $_navigation-icon-padding: 0.5em;
         background-color: map-get(colors.$grays, gray);
         transform: translateX(-50%);
     }
+
+    @include breakpoint.up($_navigation-padding-breakpoint-1) {
+        --bullet-shift-y: 1em;
+    }
+
+    @include breakpoint.up($_navigation-padding-breakpoint-2) {
+        --bullet-shift-y: 1.2em;
+    }
 }
 
 .navigation__tag {
     display: inline-block;
-    font-size: modularscale.ms(-1);
-    transform: translateX(-0.5em) rotateZ(8deg);
+    transform: translate(-0.6em, -0.4em) rotateZ(11deg);
+    pointer-events: none;
 
-    @include breakpoint.up(lg) {
-        transform: translateX(-0.8em) rotateZ(8deg);
+    @include breakpoint.up($_navigation-padding-breakpoint-2) {
+        margin-right: -2.3em;
+        transform: translate(-2.3em, -1.5em) rotateZ(15deg);
     }
 }
 
-.navigation--secondary {
-    margin-bottom: spacing.of(1);
+.navigation--icons {
+    margin: -1 * navigation.$item-padding-small;
 }
 
 .navigation--secondary .navigation__list {
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-}
-
-.navigation--secondary .navigation__item {
-    margin-bottom: spacing.of(0.5);
-}
-
-.navigation__list + .navigation__list {
-    @include breakpoint.up(sm) {
-        margin-left: spacing.of(0.5);
-    }
-
-    @include breakpoint.up(xl) {
-        margin-left: spacing.of(1);
-    }
 }

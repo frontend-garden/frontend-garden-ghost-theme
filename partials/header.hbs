@@ -1,10 +1,4 @@
-<header
-    class="
-        site__header
-        header
-        {{^if @site.navigation}}header--without-navigation{{/if}}
-    "
->
+<header class="site__header header">
     <div class="container container--fluid">
         <div class="header__layout">
 
@@ -17,11 +11,17 @@
                 </span>
             </a>
 
-            {{#unless hideInternalLinks}}
-                <div class="header__navigation print-hidden">
-                    {{> "site-nav"}}
-                </div>
-            {{/unless}}
+            {{#if @site.navigation}}
+                {{#unless hideInternalLinks}}
+                    <div class="header__navigation">
+                        {{navigation}}
+                    </div>
+                {{/unless}}
+            {{/if}}
+
+            <div class="header__social-links">
+                {{> "social-links"}}
+            </div>
 
         </div>
     </div>

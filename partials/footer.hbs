@@ -22,14 +22,10 @@
         {{/unless}}
 
         {{#unless hideInternalLinks}}
-            <nav class="navigation navigation--secondary print-hidden">
-                {{navigation type="secondary"}}
-            </nav>
+            {{navigation type="secondary" in_footer=true}}
         {{/unless}}
 
-        <nav class="navigation navigation--secondary print-hidden">
-            {{> "social-links" placement="footer"}}
-        </nav>
+        {{> "social-links" in_footer=true}}
 
         <hr class="print-only" />
 
@@ -39,6 +35,7 @@
                 href="https://creativecommons.org/licenses/by-nc/4.0/"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="text-nowrap"
                 title="Uveďte původ, neužívejte komerčně 4.0"
             >Creative Commons CC&nbsp;BY-NC&nbsp;4.0</a>.
             <br />

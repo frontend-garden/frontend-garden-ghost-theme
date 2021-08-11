@@ -1,22 +1,49 @@
 // 1. Optically align logo with other content.
+// 2. Prevent vertical scrolling in Safari (forced by active navigation item bullet) by adding
+//    slightly more padding than necessary.
 
+@use '../../settings/grid';
+@use '../../settings/container' as container-settings;
+@use '../../settings/navigation';
 @use '../../tools/breakpoint';
+@use '../../tools/container';
 @use '../../tools/spacing';
 @use '../../tools/typography';
+
+$_logo-breakpoint: sm;
+$_navigation-layout-breakpoint: md;
 
 .header {
     padding-top: spacing.of(0.5);
     padding-bottom: spacing.of(0.5);
 
     @include breakpoint.up(lg) {
+        padding-top: spacing.of(0.75);
+        padding-bottom: spacing.of(0.75);
+    }
+
+    @include breakpoint.up(xxl) {
         padding-top: spacing.of(1);
         padding-bottom: spacing.of(1);
     }
 }
 
 .header__layout {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        'logotype social'
+        'navigation navigation';
+    grid-column-gap: grid.$gap;
     align-items: center;
+
+    @include breakpoint.up($_navigation-layout-breakpoint) {
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'logotype navigation social';
+        grid-column-gap: container-settings.$padding-sm;
+    }
 }
 
 .header__logotype {
@@ -25,41 +52,60 @@
     position: relative;
     left: -0.15em; // 1.
     display: inline-flex;
+    column-gap: grid.$gap;
+    grid-area: logotype;
     align-items: flex-start;
-    margin-right: 1em;
+    justify-self: start;
 }
 
 .header__logo {
-    width: 2em;
-    height: 2em;
+    --logo-size: 1.75em;
 
-    @include breakpoint.up(lg) {
-        margin-right: 1em;
+    width: var(--logo-size);
+    height: var(--logo-size);
+
+    @include breakpoint.up($_logo-breakpoint) {
+        --logo-size: 2em;
     }
 }
 
 .header__title {
-    @include typography.style(header-title);
-
     display: none;
 
-    @include breakpoint.up(lg) {
+    @include breakpoint.up($_logo-breakpoint) {
+        @include typography.style(header-title);
+
         display: block;
     }
 }
 
-.header__navigation {
+.header__social-links {
+    grid-area: social;
     margin-left: auto;
 }
 
-.header--without-navigation .header__logo {
-    @include breakpoint.up(sm) {
-        margin-right: 1em;
-    }
-}
+.header__navigation {
+    @include container.expand();
 
-.header--without-navigation .header__title {
+    grid-area: navigation;
+    padding:
+        (2 * navigation.$item-padding-small + 0.2em) // 2.
+        container-settings.$padding;
+    margin-bottom: calc(-1 * #{spacing.of(0.5)});
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
     @include breakpoint.up(sm) {
-        display: block;
+        padding-right: container-settings.$padding-sm;
+        padding-left: container-settings.$padding-sm;
+    }
+
+    @include breakpoint.up($_navigation-layout-breakpoint) {
+        justify-self: end;
+        padding: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        overflow-x: unset;
     }
 }

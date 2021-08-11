@@ -1,19 +1,33 @@
-<ul class="navigation__list">
-    {{#foreach navigation}}
-        <li
-            class="
-                navigation__item
-                {{#if current}}
-                    navigation__item--current
-                {{else}}
-                    {{!-- Is rendered as `navigation__item--current-parent`: --}}
-                    {{link_class for=slug activeClass="navigation__item--current"}}
-                {{/if}}
-            "
-        >
-            <a href="{{url absolute="true"}}" class="navigation__link">
-                {{label}}
-            </a>
-        </li>
-    {{/foreach}}
-</ul>
+<nav
+    class="
+        navigation
+        {{#if in_footer}}
+            navigation--secondary
+            spacing-bottom
+        {{/if}}
+        print-hidden
+    "
+>
+    <ul class="navigation__list">
+        {{#foreach navigation}}
+            <li
+                class="
+                    navigation__item
+                    {{#if current}}
+                        navigation__item--current
+                    {{else}}
+                        {{!-- Active class is eventually composed to `navigation__item--current-parent`: --}}
+                        {{link_class for=slug activeClass="navigation__item--current"}}
+                    {{/if}}
+                "
+            >
+                <a href="{{url absolute="true"}}" class="navigation__link">
+                    {{label}}
+                </a>
+                {{#has slug="slovnik"}}
+                    <span class="navigation__tag label label--small label--new">nové</span>
+                {{/has}}
+            </li>
+        {{/foreach}}
+    </ul>
+</nav>

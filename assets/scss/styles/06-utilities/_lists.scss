@@ -11,9 +11,10 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: grid.$gap-small;
+    row-gap: 0.25em;
 }
 
-.list-item-decorated:not(:first-child)::before {
+.list-item-decorated::before {
     content: '·';
     margin-right: grid.$gap-small - 0.2em; // 1.
 }
