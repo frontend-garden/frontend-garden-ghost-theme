@@ -1,9 +1,6 @@
 name: Build and Run Tests
 
 on:
-  push:
-    branches-ignore:
-      - main
   pull_request:
     branches:
       - main
