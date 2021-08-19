@@ -81,6 +81,11 @@
     height: auto;
 }
 
+// stylelint-disable-next-line selector-no-qualifying-type
+.editor figure img[src$=".svg"] {
+    width: 100%;
+}
+
 .editor figcaption {
     @include typography.style(small-caps);
 
