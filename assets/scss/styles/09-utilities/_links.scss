@@ -1,5 +1,41 @@
+@use "sass:color";
+@use "sass:map";
+@use "../../settings/borders";
+@use "../../settings/colors";
+@use "../../tools/breakpoint";
 @use "../../tools/typography";
+
+@keyframes highlight {
+    0% {
+        outline-color: transparent;
+        background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -1);
+    }
+
+    15% {
+        outline-color: map.get(colors.$ui, info);
+        background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -0.9);
+    }
+
+    66% {
+        outline-color: map.get(colors.$ui, info);
+        background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -0.9);
+    }
+
+    100% {
+        outline-color: transparent;
+        background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -1);
+    }
+}
 
 .link-unstyled {
     @include typography.link-unstyled();
+}
+
+.link-target:target {
+    @include breakpoint.up(sm) {
+        border-radius: borders.$radius;
+        outline: borders.$width-thick dashed transparent;
+        outline-offset: 0.4em;
+        animation: highlight 3s ease 1s forwards;
+    }
 }
