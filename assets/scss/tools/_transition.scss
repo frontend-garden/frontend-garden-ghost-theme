@@ -1,5 +1,5 @@
 @mixin add($property, $timing: 300ms) {
     transition-property: unquote($property);
     transition-duration: $timing;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.7, 1);
+    transition-timing-function: cubic-bezier(0.1, 0.5, 0.5, 1);
 }

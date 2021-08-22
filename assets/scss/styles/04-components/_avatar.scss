@@ -2,6 +2,7 @@
 
 @use '../../settings/borders';
 @use '../../settings/colors';
+@use '../../tools/browser-hacks';
 @use '../../tools/typography';
 @use '../../tools/transition';
 
@@ -9,6 +10,8 @@ $_avatar-size: 3em * typography.line-height(base);
 $_avatar-small-size: 2em * typography.line-height(base);
 
 .avatar {
+    @include browser-hacks.safari-rounded-corners-fix();
+
     position: relative; // 1.
     z-index: 1; // 1.
     display: block;
@@ -17,8 +20,6 @@ $_avatar-small-size: 2em * typography.line-height(base);
     padding-bottom: 100%;
     overflow: hidden;
     border-radius: 50%;
-    // stylelint-disable-next-line property-no-vendor-prefix
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .avatar__image {

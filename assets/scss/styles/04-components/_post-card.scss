@@ -11,7 +11,7 @@ $_post-card-padding-x: 10%;
 $_post-card-padding-y: spacing.of(1);
 
 .post-card {
-    @include transition.add(#{box-shadow, transform});
+    @include transition.add($property: #{box-shadow, transform}, $timing: 500ms);
 
     position: relative;
     z-index: 1;
