@@ -10,7 +10,6 @@
 }
 
 .article__title {
-    margin-top: 0.25em; // 1.
     margin-bottom: 0.4em; // 1.
 
     &:last-child {
@@ -30,6 +29,10 @@
     @include typography.style(small-caps);
 
     font-size: modularscale.ms(-1);
+}
+
+.article__meta + .article__title {
+    margin-top: 0.25em; // 1.
 }
 
 .article__author {
