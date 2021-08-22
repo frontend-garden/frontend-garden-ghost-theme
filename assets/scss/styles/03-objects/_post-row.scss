@@ -25,17 +25,17 @@
     }
 
     .post-row__item {
-        @include transition.add(transform);
+        @include transition.add($property: transform, $timing: 500ms);
 
         position: relative;
         width: 35vw;
         border-radius: borders.$radius;
-        box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.25);
         will-change: transform;
         transform: translate(0, 0);
 
         &:hover {
-            transform: translateY(-1em);
+            transform: translateY(-0.75em);
         }
 
         &:not(:first-child) {

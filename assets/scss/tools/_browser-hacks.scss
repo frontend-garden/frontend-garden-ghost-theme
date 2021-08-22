@@ -16,3 +16,8 @@
     }
 }
 // stylelint-enable
+
+@mixin safari-rounded-corners-fix() {
+    // stylelint-disable-next-line property-no-vendor-prefix
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
