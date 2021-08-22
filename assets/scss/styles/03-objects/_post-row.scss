@@ -34,12 +34,18 @@
         will-change: transform;
         transform: translate(0, 0);
 
+        &:hover {
+            transform: translateY(-1em);
+        }
+
         &:not(:first-child) {
             margin-left: -3em;
         }
 
-        &:hover {
-            transform: translateY(-1em);
+        &:only-child,
+        &:first-child:nth-last-child(2),
+        &:last-child:nth-child(2) {
+            width: 50vw;
         }
     }
 
@@ -69,6 +75,12 @@
 
         &:not(:first-child) {
             margin-left: 0;
+        }
+
+        &:only-child,
+        &:first-child:nth-last-child(2),
+        &:last-child:nth-child(2) {
+            width: auto;
         }
     }
 
