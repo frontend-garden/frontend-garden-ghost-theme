@@ -71,6 +71,11 @@ $_post-card-padding-y: spacing.of(1);
     z-index: 2;
     display: inline-block;
     font-size: modularscale.ms(-2);
+    pointer-events: none;
+}
+
+.post-card__meta a {
+    pointer-events: auto;
 }
 
 .post-card__title,
