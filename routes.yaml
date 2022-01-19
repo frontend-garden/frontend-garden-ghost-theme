@@ -1,13 +1,19 @@
 routes:
+  /:
+    controller: channel
+    template: index
+    filter: primary_tag:[clanky,slovnik]
+    order: featured DESC, published_at DESC
   /registrace/: members/signup
   /prihlaseni/: members/signin
   /ucet/: members/account
 
 collections:
-  /:
-    permalink: /{slug}/
+  /clanky/:
+    permalink: /clanky/{slug}/
     template: index
     filter: primary_tag:clanky
+    order: featured DESC, published_at DESC
     data: tag.clanky
 
   /slovnik/:
