@@ -1,0 +1,29 @@
+301:
+
+  # Redirect original tags to `/tema/*`
+  ^\/tag\/(.*)\/$: /tema/$1/
+
+  # Redirect all articles before January 2022 to `/clanky/*`
+  ^\/prevod-designovych-principu-do-css\/$: /clanky/prevod-designovych-principu-do-css/
+  ^\/css-grid-pro-mikro-layouty\/$: /clanky/css-grid-pro-mikro-layouty/
+  ^\/suit-css-versus-bem\/$: /clanky/suit-css-versus-bem/
+  ^\/jak-neztratit-pul-dne-zivota-kvuli-stredniku\/$: /clanky/jak-neztratit-pul-dne-zivota-kvuli-stredniku/
+  ^\/webexpo-2019-obrazem\/$: /clanky/webexpo-2019-obrazem/
+  ^\/rozhovor-s-harrym-robertsem\/$: /clanky/rozhovor-s-harrym-robertsem/
+  ^\/dark-mode-s-css-custom-properties\/$: /clanky/dark-mode-s-css-custom-properties/
+  ^\/komentare-v-css-kodu\/$: /clanky/komentare-v-css-kodu/
+  ^\/progresivni-webove-aplikace-co-to-je-a-kdy-ma-smysl-se-o-to-zajimat\/$: /clanky/progresivni-webove-aplikace-co-to-je-a-kdy-ma-smysl-se-o-to-zajimat/
+  ^\/webdesign-bez-kodu\/$: /clanky/webdesign-bez-kodu/
+  ^\/nejmene-4-duvody-proc-zacit-pouzivat-variable-fonts\/$: /clanky/nejmene-4-duvody-proc-zacit-pouzivat-variable-fonts/
+  ^\/bootstrap-v-predvecer-pate-verze\/$: /clanky/bootstrap-v-predvecer-pate-verze/
+  ^\/proc-je-itcss-nejpokrocilejsi-metodika-organizace-css\/$: /clanky/proc-je-itcss-nejpokrocilejsi-metodika-organizace-css/
+  ^\/budoucnost-je-v-no-code-aneb-proc-kvetinarstvi-nepotrebuje-web-na-miru\/$: /clanky/budoucnost-je-v-no-code-aneb-proc-kvetinarstvi-nepotrebuje-web-na-miru/
+  ^\/progresivni-webove-aplikace-dil-ii-jak-zlepsit-performance-metriky-a-fungovat-i-offline\/$: /clanky/progresivni-webove-aplikace-dil-ii-jak-zlepsit-performance-metriky-a-fungovat-i-offline/
+  ^\/hleda-se-koder-co-vse-by-mel-umet\/$: /clanky/hleda-se-koder-co-vse-by-mel-umet/
+  ^\/jak-funguje-css-box-model\/$: /clanky/jak-funguje-css-box-model/
+  ^\/co-jsou-sass-moduly-a-jak-use-a-forward-zlepsi-vas-kod\/$: /clanky/co-jsou-sass-moduly-a-jak-use-a-forward-zlepsi-vas-kod/
+  ^\/jak-zlepsit-kvalitu-kodu-pomoci-5-jednoduchych-principu\/$: /clanky/jak-zlepsit-kvalitu-kodu-pomoci-5-jednoduchych-principu/
+  ^\/bootstrap-5-prvni-dojmy\/$: /clanky/bootstrap-5-prvni-dojmy/
+  ^\/jak-se-ze-me-stal-front-end-developer\/$: /clanky/jak-se-ze-me-stal-front-end-developer/
+  ^\/browserslist-uzitecny-nastroj-ktery-funguje-jinak-nez-jste-si-mozna-mysleli\/$: /clanky/browserslist-uzitecny-nastroj-ktery-funguje-jinak-nez-jste-si-mozna-mysleli/
+  ^\/webexpo-2021-obrazem\/$: /clanky/webexpo-2021-obrazem/
