@@ -10,6 +10,7 @@
                         class="
                             post-feed__item
                             {{#if featured}}post-feed__item--featured{{/if}}
+                            {{#has tag="#large-preview"}}post-feed__item--large{{/has}}
                         "
                     >
                         {{> "post-card"}}
