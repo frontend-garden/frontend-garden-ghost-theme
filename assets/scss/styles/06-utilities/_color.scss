@@ -3,3 +3,7 @@
 .color-white {
     color: colors.$white;
 }
+
+.color-muted {
+    color: var(--text-muted-color);
+}
