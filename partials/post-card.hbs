@@ -41,12 +41,18 @@
             {{#unless headingLevel}}
                 <h2 class="post-card__title">
                     <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
+                        {{#has tag="Slovník"}}
+                            <span class="color-muted">Slovník:</span>
+                        {{/has}}
                         {{title}}
                     </a>
                 </h2>
             {{else}}
                 <h{{headingLevel}} class="post-card__title">
                     <a href="{{url}}" class="post-card__title__link link-unstyled js-nbsp">
+                        {{#has tag="Slovník"}}
+                            <span class="color-muted">Slovník:</span>
+                        {{/has}}
                         {{title}}
                     </a>
                 </h{{headingLevel}}>

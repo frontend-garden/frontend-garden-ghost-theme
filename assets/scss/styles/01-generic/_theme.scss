@@ -19,6 +19,7 @@
     --alternate-background-color: #{map-get(colors.$grays, gray-lightest)};
     --dark-background-color: #{map-get(colors.$grays, gray-darker)};
     --footer-text-color: inherit;
+    --text-muted-color: #{map-get(colors.$grays, gray-dark)};
     --ruler-color: #{map-get(colors.$grays, gray-lightest)};
 }
 
@@ -41,6 +42,7 @@
         --alternate-background-color: #{map-get(colors.$grays, gray-darkest)};
         --dark-background-color: #{map-get(colors.$grays, gray-darkest)};
         --footer-text-color: #{map-get(colors.$grays, gray)};
+        --text-muted-color: #{map-get(colors.$grays, gray-dark)};
         --ruler-color: #{map-get(colors.$grays, gray-dark)};
     }
 }
