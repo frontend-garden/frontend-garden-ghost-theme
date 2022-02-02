@@ -2,7 +2,7 @@
 @use '../../settings/colors';
 @use '../../settings/container';
 @use '../../tools/breakpoint';
-@use '../../tools/reset';
+@use '../../tools/button';
 @use '../../tools/spacing';
 @use '../../tools/typography';
 
@@ -15,7 +15,7 @@
 }
 
 .alert__close {
-    @include reset.button();
+    @include button.reset();
 
     position: absolute;
     top: spacing.of(0.5);
