@@ -112,6 +112,12 @@ $styles: (
             line-height: map-get(typography.$line-height-values, medium),
         ),
     ),
+    callout: (
+        default: (
+            font-size: modularscale.ms(-1),
+            line-height: map-get(typography.$line-height-values, medium),
+        ),
+    ),
     header-title: (
         default: (
             font-weight: map-get(typography.$font-weight-values, bold),
@@ -127,7 +133,7 @@ $styles: (
             font-family: typography.$font-family-sans-serif,
         ),
     ),
-    tip-label: (
+    interruption-label: (
         default: (
             font-size: modularscale.ms(-3),
             line-height: map-get(typography.$line-height-values, medium),

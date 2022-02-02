@@ -8,7 +8,7 @@
     margin-top: spacing.of(2);
 
     &::before {
-        @include typography.style(tip-label);
+        @include typography.style(interruption-label);
 
         content: $text;
         position: absolute;
