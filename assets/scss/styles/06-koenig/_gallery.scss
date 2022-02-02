@@ -1,9 +1,6 @@
 // Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/gallery.css
 // ⚠️ Relies on inline styles injected by `assets/js/main.js`.
 
-// 1. Workaround for IE min-height bug.
-//    https://github.com/philipwalton/flexbugs/issues/75
-
 @use '../../settings/grid';
 @use '../../tools/breakpoint';
 @use '../../tools/container';
@@ -24,8 +21,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: auto; // 1.
-    min-height: 1px; // 1.
 
     @include breakpoint.up(md) {
         flex-direction: row;

@@ -1,8 +1,9 @@
 // Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/button.css
-// stylelint-disable selector-max-specificity, selector-no-qualifying-type
 
 @use '../../settings/colors';
 @use '../../tools/button';
+
+// stylelint-disable selector-max-specificity, selector-no-qualifying-type
 
 .article .kg-button-card a.kg-btn {
     @include button.create();

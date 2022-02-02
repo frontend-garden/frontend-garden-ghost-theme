@@ -1,18 +1,13 @@
-// 1. Fallback for IE which doesn't support CSS custom properties.
-
 @use '../../settings/colors';
 
 .background-alternate {
-    background-color: map-get(colors.$grays, gray-lightest); // 1.
     background-color: var(--alternate-background-color);
 }
 
 .background-dark {
-    background-color: map-get(colors.$grays, gray-darker); // 1.
     background-color: var(--dark-background-color);
 }
 
 .background-primary {
-    background-color: map-get(colors.$brand, green-darker); // 1.
     background-color: var(--primary-background-color);
 }

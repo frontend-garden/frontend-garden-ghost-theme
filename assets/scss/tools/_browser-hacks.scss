@@ -1,12 +1,6 @@
 // Targeting browsers:
 // https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/
 
-@mixin ie-only() {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        @content;
-    }
-}
-
 // stylelint-disable selector-type-no-unknown
 @mixin safari-only($selector) {
     _::-webkit-full-page-media,
