@@ -66,6 +66,7 @@
 // Mandatory classes and overrides of core Ghost styles for user content.
 // May contain extra specificity due to load order (Ghost styles come later).
 @use 'styles/06-koenig/bookmark';
+@use 'styles/06-koenig/button' as kg-button;
 @use 'styles/06-koenig/card';
 @use 'styles/06-koenig/gallery';
 @use 'styles/06-koenig/sizes';
