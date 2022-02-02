@@ -16,19 +16,21 @@ document.querySelectorAll('.js-nbsp').forEach((element) => {
 });
 
 // Safely open external links in a new tab.
-document.querySelectorAll('.js-external-links a[href^=http]').forEach((element) => {
-  element.setAttribute('target', '_blank');
-  element.setAttribute('rel', 'noopener noreferrer');
+document
+  .querySelectorAll('.js-external-links a[href^=http]:not(a[href^=https://frontend.garden])')
+  .forEach((element) => {
+    element.setAttribute('target', '_blank');
+    element.setAttribute('rel', 'noopener noreferrer');
 
-  if (typeof gtag !== 'undefined') {
-    element.addEventListener('click', () => {
-      gtag('event', 'navigate', {
-        event_category: 'Outbound links',
-        event_label: element.getAttribute('href'),
+    if (typeof gtag !== 'undefined') {
+      element.addEventListener('click', () => {
+        gtag('event', 'navigate', {
+          event_category: 'Outbound links',
+          event_label: element.getAttribute('href'),
+        });
       });
-    });
-  }
-});
+    }
+  });
 
 // Add clickable anchors to headings with ID.
 document.querySelectorAll(
