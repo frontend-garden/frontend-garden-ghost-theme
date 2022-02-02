@@ -1,7 +1,8 @@
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@use '../../settings/grid';
-@use '../../settings/typography' as typography-settings;
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@use "../../settings/grid";
+@use "../../settings/typography" as typography-settings;
+@use "../../tools/typography";
 
 .author-card {
     display: flex;
@@ -12,11 +13,11 @@
 }
 
 .author-card__content {
-    line-height: map-get(typography-settings.$line-height-values, dense);
+    line-height: map.get(typography-settings.$line-height-values, dense);
 }
 
 .author-card__name,
-.author-card__bio__links {
+.author-card__links {
     @include typography.style(small-caps);
 }
 
@@ -35,7 +36,7 @@
     font-size: modularscale.ms(-1);
 }
 
-.author-card__bio__text {
+.author-card__text {
     margin-right: 0.25em;
     font-style: italic;
 }

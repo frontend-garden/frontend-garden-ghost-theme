@@ -2,8 +2,8 @@
 // 2. On body we use fluid typography.
 // 3. Ensure that full-width content doesn't overflow.
 
-@use '../../settings/typography' as typography-settings;
-@use '../../tools/typography';
+@use "../../settings/typography" as typography-settings;
+@use "../../tools/typography";
 
 html {
     height: 100%;

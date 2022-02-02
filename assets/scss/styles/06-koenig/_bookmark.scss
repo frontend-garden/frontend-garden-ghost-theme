@@ -1,7 +1,8 @@
 // Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/bookmark.css
 
-@use '../../settings/colors';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../settings/colors";
+@use "../../tools/typography";
 
 .kg-code-card {
     min-width: 100%;
@@ -24,11 +25,11 @@
     display: flex;
     min-height: 148px;
     text-decoration: none;
-    color: map-get(colors.$grays, gray-dark);
+    color: map.get(colors.$grays, gray-dark);
     border-radius: 3px;
     box-shadow:
-        0 2px 5px -1px rgba(0, 0, 0, 0.15),
-        0 0 1px rgba(0, 0, 0, 0.09);
+        0 2px 5px -1px rgb(0 0 0 / 15%),
+        0 0 1px rgb(0 0 0 / 9%);
 }
 
 .kg-bookmark-content {
@@ -44,7 +45,7 @@
     font-weight: 600;
     font-size: 1.6rem;
     line-height: typography.line-height(medium);
-    color: map-get(colors.$grays, gray-dark);
+    color: map.get(colors.$grays, gray-dark);
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
@@ -58,7 +59,7 @@
     font-weight: 400;
     font-size: 1.5rem;
     line-height: typography.line-height(medium);
-    color: map-get(colors.$grays, gray);
+    color: map.get(colors.$grays, gray);
     -webkit-line-clamp: 2;
 }
 
@@ -85,7 +86,7 @@
     margin-top: 14px;
     font-weight: 400;
     font-size: 1.5rem;
-    color: map-get(colors.$grays, gray);
+    color: map.get(colors.$grays, gray);
 }
 
 .post-full-content .kg-bookmark-icon {

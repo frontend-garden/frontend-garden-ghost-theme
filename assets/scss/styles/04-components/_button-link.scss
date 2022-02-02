@@ -1,10 +1,10 @@
-@use '../../settings/borders';
-@use '../../tools/button';
+@use "../../settings/borders";
+@use "../../tools/button";
 
 .button-link {
     @include button.reset();
 
     color: var(--link-color);
-    border-bottom: borders.$width solid currentColor;
+    border-bottom: borders.$width solid currentcolor;
     cursor: pointer;
 }

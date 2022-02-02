@@ -1,5 +1,5 @@
-@use '../../tools/breakpoint';
-@use '../../tools/spacing';
+@use "../../tools/breakpoint";
+@use "../../tools/spacing";
 
 .section {
     padding-top: spacing.of(1);

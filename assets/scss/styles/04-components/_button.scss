@@ -1,4 +1,4 @@
-@use '../../tools/button';
+@use "../../tools/button";
 
 .button {
     @include button.create();
@@ -14,7 +14,7 @@
 }
 
 .button--outline {
-    color: currentColor;
-    border-color: currentColor;
+    color: currentcolor;
+    border-color: currentcolor;
     background-color: transparent;
 }

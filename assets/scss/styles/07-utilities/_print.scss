@@ -1,4 +1,5 @@
-// stylelint-disable declaration-no-important
+// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
+
 @media print {
     .print-hidden {
         display: none !important;

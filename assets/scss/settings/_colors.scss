@@ -1,13 +1,16 @@
+@use "sass:color";
+@use "sass:map";
+
 $_gray-base: #272822;
 
 $grays: (
-    gray-darkest: desaturate($_gray-base, 10%),
-    gray-darker: desaturate(lighten($_gray-base, 7%), 7.5%),
-    gray-dark: desaturate(lighten($_gray-base, 40%), 5%),
-    gray: lighten($_gray-base, 60%),
-    gray-light: lighten($_gray-base, 70%),
-    gray-lighter: lighten($_gray-base, 75%),
-    gray-lightest: lighten($_gray-base, 80%),
+    gray-darkest: color.adjust($_gray-base, $saturation: -10%),
+    gray-darker: color.adjust($_gray-base, $lightness: 7%, $saturation: -7.5%),
+    gray-dark: color.adjust($_gray-base, $lightness: 40%, $saturation: -5%),
+    gray: color.adjust($_gray-base, $lightness: 60%),
+    gray-light: color.adjust($_gray-base, $lightness: 70%),
+    gray-lighter: color.adjust($_gray-base, $lightness: 75%),
+    gray-lightest: color.adjust($_gray-base, $lightness: 80%),
 );
 
 $black: #000;
@@ -22,15 +25,15 @@ $brand: (
     green-darkest: #2b8035,
 );
 
-$primary: map-get($brand, green);
+$primary: map.get($brand, green);
 
 $ui: (
     info: #007daa,
     info-light: #00b0f0,
-    success: map-get($brand, green-dark),
-    success-dark: map-get($brand, green-darkest),
+    success: map.get($brand, green-dark),
+    success-dark: map.get($brand, green-darkest),
     error: #b70000,
-    error-dark: darken(#b70000, 0.15),
+    error-dark: #b60000,
     warning: #f6db53,
 );
 

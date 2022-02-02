@@ -1,8 +1,10 @@
-@use '../../settings/typography' as typography-settings;
-@use '../../settings/colors';
-@use '../../tools/content-block';
-@use '../../tools/horizontal-ruler';
-@use '../../tools/typography';
+@use "sass:color";
+@use "sass:map";
+@use "../../settings/typography" as typography-settings;
+@use "../../settings/colors";
+@use "../../tools/content-block";
+@use "../../tools/horizontal-ruler";
+@use "../../tools/typography";
 
 p,
 ul,
@@ -21,13 +23,13 @@ small {
 }
 
 del {
-    color: map-get(colors.$grays, gray-dark);
+    color: map.get(colors.$grays, gray-dark);
 }
 
 ins {
     padding: 0.15em 0;
     text-decoration: none;
-    background-color: transparentize(map-get(colors.$ui, warning), 0.75);
+    background-color: color.adjust(map.get(colors.$ui, warning), $alpha: -0.75);
 }
 
 hr {
@@ -35,7 +37,7 @@ hr {
     @include horizontal-ruler.create();
 
     height: 0;
-    border-style: none none solid none;
+    border-style: none none solid;
 }
 
 img {

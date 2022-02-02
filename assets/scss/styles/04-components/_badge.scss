@@ -1,5 +1,6 @@
-@use '../../settings/colors';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../settings/colors";
+@use "../../tools/typography";
 
 $_size: 1.5rem;
 
@@ -16,5 +17,5 @@ $_size: 1.5rem;
     vertical-align: middle;
     color: colors.$white;
     border-radius: 50%;
-    background-color: map-get(colors.$grays, gray-dark);
+    background-color: map.get(colors.$grays, gray-dark);
 }

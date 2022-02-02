@@ -1,7 +1,7 @@
 // Targeting browsers:
 // https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/
 
-// stylelint-disable selector-type-no-unknown
+// stylelint-disable selector-type-no-unknown -- Purposely use vendor-specific selectors.
 @mixin safari-only($selector) {
     _::-webkit-full-page-media,
     _:future,
@@ -9,9 +9,9 @@
         @content;
     }
 }
-// stylelint-enable
+// stylelint-enable selector-type-no-unknown
 
 @mixin safari-rounded-corners-fix() {
-    // stylelint-disable-next-line property-no-vendor-prefix
+    // stylelint-disable-next-line property-no-vendor-prefix, value-no-vendor-prefix -- Purposely use prefixes.
     -webkit-mask-image: -webkit-radial-gradient(white, black);
 }

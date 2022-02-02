@@ -6,19 +6,20 @@
 // 5. Reset small caps in the first line of perex in Safari as there is a bug:
 //    https://bugs.webkit.org/show_bug.cgi?id=3409
 
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@use '../../settings/borders';
-@use '../../settings/colors';
-@use '../../settings/container' as container-settings;
-@use '../../settings/tables';
-@use '../../tools/breakpoint';
-@use '../../tools/browser-hacks';
-@use '../../tools/container';
-@use '../../tools/content-block';
-@use '../../tools/horizontal-ruler';
-@use '../../tools/spacing';
-@use '../../tools/transition';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@use "../../settings/borders";
+@use "../../settings/colors";
+@use "../../settings/container" as container-settings;
+@use "../../settings/tables";
+@use "../../tools/breakpoint";
+@use "../../tools/browser-hacks";
+@use "../../tools/container";
+@use "../../tools/content-block";
+@use "../../tools/horizontal-ruler";
+@use "../../tools/spacing";
+@use "../../tools/transition";
+@use "../../tools/typography";
 
 // Links
 .editor a {
@@ -48,20 +49,20 @@
             position: relative;
 
             &::before {
-                @include transition.add('opacity, transform');
+                @include transition.add("opacity, transform");
 
-                content: '#';
+                content: "#";
                 position: absolute;
                 right: 100%;
                 bottom: 0.14em;
-                color: map-get(colors.$grays, gray);
+                color: map.get(colors.$grays, gray);
                 opacity: 0;
                 transform: translateX(-0.25rem);
             }
 
             &:hover,
             &:focus {
-                color: map-get(colors.$ui, info);
+                color: map.get(colors.$ui, info);
             }
 
             &:hover::before,
@@ -81,7 +82,7 @@
     height: auto;
 }
 
-// stylelint-disable-next-line selector-no-qualifying-type
+// stylelint-disable-next-line selector-no-qualifying-type -- Specifically target SVG images.
 .editor figure img[src$=".svg"] {
     width: 100%;
 }
@@ -93,7 +94,7 @@
     line-height: typography.line-height(dense);
 
     &::before {
-        content: '↑';
+        content: "↑";
         margin-right: 1ex;
     }
 }
@@ -104,7 +105,7 @@
     @include typography.style(blockquote);
 
     padding: spacing.of(0.5) 0 spacing.of(0.5) spacing.of(1); // 1.
-    border-left: borders.$width-thick solid map-get(colors.$ui, info);
+    border-left: borders.$width-thick solid map.get(colors.$ui, info);
 }
 
 // Code
@@ -182,7 +183,7 @@
     &::after {
         @include horizontal-ruler.create();
 
-        content: '';
+        content: "";
         display: block;
         margin-top: spacing.of(1);
         margin-bottom: spacing.of(1);
@@ -190,7 +191,7 @@
 }
 
 // 5.
-@include browser-hacks.safari-only('.editor--long-text p:first-child::first-line') {
+@include browser-hacks.safari-only(".editor--long-text p:first-child::first-line") {
     font-size: 1em;
     line-height: inherit;
     font-family: inherit;

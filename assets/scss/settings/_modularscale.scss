@@ -1,7 +1,7 @@
 // Settings for `modularscale-sass` package.
 // https://github.com/modularscale/modularscale-sass
 
-@use '../../../node_modules/modularscale-sass/stylesheets/modularscale/vars';
+@use "../../../node_modules/modularscale-sass/stylesheets/modularscale/vars";
 
 $settings: (
     base: 1em,

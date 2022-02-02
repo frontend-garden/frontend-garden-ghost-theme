@@ -1,8 +1,8 @@
 // 1. Article title needs manual margin.
 // 2. Optically align rounded avatar with text.
 
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@use '../../tools/typography';
+@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@use "../../tools/typography";
 
 .article__title,
 .article__summary {

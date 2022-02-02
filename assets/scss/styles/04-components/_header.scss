@@ -2,13 +2,13 @@
 // 2. Prevent vertical scrolling in Safari (forced by active navigation item bullet) by adding
 //    slightly more padding than necessary.
 
-@use '../../settings/grid';
-@use '../../settings/container' as container-settings;
-@use '../../settings/navigation';
-@use '../../tools/breakpoint';
-@use '../../tools/container';
-@use '../../tools/spacing';
-@use '../../tools/typography';
+@use "../../settings/grid";
+@use "../../settings/container" as container-settings;
+@use "../../settings/navigation";
+@use "../../tools/breakpoint";
+@use "../../tools/container";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 $_logo-breakpoint: sm;
 $_navigation-layout-breakpoint: md;
@@ -30,18 +30,14 @@ $_navigation-layout-breakpoint: md;
 
 .header__layout {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        'logotype social'
-        'navigation navigation';
+    grid-template:
+        "logotype social" auto
+        "navigation navigation" auto / auto auto;
     grid-column-gap: grid.$gap;
     align-items: center;
 
     @include breakpoint.up($_navigation-layout-breakpoint) {
-        grid-template-columns: auto 1fr auto;
-        grid-template-rows: auto;
-        grid-template-areas: 'logotype navigation social';
+        grid-template: "logotype navigation social" auto / auto 1fr auto;
         grid-column-gap: container-settings.$padding-sm;
     }
 }

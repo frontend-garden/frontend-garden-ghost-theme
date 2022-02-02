@@ -1,9 +1,9 @@
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@use '../../settings/borders';
-@use '../../settings/colors';
-@use '../../tools/spacing';
-@use '../../tools/transition';
-@use '../../tools/typography';
+@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@use "../../settings/borders";
+@use "../../settings/colors";
+@use "../../tools/spacing";
+@use "../../tools/transition";
+@use "../../tools/typography";
 
 $_post-card-padding-x: 10%;
 $_post-card-padding-y: spacing.of(1);
@@ -25,7 +25,7 @@ $_post-card-padding-y: spacing.of(1);
 
         &:hover {
             z-index: 2;
-            box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 15%);
             transform: scale(1.015, 1.015);
         }
     }
@@ -52,7 +52,7 @@ $_post-card-padding-y: spacing.of(1);
     align-items: baseline;
     justify-content: space-around;
     padding: spacing.of(0.5) $_post-card-padding-x;
-    border-top: borders.$width solid currentColor;
+    border-top: borders.$width solid currentcolor;
 }
 
 .post-card__image {
@@ -86,11 +86,11 @@ $_post-card-padding-y: spacing.of(1);
     margin-top: 0.15em;
 }
 
-.post-card__title__link {
+.post-card__expanded-link {
     @include typography.link-unstyled();
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;

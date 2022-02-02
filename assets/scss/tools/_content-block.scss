@@ -1,6 +1,6 @@
-@use '../settings/container';
-@use 'breakpoint';
-@use 'spacing';
+@use "../settings/container";
+@use "breakpoint";
+@use "spacing";
 
 @mixin vertical-offset($extra-large: false) {
     &:not(:first-child) {
@@ -38,7 +38,7 @@
     margin-right: -1 * container.$padding;
     margin-left: -1 * container.$padding;
 
-    @if ($declare-width) {
+    @if $declare-width {
         width: calc(100% + 2 * #{container.$padding});
     }
 
@@ -46,7 +46,7 @@
         margin-right: -1 * container.$padding-sm;
         margin-left: -1 * container.$padding-sm;
 
-        @if ($declare-width) {
+        @if $declare-width {
             width: calc(100% + 2 * #{container.$padding-sm});
         }
     }
