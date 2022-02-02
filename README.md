@@ -1,77 +1,62 @@
 # Frontend Garden Ghost Theme
 
-Minimalist theme for the 🍀 [Frontend Garden](https://frontend.garden) online
-magazine powered by 👻 [Ghost](https://ghost.org).
+![Build and test](https://github.com/frontend-garden/frontend-garden-ghost-theme/workflows/Build%20and%20test/badge.svg)
 
-## Installation
+Minimalist theme for the 🍀 [Frontend Garden] online magazine powered by
+👻 [Ghost].
 
-### Ghost
+> 👉🏻 **Please note this theme is designed solely for the purposes of the
+> 🍀 [Frontend Garden] magazine.** It's not intended to work out-of-the-box or
+> get modified for any Ghost publications other than 🍀 [Frontend Garden].
+> However, please do [fell free](#license) to try out the theme and use it as a
+> source of inspiration!
 
-Follow the official [Ghost setup guide](https://ghost.org/docs/setup/).
+## Theme Build and Activation
 
-### Theme
+Requirements: [node] v14 or newer.
 
-1. Clone the theme into the `<YOUR_GHOST_INSTALLATION>/content/themes`
-   directory. Optionally clone the theme to a place of your choice and create
-   a symlink in the said destination. Either way you should end up with this
-   structure:
-   `<YOUR_GHOST_INSTALLATION>/content/frontend-garden-ghost-theme`.
+1. Clone the theme:
 
-2. In the theme root there is a `routes.yaml` file. Upload this single file
-   using _Routes_ on the _Labs_ administration page.
+   ```bash
+   git clone git@github.com:frontend-garden/frontend-garden-ghost-theme.git
+   ```
 
-3. In the Ghost installation directory run `ghost start`.
+2. Build the theme:
 
-## Development with Live Reload
+   ```bash
+   cd frontend-garden-ghost-theme
+   npm install
+   npm run build
+   ```
 
-Requirements: [node](https://nodejs.org) v12 or newer.
-
-Install [nodemon](https://nodemon.io):
-
-```bash
-npm install --global nodemon
-```
-
-In Ghost app directory:
-
-```bash
-nodemon current/index.js --watch content/themes/frontend-garden-ghost-theme --ext hbs,js,css
-```
-
-In Ghost theme directory:
-
-```bash
-npm start
-```
-
-## Releasing and Deployment to Production
-
-Release workflow is very similar to the one of the
-[React UI](https://react-ui.io/contribute/releasing) project. A brief summary
-follows.
-
-1. Once ready to release, **update theme version** in `package.json` and
-   `package-lock.json`. See release draft on GitHub to get the right version
-   number. **Don't combine this step with any other changes,** they wouldn't be
-   reflected in the changelog.
-
-2. Commit as `Release <VERSION_NUMBER>` to `release/<VERSION_NUMBER>` branch,
-   push, create a pull request to `main`, and finally merge it. The release is
-   now being automatically published and deployed to production.
-
-**Note:** prefix version number with `v` everywhere except in `package.json` and
-`package-lock.json`.
-
-## Manual Deployment
-
-1. Adjust version number in `package.json` to your needs, eg. `3.1.0-rc1`.
-
-2. Prepare distribution ZIP package into the `dist` directory:
+3. Prepare distribution ZIP package into the `dist` directory:
 
    ```bash
    npm run dist
    ```
 
-3. Upload the ZIP package
+4. Upload the ZIP package
    `dist/frontend-garden-ghost-theme-<VERSION_NUMBER>.zip` on the _Design_
-   administration page.
+   administration page of your Ghost publication and activate
+  `frontend-garden-ghost-theme`.
+
+5. In the theme root there is a `routes.yaml` file. Upload this single file
+   using _Routes_ on the _Labs_ administration page.
+
+6. Congrats, you're done! 🎉
+
+## Contributing
+
+See [Contributing guidelines][contributing] and
+[Releasing instructions][releasing].
+
+## License
+
+Licensed under [Apache 2.0 license][license].
+
+[Frontend Garden]: https://frontend.garden
+[Ghost]: https://ghost.org
+[node]: https://nodejs.org
+[contributing]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/CONTRIBUTING.md
+[releasing]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/RELEASING.md
+[license]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/LICENSE.md
