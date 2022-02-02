@@ -74,8 +74,9 @@
     }
 }
 
-// Images
-.editor figure img {
+// Images and videos
+.editor figure img,
+.editor figure video {
     display: block;
     max-width: 100%;
     height: auto;
