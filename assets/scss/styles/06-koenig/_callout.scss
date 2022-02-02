@@ -1,11 +1,11 @@
 // Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/callout.css
 
-@use '../../settings/borders';
-@use '../../settings/container';
-@use '../../tools/breakpoint';
-@use '../../tools/content-block';
-@use '../../tools/spacing';
-@use '../../tools/typography';
+@use "../../settings/borders";
+@use "../../settings/container";
+@use "../../tools/breakpoint";
+@use "../../tools/content-block";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .article .kg-callout-card {
     @include content-block.wide();
@@ -19,7 +19,7 @@
     }
 }
 
-// stylelint-disable-next-line selector-no-qualifying-type
+// stylelint-disable-next-line selector-no-qualifying-type -- Override third-party selectors.
 .article .kg-callout-card div.kg-callout-text {
     @include typography.style(callout);
 }

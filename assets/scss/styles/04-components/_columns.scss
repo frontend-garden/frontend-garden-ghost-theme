@@ -1,6 +1,6 @@
-@use '../../settings/borders';
-@use '../../settings/grid';
-@use '../../tools/breakpoint';
+@use "../../settings/borders";
+@use "../../settings/grid";
+@use "../../tools/breakpoint";
 
 .columns {
     column-count: 1;

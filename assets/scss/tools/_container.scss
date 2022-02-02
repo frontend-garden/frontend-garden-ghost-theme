@@ -1,7 +1,7 @@
 // 1. Content of Containers can be expanded to whole screen width.
 
-@use '../settings/container';
-@use 'breakpoint';
+@use "../settings/container";
+@use "breakpoint";
 
 @mixin create() {
     max-width: container.$width;

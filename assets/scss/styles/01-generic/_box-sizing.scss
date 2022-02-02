@@ -5,9 +5,10 @@ html {
     box-sizing: border-box;
 }
 
-// stylelint-disable selector-max-universal
+// stylelint-disable selector-max-universal -- Set `box-sizing` literally on all (pseudo)elements.
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
+// stylelint-enable selector-max-universal

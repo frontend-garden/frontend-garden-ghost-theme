@@ -1,10 +1,10 @@
-@use '../../settings/borders';
-@use '../../settings/colors';
-@use '../../settings/container';
-@use '../../tools/breakpoint';
-@use '../../tools/button';
-@use '../../tools/spacing';
-@use '../../tools/typography';
+@use "../../settings/borders";
+@use "../../settings/colors";
+@use "../../settings/container";
+@use "../../tools/breakpoint";
+@use "../../tools/button";
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 .alert {
     @include typography.style(alert);

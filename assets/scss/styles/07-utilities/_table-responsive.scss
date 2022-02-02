@@ -1,8 +1,8 @@
-@use '../../settings/container' as container-settings;
-@use '../../settings/tables';
-@use '../../tools/breakpoint';
-@use '../../tools/container';
-@use '../../tools/content-block';
+@use "../../settings/container" as container-settings;
+@use "../../settings/tables";
+@use "../../tools/breakpoint";
+@use "../../tools/container";
+@use "../../tools/content-block";
 
 .table-responsive {
     @include content-block.vertical-offset();

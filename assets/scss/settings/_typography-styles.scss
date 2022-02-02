@@ -1,14 +1,15 @@
-@use '../settings/modularscale' as modularscale-settings;
-@use '../../../node_modules/modularscale-sass/stylesheets/modularscale' with (
+@use "sass:map";
+@use "../settings/modularscale" as modularscale-settings;
+@use "../../../node_modules/modularscale-sass/stylesheets/modularscale" with (
     $modularscale: modularscale-settings.$settings,
 );
-@use '../tools/spacing';
-@use 'typography';
+@use "../tools/spacing";
+@use "typography";
 
 $styles: (
     headline1: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, extrabold),
+            font-weight: map.get(typography.$font-weight-values, extrabold),
             // Faster growing font size:
             font-size: calc(1.65em + 1.25vw),
             line-height: 1.1,
@@ -17,7 +18,7 @@ $styles: (
     ),
     headline2: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, extrabold),
+            font-weight: map.get(typography.$font-weight-values, extrabold),
             // Faster growing font size:
             font-size: calc(1.5rem + 0.333vw),
             line-height: spacing.of(1),
@@ -26,7 +27,7 @@ $styles: (
     ),
     headline3: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, extrabold),
+            font-weight: map.get(typography.$font-weight-values, extrabold),
             font-size: modularscale.ms(3),
             line-height: spacing.of(1),
             font-family: typography.$font-family-sans-serif,
@@ -34,7 +35,7 @@ $styles: (
     ),
     headline4: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, bold),
+            font-weight: map.get(typography.$font-weight-values, bold),
             font-size: modularscale.ms(0),
             line-height: spacing.of(1),
             font-family: typography.$font-family-sans-serif,
@@ -42,7 +43,7 @@ $styles: (
     ),
     summary: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, regular),
+            font-weight: map.get(typography.$font-weight-values, regular),
             font-style: italic,
             font-size: modularscale.ms(1),
             line-height: spacing.of(1),
@@ -51,7 +52,7 @@ $styles: (
     ),
     body: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, regular),
+            font-weight: map.get(typography.$font-weight-values, regular),
             font-size: typography.$font-size-base,
             line-height: spacing.of(1),
             font-family: typography.$font-family-serif,
@@ -72,7 +73,7 @@ $styles: (
     small-block: (
         default: (
             font-size: modularscale.ms(-2),
-            line-height: map-get(typography.$line-height-values, base),
+            line-height: map.get(typography.$line-height-values, base),
         ),
     ),
     small-caps: (
@@ -93,7 +94,7 @@ $styles: (
     ),
     button: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, bold),
+            font-weight: map.get(typography.$font-weight-values, bold),
             font-size: modularscale.ms(0),
             line-height: spacing.of(1),
             font-family: typography.$font-family-sans-serif,
@@ -109,18 +110,18 @@ $styles: (
     alert: (
         default: (
             font-size: modularscale.ms(-1),
-            line-height: map-get(typography.$line-height-values, medium),
+            line-height: map.get(typography.$line-height-values, medium),
         ),
     ),
     callout: (
         default: (
             font-size: modularscale.ms(-1),
-            line-height: map-get(typography.$line-height-values, medium),
+            line-height: map.get(typography.$line-height-values, medium),
         ),
     ),
     header-title: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, bold),
+            font-weight: map.get(typography.$font-weight-values, bold),
             font-size: modularscale.ms(2),
             line-height: spacing.of(1),
             font-family: typography.$font-family-sans-serif,
@@ -129,14 +130,14 @@ $styles: (
     ),
     footer-title: (
         default: (
-            font-weight: map-get(typography.$font-weight-values, bold),
+            font-weight: map.get(typography.$font-weight-values, bold),
             font-family: typography.$font-family-sans-serif,
         ),
     ),
     interruption-label: (
         default: (
             font-size: modularscale.ms(-3),
-            line-height: map-get(typography.$line-height-values, medium),
+            line-height: map.get(typography.$line-height-values, medium),
             font-family: typography.$font-family-sans-serif,
         ),
     ),

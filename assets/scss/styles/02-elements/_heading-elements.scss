@@ -1,5 +1,5 @@
-@use '../../tools/spacing';
-@use '../../tools/typography';
+@use "../../tools/spacing";
+@use "../../tools/typography";
 
 h1 {
     @include typography.style(headline1);

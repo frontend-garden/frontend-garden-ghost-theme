@@ -1,8 +1,8 @@
-@use '../settings/borders';
-@use '../settings/colors';
-@use '../tools/spacing';
-@use '../tools/transition';
-@use '../tools/typography';
+@use "../settings/borders";
+@use "../settings/colors";
+@use "../tools/spacing";
+@use "../tools/transition";
+@use "../tools/typography";
 
 @mixin create() {
     @include typography.style(button);

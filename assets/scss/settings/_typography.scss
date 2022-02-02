@@ -1,8 +1,7 @@
-$font-family-serif: 'Georgia', 'Times', serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-$font-family-sans-serif:
-    'clone-rounded-latin', 'Helvetica', 'Arial', serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-$font-family-monospace:
-    'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace, 'Apple Color Emoji', 'Segoe UI Emoji';
+$font-family-serif: "Georgia", "Times", serif, "Apple Color Emoji", "Segoe UI Emoji";
+$font-family-sans-serif: "clone-rounded-latin", "Helvetica", "Arial", serif, "Apple Color Emoji", "Segoe UI Emoji";
+// stylelint-disable-next-line max-line-length -- Better than multiline syntax.
+$font-family-monospace: "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji";
 
 $font-size-root: 18px;
 $font-size-fluid-factor: 0.2vw;

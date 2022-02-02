@@ -1,17 +1,18 @@
-@use '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
-@use '../../settings/borders';
-@use '../../settings/colors';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@use "../../settings/borders";
+@use "../../settings/colors";
+@use "../../tools/typography";
 
 .label {
     @include typography.style(small-caps);
 
-    padding: 0 0.5em 0.2em 0.5em;
+    padding: 0 0.5em 0.2em;
     white-space: nowrap;
     vertical-align: baseline;
-    color: map-get(colors.$grays, gray-darker);
+    color: map.get(colors.$grays, gray-darker);
     border-radius: borders.$radius;
-    background-color: map-get(colors.$grays, gray-light);
+    background-color: map.get(colors.$grays, gray-light);
     user-select: none;
 
     &:link,
@@ -34,5 +35,5 @@
 }
 
 .label--new {
-    background-color: map-get(colors.$ui, warning);
+    background-color: map.get(colors.$ui, warning);
 }

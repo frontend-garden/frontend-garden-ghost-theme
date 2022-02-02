@@ -1,8 +1,8 @@
 // 1. On mobile phones the post card needs to be narrower than we want it on bigger screens so let's
 //    apply grid algorithm later.
 
-@use '../../settings/grid';
-@use '../../tools/breakpoint';
+@use "../../settings/grid";
+@use "../../tools/breakpoint";
 
 .post-feed {
     display: grid;
@@ -40,11 +40,11 @@
     }
 }
 
-// stylelint-disable selector-max-specificity
+// stylelint-disable selector-max-specificity -- Post feed grid design requires higher specificity.
 .post-feed--articles .post-feed__item:first-child,
 .post-feed--articles .post-feed__item--large:not(:nth-child(2)):not(:nth-child(3)) {
     @include breakpoint.up(md) {
         grid-column: span 2;
     }
 }
-// stylelint-enable
+// stylelint-enable selector-max-specificity

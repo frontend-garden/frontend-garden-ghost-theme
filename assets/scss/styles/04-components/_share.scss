@@ -1,4 +1,4 @@
-@use '../../tools/typography';
+@use "../../tools/typography";
 
 .share {
     @include typography.style(small);

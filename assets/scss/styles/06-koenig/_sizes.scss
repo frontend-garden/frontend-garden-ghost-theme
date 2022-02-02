@@ -1,8 +1,8 @@
 // Mandatory classes for any Ghost theme.
 // Ghost docs: https://ghost.org/docs/themes/content/#image-size-options
 
-@use '../../tools/container';
-@use '../../tools/content-block';
+@use "../../tools/container";
+@use "../../tools/content-block";
 
 .kg-width-wide {
     @include content-block.wide();

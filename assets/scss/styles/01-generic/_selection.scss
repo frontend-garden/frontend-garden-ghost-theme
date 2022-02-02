@@ -1,6 +1,7 @@
-@use '../../settings/colors';
+@use "sass:color";
+@use "../../settings/colors";
 
 ::selection {
     color: colors.$white;
-    background-color: rgba(colors.$primary, 0.75);
+    background-color: color.adjust(colors.$primary, $alpha: -0.25);
 }

@@ -1,4 +1,6 @@
-@use '../../settings/colors';
+@use "sass:color";
+@use "sass:map";
+@use "../../settings/colors";
 
 .cover {
     position: relative;
@@ -6,7 +8,7 @@
 }
 
 .cover__text {
-    --link-color: #{map-get(colors.$ui, info-light)};
+    --link-color: #{map.get(colors.$ui, info-light)};
 
     position: relative;
     z-index: 2;
@@ -23,14 +25,14 @@
     margin-bottom: 0;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         z-index: 1;
-        background-color: transparentize(colors.$black, 0.333);
+        background-color: color.adjust(colors.$black, $alpha: -0.333);
     }
 }
 
@@ -72,32 +74,32 @@
 .cover--object--light {
     $overlay-color: colors.$white;
 
-    --gradient-from: #{transparentize($overlay-color, 0.06)};
-    --gradient-to: #{transparentize($overlay-color, 1)};
+    --gradient-from: #{color.adjust($overlay-color, $alpha: -0.06)};
+    --gradient-to: #{color.adjust($overlay-color, $alpha: -1)};
 
     @media (prefers-color-scheme: dark) {
-        $overlay-color: transparentize(colors.$black, 0.333);
+        $overlay-color: color.adjust(colors.$black, $alpha: -0.333);
 
         --gradient-from: #{$overlay-color};
-        --gradient-to: #{transparentize($overlay-color, 0.25)};
+        --gradient-to: #{color.adjust($overlay-color, $alpha: -0.25)};
     }
 }
 
 @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
     .cover--object--light .cover__text {
-        --link-color: #{map-get(colors.$ui, info)};
+        --link-color: #{map.get(colors.$ui, info)};
 
         text-shadow: 0 0 0.4em colors.$white;
         color: inherit;
     }
 
     .cover--full-page.cover--object--light {
-        $overlay-color: map-get(colors.$grays, gray-lightest);
+        $overlay-color: map.get(colors.$grays, gray-lightest);
 
-        --gradient-from: #{transparentize($overlay-color, 0.06)};
-        --gradient-to: #{transparentize($overlay-color, 1)};
+        --gradient-from: #{color.adjust($overlay-color, $alpha: -0.06)};
+        --gradient-to: #{color.adjust($overlay-color, $alpha: -1)};
 
-        background-color: map-get(colors.$grays, gray-lighter);
+        background-color: map.get(colors.$grays, gray-lighter);
     }
 
     .cover--full-page.cover--object--light .cover__text {
@@ -106,22 +108,22 @@
 }
 
 .cover--object--dark {
-    $overlay-color: transparentize(colors.$black, 0.333);
+    $overlay-color: color.adjust(colors.$black, $alpha: -0.333);
 
     --gradient-from: #{$overlay-color};
-    --gradient-to: #{transparentize($overlay-color, 0.25)};
+    --gradient-to: #{color.adjust($overlay-color, $alpha: -0.25)};
 }
 
 .cover--bootstrap.cover--object--dark {
-    $overlay-color: transparentize(map-get(colors.$tags, bootstrap-purple-800), 0.35);
+    $overlay-color: color.adjust(map.get(colors.$tags, bootstrap-purple-800), $alpha: -0.35);
 
     --gradient-from: #{$overlay-color};
-    --gradient-to: #{transparentize($overlay-color, 0.7)};
+    --gradient-to: #{color.adjust($overlay-color, $alpha: -0.7)};
 
     @media (prefers-color-scheme: dark) {
-        $overlay-color: transparentize(map-get(colors.$tags, bootstrap-purple-900), 0.25);
+        $overlay-color: color.adjust(map.get(colors.$tags, bootstrap-purple-900), $alpha: -0.25);
 
         --gradient-from: #{$overlay-color};
-        --gradient-to: #{transparentize($overlay-color, 0.4)};
+        --gradient-to: #{color.adjust($overlay-color, $alpha: -0.4)};
     }
 }

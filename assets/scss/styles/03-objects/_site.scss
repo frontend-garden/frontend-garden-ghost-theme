@@ -1,12 +1,10 @@
 .site {
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-        'notifications'
-        'header'
-        'content'
-        'footer';
+    grid-template:
+        "notifications" auto
+        "header" auto
+        "content" 1fr
+        "footer" auto / 100%;
 }
 
 .site__notifications {

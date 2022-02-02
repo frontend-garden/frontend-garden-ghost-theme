@@ -1,9 +1,10 @@
-@use '../../settings/colors';
-@use '../../settings/navigation';
-@use '../../tools/breakpoint';
-@use '../../tools/spacing';
-@use '../../tools/transition';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../settings/colors";
+@use "../../settings/navigation";
+@use "../../tools/breakpoint";
+@use "../../tools/spacing";
+@use "../../tools/transition";
+@use "../../tools/typography";
 
 $_navigation-icon-padding: 0.5em;
 $_navigation-padding-breakpoint-1: md;
@@ -78,14 +79,14 @@ $_navigation-padding-breakpoint-2: lg;
     position: relative;
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: calc(50% + var(--bullet-shift-y));
         left: 50%;
         width: 0.2em;
         height: 0.2em;
         border-radius: 50%;
-        background-color: map-get(colors.$grays, gray);
+        background-color: map.get(colors.$grays, gray);
         transform: translateX(-50%);
     }
 

@@ -1,7 +1,7 @@
 // 1. Account with whitespace.
 
-@use '../../settings/grid';
-@use '../../tools/typography';
+@use "../../settings/grid";
+@use "../../tools/typography";
 
 .list-unstyled {
     @include typography.list-unstyled();
@@ -15,6 +15,6 @@
 }
 
 .list-item-decorated::before {
-    content: '·';
+    content: "·";
     margin-right: grid.$gap-small - 0.2em; // 1.
 }

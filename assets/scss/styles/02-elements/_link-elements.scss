@@ -1,7 +1,7 @@
-@use '../../settings/borders';
+@use "../../settings/borders";
 
 a {
     text-decoration: none;
     color: var(--link-color);
-    border-bottom: borders.$width solid currentColor;
+    border-bottom: borders.$width solid currentcolor;
 }

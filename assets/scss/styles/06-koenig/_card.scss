@@ -1,9 +1,9 @@
 // Basic styling for all Ghost content blocks.
 // Ghost docs: https://ghost.org/docs/themes/content/#figure-and-figcaption
 
-@use '../../tools/breakpoint';
-@use '../../tools/content-block';
-@use '../../tools/spacing';
+@use "../../tools/breakpoint";
+@use "../../tools/content-block";
+@use "../../tools/spacing";
 
 .kg-card {
     @include content-block.vertical-offset();

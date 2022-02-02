@@ -50,8 +50,7 @@
     "modularscale-sass": "^3.0.10"
   },
   "devDependencies": {
-    "@visionappscz/stylelint-config-visionapps": "^2.0.1",
-    "@visionappscz/stylelint-config-visionapps-order": "^2.1.0",
+    "@visionappscz/stylelint-config": "^3.0.0",
     "autoprefixer": "^10.4.2",
     "clean-css-cli": "^5.5.2",
     "concurrently": "^7.0.0",
@@ -64,9 +63,7 @@
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
     "sass": "^1.49.7",
-    "stylelint": "^13.13.1",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint": "^14.3.0"
   },
   "config": {
     "image_sizes": {

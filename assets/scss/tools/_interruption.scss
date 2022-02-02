@@ -1,7 +1,8 @@
-@use '../settings/colors';
-@use 'breakpoint';
-@use 'spacing';
-@use 'typography';
+@use "sass:map";
+@use "../settings/colors";
+@use "breakpoint";
+@use "spacing";
+@use "typography";
 
 @mixin label($text) {
     position: relative;
@@ -15,7 +16,7 @@
         bottom: 100%;
         left: 0.75em;
         margin-bottom: 0.75em;
-        color: map-get(colors.$grays, gray-dark);
+        color: map.get(colors.$grays, gray-dark);
 
         @include breakpoint.up(lg) {
             left: 0;

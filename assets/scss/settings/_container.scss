@@ -5,7 +5,7 @@
 // 2. We also use `em` for container padding so the line length doesn't get shorter when viewport is
 //    growing (like it would with `vw` for example).
 
-@use 'sass:math';
+@use "sass:math";
 
 $width: 78em; // 1.
 $padding-dense: 0.625rem; // 2.

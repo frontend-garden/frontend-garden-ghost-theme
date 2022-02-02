@@ -3,10 +3,10 @@
 // 3. On big screens, there is no need to save space so the stacking is destroyed and the posts are
 //    listed in grid.
 
-@use '../../settings/borders';
-@use '../../settings/grid';
-@use '../../tools/breakpoint';
-@use '../../tools/transition';
+@use "../../settings/borders";
+@use "../../settings/grid";
+@use "../../tools/breakpoint";
+@use "../../tools/transition";
 
 .post-row {
     display: grid; // 1.
@@ -29,7 +29,7 @@
         position: relative;
         width: 35vw;
         border-radius: borders.$radius;
-        box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0.75em 1.5em rgb(0 0 0 / 25%);
         transform: translate(0, 0);
         will-change: transform;
 

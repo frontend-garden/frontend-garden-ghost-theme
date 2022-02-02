@@ -1,7 +1,8 @@
 // 1. Avoid cascading font size.
 
-@use '../../settings/colors';
-@use '../../tools/typography';
+@use "sass:map";
+@use "../../settings/colors";
+@use "../../tools/typography";
 
 code,
 pre {
@@ -13,8 +14,8 @@ code {
 }
 
 pre {
-    color: map-get(colors.$grays, gray-lightest);
-    background-color: map-get(colors.$grays, gray-darkest);
+    color: map.get(colors.$grays, gray-lightest);
+    background-color: map.get(colors.$grays, gray-darkest);
 }
 
 pre code {
@@ -23,5 +24,5 @@ pre code {
 
 code a {
     color: unset;
-    border-bottom-color: map-get(colors.$ui, info-light);
+    border-bottom-color: map.get(colors.$ui, info-light);
 }
