@@ -60,7 +60,6 @@
 @use 'styles/05-editor/code';
 @use 'styles/05-editor/content';
 @use 'styles/05-editor/cta';
-@use 'styles/05-editor/tip';
 
 // 6. Koenig (kg)
 // Mandatory classes and overrides of core Ghost styles for user content.
@@ -68,6 +67,7 @@
 @use 'styles/06-koenig/bookmark';
 @use 'styles/06-koenig/button' as kg-button;
 @use 'styles/06-koenig/card';
+@use 'styles/06-koenig/callout';
 @use 'styles/06-koenig/gallery';
 @use 'styles/06-koenig/sizes';
 
