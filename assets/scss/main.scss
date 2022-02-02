@@ -60,18 +60,25 @@
 @use 'styles/05-editor/code';
 @use 'styles/05-editor/content';
 @use 'styles/05-editor/cta';
-@use 'styles/05-editor/koenig';
 @use 'styles/05-editor/tip';
 
-// 6. Utilities
+// 6. Koenig (kg)
+// Mandatory classes and overrides of core Ghost styles for user content.
+// May contain extra specificity due to load order (Ghost styles come later).
+@use 'styles/06-koenig/bookmark';
+@use 'styles/06-koenig/card';
+@use 'styles/06-koenig/gallery';
+@use 'styles/06-koenig/sizes';
+
+// 7. Utilities
 // Helpers and overrides.
-@use 'styles/06-utilities/background';
-@use 'styles/06-utilities/color';
-@use 'styles/06-utilities/invert-shapes-in-dark-mode';
-@use 'styles/06-utilities/links';
-@use 'styles/06-utilities/lists';
-@use 'styles/06-utilities/print' as print-utilities;
-@use 'styles/06-utilities/spacing';
-@use 'styles/06-utilities/table-responsive';
-@use 'styles/06-utilities/text';
-@use 'styles/06-utilities/visually-hidden';
+@use 'styles/07-utilities/background';
+@use 'styles/07-utilities/color';
+@use 'styles/07-utilities/invert-shapes-in-dark-mode';
+@use 'styles/07-utilities/links';
+@use 'styles/07-utilities/lists';
+@use 'styles/07-utilities/print' as print-utilities;
+@use 'styles/07-utilities/spacing';
+@use 'styles/07-utilities/table-responsive';
+@use 'styles/07-utilities/text';
+@use 'styles/07-utilities/visually-hidden';

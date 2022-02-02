@@ -1,0 +1,23 @@
+// Basic styling for all Ghost content blocks.
+// Ghost docs: https://ghost.org/docs/themes/content/#figure-and-figcaption
+
+@use '../../tools/breakpoint';
+@use '../../tools/content-block';
+@use '../../tools/spacing';
+
+.kg-card {
+    @include content-block.vertical-offset();
+}
+
+.kg-card figcaption {
+    margin-top: spacing.of(0.5);
+
+    @include breakpoint.up(md) {
+        margin-top: spacing.of(1);
+    }
+}
+
+.kg-embed-card {
+    display: flex;
+    justify-content: center;
+}
