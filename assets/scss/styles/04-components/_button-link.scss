@@ -1,8 +1,8 @@
 @use '../../settings/borders';
-@use '../../tools/reset';
+@use '../../tools/button';
 
 .button-link {
-    @include reset.button();
+    @include button.reset();
 
     color: var(--link-color);
     border-bottom: borders.$width solid currentColor;
