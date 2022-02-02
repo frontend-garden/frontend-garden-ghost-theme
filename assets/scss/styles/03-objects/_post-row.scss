@@ -6,7 +6,6 @@
 @use '../../settings/borders';
 @use '../../settings/grid';
 @use '../../tools/breakpoint';
-@use '../../tools/browser-hacks';
 @use '../../tools/transition';
 
 .post-row {
@@ -91,16 +90,5 @@
             position: static;
             transform: none;
         }
-    }
-}
-
-@include browser-hacks.ie-only() {
-    .post-row {
-        display: flex;
-    }
-
-    .post-row__item {
-        flex: 1 1 30%;
-        margin-right: grid.$gap;
     }
 }
