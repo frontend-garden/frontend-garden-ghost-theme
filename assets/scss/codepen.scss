@@ -1,0 +1,14 @@
+// Base styles for CodePen examples.
+// Publicly available at https://frontend.garden/assets/built/css/codepen.css
+
+// 1. Generic
+// Ground-zero styles.
+@use "styles/01-generic/box-sizing";
+@use "styles/01-generic/reset";
+@use "styles/01-generic/selection";
+@use "styles/01-generic/shared";
+@use "styles/01-generic/theme";
+
+// 2. Elements
+// Unclassed HTML elements (type selectors).
+@use "styles/02-elements/page-elements";
