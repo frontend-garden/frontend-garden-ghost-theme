@@ -15,13 +15,6 @@
         {{#is "home"}}
             {{@site.title}} — {{@site.description}}
         {{/is}}
-        {{!--
-          Commented out until gscan error is fixed.
-          https://github.com/TryGhost/gscan/issues/365
-        --}}
-        {{!--#is "author"--}}
-            {{!--author.name}} | {{@site.title--}}
-        {{!--/is--}}
         {{#is "tag"}}
             {{tag.name}} | {{@site.title}}
         {{else}}
