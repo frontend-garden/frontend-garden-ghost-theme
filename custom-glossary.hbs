@@ -18,30 +18,28 @@
                 </div>
             </header>
 
-            <div class="section section--only-top">
+            <div class="section section--roomy-bottom">
                 <div class="container container--article">
 
-                    <div class="editor js-nbsp js-external-links">
+                    <div class="editor js-nbsp js-external-links js-heading-anchors">
                         {{content}}
                     </div>
 
-                    <hr class="spacing-bottom-none" />
+                    <hr />
 
-                </div>
-            </div>
-
-            <footer class="section section--roomy-bottom">
-                <div class="container container--article">
-
-                    <p class="text-small-block text-italic spacing-bottom-none">
+                    <p class="text-small-block text-italic">
                         Poslední aktualizace:
                         <time datetime="{{date format="YYYY-MM-DD"}}">
                             {{date format="D. MMMM YYYY"}}
                         </time>
                     </p>
 
+                    <hr class="print-hidden" />
+
+                    {{> "share-and-comment"}}
+
                 </div>
-            </footer>
+            </div>
 
         </article>
     {{/post}}
