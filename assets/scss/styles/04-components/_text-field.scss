@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../../settings/borders";
+@use "../../settings/button";
 @use "../../settings/colors";
 @use "../../tools/spacing";
 @use "../../tools/typography";
@@ -9,7 +10,8 @@
 
     appearance: none;
     min-width: 0;
-    padding: spacing.of(0.5) 1em;
+    height: button.$height;
+    padding: button.$padding-block 1em;
     color: var(--page-text-color);
     border: borders.$width solid var(--input-border-color);
     border-radius: borders.$radius;

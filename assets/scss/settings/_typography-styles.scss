@@ -4,6 +4,7 @@
     $modularscale: modularscale-settings.$settings,
 );
 @use "../tools/spacing";
+@use "button";
 @use "typography";
 
 $styles: (
@@ -96,14 +97,14 @@ $styles: (
         default: (
             font-weight: map.get(typography.$font-weight-values, bold),
             font-size: modularscale.ms(0),
-            line-height: spacing.of(1),
+            line-height: button.$line-height,
             font-family: typography.$font-family-sans-serif,
         ),
     ),
     form-field: (
         default: (
             font-size: modularscale.ms(0),
-            line-height: spacing.of(1),
+            line-height: button.$line-height,
             font-family: typography.$font-family-sans-serif,
         ),
     ),
