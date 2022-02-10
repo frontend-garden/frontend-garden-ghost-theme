@@ -1,4 +1,6 @@
+@use "../../settings/button" as button-settings;
 @use "../../tools/button";
+@use "../../tools/spacing";
 
 .button {
     @include button.create();
@@ -13,8 +15,42 @@
     transform: translate(-50%, -50%);
 }
 
-.button--outline {
-    color: currentcolor;
-    border-color: currentcolor;
-    background-color: transparent;
+.button--primary {
+    @include button.primary();
+}
+
+.button--secondary {
+    color: var(--button-secondary-text-color);
+    border-color: var(--button-secondary-border-color);
+    background-color: var(--button-secondary-background);
+
+    &:hover,
+    &:focus {
+        color: var(--button-secondary-hover-text-color);
+        border-color: var(--button-secondary-hover-border-color);
+        background-color: var(--button-secondary-hover-background);
+    }
+
+    &:active,
+    &:active:focus {
+        color: var(--button-secondary-active-text-color);
+        border-color: var(--button-secondary-active-border-color);
+        background-color: var(--button-secondary-active-background);
+    }
+}
+
+.button--square {
+    width: button-settings.$height;
+    padding-inline: button-settings.$padding-block;
+}
+
+.button--small {
+    height: button-settings.$height-small;
+    padding: button-settings.$padding-block-small button-settings.$padding-inline-small;
+    line-height: button-settings.$line-height-small;
+}
+
+.button--small.button--square {
+    width: button-settings.$height-small;
+    padding-inline: button-settings.$padding-block-small;
 }
