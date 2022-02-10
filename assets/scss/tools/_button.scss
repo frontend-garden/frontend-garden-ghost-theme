@@ -1,4 +1,5 @@
 @use "../settings/borders";
+@use "../settings/button";
 @use "../settings/colors";
 @use "../tools/spacing";
 @use "../tools/transition";
@@ -11,27 +12,32 @@
     position: relative;
     appearance: none;
     display: inline-flex;
+    align-items: center;
     justify-content: center;
-    padding: spacing.of(0.5) 1.5em;
+    height: button.$height;
+    padding: button.$padding-block button.$padding-inline;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    color: colors.$white;
-    border: borders.$width solid transparent;
+    border: button.$border-width solid transparent;
     border-radius: borders.$radius;
-    background-color: var(--button-background);
     box-shadow: none;
     user-select: none;
     cursor: pointer;
+}
+
+@mixin primary() {
+    color: colors.$white;
+    background-color: var(--button-primary-background);
 
     &:hover,
     &:focus {
-        background-color: var(--button-hover-background);
+        background-color: var(--button-primary-hover-background);
     }
 
     &:active,
     &:active:focus {
-        background-color: var(--button-active-background);
+        background-color: var(--button-primary-active-background);
     }
 }
 

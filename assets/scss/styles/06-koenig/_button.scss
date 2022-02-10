@@ -20,6 +20,5 @@
 }
 
 .article .kg-button-card a.kg-btn-accent {
-    color: colors.$white;
-    background-color: var(--button-background);
+    @include button.primary();
 }

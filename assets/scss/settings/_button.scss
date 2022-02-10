@@ -1,0 +1,14 @@
+@use "../settings/borders";
+@use "../tools/spacing";
+
+$border-width: borders.$width;
+
+$line-height: spacing.of(1);
+$padding-block: spacing.of(0.5);
+$padding-inline: 1.5em;
+$height: calc(#{2 * $border-width} + #{$line-height} + 2 * #{$padding-block});
+
+$line-height-small: 1.25em;
+$padding-block-small: 0.5em;
+$padding-inline-small: 1em;
+$height-small: calc(#{2 * $border-width} + #{$line-height-small} + 2 * #{$padding-block-small});
