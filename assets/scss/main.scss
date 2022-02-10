@@ -22,8 +22,9 @@
 @use "styles/02-elements/page-elements";
 
 // 3. Objects
-// Cosmetic-free design patterns.
+// Mostly cosmetic-free layout patterns.
 @use "styles/03-objects/aligner";
+@use "styles/03-objects/columns";
 @use "styles/03-objects/container";
 @use "styles/03-objects/content-block";
 @use "styles/03-objects/grid";
@@ -42,7 +43,6 @@
 @use "styles/04-components/badge";
 @use "styles/04-components/button";
 @use "styles/04-components/button-link";
-@use "styles/04-components/columns";
 @use "styles/04-components/cover";
 @use "styles/04-components/footer";
 @use "styles/04-components/header";
@@ -51,7 +51,6 @@
 @use "styles/04-components/members-form";
 @use "styles/04-components/navigation";
 @use "styles/04-components/post-card";
-@use "styles/04-components/share";
 @use "styles/04-components/text-field";
 
 // 5. Editor

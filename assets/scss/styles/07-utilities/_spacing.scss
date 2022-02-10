@@ -12,12 +12,12 @@
     margin-bottom: 0;
 }
 
-.spacing-bottom {
-    margin-bottom: spacing.of(1);
-}
-
 .spacing-bottom-small {
     margin-bottom: spacing.of(0.5);
+}
+
+.spacing-bottom {
+    margin-bottom: spacing.of(1);
 }
 
 .spacing-bottom-large {
