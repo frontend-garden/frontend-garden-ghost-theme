@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 @use "../../settings/colors";
 
@@ -59,6 +60,6 @@
         --dark-background-color: #{map.get(colors.$grays, gray-darkest)};
         --footer-text-color: #{map.get(colors.$grays, gray)};
         --text-muted-color: #{map.get(colors.$grays, gray-dark)};
-        --ruler-color: #{map.get(colors.$grays, gray-dark)};
+        --ruler-color: #{color.adjust(map.get(colors.$grays, gray-dark), $alpha: - 0.8)};
     }
 }

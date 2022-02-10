@@ -1,0 +1,72 @@
+<div class="columns spacing-bottom-small print-hidden">
+
+    <h2 class="text-headline-3 text-small-caps spacing-bottom-small">
+        Sdílejte
+    </h2>
+    <p class="text-small-block spacing-bottom-small">
+        Líbí se vám článek? Podpořte jej sdílením!
+    </p>
+    <div class="spacing-bottom">
+        <a
+            href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute="true"}}&via=FrontendGarden"
+            target="_blank"
+            rel="noopener"
+            class="button button--secondary button--small button--square spacing-right-1"
+            data-track="share"
+            data-method="Twitter"
+            title="Sdílet na Twitteru"
+        >
+            <span class="icon">
+                {{> "icons/twitter"}}
+            </span>
+            <span class="visually-hidden">
+                Twitter
+            </span>
+        </a>
+        <a
+            href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}"
+            target="_blank"
+            rel="noopener"
+            class="button button--secondary button--small button--square spacing-right-1"
+            data-track="share"
+            data-method="Facebook"
+            title="Sdílet na Facebooku"
+        >
+            <span class="icon">
+                {{> "icons/facebook"}}
+            </span>
+            <span class="visually-hidden">
+                Facebook
+            </span>
+        </a>
+        <a
+            href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}"
+            target="_blank"
+            rel="noopener"
+            class="button button--secondary button--small button--square"
+            data-track="share"
+            data-method="LinkedIn"
+            title="Sdílet na LinkedIn"
+        >
+            <span class="icon">
+                {{> "icons/linkedin"}}
+            </span>
+            <span class="visually-hidden">
+                LinkedIn
+            </span>
+        </a>
+    </div>
+
+    <h2 class="text-headline-3 text-small-caps spacing-bottom-small">
+        Komentujte
+    </h2>
+    <p class="text-small-block spacing-bottom-none">
+        Chcete k&nbsp;článku něco doplnit? Našli jste chybu?
+        <a
+            href="mailto:adam@frontend.garden?subject={{encode "Reakce na článek „"}}{{encode title}}{{encode "“"}}&body={{encode "Odkaz na článek: "}}{{url absolute="true"}}"
+            data-track="contact"
+            data-method="Email"
+        >Napište e-mail</a>.
+    </p>
+
+</div>

@@ -1,5 +1,5 @@
 .icon {
-    display: inline-block;
+    display: inline-flex;
     width: 1em;
     height: 1em;
 }
@@ -7,14 +7,10 @@
 .icon > svg {
     width: 100%;
     height: auto;
-    vertical-align: middle;
     fill: currentcolor;
 }
 
 .icon--in-text {
-    position: relative;
-    top: -0.24em;
-    line-height: 1;
     vertical-align: middle;
 }
 

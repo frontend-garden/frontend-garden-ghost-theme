@@ -7,10 +7,12 @@
 
     @include breakpoint.up(sm) {
         column-count: 2;
-        column-rule: borders.$width solid var(--ruler-color);
+        column-rule: borders.$width-thick solid var(--ruler-color);
         column-gap: 2 * grid.$gap;
     }
+}
 
+.columns--4 {
     @include breakpoint.up(md) {
         column-count: 3;
     }
