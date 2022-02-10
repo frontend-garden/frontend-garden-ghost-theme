@@ -39,49 +39,71 @@
                                     </p>
                                     <div class="author-card__links">
                                         {{#if location}}
-                                            {{location}}
-                                            —
+                                            <span class="spacing-right-2">
+                                                {{location}}
+                                            </span>
                                         {{/if}}
                                         {{#if website}}
                                             <a
                                                 href="{{website}}"
-                                                class="icon link-unstyled"
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="button button--secondary button--small button--square spacing-right-1"
+                                                title="Web autora"
                                             >
-                                                {{> "icons/website"}}
+                                                <span class="icon">
+                                                    {{> "icons/website"}}
+                                                </span>
+                                                <span class="visually-hidden">
+                                                    Web
+                                                </span>
                                             </a>
-                                            —
                                         {{/if}}
                                         {{#if twitter}}
                                             <a
                                                 href="{{twitter_url}}"
-                                                class="icon link-unstyled"
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="button button--secondary button--small button--square spacing-right-1"
+                                                title="Twitter autora"
                                             >
-                                                {{> "icons/twitter"}}
+                                                <span class="icon">
+                                                    {{> "icons/twitter"}}
+                                                </span>
+                                                <span class="visually-hidden">
+                                                    Twitter
+                                                </span>
                                             </a>
-                                            —
                                         {{/if}}
                                         {{#if facebook}}
                                             <a
                                                 href="{{facebook_url}}"
-                                                class="icon link-unstyled"
                                                 target="_blank"
                                                 rel="noopener"
+                                                class="button button--secondary button--small button--square spacing-right-1"
+                                                title="Facebook autora"
                                             >
-                                                {{> "icons/facebook"}}
+                                                <span class="icon">
+                                                    {{> "icons/facebook"}}
+                                                </span>
+                                                <span class="visually-hidden">
+                                                    Facebook
+                                                </span>
                                             </a>
-                                            —
                                         {{/if}}
                                         <a
                                             href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/"
-                                            class="icon link-unstyled"
                                             target="_blank"
                                             rel="noopener"
+                                            class="button button--secondary button--small button--square"
+                                            title="RSS feed s články autora"
                                         >
-                                            {{> "icons/rss"}}
+                                            <span class="icon">
+                                                {{> "icons/rss"}}
+                                            </span>
+                                            <span class="visually-hidden">
+                                                RSS
+                                            </span>
                                         </a>
                                     </div>
                                 </div>
