@@ -1,0 +1,85 @@
+<script defer src="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/init.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lmc-eu/cookie-consent-manager@2/LmcCookieConsentManager.min.css" />
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        initLmcCookieConsentManager(
+            'frontend-garden',
+            {
+                consentCollectorApiUrl: null,
+                displayMode: 'soft',
+                config: {
+                    gui_options: {
+                        consent_modal: {
+                            layout: 'box',                 // box/cloud/bar
+                            position: 'bottom right',      // bottom/middle/top + left/right/center
+                            transition: 'zoom',            // zoom/slide
+                            swap_buttons: true             // enable to invert buttons
+                        },
+                        settings_modal: {
+                            layout: 'box',                 // box/bar
+                            transition: 'zoom'             // zoom/slide
+                        }
+                    },
+                    languages: {
+                        cs: {
+                            consent_modal: {
+                                title: 'I Frontend Garden používá Cookies',
+                                description: `Ne že by to bez Cookies nešlo. Ale když lépe pochopíme, co vás zajímá, pomůže nám to tvořit kvalitní obsah zdarma.
+                                    Kliknutím na tlačítko „Přijmout všechny“ dáte Frontend Garden souhlas s využíváním souborů Cookies pro účely analýzy a marketingu.
+                                    Další informace o Cookies a úpravu jejich používání naleznete
+                                    ve <strong><a href="" data-cc="c-settings">vlastním nastavení</a></strong>.`,
+                                primary_btn: {
+                                    text: 'Přijmout všechny',
+                                    role: 'accept_all',
+                                },
+                                secondary_btn: {
+                                    text: 'Přijmout nezbytné',
+                                    role: 'accept_necessary',
+                                },
+                            },
+                            settings_modal: {
+                                title: 'Přizpůsobit nastavení Cookies',
+                                accept_all_btn: 'Přijmout všechny',
+                                reject_all_btn: 'Přijmout nezbytné',
+                                save_settings_btn: 'Uložit nastavení',
+                                blocks: [
+                                    {
+                                        title: 'Technicky nezbytné Cookies',
+                                        description: `Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
+                                            Bez nich by na našich stránkách nefungovalo přihlášení k newsletteru a do členské sekce.`,
+                                        toggle: {
+                                            value: 'necessary',
+                                            enabled: true,
+                                            readonly: true,
+                                        },
+                                    },
+                                    {
+                                        title: 'Analytické Cookies',
+                                        description: `Pomocí nich sledujeme, kolik lidí náš web navštěvuje, jak ho používají a co je nejvíc zajímá.
+                                            Díky tomu můžeme web neustále vylepšovat.`,
+                                        toggle: {
+                                            value: 'analytics',
+                                            enabled: false,
+                                            readonly: false,
+                                        },
+                                    },
+                                    {
+                                        title: 'Marketingové Cookies',
+                                        description: `S těmito Cookies můžeme měřit, jak efektivní je naše reklama.
+                                            Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.`,
+                                        toggle: {
+                                            value: 'ads',
+                                            enabled: false,
+                                            readonly: false,
+                                        },
+                                    },
+                                ],
+                            },
+                        },
+                    },
+                },
+            },
+        );
+    });
+</script>

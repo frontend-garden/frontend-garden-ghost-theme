@@ -1,0 +1,58 @@
+@use "../../settings/borders";
+@use "../../settings/button";
+@use "../../settings/colors";
+
+:root {
+    /* Common */
+    --lmcccm-font-family: system-ui, sans-serif;
+    --lmcccm-base-font-size: 0.889rem; // 16px
+    --lmcccm-bg: var(--page-background-color);
+    --lmcccm-text: var(--page-text-color);
+    --lmcccm-backdrop-color: rgba(0 0 0 / 50%);
+
+    /* Links */
+    --lmcccm-link-text: var(--link-color);
+    --lmcccm-link-hover-text: var(--link-color);
+    --lmcccm-link-active-text: var(--link-color);
+
+    /* Buttons */
+    --lmcccm-btn-font-weight: #{button.$font-weight};
+    --lmcccm-btn-border-radius: #{button.$border-radius};
+    --lmcccm-btn-primary-border: transparent;
+    --lmcccm-btn-primary-bg: var(--button-primary-background);
+    --lmcccm-btn-primary-text: #{colors.$white};
+    --lmcccm-btn-primary-hover-border: transparent;
+    --lmcccm-btn-primary-hover-bg: var(--button-primary-hover-background);
+    --lmcccm-btn-primary-hover-text: var(--lmcccm-btn-primary-text);
+    --lmcccm-btn-primary-active-border: transparent;
+    --lmcccm-btn-primary-active-bg: var(--button-primary-active-background);
+    --lmcccm-btn-primary-active-text: var(--lmcccm-btn-primary-text);
+    --lmcccm-btn-secondary-border: var(--button-secondary-border-color);
+    --lmcccm-btn-secondary-bg: var(--button-secondary-background);
+    --lmcccm-btn-secondary-text: var(--button-secondary-text-color);
+    --lmcccm-btn-secondary-hover-border: var(--button-secondary-hover-border-color);
+    --lmcccm-btn-secondary-hover-bg: var(--button-secondary-hover-background);
+    --lmcccm-btn-secondary-hover-text: var(--button-secondary-hover-text-color);
+    --lmcccm-btn-secondary-active-border: var(--button-secondary-active-border-color);
+    --lmcccm-btn-secondary-active-bg: var(--button-secondary-active-background);
+    --lmcccm-btn-secondary-active-text: var(--button-secondary-active-text-color);
+
+    /* Toggle */
+    --lmcccm-toggle-bg-off: var(--dark-background-color);
+    --lmcccm-toggle-bg-on: var(--ui-success-background-color);
+
+    /* Modal */
+    --lmcccm-modal-border-radius: #{borders.$radius};
+    --lmcccm-modal-section-border: var(--ruler-color);
+
+    /* Cookies */
+    --lmcccm-cookie-category-border-radius: #{borders.$radius};
+    --lmcccm-cookie-category-bg: var(--alternate-background-color);
+    --lmcccm-cookie-category-hover-bg: var(--alternate-background-color);
+
+    /* Dark mode tweaks */
+    @media (prefers-color-scheme: dark) {
+        --lmcccm-bg: var(--dark-background-color);
+        --lmcccm-modal-bg: var(--page-background-color);
+    }
+}
