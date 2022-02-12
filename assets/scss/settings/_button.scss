@@ -1,7 +1,11 @@
+@use "sass:map";
 @use "../settings/borders";
+@use "../settings/typography";
 @use "../tools/spacing";
 
+$font-weight: map.get(typography.$font-weight-values, bold);
 $border-width: borders.$width;
+$border-radius: borders.$radius;
 
 $line-height: spacing.of(1);
 $padding-block: spacing.of(0.5);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://use.typekit.net" crossorigin="anonymous" />
     <link rel="preconnect" href="https://p.typekit.net" crossorigin="anonymous" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -20,6 +21,9 @@
             {{meta_title}} | {{@site.title}}
         {{/is}}
     </title>
+
+    {{> "external/google-analytics"}}
+    {{> "external/cookie-consent"}}
 
     {{{block "styles"}}}
 

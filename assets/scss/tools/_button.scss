@@ -20,7 +20,7 @@
     text-decoration: none;
     white-space: nowrap;
     border: button.$border-width solid transparent;
-    border-radius: borders.$radius;
+    border-radius: button.$border-radius;
     box-shadow: none;
     user-select: none;
     cursor: pointer;

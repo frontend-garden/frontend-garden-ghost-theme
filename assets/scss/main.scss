@@ -13,6 +13,7 @@
 
 // 2. Themes
 // Light and dark mode.
+@use "styles/02-themes/cookie-consent" as cookie-consent-theme;
 @use "styles/02-themes/site" as site-theme;
 
 // 3. Elements
@@ -71,15 +72,19 @@
 @use "styles/07-koenig/gallery";
 @use "styles/07-koenig/sizes";
 
-// 8. Utilities
+// 8. Vendor
+// Third-party overrides.
+@use "styles/08-vendor/cookie-consent";
+
+// 9. Utilities
 // Helpers and overrides.
-@use "styles/08-utilities/background";
-@use "styles/08-utilities/color";
-@use "styles/08-utilities/invert-shapes-in-dark-mode";
-@use "styles/08-utilities/links";
-@use "styles/08-utilities/lists";
-@use "styles/08-utilities/print" as print-utilities;
-@use "styles/08-utilities/spacing";
-@use "styles/08-utilities/table-responsive";
-@use "styles/08-utilities/text";
-@use "styles/08-utilities/visually-hidden";
+@use "styles/09-utilities/background";
+@use "styles/09-utilities/color";
+@use "styles/09-utilities/invert-shapes-in-dark-mode";
+@use "styles/09-utilities/links";
+@use "styles/09-utilities/lists";
+@use "styles/09-utilities/print" as print-utilities;
+@use "styles/09-utilities/spacing";
+@use "styles/09-utilities/table-responsive";
+@use "styles/09-utilities/text";
+@use "styles/09-utilities/visually-hidden";

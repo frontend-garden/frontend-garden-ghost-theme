@@ -95,7 +95,7 @@ $styles: (
     ),
     button: (
         default: (
-            font-weight: map.get(typography.$font-weight-values, bold),
+            font-weight: button.$font-weight,
             font-size: modularscale.ms(0),
             line-height: button.$line-height,
             font-family: typography.$font-family-sans-serif,
