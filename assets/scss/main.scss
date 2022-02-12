@@ -1,7 +1,7 @@
 // This project's CSS is organized using ITCSS methodology.
 // Most importantly, CSS selectors are ordered **by specificity** from lowest to highest.
 //
-// https://frontend.garden/proc-je-itcss-nejpokrocilejsi-metodika-organizace-css/ (in Czech)
+// https://frontend.garden/clanky/proc-je-itcss-nejpokrocilejsi-metodika-organizace-css/ (in Czech)
 
 // 1. Generic
 // Ground-zero styles.
@@ -11,72 +11,75 @@
 @use "styles/01-generic/reset";
 @use "styles/01-generic/selection";
 @use "styles/01-generic/shared";
-@use "styles/01-generic/theme";
 
-// 2. Elements
+// 2. Themes
+// Light and dark mode.
+@use "styles/02-themes/site" as site-theme;
+
+// 3. Elements
 // Unclassed HTML elements (type selectors).
-@use "styles/02-elements/code-elements";
-@use "styles/02-elements/content-elements";
-@use "styles/02-elements/heading-elements";
-@use "styles/02-elements/link-elements";
-@use "styles/02-elements/page-elements";
+@use "styles/03-elements/code-elements";
+@use "styles/03-elements/content-elements";
+@use "styles/03-elements/heading-elements";
+@use "styles/03-elements/link-elements";
+@use "styles/03-elements/page-elements";
 
-// 3. Objects
+// 4. Objects
 // Mostly cosmetic-free layout patterns.
-@use "styles/03-objects/columns";
-@use "styles/03-objects/container";
-@use "styles/03-objects/content-block";
-@use "styles/03-objects/grid";
-@use "styles/03-objects/input-group";
-@use "styles/03-objects/post-feed";
-@use "styles/03-objects/post-row";
-@use "styles/03-objects/section";
-@use "styles/03-objects/site";
+@use "styles/04-objects/columns";
+@use "styles/04-objects/container";
+@use "styles/04-objects/content-block";
+@use "styles/04-objects/grid";
+@use "styles/04-objects/input-group";
+@use "styles/04-objects/post-feed";
+@use "styles/04-objects/post-row";
+@use "styles/04-objects/section";
+@use "styles/04-objects/site";
 
-// 4. Components
+// 5. Components
 // Reusable UI components.
-@use "styles/04-components/alert";
-@use "styles/04-components/article";
-@use "styles/04-components/author-card";
-@use "styles/04-components/avatar";
-@use "styles/04-components/badge";
-@use "styles/04-components/button";
-@use "styles/04-components/button-link";
-@use "styles/04-components/cover";
-@use "styles/04-components/footer";
-@use "styles/04-components/header";
-@use "styles/04-components/icon";
-@use "styles/04-components/label";
-@use "styles/04-components/members-form";
-@use "styles/04-components/navigation";
-@use "styles/04-components/post-card";
-@use "styles/04-components/text-field";
+@use "styles/05-components/alert";
+@use "styles/05-components/article";
+@use "styles/05-components/author-card";
+@use "styles/05-components/avatar";
+@use "styles/05-components/badge";
+@use "styles/05-components/button";
+@use "styles/05-components/button-link";
+@use "styles/05-components/cover";
+@use "styles/05-components/footer";
+@use "styles/05-components/header";
+@use "styles/05-components/icon";
+@use "styles/05-components/label";
+@use "styles/05-components/members-form";
+@use "styles/05-components/navigation";
+@use "styles/05-components/post-card";
+@use "styles/05-components/text-field";
 
-// 5. Editor
+// 6. Editor
 // User content from CMS.
-@use "styles/05-editor/code";
-@use "styles/05-editor/content";
-@use "styles/05-editor/cta";
+@use "styles/06-editor/code";
+@use "styles/06-editor/content";
+@use "styles/06-editor/cta";
 
-// 6. Koenig (kg)
+// 7. Ghost Koenig (kg)
 // Mandatory classes and overrides of core Ghost styles for user content.
 // May contain extra specificity due to load order (Ghost styles come later).
-@use "styles/06-koenig/bookmark";
-@use "styles/06-koenig/button" as kg-button;
-@use "styles/06-koenig/card";
-@use "styles/06-koenig/callout";
-@use "styles/06-koenig/gallery";
-@use "styles/06-koenig/sizes";
+@use "styles/07-koenig/bookmark";
+@use "styles/07-koenig/button" as kg-button;
+@use "styles/07-koenig/card";
+@use "styles/07-koenig/callout";
+@use "styles/07-koenig/gallery";
+@use "styles/07-koenig/sizes";
 
-// 7. Utilities
+// 8. Utilities
 // Helpers and overrides.
-@use "styles/07-utilities/background";
-@use "styles/07-utilities/color";
-@use "styles/07-utilities/invert-shapes-in-dark-mode";
-@use "styles/07-utilities/links";
-@use "styles/07-utilities/lists";
-@use "styles/07-utilities/print" as print-utilities;
-@use "styles/07-utilities/spacing";
-@use "styles/07-utilities/table-responsive";
-@use "styles/07-utilities/text";
-@use "styles/07-utilities/visually-hidden";
+@use "styles/08-utilities/background";
+@use "styles/08-utilities/color";
+@use "styles/08-utilities/invert-shapes-in-dark-mode";
+@use "styles/08-utilities/links";
+@use "styles/08-utilities/lists";
+@use "styles/08-utilities/print" as print-utilities;
+@use "styles/08-utilities/spacing";
+@use "styles/08-utilities/table-responsive";
+@use "styles/08-utilities/text";
+@use "styles/08-utilities/visually-hidden";

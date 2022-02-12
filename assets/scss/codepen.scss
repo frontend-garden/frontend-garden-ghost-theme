@@ -7,8 +7,11 @@
 @use "styles/01-generic/reset";
 @use "styles/01-generic/selection";
 @use "styles/01-generic/shared";
-@use "styles/01-generic/theme";
 
-// 2. Elements
+// 2. Themes
+// Light and dark mode.
+@use "styles/02-themes/site";
+
+// 3. Elements
 // Unclassed HTML elements (type selectors).
-@use "styles/02-elements/page-elements";
+@use "styles/03-elements/page-elements";
