@@ -1,0 +1,6 @@
+@use "../../settings/grid";
+
+.media {
+    display: flex;
+    gap: grid.$gap;
+}

@@ -16,10 +16,10 @@
 
                     <h1 class="article__title spacing-bottom">{{name}}</h1>
 
-                    <div class="author-card">
+                    <div class="media">
 
                         {{#if profile_image}}
-                            <div class="author-card__media">
+                            <div>
                                 <div class="avatar">
                                     <img
                                         src="{{img_url profile_image size="avatar_medium_2x"}}"
@@ -32,7 +32,7 @@
                         {{/if}}
 
                         {{#if bio}}
-                            <div class="author-card__content">
+                            <div class="author-card">
                                 <div class="author-card__bio">
                                     <p class="author-card__text spacing-bottom-small js-nbsp js-external-links">
                                         {{bio}}
