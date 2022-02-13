@@ -5,7 +5,7 @@
 }
 
 .container__expand {
-    @include container.expand();
+    @include container.breakout();
 }
 
 .container--fluid {

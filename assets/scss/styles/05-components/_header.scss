@@ -81,7 +81,7 @@ $_navigation-layout-breakpoint: md;
 }
 
 .header__navigation {
-    @include container.expand();
+    @include container.breakout();
 
     grid-area: navigation;
     padding:

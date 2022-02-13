@@ -9,7 +9,7 @@
 }
 
 .kg-width-full {
-    @include container.expand();
+    @include container.breakout();
 }
 
 .kg-width-wide figcaption,
