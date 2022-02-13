@@ -97,6 +97,11 @@
             </div>
 
         </article>
+
+        {{^has tag="#no-bottom-ad"}}
+            {{> "bottom-ad"}}
+        {{/has}}
+
     {{/post}}
 
     {{#get "posts"

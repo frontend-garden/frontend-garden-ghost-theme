@@ -114,3 +114,41 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 
   element.appendChild(snippet);
 });
+
+// Populate snippets with data from Ghost admin. All texts support HTML.
+//
+// Example data (inject into `<head>`):
+//
+// const snippetsData = {
+//   'bottom-ad': {
+//     ctaLabel: 'Dynamic CTA label',
+//     ctaUrl: 'https://www.example.com',
+//     text: 'Dynamic <strong>text</strong>',
+//     title: 'Dynamic title',
+//   },
+// };
+//
+// Example snippet HTML:
+//
+// <div data-populate="bottom-ad">
+//     <h2 id="bottom-ad__title"></h2>
+//     <p id="bottom-ad__text"></p>
+//     <a id="bottom-ad__cta"></a>
+// </div>
+document.querySelectorAll('[data-populate]').forEach((element) => {
+  const snippetName = element.getAttribute('data-populate');
+
+  if (typeof snippetsData === 'undefined') {
+    element.toggleAttribute('hidden');
+
+    // eslint-disable-next-line no-console -- Input data is managed in admin, warning is useful.
+    console.warn(`Warning: No data found for snippet "${snippetName}"! The snippet is now hidden.`);
+  } else if (snippetsData[snippetName]) {
+    const dataToPopulate = snippetsData[snippetName];
+
+    document.getElementById(`${snippetName}__title`).innerHTML = dataToPopulate.title;
+    document.getElementById(`${snippetName}__text`).innerHTML = dataToPopulate.text;
+    document.getElementById(`${snippetName}__cta`).innerHTML = dataToPopulate.ctaLabel;
+    document.getElementById(`${snippetName}__cta`).setAttribute('href', dataToPopulate.ctaUrl);
+  }
+});
