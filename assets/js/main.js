@@ -106,13 +106,23 @@ if (typeof gtag !== 'undefined') {
 //     {{> "snippets/newsletter-signup"}}
 // </template>
 document.querySelectorAll('[data-snippet]').forEach((element) => {
-  const snippetName = element.getAttribute('data-snippet');
-  const snippet = document
-    .getElementById(`snippet__${snippetName}__template`)
-    .content
-    .cloneNode(true);
+  const snippetEl = element;
+  const snippetName = snippetEl.getAttribute('data-snippet');
 
-  element.appendChild(snippet);
+  if (!snippetName) {
+    // eslint-disable-next-line no-console -- Warn for undefined snippet name.
+    console.warn('Warning: No snippet name set!');
+  } else {
+    const snippetTemplate = document.getElementById(`snippet__${snippetName}__template`);
+
+    if (!snippetTemplate) {
+      // eslint-disable-next-line no-console -- Warn for non-existing snippet template.
+      console.warn(`Warning: No template found for snippet "${snippetName}"!`);
+    } else {
+      const snippet = snippetTemplate.content.cloneNode(true);
+      snippetEl.appendChild(snippet);
+    }
+  }
 });
 
 // Populate snippets with data from Ghost admin. All texts support HTML.
@@ -131,24 +141,47 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 // Example snippet HTML:
 //
 // <div data-populate="bottom-ad">
-//     <h2 id="bottom-ad__title"></h2>
-//     <p id="bottom-ad__text"></p>
-//     <a id="bottom-ad__cta"></a>
+//     <h2 data-populate-field="title"></h2>
+//     <p data-populate-field="text"></p>
+//     <a data-populate-field="cta"></a>
 // </div>
 document.querySelectorAll('[data-populate]').forEach((element) => {
-  const snippetName = element.getAttribute('data-populate');
+  const populateEl = element;
+  const snippetName = populateEl.getAttribute('data-populate');
+  const hideSnippet = () => populateEl.toggleAttribute('hidden');
 
   if (typeof snippetsData === 'undefined') {
-    element.toggleAttribute('hidden');
+    hideSnippet();
+
+    // eslint-disable-next-line no-console -- Input data is managed in admin, warning is useful.
+    console.warn('Warning: `snippetsData` not configured! Calling snippet is now hidden.');
+  } else if (!snippetName) {
+    hideSnippet();
+
+    // eslint-disable-next-line no-console -- Warn for a misconfigured snippet.
+    console.warn('Warning: No populate name set for snippet! The snippet is now hidden.');
+  } else if (!snippetsData[snippetName]) {
+    hideSnippet();
 
     // eslint-disable-next-line no-console -- Input data is managed in admin, warning is useful.
     console.warn(`Warning: No data found for snippet "${snippetName}"! The snippet is now hidden.`);
-  } else if (snippetsData[snippetName]) {
+  } else {
     const dataToPopulate = snippetsData[snippetName];
+    const titleField = populateEl.querySelector('[data-populate-field="title"]');
+    const textField = populateEl.querySelector('[data-populate-field="text"]');
+    const ctaField = populateEl.querySelector('[data-populate-field="cta"]');
 
-    document.getElementById(`${snippetName}__title`).innerHTML = dataToPopulate.title;
-    document.getElementById(`${snippetName}__text`).innerHTML = dataToPopulate.text;
-    document.getElementById(`${snippetName}__cta`).innerHTML = dataToPopulate.ctaLabel;
-    document.getElementById(`${snippetName}__cta`).setAttribute('href', dataToPopulate.ctaUrl);
+    if (titleField) {
+      titleField.innerHTML = dataToPopulate.title;
+    }
+
+    if (textField) {
+      textField.innerHTML = dataToPopulate.text;
+    }
+
+    if (ctaField) {
+      ctaField.innerHTML = dataToPopulate.ctaLabel;
+      ctaField.setAttribute('href', dataToPopulate.ctaUrl);
+    }
   }
 });
