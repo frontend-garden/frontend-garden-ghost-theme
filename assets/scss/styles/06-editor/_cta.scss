@@ -5,7 +5,7 @@
 @use "../../tools/interruption";
 
 .cta {
-    @include content-block.vertical-offset($extra-large: true);
+    @include content-block.vertical-offset($extra-large: true, $always: true);
     @include container.breakout();
 }
 
