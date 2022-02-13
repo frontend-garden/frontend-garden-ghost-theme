@@ -74,19 +74,19 @@ if (typeof gtag !== 'undefined') {
 
       if (action === 'share') {
         gtag('event', 'share', {
-          method: element.getAttribute('data-method'),
+          method: element.getAttribute('data-track-method'),
         });
       } else {
         let label;
 
-        if (element.getAttribute('data-label')) {
-          label = element.getAttribute('data-label');
+        if (element.getAttribute('data-track-label')) {
+          label = element.getAttribute('data-track-label');
         } else {
           label = element.getAttribute('href');
         }
 
         gtag('event', action, {
-          event_category: element.getAttribute('data-category'),
+          event_category: element.getAttribute('data-track-category'),
           event_label: label,
         });
       }
