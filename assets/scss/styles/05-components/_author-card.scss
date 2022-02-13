@@ -1,18 +1,9 @@
 @use "sass:map";
 @use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
-@use "../../settings/grid";
 @use "../../settings/typography" as typography-settings;
 @use "../../tools/typography";
 
 .author-card {
-    display: flex;
-}
-
-.author-card__media {
-    margin-right: grid.$gap;
-}
-
-.author-card__content {
     line-height: map.get(typography-settings.$line-height-values, dense);
 }
 

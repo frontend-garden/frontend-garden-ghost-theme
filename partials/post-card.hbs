@@ -69,8 +69,8 @@
                 {{#foreach authors}}
                     <li {{^if @last}}class="spacing-bottom-small"{{/if}}>
 
-                        <div class="author-card">
-                            <div class="author-card__media">
+                        <div class="media">
+                            <div>
                                 {{#if profile_image}}
                                     <a href="{{url}}" class="avatar avatar--small avatar--link">
                                         <img
@@ -88,7 +88,7 @@
                                     </a>
                                 {{/if}}
                             </div>
-                            <div class="author-card__content">
+                            <div class="author-card">
                                 <div class="author-card__name">
                                     <a href="{{url}}" class="post-card__link link-unstyled">
                                         {{name}}
