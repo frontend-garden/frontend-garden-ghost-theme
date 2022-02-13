@@ -2,33 +2,47 @@
 @use "breakpoint";
 @use "spacing";
 
-@mixin vertical-offset($extra-large: false) {
-    &:not(:first-child) {
-        margin-top: spacing.of(1);
-    }
+@mixin vertical-offset($extra-large: false, $always: false) {
+    @if $always {
+        margin-block: spacing.of(1);
 
-    &:not(:last-child) {
-        margin-bottom: spacing.of(1);
-    }
+        @include breakpoint.up(md) {
+            margin-block: spacing.of(2);
+        }
 
-    @include breakpoint.up(md) {
+        @if $extra-large {
+            @include breakpoint.up(lg) {
+                margin-block: spacing.of(3);
+            }
+        }
+    } @else {
         &:not(:first-child) {
-            margin-top: spacing.of(2);
+            margin-top: spacing.of(1);
         }
 
         &:not(:last-child) {
-            margin-bottom: spacing.of(2);
+            margin-bottom: spacing.of(1);
         }
-    }
 
-    @if $extra-large {
-        @include breakpoint.up(lg) {
+        @include breakpoint.up(md) {
             &:not(:first-child) {
-                margin-top: spacing.of(3);
+                margin-top: spacing.of(2);
             }
 
             &:not(:last-child) {
-                margin-bottom: spacing.of(3);
+                margin-bottom: spacing.of(2);
+            }
+        }
+
+        @if $extra-large {
+            @include breakpoint.up(lg) {
+                &:not(:first-child) {
+                    margin-top: spacing.of(3);
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: spacing.of(3);
+                }
             }
         }
     }
