@@ -1,3 +1,4 @@
+@use "../../settings/borders";
 @use "../../settings/container" as container-settings;
 @use "../../tools/breakpoint";
 @use "../../tools/container";
@@ -6,7 +7,8 @@
 
 .cta {
     @include content-block.vertical-offset($extra-large: true, $always: true);
-    @include container.breakout();
+
+    border-radius: borders.$radius;
 }
 
 .cta__label {
@@ -14,7 +16,29 @@
 
     @include breakpoint.up(lg) {
         max-width: container-settings.$narrow-width - 2 * container-settings.$padding-sm;
-        margin-right: auto;
-        margin-left: auto;
+        margin-inline: auto;
+    }
+}
+
+.cta--wide,
+.cta--breakout {
+    border-radius: 0;
+}
+
+.cta--wide {
+    @include content-block.wide();
+
+    @include breakpoint.up(md) {
+        border-radius: borders.$radius;
+    }
+}
+
+.cta--breakout {
+    @include container.breakout();
+}
+
+.cta--wide .cta__label::before {
+    @include breakpoint.up(md) {
+        left: 0;
     }
 }

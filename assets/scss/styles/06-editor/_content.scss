@@ -132,7 +132,7 @@
 // Tables
 .editor table {
     @include content-block.vertical-offset();
-    @include content-block.wide(true);
+    @include content-block.wide($declare-width: true);
 }
 
 .editor th,

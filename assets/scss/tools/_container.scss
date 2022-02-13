@@ -1,28 +1,26 @@
-// 1. Content of Containers can be expanded to whole screen width.
+// 1. Limit Container width starting from `md` breakpoint so it doesn't interfere with
+//    `content-block.wide()` around this breakpoint.
+//
+// 2. Content of Containers can be expanded to whole screen width.
 
 @use "../settings/container";
 @use "breakpoint";
 
 @mixin create() {
     max-width: container.$width;
-    padding-right: container.$padding;
-    padding-left: container.$padding;
-    margin-right: auto;
-    margin-left: auto;
+    padding-inline: container.$padding;
+    margin-inline: auto;
 
     @include breakpoint.up(sm) {
-        padding-right: container.$padding-sm;
-        padding-left: container.$padding-sm;
+        padding-inline: container.$padding-sm;
     }
 }
 
 @mixin dense() {
-    padding-right: container.$padding-dense;
-    padding-left: container.$padding-dense;
+    padding-inline: container.$padding-dense;
 
     @include breakpoint.up(sm) {
-        padding-right: container.$padding-sm;
-        padding-left: container.$padding-sm;
+        padding-inline: container.$padding-sm;
     }
 }
 
@@ -34,14 +32,14 @@
     max-width: container.$narrow-width;
 }
 
+// 1.
 @mixin article() {
-    max-width: container.$article-width;
+    @include breakpoint.up(md) {
+        max-width: container.$article-width;
+    }
 }
 
-// 1.
+// 2.
 @mixin breakout() {
-    $offset: calc(-1 * ((100vw - 100%) / 2));
-
-    margin-right: $offset;
-    margin-left: $offset;
+    margin-inline: calc(-1 * ((100vw - 100%) / 2));
 }

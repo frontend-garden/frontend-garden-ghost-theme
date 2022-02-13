@@ -49,16 +49,26 @@
 }
 
 @mixin wide($declare-width: false) {
-    margin-right: -1 * container.$padding;
-    margin-left: -1 * container.$padding;
+    margin-inline: -1 * container.$padding;
 
     @if $declare-width {
         width: calc(100% + 2 * #{container.$padding});
     }
 
     @include breakpoint.up(sm) {
-        margin-right: -1 * container.$padding-sm;
-        margin-left: -1 * container.$padding-sm;
+        margin-inline: -1 * container.$padding-sm;
+    }
+
+    @include breakpoint.up(md) {
+        margin-inline: -1 * container.$padding;
+
+        @if $declare-width {
+            width: calc(100% + 2 * #{container.$padding});
+        }
+    }
+
+    @include breakpoint.up(lg) {
+        margin-inline: -1 * container.$padding-sm;
 
         @if $declare-width {
             width: calc(100% + 2 * #{container.$padding-sm});
