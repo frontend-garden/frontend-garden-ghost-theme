@@ -5,7 +5,14 @@
         <section class="section section--only-top print-padding-none">
             <div class="container">
 
-                <div class="article">
+                <div
+                    class="
+                        article
+                        {{#has slug="adam-kudrna"}}
+                            spacing-bottom
+                        {{/has}}
+                    "
+                >
 
                     <div class="article__meta">
                         <span class="spacing-right-1">
@@ -113,8 +120,30 @@
                     </div>
                 </div>
 
+                {{#has slug="adam-kudrna"}}
+                    <a
+                        href="https://www.adamkudrna.cz/konzultace"
+                        class="button button--primary spacing-bottom-small spacing-right-1"
+                        data-track="Navigate"
+                        data-category="Personal website"
+                        data-label="Author's page – primary CTA"
+                    >
+                        Objednat konzultaci
+                    </a>
+                    <a
+                        href="https://www.adamkudrna.cz/sluzby"
+                        class="button button--secondary spacing-bottom-small"
+                        data-track="Navigate"
+                        data-category="Personal website"
+                        data-label="Author's page – secondary CTA"
+                    >
+                        Prohlédnout všechny služby
+                    </a>
+                {{/has}}
+
             </div>
         </section>
+
         <section class="section">
             <div class="container">
 
@@ -135,6 +164,11 @@
 
             </div>
         </section>
+
+        {{#has slug="adam-kudrna"}}
+            {{> "bottom-ad"}}
+        {{/has}}
+
     </main>
 {{/author}}
 
