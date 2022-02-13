@@ -3,14 +3,14 @@
 <main class="site__content background-alternate">
     <section
         class="section section--only-top print-padding-none"
-        aria-labelledby="h_header"
+        aria-labelledby="h__header"
     >
         <div class="container">
 
             {{#tag}}
                 <div class="article">
                     <div class="article__meta">Téma</div>
-                    <h1 id="h_header" class="article__title">{{name}}</h1>
+                    <h1 id="h__header" class="article__title">{{name}}</h1>
 
                     {{#if description}}
                         <p class="article__summary spacing-bottom-none js-nbsp">
@@ -36,11 +36,11 @@
             <section
                 id="slovnik"
                 class="section section--only-top"
-                aria-labelledby="h_slovnik"
+                aria-labelledby="h__slovnik"
             >
                 <div class="container">
 
-                    <h2 id="h_slovnik" class="spacing-bottom-small">Hesla ve slovníku</h2>
+                    <h2 id="h__slovnik" class="spacing-bottom-small">Hesla ve slovníku</h2>
 
                     <ul class="list-unstyled list-inline spacing-bottom-none">
                         {{#foreach glossary_items visibility="public"}}
@@ -63,7 +63,7 @@
     <section
         id="clanky"
         class="section"
-        aria-labelledby="h_clanky"
+        aria-labelledby="h__clanky"
     >
         <div class="container container--dense">
 
@@ -71,7 +71,7 @@
                 Hide the headline as we cannot be sure if there are some posts or not.
                 (It's visually redundant anyway.)
             }}
-            <h2 id="h_clanky" class="visually-hidden">Články</h2>
+            <h2 id="h__clanky" class="visually-hidden">Články</h2>
 
             <div class="post-feed">
                 {{#foreach posts visibility="public"}}

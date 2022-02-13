@@ -94,11 +94,21 @@ if (typeof gtag !== 'undefined') {
   });
 }
 
-// Replace snippets with actual content
+// Replace snippet placeholders with actual content defined in `<template>`.
+//
+// Example placeholder HTML:
+//
+// <div data-snippet="newsletter-signup"></div>
+//
+// Example template HTML:
+//
+// <template id="snippet__newsletter-signup__template">
+//     {{> "snippets/newsletter-signup"}}
+// </template>
 document.querySelectorAll('[data-snippet]').forEach((element) => {
   const snippetName = element.getAttribute('data-snippet');
   const snippet = document
-    .getElementById(`snippet_${snippetName}_template`)
+    .getElementById(`snippet__${snippetName}__template`)
     .content
     .cloneNode(true);
 
