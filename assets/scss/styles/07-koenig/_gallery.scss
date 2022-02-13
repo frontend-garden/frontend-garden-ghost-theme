@@ -6,7 +6,7 @@
 @use "../../tools/container";
 
 .kg-gallery-container {
-    @include container.expand();
+    @include container.breakout();
 
     display: flex;
     flex-direction: column;

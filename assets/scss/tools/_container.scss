@@ -39,7 +39,7 @@
 }
 
 // 1.
-@mixin expand() {
+@mixin breakout() {
     $offset: calc(-1 * ((100vw - 100%) / 2));
 
     margin-right: $offset;

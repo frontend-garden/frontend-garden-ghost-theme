@@ -15,7 +15,7 @@
 // 1.
 pre,
 pre[class*="language-"] {
-    @include container.expand();
+    @include container.breakout();
     @include content-block.vertical-offset();
 
     padding: spacing.of(1) 0;

@@ -12,5 +12,5 @@
 }
 
 .content-block--full {
-    @include container.expand();
+    @include container.breakout();
 }

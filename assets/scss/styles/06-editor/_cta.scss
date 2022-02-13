@@ -6,7 +6,7 @@
 
 .cta {
     @include content-block.vertical-offset($extra-large: true);
-    @include container.expand();
+    @include container.breakout();
 }
 
 .cta__label {
