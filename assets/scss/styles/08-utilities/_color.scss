@@ -1,7 +1,5 @@
-@use "../../settings/colors";
-
-.color-white {
-    color: colors.$white;
+.color-inverse {
+    color: var(--text-inverse-color);
 }
 
 .color-muted {

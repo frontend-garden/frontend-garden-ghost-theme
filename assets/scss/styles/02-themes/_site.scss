@@ -28,8 +28,9 @@
     --post-card-text-color: inherit;
     --primary-background-color: #{map.get(colors.$brand, green-darker)};
     --alternate-background-color: #{map.get(colors.$grays, gray-lightest)};
-    --dark-background-color: #{map.get(colors.$grays, gray-darker)};
+    --dark-background-color: #{map.get(colors.$grays, gray-darkest)};
     --footer-text-color: inherit;
+    --text-inverse-color: #{colors.$white};
     --text-muted-color: #{map.get(colors.$grays, gray-dark)};
     --ruler-color: #{map.get(colors.$grays, gray-lightest)};
 }
@@ -57,8 +58,9 @@
         --post-card-text-color: inherit;
         --primary-background-color: #{map.get(colors.$brand, green-darkest)};
         --alternate-background-color: #{map.get(colors.$grays, gray-darkest)};
-        --dark-background-color: #{map.get(colors.$grays, gray-darkest)};
+        --dark-background-color: #{color.adjust(map.get(colors.$grays, gray-darkest), $lightness: - 8%)};
         --footer-text-color: #{map.get(colors.$grays, gray)};
+        --text-inverse-color: #{map.get(colors.$grays, gray-light)};
         --text-muted-color: #{map.get(colors.$grays, gray-dark)};
         --ruler-color: #{color.adjust(map.get(colors.$grays, gray-dark), $alpha: - 0.8)};
     }

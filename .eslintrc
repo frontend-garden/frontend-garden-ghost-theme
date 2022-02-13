@@ -4,7 +4,8 @@
     "browser": true
   },
   "globals": {
-    "gtag": false
+    "gtag": false,
+    "snippetsData": false
   },
   "parserOptions": {
     "ecmaVersion": 10,
