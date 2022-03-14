@@ -15,12 +15,6 @@
     line-height: button.$line-height-small;
 }
 
-// TODO Remove block once fixed in LMCCCM.
-.cc_div #s-c-bn:hover,
-.cc_div #s-c-bn:active {
-    background-color: transparent;
-}
-
 .cc_div #cm,
 .cc_div #s-inr {
     box-shadow: shadows.$default;
