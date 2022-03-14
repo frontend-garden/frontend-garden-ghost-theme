@@ -8,7 +8,7 @@ Minimalist theme for the 🍀 [Frontend Garden] online magazine powered by
 > 👉🏻 **Please note this theme is designed solely for the purposes of the
 > 🍀 [Frontend Garden] magazine.** It's not intended to work out-of-the-box or
 > get modified for any Ghost publications other than 🍀 [Frontend Garden].
-> However, please do [fell free](#license) to try out the theme and use it as a
+> However, please do [feel free](#license) to try it out and use it as a
 > source of inspiration!
 
 ## Theme Build and Activation
