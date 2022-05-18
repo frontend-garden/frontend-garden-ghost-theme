@@ -24,8 +24,8 @@
   "engines": {
     "ghost": ">=4.2.0",
     "ghost-api": "v4",
-    "node": ">=14.15.1",
-    "npm": ">=6.14.8"
+    "node": ">=16.14.0",
+    "npm": ">=8.3.0"
   },
   "scripts": {
     "build": "concurrently \"npm run css\" \"npm run js\"",
