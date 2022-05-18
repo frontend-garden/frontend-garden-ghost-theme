@@ -42,7 +42,7 @@ See the source of `.github/workflows` for details.
        button, **do not publish** yet!
 
     3. Get back to the repository, commit both files as
-       `Bump version to <VERSION_NUMBER>` in `release/<VERSION_NUMBER>` branch,
+       `Release <VERSION_NUMBER>` in `release/<VERSION_NUMBER>` branch,
        create a pull request, hold your breath, and—merge it.
 
 3. **Automatic:** once the release pull request from step 2.3 is merged, the
