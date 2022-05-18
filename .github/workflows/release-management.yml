@@ -6,29 +6,19 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-18.04
+    name: Build and test
+    runs-on: ubuntu-20.04
     outputs:
       version_changed: ${{ steps.check_package_version.outputs.changed }}
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
-
-      - name: Cache node modules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          node-version: 16
+          cache: npm
 
       - name: Install
         run: npm ci
@@ -41,39 +31,41 @@ jobs:
 
       - name: Check package.json for version change
         id: check_package_version
-        uses: EndBug/version-check@v1.6.0
+        uses: EndBug/version-check@v2.1.0
 
       - name: Log when version changed
         if: steps.check_package_version.outputs.changed == 'true'
         run: 'echo "Version change found in commit ${{ steps.check_package_version.outputs.commit }}! New version: ${{ steps.check_package_version.outputs.version }} (${{ steps.check_package_version.outputs.type }})"'
 
       - name: Log when version unchanged
-        if: steps.check_package_version.outputs.changed != 'true'
+        if: steps.check_package_version.outputs.changed == 'false'
         run: 'echo "No version change"'
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: assets
           path: assets/built
 
   update_release_draft:
+    name: Update release draft
     needs: [build_and_test]
-    if: needs.build_and_test.outputs.version_changed != 'true'
-    runs-on: ubuntu-18.04
+    if: needs.build_and_test.outputs.version_changed == 'false'
+    runs-on: ubuntu-20.04
     steps:
       - name: Draft release on GitHub
-        uses: release-drafter/release-drafter@v5.12.1
+        uses: release-drafter/release-drafter@v5.19.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish_release_draft_on_version_bump:
+    name: Publish release draft
     needs: [build_and_test]
     if: needs.build_and_test.outputs.version_changed == 'true'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # An existing release draft is published only if there is a version bump in `package.json`.
       # Throws an error and breaks the job if called regardless. We check for version changes in the
@@ -90,21 +82,22 @@ jobs:
           RELEASE_URL: ${{ steps.github_release.outputs.release_url }}
 
   deploy_theme:
+    name: Deploy theme to Ghost cloud
     needs: [build_and_test, publish_release_draft_on_version_bump]
     if: needs.build_and_test.outputs.version_changed == 'true'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: assets
           path: assets/built
 
       - name: Deploy Ghost theme
-        uses: TryGhost/action-deploy-theme@v1.4.0
+        uses: TryGhost/action-deploy-theme@v1.5.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
