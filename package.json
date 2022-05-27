@@ -22,8 +22,7 @@
     "url": "https://github.com/frontend-garden/frontend-garden-ghost-theme"
   },
   "engines": {
-    "ghost": ">=4.2.0",
-    "ghost-api": "v4",
+    "ghost": ">=5.1.0",
     "node": ">=16.14.0",
     "npm": ">=8.3.0"
   },
@@ -68,6 +67,7 @@
     "stylelint": "^14.3.0"
   },
   "config": {
+    "card_assets": true,
     "image_sizes": {
       "avatar_small_2x": {
         "width": 150
