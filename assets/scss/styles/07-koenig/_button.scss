@@ -1,24 +1,26 @@
-// Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/button.css
+// Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/button.css
 
-@use "../../settings/colors";
 @use "../../tools/button";
 
-// stylelint-disable selector-max-specificity, selector-no-qualifying-type -- Override third-party selectors.
+.kg-button-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
-.article .kg-button-card a.kg-btn {
+.kg-button-card.kg-align-left {
+    justify-content: flex-start;
+}
+
+.kg-button-card .kg-btn {
     @include button.create();
-
-    height: auto;
-
-    &:hover {
-        opacity: 1;
-    }
 
     @media print {
         display: none;
     }
 }
 
-.article .kg-button-card a.kg-btn-accent {
+.kg-button-card .kg-btn-accent {
     @include button.primary();
 }

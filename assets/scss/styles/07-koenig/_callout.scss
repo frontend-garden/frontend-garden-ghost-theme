@@ -1,18 +1,21 @@
-// Overrides https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/callout.css
+// Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/callout.css
 
 @use "sass:color";
 @use "sass:map";
 @use "../../settings/borders";
 @use "../../settings/colors";
 @use "../../settings/container";
+@use "../../settings/grid";
 @use "../../tools/breakpoint";
 @use "../../tools/content-block";
 @use "../../tools/spacing";
 @use "../../tools/typography";
 
-.article .kg-callout-card {
+.kg-callout-card {
     @include content-block.wide();
 
+    display: flex;
+    column-gap: grid.$gap;
     padding: spacing.of(0.75) container.$padding;
     border-radius: 0;
 
@@ -22,14 +25,22 @@
     }
 }
 
-.article .kg-callout-card-grey {
+.kg-callout-emoji {
+    font-size: 1.15em;
+    line-height: 1.25;
+}
+
+.kg-callout-text {
+    @include typography.style(callout);
+}
+
+.kg-callout-card-grey {
     background-color: color.adjust(map.get(colors.$grays, gray-dark), $alpha: -0.9);
 }
 
-.article .kg-callout-card-white {
+.kg-callout-card-white {
     border-top: borders.$width solid var(--ruler-color);
     border-bottom: borders.$width solid var(--ruler-color);
-    box-shadow: none;
 
     @include breakpoint.up(sm) {
         border: none;
@@ -37,27 +48,30 @@
     }
 }
 
-.article .kg-callout-card-blue {
+.kg-callout-card-blue {
     background-color: color.adjust(map.get(colors.$ui, info), $alpha: -0.89);
 }
 
-.article .kg-callout-card-green {
+.kg-callout-card-green {
     background-color: color.adjust(map.get(colors.$ui, success), $alpha: -0.88);
 }
 
-.article .kg-callout-card-yellow {
+.kg-callout-card-yellow {
     background-color: color.adjust(map.get(colors.$ui, warning), $alpha: -0.84);
 }
 
-.article .kg-callout-card-accent {
+.kg-callout-card-accent {
+    color: colors.$white;
     background-color: var(--primary-background-color);
 }
 
-.article .kg-callout-card.kg-callout-card-accent a {
+.kg-callout-card-accent a {
     text-decoration: none;
 }
 
-// stylelint-disable-next-line selector-no-qualifying-type -- Override third-party selectors.
-.article .kg-callout-card div.kg-callout-text {
-    @include typography.style(callout);
+@media print {
+    .kg-callout-card {
+        border: borders.$width-thick solid var(--ruler-color);
+        box-shadow: none;
+    }
 }
