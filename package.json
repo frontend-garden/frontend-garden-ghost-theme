@@ -68,7 +68,7 @@
   },
   "config": {
     "card_assets": {
-      "exclude": ["bookmark"]
+      "exclude": ["bookmark", "button", "callout", "gallery"]
     },
     "image_sizes": {
       "avatar_small_2x": {

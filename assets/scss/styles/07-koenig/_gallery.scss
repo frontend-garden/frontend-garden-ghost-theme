@@ -1,5 +1,6 @@
 // Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/gallery.css
-// ⚠️ Relies on inline styles injected by `assets/js/main.js`.
+
+// 1. ⚠️ Relies on inline styles injected by `assets/js/main.js`.
 
 @use "../../settings/grid";
 @use "../../tools/breakpoint";
@@ -10,6 +11,7 @@
 
     display: flex;
     flex-direction: column;
+    row-gap: grid.$gap-small;
 
     @include breakpoint.up(md) {
         padding-right: grid.$gap-small;
@@ -20,32 +22,18 @@
 .kg-gallery-row {
     display: flex;
     flex-direction: column;
+    gap: grid.$gap-small;
     justify-content: center;
 
     @include breakpoint.up(md) {
         flex-direction: row;
-
-        &:not(:first-of-type) {
-            margin: grid.$gap-small 0 0 0;
-        }
     }
-}
-
-.kg-gallery-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
 }
 
 .kg-gallery-image {
-    margin-bottom: grid.$gap-small;
+    flex: var(--aspect-ratio, 1) 1 0%; // 1.
+}
 
-    @include breakpoint.up(md) {
-        margin-bottom: 0;
-
-        &:not(:first-of-type) {
-            margin-left: grid.$gap-small;
-        }
-    }
+.kg-gallery-image > img {
+    width: 100%;
 }
