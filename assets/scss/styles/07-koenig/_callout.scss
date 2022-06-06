@@ -31,7 +31,7 @@
 }
 
 .kg-callout-text {
-    @include typography.style(callout);
+    @include typography.style(body-small);
 }
 
 .kg-callout-card-grey {

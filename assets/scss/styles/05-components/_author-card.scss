@@ -4,7 +4,7 @@
 @use "../../tools/typography";
 
 .author-card {
-    line-height: map.get(typography-settings.$line-height-values, dense);
+    line-height: map.get(typography-settings.$line-height-values, small);
 }
 
 .author-card__name,

@@ -42,6 +42,14 @@ $styles: (
             font-family: typography.$font-family-sans-serif,
         ),
     ),
+    caption: (
+        default: (
+            font-weight: map.get(typography.$font-weight-values, regular),
+            font-size: modularscale.ms(-3),
+            line-height: map.get(typography.$line-height-values, medium),
+            font-family: typography.$font-family-sans-serif,
+        ),
+    ),
     summary: (
         default: (
             font-weight: map.get(typography.$font-weight-values, regular),
@@ -56,6 +64,14 @@ $styles: (
             font-weight: map.get(typography.$font-weight-values, regular),
             font-size: typography.$font-size-base,
             line-height: spacing.of(1),
+            font-family: typography.$font-family-serif,
+        ),
+    ),
+    body-small: (
+        default: (
+            font-weight: map.get(typography.$font-weight-values, regular),
+            font-size: modularscale.ms(-1),
+            line-height: map.get(typography.$line-height-values, medium),
             font-family: typography.$font-family-serif,
         ),
     ),
@@ -74,7 +90,7 @@ $styles: (
     small-block: (
         default: (
             font-size: modularscale.ms(-2),
-            line-height: map.get(typography.$line-height-values, base),
+            line-height: map.get(typography.$line-height-values, medium),
         ),
     ),
     small-caps: (
@@ -108,18 +124,6 @@ $styles: (
             font-family: typography.$font-family-sans-serif,
         ),
     ),
-    alert: (
-        default: (
-            font-size: modularscale.ms(-1),
-            line-height: map.get(typography.$line-height-values, medium),
-        ),
-    ),
-    callout: (
-        default: (
-            font-size: modularscale.ms(-1),
-            line-height: map.get(typography.$line-height-values, medium),
-        ),
-    ),
     header-title: (
         default: (
             font-weight: map.get(typography.$font-weight-values, bold),
@@ -132,13 +136,6 @@ $styles: (
     footer-title: (
         default: (
             font-weight: map.get(typography.$font-weight-values, bold),
-            font-family: typography.$font-family-sans-serif,
-        ),
-    ),
-    interruption-label: (
-        default: (
-            font-size: modularscale.ms(-3),
-            line-height: map.get(typography.$line-height-values, medium),
             font-family: typography.$font-family-sans-serif,
         ),
     ),

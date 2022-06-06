@@ -9,9 +9,8 @@ $font-size-base: calc(#{$font-size-root} + #{$font-size-fluid-factor});
 $line-height-fluid-factor: 0.2vw;
 
 $line-height-values: (
-    dense: 1.4,
-    medium: 1.6,
-    base: 1.68,
+    small: 1.4,
+    medium: 1.68,
     large: 1.8,
 );
 

@@ -7,7 +7,7 @@
 @use "../../tools/typography";
 
 .alert {
-    @include typography.style(alert);
+    @include typography.style(body-small);
 
     padding: spacing.of(0.5) 1em;
     color: colors.$white;

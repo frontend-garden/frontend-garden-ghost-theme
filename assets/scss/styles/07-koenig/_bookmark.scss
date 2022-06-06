@@ -72,7 +72,7 @@ $_breakpoint: md;
 .kg-bookmark-title {
     @include typography.style(headline4);
 
-    line-height: typography.line-height(dense);
+    line-height: typography.line-height(small);
 }
 
 .kg-bookmark-description {
@@ -83,7 +83,7 @@ $_breakpoint: md;
 }
 
 .kg-bookmark-metadata {
-    @include typography.style(small-block);
+    @include typography.style(caption);
 
     display: flex;
     column-gap: 0.5em;
