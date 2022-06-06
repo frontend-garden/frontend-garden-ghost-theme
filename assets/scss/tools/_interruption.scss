@@ -9,7 +9,7 @@
     margin-top: spacing.of(2);
 
     &::before {
-        @include typography.style(interruption-label);
+        @include typography.style(caption);
 
         content: $text;
         position: absolute;

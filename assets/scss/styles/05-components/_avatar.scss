@@ -7,8 +7,8 @@
 @use "../../tools/typography";
 @use "../../tools/transition";
 
-$_avatar-size: 3em * typography.line-height(base);
-$_avatar-small-size: 2em * typography.line-height(base);
+$_avatar-size: 3em * typography.line-height(medium);
+$_avatar-small-size: 2em * typography.line-height(medium);
 
 .avatar {
     @include browser-hacks.safari-rounded-corners-fix();
