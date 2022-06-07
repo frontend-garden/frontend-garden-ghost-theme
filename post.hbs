@@ -91,6 +91,50 @@
 
                     <hr class="print-hidden" />
 
+                    <div class="article__author spacing-bottom print-hidden">
+                        {{#has author="count:>1"}}
+                            {{> "byline-multiple"}}
+                        {{else}}
+                            {{> "byline-single"}}
+                        {{/has}}
+                    </div>
+
+                    {{#get "posts"
+                        filter="author:{{primary_author.slug}}+id:-{{id}}"
+                        limit="3"
+                        as |more_posts_by_author|
+                    }}
+                        {{#if more_posts_by_author}}
+                            <div class="print-hidden">
+                                <h4>Další články od&nbsp;autora:</h4>
+                                <ul class="js-nbsp">
+                                    {{#foreach more_posts_by_author visibility="public"}}
+                                        <li>
+                                            <a href="{{url}}">{{title}}</a>
+                                        </li>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
+                        {{/if}}
+                    {{/get}}
+
+                    {{#if tags}}
+                        <div class="list-inline print-hidden">
+                            <span class="text-small-block text-italic color-muted">Více k&nbsp;tématu:</span>
+                            <nav>
+                                <ul class="list-unstyled list-inline spacing-bottom-none">
+                                    {{#foreach tags from=2}}
+                                        <li>
+                                            <a href="{{url}}" class="label">{{name}}</a>
+                                        </li>
+                                    {{/foreach}}
+                                </ul>
+                            </nav>
+                        </div>
+                    {{/if}}
+
+                    <hr class="print-hidden" />
+
                     {{> "share-and-comment"}}
 
                 </div>

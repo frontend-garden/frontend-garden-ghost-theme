@@ -1,10 +1,8 @@
 @use "sass:map";
-@use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
-@use "../../settings/typography" as typography-settings;
 @use "../../tools/typography";
 
 .author-card {
-    line-height: map.get(typography-settings.$line-height-values, small);
+    line-height: typography.line-height(small);
 }
 
 .author-card__name,
@@ -23,8 +21,10 @@
 }
 
 .author-card__bio {
+    @include typography.style(body-small);
+
     margin-bottom: 0;
-    font-size: modularscale.ms(-1);
+    line-height: inherit;
 }
 
 .author-card__text {
