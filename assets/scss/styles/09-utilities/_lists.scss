@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     column-gap: grid.$gap-small;
     row-gap: 0.25em;
+    align-items: baseline;
 }
 
 .list-item-decorated::before {
