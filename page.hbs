@@ -41,6 +41,14 @@
 
 {{> "footer"}}
 
+{{#contentFor "styles"}}
+    {{> "external/prism-css"}}
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+    {{> "external/prism-js"}}
+{{/contentFor}}
+
 {{#contentFor "snippets"}}
     <template id="snippet__newsletter-signup__template">
         {{> "snippets/newsletter-signup"}}
