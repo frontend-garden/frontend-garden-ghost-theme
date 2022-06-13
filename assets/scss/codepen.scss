@@ -3,18 +3,18 @@
 
 // 1. Generic
 // Ground-zero styles.
-@use "styles/01-generic/box-sizing";
-@use "styles/01-generic/reset";
-@use "styles/01-generic/selection";
-@use "styles/01-generic/shared";
+@forward "styles/01-generic/box-sizing";
+@forward "styles/01-generic/reset";
+@forward "styles/01-generic/selection";
+@forward "styles/01-generic/shared";
 
 // 2. Themes
 // Light and dark mode.
-@use "styles/02-themes/site";
+@forward "styles/02-themes/site";
 
 // 3. Elements
 // Unclassed HTML elements (type selectors).
-@use "styles/03-elements/page-elements";
+@forward "styles/03-elements/page-elements";
 
 // 4. Other useful defaults
 body {
