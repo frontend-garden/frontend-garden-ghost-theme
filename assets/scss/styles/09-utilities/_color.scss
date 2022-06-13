@@ -1,7 +1,9 @@
+// stylelint-disable declaration-no-important -- Utilities are OK.
+
 .color-inverse {
-    color: var(--text-inverse-color);
+    color: var(--text-inverse-color) !important;
 }
 
 .color-muted {
-    color: var(--text-muted-color);
+    color: var(--text-muted-color) !important;
 }
