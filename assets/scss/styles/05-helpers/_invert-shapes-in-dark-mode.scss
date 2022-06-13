@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../../settings/colors";
 
-// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
+// stylelint-disable declaration-no-important -- Use `!important` to override any styling.
 
 @media (prefers-color-scheme: dark) {
     .invert-shapes-in-dark-mode :is(circle, ellipse, line, path, polygon, polyline, rect) {

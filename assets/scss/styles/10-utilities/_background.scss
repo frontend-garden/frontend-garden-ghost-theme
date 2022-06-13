@@ -1,0 +1,15 @@
+@use "../../settings/colors";
+
+// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
+
+.background-alternate {
+    background-color: var(--alternate-background-color) !important;
+}
+
+.background-dark {
+    background-color: var(--dark-background-color) !important;
+}
+
+.background-primary {
+    background-color: var(--primary-background-color) !important;
+}
