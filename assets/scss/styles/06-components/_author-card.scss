@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "../../tools/spacing";
 @use "../../tools/typography";
 
 .author-card {
@@ -13,7 +14,7 @@
 .author-card__name {
     @include typography.style(headline4);
 
-    margin-bottom: 0;
+    margin-bottom: spacing.of(0.5);
 }
 
 .author-card__link {
