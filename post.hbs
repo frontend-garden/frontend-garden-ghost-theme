@@ -101,6 +101,7 @@
 
                     {{#get "posts"
                         filter="author:{{primary_author.slug}}+id:-{{id}}"
+                        include="tags"
                         limit="3"
                         as |more_posts_by_author|
                     }}
@@ -110,6 +111,10 @@
                                 <ul class="js-nbsp">
                                     {{#foreach more_posts_by_author visibility="public"}}
                                         <li>
+                                            {{#has tag="Slovník"}}
+                                                <a href="/slovnik" class="link-unstyled color-muted">Slovník</a>
+                                                <span class="color-muted">/</span>
+                                            {{/has}}
                                             <a href="{{url}}">{{title}}</a>
                                         </li>
                                     {{/foreach}}
