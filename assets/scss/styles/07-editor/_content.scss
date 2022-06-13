@@ -5,6 +5,7 @@
 // 4. Separate perex with horizontal line.
 // 5. Reset small caps in the first line of perex in Safari as there is a bug:
 //    https://bugs.webkit.org/show_bug.cgi?id=3409
+// 6. Re-declare styling for responsive tables.
 
 @use "sass:map";
 @use "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
@@ -133,6 +134,12 @@
 .editor table {
     @include content-block.vertical-offset();
     @include content-block.wide($declare-width: true);
+}
+
+// 6.
+.editor .table-responsive table {
+    width: 100%;
+    margin: 0 0 1em;
 }
 
 .editor th,

@@ -6,7 +6,7 @@
 
 .table-responsive {
     @include content-block.vertical-offset();
-    @include content-block.wide($declare-width: true);
+    @include content-block.wide();
 
     display: block;
     overflow-x: auto;
