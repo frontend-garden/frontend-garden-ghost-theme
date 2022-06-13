@@ -146,7 +146,9 @@ $_breakpoint: md;
     }
 }
 
-.kg-bookmark-thumbnail > img {
+// stylelint-disable selector-no-qualifying-type -- Override editor styles for SVG.
+.kg-bookmark-thumbnail > img,
+.kg-bookmark-card .kg-bookmark-thumbnail > img[src$=".svg"] {
     width: 100%;
     border-radius: borders.$radius borders.$radius 0 0;
 
@@ -157,3 +159,4 @@ $_breakpoint: md;
         border-radius: 0;
     }
 }
+// stylelint-enable selector-no-qualifying-type
