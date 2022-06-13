@@ -1,5 +1,8 @@
 @use "../../settings/button";
 
+$_button-height: 3em;
+$_footer-height: calc(3 * #{$_button-height} + 4 * 1em + 1px);
+
 // stylelint-disable selector-class-pattern, selector-max-specificity, selector-max-id -- Sorry!
 
 .cc_div #c-ttl,
@@ -9,12 +12,30 @@
 }
 
 .cc_div .c-bn {
-    height: 3em;
-    padding: button.$padding-block-small button button.$padding-inline-small;
+    height: $_button-height;
+    padding: button.$padding-block-small button.$padding-inline-small;
     line-height: button.$line-height-small;
 }
 
 .cc_div #cm,
 .cc_div #s-inr {
     box-shadow: var(--medium-shadow);
+}
+
+.cc_div #cm {
+    max-width: 31em;
+}
+
+@media screen and (max-width: 688px) {
+    .cc_div #cm {
+        max-width: none;
+    }
+
+    #s-inr.bns-t {
+        padding-bottom: $_footer-height;
+    }
+
+    .bns-t #s-bns {
+        height: $_footer-height;
+    }
 }
