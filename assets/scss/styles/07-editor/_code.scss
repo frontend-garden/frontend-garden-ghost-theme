@@ -2,6 +2,7 @@
 //    https://prismjs.com
 // 2. Avoid cascading font size when prism.js is not applied…
 // 3. … and set it back when prism.js is active.
+// 4. Make code readable even when prism.js has not loaded.
 
 @use "../../settings/typography" as typography-settings;
 @use "../../tools/breakpoint";
@@ -47,4 +48,8 @@ pre code[class*="language-"] {
 
 pre[class*="language-"] code[class*="language-"] {
     font-size: typography-settings.$code-font-size; // 3.
+}
+
+pre:not([class]) code {
+    background-color: transparent; // 4.
 }
