@@ -1,9 +1,5 @@
 @use "../../tools/typography";
 
-.text-center {
-    text-align: center;
-}
-
 .text-small-block {
     @include typography.style(small-block);
 }
@@ -14,12 +10,4 @@
 
 .text-headline-3 {
     @include typography.style(headline3);
-}
-
-.text-italic {
-    font-style: italic;
-}
-
-.text-nowrap {
-    white-space: nowrap;
 }

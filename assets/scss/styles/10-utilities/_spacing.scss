@@ -1,0 +1,27 @@
+@use "../../tools/spacing";
+
+// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
+
+.spacing-right-1 {
+    margin-right: 0.5em !important;
+}
+
+.spacing-right-2 {
+    margin-right: 1em !important;
+}
+
+.spacing-bottom-none {
+    margin-bottom: 0 !important;
+}
+
+.spacing-bottom-small {
+    margin-bottom: spacing.of(0.5) !important;
+}
+
+.spacing-bottom {
+    margin-bottom: spacing.of(1) !important;
+}
+
+.spacing-bottom-large {
+    margin-bottom: spacing.of(2) !important;
+}

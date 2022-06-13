@@ -1,4 +1,4 @@
-// stylelint-disable declaration-no-important -- Utilities are OK.
+// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
 
 .color-inverse {
     color: var(--text-inverse-color) !important;
