@@ -1,4 +1,6 @@
 // Replaces https://github.com/TryGhost/Ghost/blob/main/core/frontend/src/cards/css/callout.css
+//
+// 1. Original colors from the core CSS are just fine, let's reuse them.
 
 @use "sass:color";
 @use "sass:map";
@@ -58,6 +60,18 @@
 
 .kg-callout-card-yellow {
     background-color: color.adjust(map.get(colors.$ui, warning), $alpha: -0.84);
+}
+
+.kg-callout-card-red {
+    background-color: rgb(209 46 46 / 11%); // 1.
+}
+
+.kg-callout-card-pink {
+    background-color: rgb(225 71 174 / 11%); // 1.
+}
+
+.kg-callout-card-purple {
+    background-color: rgb(135 85 236 / 12%); // 1.
 }
 
 .kg-callout-card-accent {
