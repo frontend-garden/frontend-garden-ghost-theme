@@ -15,3 +15,8 @@
 // 3. Elements
 // Unclassed HTML elements (type selectors).
 @use "styles/03-elements/page-elements";
+
+// 4. Other useful defaults
+body {
+    padding: 1.5em;
+}
