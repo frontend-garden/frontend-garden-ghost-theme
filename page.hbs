@@ -16,7 +16,17 @@
             <section class="section section--roomy-bottom">
                 <div class="container container--article">
 
-                    <div class="editor js-nbsp js-external-links js-heading-anchors">
+                    <div
+                        class="
+                            editor
+                            {{#has tag="#page-long-text"}}
+                                editor--long-text
+                            {{/has}}
+                            js-nbsp
+                            js-external-links
+                            js-heading-anchors
+                        "
+                    >
                         {{content}}
                     </div>
 
