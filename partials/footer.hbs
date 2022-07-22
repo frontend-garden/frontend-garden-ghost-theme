@@ -9,7 +9,7 @@
     <div class="container container--narrow">
 
         {{#unless hideInternalLinks}}
-            {{#get "tags" filter="slug:-[clanky,slovnik]" limit="all"}}
+            {{#get "tags" filter="slug:-[clanky,newsletter,slovnik]" limit="all"}}
                 <h2 class="print-hidden">Všechna témata</h2>
                 <ul class="footer__list list-unstyled list-inline spacing-bottom-large print-hidden">
                     {{#foreach tags}}
