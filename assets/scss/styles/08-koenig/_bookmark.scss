@@ -4,6 +4,7 @@
 @use "../../settings/borders";
 @use "../../settings/colors";
 @use "../../tools/breakpoint";
+@use "../../tools/interruption";
 @use "../../tools/spacing";
 @use "../../tools/transition";
 @use "../../tools/typography";
@@ -11,14 +12,24 @@
 $_breakpoint: md;
 
 .kg-bookmark-card {
+    @include interruption.label("Přečtěte si také ↓");
+
     width: 100%;
     max-width: 22em;
     margin-inline: auto;
     background: var(--page-background-color);
 
+    &::before {
+        left: 0;
+    }
+
     @include breakpoint.up($_breakpoint) {
         max-width: none;
     }
+}
+
+.kg-card.kg-bookmark-card:not(:first-child) {
+    margin-top: spacing.of(2);
 }
 
 .kg-bookmark-container {
@@ -92,7 +103,7 @@ $_breakpoint: md;
 
 .kg-bookmark-icon {
     width: 2em;
-    height: 2em;
+    max-height: 2em;
 }
 
 .kg-bookmark-author {
