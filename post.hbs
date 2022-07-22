@@ -100,7 +100,7 @@
                     </div>
 
                     {{#get "posts"
-                        filter="author:{{primary_author.slug}}+id:-{{id}}"
+                        filter="author:{{primary_author.slug}}+primary_tag:[clanky,slovnik]+id:-{{id}}"
                         include="tags"
                         limit="3"
                         as |more_posts_by_author|

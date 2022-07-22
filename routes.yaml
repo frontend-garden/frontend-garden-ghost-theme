@@ -16,6 +16,13 @@ collections:
     order: featured DESC, published_at DESC
     data: tag.clanky
 
+  /newsletter/:
+    permalink: /newsletter/{slug}/
+    template: index
+    filter: primary_tag:newsletter
+    order: published_at DESC
+    data: tag.newsletter
+
   /slovnik/:
     permalink: /slovnik/{slug}/
     template: glossary
