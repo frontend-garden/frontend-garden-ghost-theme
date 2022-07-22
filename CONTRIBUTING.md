@@ -4,7 +4,7 @@
 
 ## Installation
 
-Requirements: [node] v14 or newer.
+Requirements: [node] v16 or newer.
 
 ### Set up Ghost
 
