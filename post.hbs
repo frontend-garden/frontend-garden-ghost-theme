@@ -102,6 +102,7 @@
                     {{#get "posts"
                         filter="author:{{primary_author.slug}}+primary_tag:[clanky,slovnik]+id:-{{id}}"
                         include="tags"
+                        order="published_at DESC"
                         limit="3"
                         as |more_posts_by_author|
                     }}
@@ -156,6 +157,7 @@
     {{#get "posts"
         filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"
         include="authors,tags"
+        order="published_at DESC"
         limit="3"
         as |recent|
     }}

@@ -38,6 +38,7 @@
         {{#get "posts"
             filter="primary_tag:clanky"
             include="authors,tags"
+            order="published_at DESC"
             limit="3"
             as |recent|
         }}
