@@ -5,6 +5,10 @@
 @use "../../settings/typography" as typography-settings;
 @use "../../tools/typography";
 
+:root {
+    color-scheme: light dark;
+}
+
 html {
     height: 100%;
     font-size: typography-settings.$font-size-root; // 1.
