@@ -1,6 +1,7 @@
 @use "sass:color";
 @use "sass:map";
 @use "../../settings/colors";
+@use "../../tools/units";
 
 .cover {
     position: relative;
@@ -57,7 +58,7 @@
             circle at left 25%,
             var(--gradient-from),
             var(--gradient-from) 32rem,
-            var(--gradient-to) calc((46rem - 12vw) * 1.5)
+            var(--gradient-to) calc((46rem - #{units.limit-vw(12)}) * 1.5)
         );
 }
 
@@ -66,8 +67,8 @@
         radial-gradient(
             circle at left 25%,
             var(--gradient-from),
-            var(--gradient-from) calc(60rem - 20vw),
-            var(--gradient-to) calc(80rem - 10vw)
+            var(--gradient-from) calc(60rem - #{units.limit-vw(20)}),
+            var(--gradient-to) calc(80rem - #{units.limit-vw(10)})
         );
 }
 

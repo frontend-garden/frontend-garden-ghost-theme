@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "sass:meta";
+
+$_viewport-width-limit-in-px: 1920;
+
+/**
+Return CSS min() function comparing input value in vw and its equivalent in px for a full-HD screen.
+ */
+@function limit-vw($value) {
+    $value-type: meta.type-of($value);
+
+    @if $value-type != "number" {
+        @error "The argument of the limit-vw() function must be a number, #{$value-type} given.";
+    }
+
+    $limit: math.floor($_viewport-width-limit-in-px * $value / 100);
+
+    @return min($value * 1vw, $limit * 1px);
+}
