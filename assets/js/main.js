@@ -137,9 +137,14 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 //     image: {
 //       src: 'image.png',
 //       alt: 'Alternative text',
+//       linkUrl: 'https://www.example.com',
 //     },
-//     ctaLabel: 'Dynamic CTA label',
-//     ctaUrl: 'https://www.example.com',
+//     cta: {
+//       label: 'Dynamic CTA label',
+//       linkUrl: 'https://www.example.com',
+//     },
+//     ctaLabel: 'Dynamic CTA label', // DEPRECATED
+//     ctaUrl: 'https://www.example.com', // DEPRECATED
 //   },
 // };
 //
@@ -148,7 +153,7 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 // <div data-populate="bottom-ad">
 //     <h2 data-populate-field="title"></h2>
 //     <p data-populate-field="text"></p>
-//     <figure data-populate-field="image"><img /></figure>
+//     <a data-populate-field="image"><figure><img /></figure></a>
 //     <a data-populate-field="cta"></a>
 // </div>
 document.querySelectorAll('[data-populate]').forEach((element) => {
@@ -196,25 +201,39 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
 
     if (imageField) {
       if (dataToPopulate.image) {
-        const imageEl = imageField.firstElementChild;
+        if (!dataToPopulate.image.src) {
+          hideSnippet();
 
-        imageEl.setAttribute('src', dataToPopulate.image.src);
-        imageEl.setAttribute('alt', dataToPopulate.image.alt);
+          // eslint-disable-next-line no-console -- Warn for a misconfigured snippet.
+          console.warn('Warning! Image "src" attribute is required. Whole snippet is now hidden.');
+        } else {
+          const imageEl = imageField.querySelector('img');
 
-        if (dataToPopulate.image.srcset) {
-          imageEl.setAttribute('srcset', dataToPopulate.image.srcset);
-        }
+          imageEl.setAttribute('src', dataToPopulate.image.src);
 
-        if (dataToPopulate.image.sizes) {
-          imageEl.setAttribute('sizes', dataToPopulate.image.sizes);
-        }
+          if (dataToPopulate.image.linkUrl) {
+            imageField.setAttribute('href', dataToPopulate.image.linkUrl);
+          }
 
-        if (dataToPopulate.image.width) {
-          imageEl.setAttribute('width', dataToPopulate.image.width);
-        }
+          if (dataToPopulate.image.alt) {
+            imageEl.setAttribute('alt', dataToPopulate.image.alt);
+          }
 
-        if (dataToPopulate.image.height) {
-          imageEl.setAttribute('height', dataToPopulate.image.height);
+          if (dataToPopulate.image.srcset) {
+            imageEl.setAttribute('srcset', dataToPopulate.image.srcset);
+          }
+
+          if (dataToPopulate.image.sizes) {
+            imageEl.setAttribute('sizes', dataToPopulate.image.sizes);
+          }
+
+          if (dataToPopulate.image.width) {
+            imageEl.setAttribute('width', dataToPopulate.image.width);
+          }
+
+          if (dataToPopulate.image.height) {
+            imageEl.setAttribute('height', dataToPopulate.image.height);
+          }
         }
       } else {
         imageField.remove();
@@ -222,9 +241,10 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
     }
 
     if (ctaField) {
-      if (dataToPopulate.ctaLabel && dataToPopulate.ctaUrl) {
-        ctaField.innerHTML = dataToPopulate.ctaLabel;
-        ctaField.setAttribute('href', dataToPopulate.ctaUrl);
+      // @deprecated `ctaLabel` and `ctaUrl` are deprecated in favour of the `cta` object.
+      if (dataToPopulate.cta || (dataToPopulate.ctaLabel && dataToPopulate.ctaUrl)) {
+        ctaField.innerHTML = dataToPopulate.cta?.label || dataToPopulate.ctaLabel;
+        ctaField.setAttribute('href', dataToPopulate.cta?.linkUrl || dataToPopulate.ctaUrl);
       } else {
         ctaField.remove();
       }
