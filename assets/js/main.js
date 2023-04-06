@@ -132,10 +132,14 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 //
 // const snippetsData = {
 //   'bottom-ad': {
+//     title: 'Dynamic title',
+//     text: 'Dynamic <strong>text</strong>',
+//     image: {
+//       src: 'image.png',
+//       alt: 'Alternative text',
+//     },
 //     ctaLabel: 'Dynamic CTA label',
 //     ctaUrl: 'https://www.example.com',
-//     text: 'Dynamic <strong>text</strong>',
-//     title: 'Dynamic title',
 //   },
 // };
 //
@@ -144,6 +148,7 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
 // <div data-populate="bottom-ad">
 //     <h2 data-populate-field="title"></h2>
 //     <p data-populate-field="text"></p>
+//     <figure data-populate-field="image"><img /></figure>
 //     <a data-populate-field="cta"></a>
 // </div>
 document.querySelectorAll('[data-populate]').forEach((element) => {
@@ -170,19 +175,59 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
     const dataToPopulate = snippetsData[snippetName];
     const titleField = populateEl.querySelector('[data-populate-field="title"]');
     const textField = populateEl.querySelector('[data-populate-field="text"]');
+    const imageField = populateEl.querySelector('[data-populate-field="image"]');
     const ctaField = populateEl.querySelector('[data-populate-field="cta"]');
 
     if (titleField) {
-      titleField.innerHTML = dataToPopulate.title;
+      if (dataToPopulate.title) {
+        titleField.innerHTML = dataToPopulate.title;
+      } else {
+        titleField.remove();
+      }
     }
 
     if (textField) {
-      textField.innerHTML = dataToPopulate.text;
+      if (dataToPopulate.text) {
+        textField.innerHTML = dataToPopulate.text;
+      } else {
+        textField.remove();
+      }
+    }
+
+    if (imageField) {
+      if (dataToPopulate.image) {
+        const imageEl = imageField.firstElementChild;
+
+        imageEl.setAttribute('src', dataToPopulate.image.src);
+        imageEl.setAttribute('alt', dataToPopulate.image.alt);
+
+        if (dataToPopulate.image.srcset) {
+          imageEl.setAttribute('srcset', dataToPopulate.image.srcset);
+        }
+
+        if (dataToPopulate.image.sizes) {
+          imageEl.setAttribute('sizes', dataToPopulate.image.sizes);
+        }
+
+        if (dataToPopulate.image.width) {
+          imageEl.setAttribute('width', dataToPopulate.image.width);
+        }
+
+        if (dataToPopulate.image.height) {
+          imageEl.setAttribute('height', dataToPopulate.image.height);
+        }
+      } else {
+        imageField.remove();
+      }
     }
 
     if (ctaField) {
-      ctaField.innerHTML = dataToPopulate.ctaLabel;
-      ctaField.setAttribute('href', dataToPopulate.ctaUrl);
+      if (dataToPopulate.ctaLabel && dataToPopulate.ctaUrl) {
+        ctaField.innerHTML = dataToPopulate.ctaLabel;
+        ctaField.setAttribute('href', dataToPopulate.ctaUrl);
+      } else {
+        ctaField.remove();
+      }
     }
   }
 });
