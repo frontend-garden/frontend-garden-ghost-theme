@@ -1,4 +1,4 @@
-name: Deploy Theme
+name: Deploy "ramonguilherme.com.br" 🚀
 on:
   push:
     branches:
