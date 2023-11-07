@@ -9,8 +9,8 @@
     <div class="container container--narrow">
 
         {{#unless hideInternalLinks}}
-            {{#get "tags" filter="slug:-[clanky,newsletter,slovnik]" limit="all"}}
-                <h2 class="print-hidden">Všechna témata</h2>
+            {{#get "tags" filter="slug:-[posts,dicionario,jukebox,portfolio]" limit="all"}}
+                <h2 class="print-hidden">Todos os Temas</h2>
                 <ul class="footer__list list-unstyled list-inline spacing-bottom-large print-hidden">
                     {{#foreach tags}}
                         <li class="list-item-decorated">
@@ -30,9 +30,9 @@
         <hr class="print-only" />
 
         <p class="footer__section">
-            Obsah na tomto webu je publikován pod&nbsp;licencí
+            O conteúdo deste site é publicado sob a licença
             <a
-                href="https://creativecommons.org/licenses/by-nc/4.0/"
+                href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-nowrap"
@@ -40,9 +40,9 @@
             >Creative Commons CC&nbsp;BY-NC&nbsp;4.0</a>.
             <br />
             <a href="{{@site.url}}" class="footer__title link-unstyled">{{@site.title}}</a>
-            vysázel, zastřihuje a&nbsp;okopává (s&nbsp;♥️) Adam&nbsp;Kudrna.
+            feito com paixão ❤️ e dedicação por Ramon.
             <br />
-            Založeno v&nbsp;květnu 2019.
+            Conectado ao mundo desde 2020 🚀
         </p>
 
     </div>
