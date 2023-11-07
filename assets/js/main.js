@@ -251,3 +251,13 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
     }
   }
 });
+// Efeito de rolagem do cabeçalho
+window.onscroll = function scrollFunction() {
+  const header = document.querySelector('.site__header');
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    header.style.fontSize = '21px';
+  } else {
+    header.style.fontSize = '23px';
+  }
+};
+
