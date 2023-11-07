@@ -37,7 +37,6 @@ jobs:
   deploy_theme:
     name: Deploy theme to Ghost
     needs: [build_and_test]
-    if: needs.build_and_test.outputs.version_changed == 'true'
     runs-on: ubuntu-22.04
     steps:
       - name: Clone repository
