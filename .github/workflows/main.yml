@@ -34,22 +34,22 @@ jobs:
           name: assets
           path: assets/built
 
-deploy_theme:
-  name: Deploy theme to Ghost
-  runs-on: ubuntu-22.04
-  steps:
-    - name: Clone repository
-      uses: actions/checkout@v3
+  deploy_theme:
+    name: Deploy theme to Ghost
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
 
-    - name: Download artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: assets
-        path: assets/built
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
+          path: assets/built
 
-    - name: Deploy "ramonguilherme.com.br" Theme 🚀
-      uses: TryGhost/action-deploy-theme@v1.5.0
-      with:
-        api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-        api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-        exclude: '.* assets/scss/* dist/* postcss.config.js'
+      - name: Deploy "ramonguilherme.com.br" Theme 🚀
+        uses: TryGhost/action-deploy-theme@v1.5.0
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+          exclude: '.* assets/scss/* dist/* postcss.config.js'
