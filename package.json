@@ -1,7 +1,7 @@
 {
-  "name": "ramon-guilherme",
-  "description": "ramonguilherme.com.br Ghost theme",
-  "version": "1.0.0-beta.1",
+  "name": "frontend-garden-ghost-theme",
+  "description": "Frontend Garden Ghost theme",
+  "version": "6.5.1",
   "license": "Apache-2.0",
   "author": {
     "name": "Adam Kudrna",
