@@ -255,7 +255,7 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
 window.onscroll = function scrollFunction() {
   const header = document.querySelector('.site__header');
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    header.style.fontSize = '21px';
+    header.style.fontSize = '23px';
   } else {
     header.style.fontSize = '23px';
   }
