@@ -257,7 +257,7 @@ window.onscroll = function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     header.style.fontSize = '23px';
   } else {
-    header.style.fontSize = '23px';
+    header.style.fontSize = '21px';
   }
 };
 
