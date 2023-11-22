@@ -13,16 +13,14 @@
 
 .site__header {
     position: sticky;
-    grid-area: header;
-}
-
-.site__content {
-    position: sticky;
     z-index: 99;
     grid-area: header;
     transition: font-size 0.3s ease;
 }
 
+.site__content {
+    grid-area: content;
+}
 .site__footer {
     grid-area: footer;
 }
