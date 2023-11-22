@@ -17,7 +17,10 @@
 }
 
 .site__content {
-    grid-area: content;
+    position: sticky;
+    z-index: 99;
+    grid-area: header;
+    transition: font-size 0.3s ease;
 }
 
 .site__footer {
