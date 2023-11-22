@@ -12,9 +12,6 @@
 }
 
 .site__header {
-    position: fixed;
-    top: 0;
-    z-index: 99;
     grid-area: header;
     transition: font-size 0.3s ease;
 }
