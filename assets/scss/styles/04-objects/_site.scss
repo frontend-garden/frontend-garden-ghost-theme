@@ -12,7 +12,7 @@
 }
 
 .site__header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 99;
     grid-area: header;
