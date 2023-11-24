@@ -256,8 +256,11 @@ window.onscroll = function scrollFunction() {
   const header = document.querySelector('.site__header');
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     header.style.fontSize = '23px';
+    header.style.position = 'fixed';
+    header.style.top = '0';
   } else {
     header.style.fontSize = '21px';
+    header.style.position = 'relative';
   }
 };
 
