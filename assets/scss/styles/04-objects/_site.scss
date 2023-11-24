@@ -12,9 +12,14 @@
 }
 
 .site__header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
     grid-area: header;
+    width: 100%;
     transition: font-size 0.3s ease;
 }
+
 
 .site__content {
     grid-area: content;
