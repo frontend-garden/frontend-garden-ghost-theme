@@ -17,7 +17,7 @@ your machine.
    directory. Optionally clone the theme to a place of your choice and create
    a symlink in the said destination. Either way you should end up with this
    structure:
-   `<YOUR_GHOST_INSTALLATION>/content/frontend-garden-ghost-theme`.
+   `<YOUR_GHOST_INSTALLATION>/content/themes/frontend-garden-ghost-theme`.
 
 2. In the theme root run:
 

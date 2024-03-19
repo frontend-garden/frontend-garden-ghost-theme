@@ -108,6 +108,13 @@
     }
 }
 
+.cover--object--medium {
+    $overlay-color: color.adjust(colors.$black, $alpha: -0.75);
+
+    --gradient-from: #{$overlay-color};
+    --gradient-to: #{color.adjust($overlay-color, $alpha: -1)};
+}
+
 .cover--object--dark {
     $overlay-color: color.adjust(colors.$black, $alpha: -0.333);
 
