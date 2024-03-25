@@ -37,13 +37,13 @@
                     <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
                         <div class="article__meta">
-                            <time datetime="{{date format="YYYY-MM-DD"}}">
-                                {{date format="D. MMMM YYYY"}}
+                            <time datetime="{{date format="DD-MM-YYYY"}}">
+                                {{date format="DD MMMM YYYY"}}
                             </time>
                             —
                             {{tags from=2}}
                             —
-                            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                            {{reading_time minute=(t "1 min de leitura") minutes=(t "% min de leitura")}}
                         </div>
 
                         <h1 class="article__title js-nbsp">{{title}}</h1>
