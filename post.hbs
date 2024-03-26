@@ -145,7 +145,12 @@
 
                     <hr class="print-hidden" />
 
-                {{comment_count empty="" singular="Comentário" plural="Comentários" autowrap="span" class=""}}
+                            {{#if access}}
+                                    {{comments title="Comentários" count=false mode="night" saturation=8}}
+                            {{else}}
+                              <p>You're missing out on the conversation. Become a member and join in.</p>
+                                  <a href="#/portal/">Subscribe</a>
+                            {{/if}}
 
                     {{> "share-and-comment"}}
 
