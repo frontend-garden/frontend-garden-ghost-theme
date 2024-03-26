@@ -145,12 +145,7 @@
 
                     <hr class="print-hidden" />
 
-                    {{#if comments}}
-                       <h2>Comentários</h2>
-                       <a href="/guides">Community guidelines</a>
-                       {{comment_count}}
-                       {{comments title="" count=false mode="dark" saturation=8}}
-                    {{/if}}
+                {{comment_count empty="" singular="Comentário" plural="Comentários" autowrap="span" class=""}}
 
                     {{> "share-and-comment"}}
 
