@@ -5,7 +5,7 @@ https://github.com/airbnb/javascript/issues/1632. */
 
 /* eslint no-restricted-globals: 0 */
 
-const APP_NAME = 'frontend-garden';
+const APP_NAME = 'ramonguilherme-com-br';
 const CACHE_VERSION = 1;
 const ASSETS_PATH_BUILT = '/assets/built/';
 const OFFLINE_URL = '/offline/';
