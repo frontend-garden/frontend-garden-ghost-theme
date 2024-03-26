@@ -1,0 +1,105 @@
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
+  --}} <script>
+  let clientWidth;
+  let root = document.documentElement;
+  window.addEventListener("load", () => {
+  clientWidth = document.getElementById('size-ref').clientWidth;
+  root.style.setProperty('--size-ref-x', clientWidth + "px");
+  });
+  console.log("portfolio.hbs");
+  </script>
+
+  {{!-- The main content area --}}
+  <main id="site-main">
+    <div class="">
+      <!--div class="vh-2-3 flex justify-center items-center text-6xl text-center font-semibold">
+      {{@site.description}}
+    </div-->
+      <div class="flex md:flex-wrap flex-wrap-reverse font-sans">
+        <div id="left-container"
+          class="scrollableContainer md:box-border md:overflow-y-auto md:h-[100vh] min-w-0 w-full md:w-1/2 flex-none md:flex-[0.5] lg:flex-[0.35] md:border-r-2 border-black">
+          {{#foreach posts}}
+          {{^has tag="highlight"}}
+          <article href="{{url}}"
+            class="{{post_class}} aos-element h-[33vh] intersectionObserved relative overflow-hidden bg-black border-bottom border-black"
+            data-aos="fade-up">
+            {{#if feature_image}}
+            <a class="post-card-image-link z-30" href="{{url}}">
+              {{!-- This is a responsive image, it loads different sizes depending on device
+              https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+              <img class="post-card-image min-w-full object-cover h-full" srcset="{{img_url feature_image size=" s"}}
+                300w, {{img_url feature_image size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url
+                feature_image size="xl" }} 2000w" sizes="100vw" src="{{img_url feature_image size=" m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" />
+            </a>
+            {{/if}}
+            {{#if tags}}
+            <ul class="flex flex-grow-1 justify-start mt-[calc(-0.975rem-2px)] md:mt-[calc(-0.975rem-4px)]">
+              {{#foreach tags}}
+              {{#unless @first}}
+              <li class="m-0 flex flex-col justify-start">
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+              </li>
+              {{/unless}}
+              {{/foreach}}
+            </ul>
+            {{/if}}
+          </article>
+
+          {{/has}}
+          {{/foreach}}
+        </div>
+
+        <div id="right-container"
+          class="fade-out scrollableContainer md:box-border md:overflow-y-auto md:h-[100vh] min-w-0 w-full md:w-1/2 flex-none md:flex-1">
+
+           {{!-- <div class="section-title border-b md:border-b-2 border-black hidden md:flex md:flex-row">
+              <div id="arrow-wrapper" class="flex items-center justify-center px-1 py-[0.4rem] d-inline-block">
+                <div class="w-[1.4rem]">
+                  <svg class="rotate-[270deg]" height="100%" viewBox="0 0 57 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.5 0L0 23.5L21.5 47L28 41L16 28H57V19H16L28 6L21.5 0Z" fill="black" />
+                  </svg>
+                </div>
+              </div>
+              <h1 class=" py-1 text-lg uppercase aos-element">Highlights</h1>
+            </div>--}}
+
+          {{#foreach posts}}
+          {{#has tag="highlight"}}
+          <article href="{{url}}" id="thumb-size"
+            class="{{post_class}} aos-element h-[33vh] intersectionObserved relative overflow-hidden bg-black border-bottom border-black md:h-[66vh]"
+            data-aos="fade-up">
+            {{#if feature_image}}
+            <a class="post-card-image-link z-30" href="{{url}}">
+              {{!-- This is a responsive image, it loads different sizes depending on device
+              https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+              <img class="post-card-image min-w-full object-cover h-full" srcset="{{img_url feature_image size=" s"}}
+                300w, {{img_url feature_image size="m" }} 600w, {{img_url feature_image size="l" }} 1000w, {{img_url
+                feature_image size="xl" }} 2000w" sizes="100vw" src="{{img_url feature_image size=" m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" />
+            </a>
+            {{/if}}
+            {{#if tags}}
+            <ul class="flex flex-grow-1 justify-start mt-[calc(-0.975rem-2px)] md:mt-[calc(-0.975rem-4px)]">
+              {{#foreach tags}}
+              {{#unless @first}}
+              <li class="m-0 flex flex-col justify-start">
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+              </li>
+              {{/unless}}
+              {{/foreach}}
+            </ul>
+            {{/if}}
+          </article>
+          {{/has}}
+          {{/foreach}}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    #left-container #thumbsize {
+      height: 33vh;
+    }
+  </style>
