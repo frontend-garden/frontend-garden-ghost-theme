@@ -3,7 +3,7 @@
 <main class="site__content">
 
     {{#post}}
-        <article class="article">
+        <article class="article {{#has tag="#cover"}}article--cover{{/has}}">
 
             <header
                 class="
@@ -20,6 +20,10 @@
                             cover--object
                             cover--object--light
                         {{/has}}
+                        {{#has tag="#cover-object-medium"}}
+                            cover--object
+                            cover--object--medium
+                        {{/has}}                
                         {{#has tag="#cover-object-dark"}}
                             cover--object
                             cover--object--dark
