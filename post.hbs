@@ -95,10 +95,6 @@
 
                     <hr class="print-hidden" />
 
-                    <hr class="print-hidden" />
-
-                    <hr class="print-hidden" />
-
                     <div class="article__author spacing-bottom print-hidden">
                         {{#has author="count:>1"}}
                             {{> "byline-multiple"}}
@@ -148,6 +144,13 @@
                     {{/if}}
 
                     <hr class="print-hidden" />
+
+{{#if access}}
+  {{comments}}
+{{else}}
+  <p>You're missing out on the conversation. Become a member and join in.</p>
+  <a href="#/portal/">Subscribe</a>
+{{/if}}
 
                     {{> "share-and-comment"}}
 
