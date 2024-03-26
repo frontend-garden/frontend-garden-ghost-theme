@@ -28,11 +28,11 @@ $brand: (
 $primary: map.get($brand, green);
 
 $ui: (
-    info: #007daa,
-    info-light: #00b0f0,
+    info: #8e44ad,
+    info-light: #9b59b6,
     success: map.get($brand, green-dark),
     success-dark: map.get($brand, green-darkest),
-    error: #b70000,
+    error: #c0392b,
     error-dark: #b60000,
     warning: #f6db53,
 );
