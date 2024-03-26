@@ -38,7 +38,7 @@
 
                         <div class="article__meta">
                             <time datetime="{{date format="DD-MM-YYYY"}}">
-                                {{date format="DD MM YYYY"}}
+                                {{date format="DD MMMM YYYY"}}
                             </time>
                             —
                             {{tags from=2}}
@@ -112,8 +112,8 @@
                                 <ul class="js-nbsp">
                                     {{#foreach more_posts_by_author visibility="public"}}
                                         <li>
-                                            {{#has tag="Slovník"}}
-                                                <a href="/slovnik" class="link-unstyled color-muted">Slovník</a>
+                                            {{#has tag="Dicionário"}}
+                                                <a href="/dicionario" class="link-unstyled color-muted">Slovník</a>
                                                 <span class="color-muted">/</span>
                                             {{/has}}
                                             <a href="{{url}}">{{title}}</a>
@@ -126,7 +126,7 @@
 
                     {{#if tags}}
                         <div class="list-inline print-hidden">
-                            <span class="text-small-block text-italic color-muted">Více k&nbsp;tématu:</span>
+                            <span class="text-small-block text-italic color-muted">Mais sobre:</span>
                             <nav>
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
                                     {{#foreach tags from=2}}
