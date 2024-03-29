@@ -9,7 +9,7 @@
     <div class="container container--narrow">
 
         {{#unless hideInternalLinks}}
-            {{#get "tags" filter="slug:-[posts,dicionario,jukebox,portfolio]" limit="all"}}
+            {{#get "tags" filter="slug:-[dicionario,portfolio,artigo]" limit="all"}}
                 <h2 class="print-hidden">Todos os Temas</h2>
                 <ul class="footer__list list-unstyled list-inline spacing-bottom-large print-hidden">
                     {{#foreach tags}}
