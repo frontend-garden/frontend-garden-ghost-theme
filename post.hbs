@@ -104,7 +104,7 @@
                     </div>
 
                     {{#get "posts"
-                        filter="author:{{primary_author.slug}}+primary_tag:[artigo,dicionario]+id:-{{id}}"
+                        filter="author:{{primary_author.slug}}+primary_tag:[post,artigo,dicionario]+id:-{{id}}"
                         include="tags"
                         order="published_at DESC"
                         limit="3"
@@ -116,7 +116,7 @@
                                 <ul class="js-nbsp">
                                     {{#foreach more_posts_by_author visibility="public"}}
                                         <li>
-                                            {{#has tag="Dicionário"}}
+                                            {{#has tag="dicionario"}}
                                                 <a href="/dicionario" class="link-unstyled color-muted">Slovník</a>
                                                 <span class="color-muted">/</span>
                                             {{/has}}
@@ -144,13 +144,6 @@
                     {{/if}}
 
                     <hr class="print-hidden" />
-
-                            {{#if access}}
-                                    {{comments}}
-                            {{else}}
-                              <p>Você está perdendo a conversa. Torne-se um membro e participe.</p>
-                                  <a href="#/portal/">Inscreva-se</a>
-                            {{/if}}
 
                     {{> "share-and-comment"}}
 
