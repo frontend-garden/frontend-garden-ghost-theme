@@ -28,8 +28,8 @@ $brand: (
 $primary: map.get($brand, green);
 
 $ui: (
-    info: #007daa,
-    info-light: #00b0f0,
+    info: #d42a5b,
+    info-light: #e63f66,
     success: map.get($brand, green-dark),
     success-dark: map.get($brand, green-darkest),
     error: #b70000,
