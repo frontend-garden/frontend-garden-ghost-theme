@@ -104,7 +104,7 @@
                     </div>
 
                     {{#get "posts"
-                        filter="author:{{primary_author.slug}}+primary_tag:[posts,artigo,dicionario]+id:-{{id}}"
+                        filter="author:{{primary_author.slug}}+primary_tag:[artigo,dicionario]+id:-{{id}}"
                         include="tags"
                         order="published_at DESC"
                         limit="3"
