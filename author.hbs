@@ -56,7 +56,7 @@
                                                 target="_blank"
                                                 rel="noopener"
                                                 class="button button--secondary button--small button--square spacing-right-1"
-                                                title="Web autora"
+                                                title="Website"
                                             >
                                                 <span class="icon">
                                                     {{> "icons/website"}}
@@ -72,7 +72,7 @@
                                                 target="_blank"
                                                 rel="noopener"
                                                 class="button button--secondary button--small button--square spacing-right-1"
-                                                title="Twitter autora"
+                                                title="Twitter"
                                             >
                                                 <span class="icon">
                                                     {{> "icons/twitter"}}
@@ -88,7 +88,7 @@
                                                 target="_blank"
                                                 rel="noopener"
                                                 class="button button--secondary button--small button--square spacing-right-1"
-                                                title="Facebook autora"
+                                                title="Facebook"
                                             >
                                                 <span class="icon">
                                                     {{> "icons/facebook"}}
@@ -103,7 +103,7 @@
                                             target="_blank"
                                             rel="noopener"
                                             class="button button--secondary button--small button--square"
-                                            title="RSS feed s články autora"
+                                            title="RSS Feed"
                                         >
                                             <span class="icon">
                                                 {{> "icons/rss"}}
@@ -122,22 +122,22 @@
 
                 {{#has slug="ram0ng1"}}
                     <a
-                        href="https://www.adamkudrna.cz/o-mne#kontakt"
+                        href="https://ramonguilherme.com.br/contato"
                         class="button button--primary spacing-bottom-small spacing-right-1"
                         data-track="Navigate"
                         data-track-category="Personal website"
                         data-track-label="Author's page – primary CTA"
                     >
-                        Solicitar Orçamento
+                        Solicitar uma consulta
                     </a>
                     <a
-                        href="https://www.adamkudrna.cz/sluzby"
+                        href="https://ramonguilherme.com.br/servicos"
                         class="button button--secondary spacing-bottom-small"
                         data-track="Navigate"
                         data-track-category="Personal website"
                         data-track-label="Author's page – secondary CTA"
                     >
-                        Prohlédnout všechny služby
+                        Ver todos os serviços
                     </a>
                 {{/has}}
 
@@ -147,14 +147,14 @@
         <section class="section">
             <div class="container">
 
-                <h2>Články</h2>
+                <h2>Artigos</h2>
 
             </div>
             <div class="container container--dense">
 
                 <div class="post-feed">
                     {{#foreach ../posts}}
-                        {{#has tag="Články"}}
+                        {{#has tag="artigos"}}
                             <div class="post-feed__item">
                                 {{> "post-card" headingLevel=3}}
                             </div>
@@ -165,7 +165,7 @@
             </div>
         </section>
 
-        {{#has slug="adam-kudrna"}}
+        {{#has slug="ram0ng1"}}
             {{> "bottom-ad"}}
         {{/has}}
 
