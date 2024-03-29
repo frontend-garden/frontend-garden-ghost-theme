@@ -17,22 +17,22 @@ $black: #000;
 $white: #fff;
 
 $brand: (
-    green-lighter: #80d58a,
-    green-light: #62cb6e,
-    green: #c9184a,
-    green-dark: #a4133c,
-    green-darker: #c9184acc,
-    green-darkest: #2b8035,
+    green-lighter: #f7aab9,
+    green-light: #f27a93,
+    green: #e63f66,
+    green-dark: #b21e4b,
+    green-darker: #951c45,
+    green-darkest: #801b40,
 );
 
 $primary: map.get($brand, green);
 
 $ui: (
-    info: #a4133c,
-    info-light: #a4133c,
+    info: #007daa,
+    info-light: #00b0f0,
     success: map.get($brand, green-dark),
     success-dark: map.get($brand, green-darkest),
-    error: #c0392b,
+    error: #b70000,
     error-dark: #b60000,
     warning: #f6db53,
 );
