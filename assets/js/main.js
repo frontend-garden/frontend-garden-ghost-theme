@@ -17,7 +17,7 @@ document.querySelectorAll('.js-nbsp').forEach((element) => {
 
 // Safely open external links in a new tab.
 document.querySelectorAll('.js-external-links a[href^=http]').forEach((element) => {
-  if (!element.getAttribute('href').includes('https://frontend.garden')) {
+  if (!element.getAttribute('href').includes('https://ramonguilherme.com.br')) {
     element.setAttribute('target', '_blank');
     element.setAttribute('rel', 'noopener noreferrer');
 
