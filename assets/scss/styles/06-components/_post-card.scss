@@ -110,3 +110,22 @@ $_post-card-padding-y: spacing.of(1);
     position: relative;
     z-index: 1;
 }
+
+.project-info {
+	overflow: hidden;
+	padding: 30px;
+	border-radius: 20px;
+	transition: 0.65s ease;
+	display: block;
+	ul {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&:hover {
+		background: rgba(187,185,186,0.22);
+		border-radius: 20px;
+		transition: 0.65s ease;
+	}
+}
+
