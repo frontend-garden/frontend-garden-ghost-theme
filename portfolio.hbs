@@ -58,7 +58,7 @@
                                 <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
-                                        {{#if @second}}
+                                        {{#if @index "===" 1}}
                                             <li><a href="{{url}}" class="label">{{name}}</a></li>
                                         {{/if}}
                                     {{/foreach}}}
