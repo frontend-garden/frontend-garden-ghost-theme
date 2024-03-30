@@ -45,12 +45,20 @@
                     Loop through the original `posts` and group them.
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
-                {{>glossary-group slug="linguagens" name="Linguagens"}}
-                {{>glossary-group slug="frameworks" name="Frameworks"}}
-                {{>glossary-group slug="ferramentas" name="Ferramentas"}}
-                {{>glossary-group slug="testes" name="Testes"}}
-                {{>glossary-group slug="no-code" name="No-code"}}
-                {{>glossary-group slug="design-grafico" name="Design Gráfico"}}
+                {{#get "posts"
+                    filter="primary_tag:projetos"
+                    include="authors,tags"
+                    order="published_at DESC"
+                    limit="3"
+                    as |projects|
+                }}
+                    {{#each projects}}
+                        <div>
+                            <h2>{{title}}</h2>
+                            <p>{{excerpt}}</p>
+                        </div>
+                    {{/each}}
+                {{/get}}
 
             </div>
         </div>
