@@ -56,25 +56,20 @@
                         <div class="project-info" data-url="{{url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                {{#set lastTagUrl ""}}
                                 {{#foreach tags}}
                                     {{#if @last}}
-                                        <li>
-                                            {{#if @first}}
-                                                {{#set lastTagUrl url}}
-                                            {{/if}}
-                                            <a href="{{url}}" class="label">{{name}}</a>
-                                        </li>
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
                                     {{/if}}
                                 {{/foreach}}
-                                {{/set}}
                             </ul>
                             {{#if custom_excerpt}}
                                 <p>{{custom_excerpt}}</p>
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                            <a href="{{lastTagUrl}}" class="visit-website-button">Visit Website</a>
+                            {{#if @last}}
+                                <a href="{{url}}" class="visit-website-button">Visit Website</a>
+                            {{/if}}
                         </div>
                     {{/each}}
                 {{/get}}
@@ -109,8 +104,6 @@
                     window.location.href = url;
                 }
             });
-        });
-    });
 </script>
 
 <style>
