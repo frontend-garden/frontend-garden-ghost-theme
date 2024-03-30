@@ -3,59 +3,25 @@
 <main class="site__content article">
     <div class="section background-alternate print-padding-none">
         <div class="container">
-
             {{#tag}}
                 <h1 class="article__title js-nbsp">{{name}}</h1>
-
                 {{#if description}}
-                    <p class="article__summary spacing-bottom-small js-nbsp">
-                        {{description}}
-                    </p>
+                    <p class="article__summary spacing-bottom-small js-nbsp">{{description}}</p>
                 {{/if}}
-
                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                    <li>
-                        <a href="#tecnologias" class="label">Tecnologias</a>
-                    </li>
-                    <li>
-                        <a href="#frameworks" class="label">Frameworks</a>
-                    </li>
-                    <li>
-                        <a href="#ferramentas" class="label">Ferramentas</a>
-                    </li>
-                    <li>
-                        <a href="#testes" class="label">Testes</a>
-                    </li>
-                    <li>
-                        <a href="#no-code" class="label">No-Code</a>
-                    </li>
-                    <li>
-                        <a href="#design-grafico" class="label">Design Gráfico</a>
-                    </li>
+                    <!-- Links here -->
                 </ul>
             {{/tag}}
-
         </div>
     </div>
     <div class="section section--roomy-bottom print-padding-none">
         <div class="container">
             <div class="columns columns--4">
-
-                {{!
-                    Loop through the original `posts` and group them.
-                    Pagination of `posts` is made impossible in `routes.yaml`.
-                }}
-                {{#get "posts"
-                    filter="tag:projetos"
-                    include="authors,tags"
-                    order="published_at ASC"
-                    limit="4"
-                    as |projects|
-                }}
+                {{#get "posts" filter="tag:projetos" include="authors,tags" order="published_at ASC" limit="4" as |projects|}}
                     {{#each projects}}
                         <div class="project-info">
                             <a href="{{url}}">
-                                <h2>{{title}}</h2>
+                                <h2>{{title}} <i class="fa fa-globe" aria-hidden="true"></i></h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
                                         {{#if @first}}
@@ -72,23 +38,15 @@
                         </div>
                     {{/each}}
                 {{/get}}
-
             </div>
         </div>
     </div>
 
-    {{#get "posts"
-        filter="primary_tag:artigo"
-        include="authors,tags"
-        order="published_at DESC"
-        limit="3"
-        as |recent|
-    }}
+    {{#get "posts" filter="primary_tag:artigo" include="authors,tags" order="published_at DESC" limit="3" as |recent|}}
         {{#if recent}}
             {{> "related-posts" posts=recent}}
         {{/if}}
     {{/get}}
-
 </main>
 
 {{> "footer"}}
