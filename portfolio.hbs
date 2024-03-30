@@ -53,22 +53,20 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info">
-                            <a href="{{url}}">
-                                <h2>{{title}}</h2>
-                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                    {{#foreach tags}}
-                                        {{#if @first}}
-                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                        {{/if}}
-                                    {{/foreach}}
-                                </ul>
-                                {{#if custom_excerpt}}
-                                    <p>{{custom_excerpt}}</p>
-                                {{else}}
-                                    <p>{{excerpt words="30"}}</p>
-                                {{/if}}
-                            </a>
+                        <div class="project-info" data-url="{{url}}">
+                            <h2>{{title}}</h2>
+                            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                {{#foreach tags}}
+                                    {{#if @first}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/if}}
+                                {{/foreach}}
+                            </ul>
+                            {{#if custom_excerpt}}
+                                <p>{{custom_excerpt}}</p>
+                            {{else}}
+                                <p>{{excerpt words="30"}}</p>
+                            {{/if}}
                         </div>
                     {{/each}}
                 {{/get}}
@@ -92,3 +90,17 @@
 </main>
 
 {{> "footer"}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectInfos = document.querySelectorAll('.project-info');
+        projectInfos.forEach(function(projectInfo) {
+            projectInfo.addEventListener('click', function() {
+                const url = projectInfo.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
+        });
+    });
+</script>
