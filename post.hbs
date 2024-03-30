@@ -38,7 +38,7 @@
             <div class="columns columns--4">
                 {{#get "posts" filter="tag:projetos" include="authors,tags" order="published_at ASC" limit="4" as |projects|}}
                 {{#each projects}}
-                <article class="post-card project-info {{#has tag="#cover"}}post-card--cover{{/has}}">
+                <article class="post-card project-info {{#has tag="#cover"}}post-card{{/has}}">
                     <div class="post-card__content">
                         <div>
                             <a href="{{url}}" class="link-unstyled">
@@ -66,7 +66,7 @@
                     </div>
                     {{#has tag="#cover"}}
                     {{#if feature_image}}
-                    <figure class="post-card__image cover__canvas print-hidden">
+                    <figure class="post-card__image">
                         <a href="{{url}}" class="link-unstyled">
                             <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" class="cover__image" />
                         </a>
