@@ -53,8 +53,8 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info">
-                            <a href="{{url}}">
+                        <a href="{{url}}" class="project-info">
+                            <div>
                                 <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
@@ -68,8 +68,8 @@
                                 {{else}}
                                     <p>{{excerpt words="30"}}</p>
                                 {{/if}}
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     {{/each}}
                 {{/get}}
 
