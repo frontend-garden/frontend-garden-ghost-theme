@@ -28,7 +28,7 @@
         of `posts`.
     }}
     {{#get "posts"
-        filter="primary_tag:artigo+tag:{{tag.slug}}"
+        filter="primary_tag:posts,artigo+tag:{{tag.slug}}"
         limit="all"
         as |glossary_items|
     }}
