@@ -68,7 +68,7 @@
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
                                 {{#foreach tags}}
-                                    {{#if (is "2" @index)}} <!-- Verifica se é a terceira tag (0-indexed) -->
+                                    {{#if @last}}
                                             <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
                                         {{/if}}
                                     {{/if}}
