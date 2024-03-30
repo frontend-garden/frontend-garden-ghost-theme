@@ -115,19 +115,19 @@ $_post-card-padding-y: spacing.of(1);
     padding: 30px;
     overflow: hidden;
     border-radius: 20px;
-    transition: 0.65s ease;
     display: block;
+    transition: 0.65s ease;
 
     ul {
         display: block;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
     }
 
     &:hover {
-        background: rgba(187, 185, 186, 0.22);
-        border-radius: 20px;
+        border-radius: 20px;        
+        background: #bbb9ba;
+        opacity: 0.2;
         transition: 0.65s ease;
     }
 }
-
