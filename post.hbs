@@ -1,195 +1,96 @@
 {{!< default}}
 
-<main class="site__content">
-
-    {{#post}}
-        <article class="article {{#has tag="#cover"}}article--cover{{/has}}">
-
-            <header
-                class="
-                    section
-                    section--roomy-bottom
-                    {{#has tag="#cover"}}
-                        background-dark
-                        cover
-                        cover--full-page
-                        {{#has tag="#cover-precomposed"}}
-                            cover--precomposed
-                        {{/has}}
-                        {{#has tag="#cover-object-light"}}
-                            cover--object
-                            cover--object--light
-                        {{/has}}
-                        {{#has tag="#cover-object-medium"}}
-                            cover--object
-                            cover--object--medium
-                        {{/has}}                
-                        {{#has tag="#cover-object-dark"}}
-                            cover--object
-                            cover--object--dark
-                        {{/has}}
-                        {{#has tag="bootstrap"}}
-                            cover--bootstrap
-                        {{/has}}
-                    {{else}}
-                        background-alternate
-                    {{/has}}
-                    print-padding-none
-                "
-            >
-                <div class="{{#has tag="#cover"}}cover__text{{/has}}">
-                    <div class="container {{^has tag="#cover"}}container--article{{/has}}">
-
-                        <div class="article__meta">
-                            <time datetime="{{date format="DD-MM-YYYY"}}">
-                                {{date format="DD MMMM YYYY"}}
-                            </time>
-                            —
-                            {{tags from=2}}
-                            —
-                            {{reading_time minute=(t "1 min de leitura") minutes=(t "% min de leitura")}}
-                        </div>
-
-                        <h1 class="article__title js-nbsp">{{title}}</h1>
-                        <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
-
-                        <div class="article__author">
-                            {{#has author="count:>1"}}
-                                {{> "byline-multiple"}}
-                            {{else}}
-                                {{> "byline-single"}}
-                            {{/has}}
-                        </div>
-
-                    </div>
-                </div>
-
-                {{#has tag="#cover"}}
-                    {{#if feature_image}}
-                        <figure class="cover__canvas print-hidden">
-                            <img
-                                src="{{img_url feature_image size="xl"}}"
-                                srcset="
-                                    {{img_url feature_image size="s"}} 300w,
-                                    {{img_url feature_image size="m"}} 600w,
-                                    {{img_url feature_image size="l"}} 1000w,
-                                    {{img_url feature_image size="xl"}} 2000w,
-                                    {{img_url feature_image size="xxl"}} 4000w
-                                "
-                                sizes="100vw"
-                                class="cover__image"
-                                alt="{{title}}"
-                            />
-                        </figure>
-                    {{/if}}
-                {{/has}}
-
-            </header>
-
-            <div class="section section--roomy-bottom">
-                <div class="container container--article">
-
-                    <div class="editor editor--long-text js-nbsp js-external-links js-heading-anchors">
-                        {{content}}
-                    </div>
-
-                    <hr class="print-hidden" />
-
-                    <div class="article__author spacing-bottom print-hidden">
-                        {{#has author="count:>1"}}
-                            {{> "byline-multiple"}}
-                        {{else}}
-                            {{> "byline-single"}}
-                        {{/has}}
-                    </div>
-
-                    {{#get "posts"
-                        filter="author:{{primary_author.slug}}+primary_tag:[artigo,dicionario]+id:-{{id}}"
-                        include="tags"
-                        order="published_at DESC"
-                        limit="3"
-                        as |more_posts_by_author|
-                    }}
-                        {{#if more_posts_by_author}}
-                            <div class="print-hidden">
-                                <h4>Mais:</h4>
-                                <ul class="js-nbsp">
-                                    {{#foreach more_posts_by_author visibility="public"}}
-                                        <li>
-                                            {{#has tag="dicionario"}}
-                                                <a href="/dicionario" class="link-unstyled color-muted">Slovník</a>
-                                                <span class="color-muted">/</span>
-                                            {{/has}}
-                                            <a href="{{url}}">{{title}}</a>
-                                        </li>
-                                    {{/foreach}}
-                                </ul>
-                            </div>
-                        {{/if}}
-                    {{/get}}
-
-                    {{#if tags}}
-                        <div class="list-inline print-hidden">
-                            <span class="text-small-block text-italic color-muted">Tags:</span>
-                            <nav>
+<main class="site__content article">
+    <div class="section background-alternate print-padding-none">
+        <div class="container">
+            {{#tag}}
+            <h1 class="article__title js-nbsp">{{name}}</h1>
+            {{#if description}}
+            <p class="article__summary spacing-bottom-small js-nbsp">
+                {{description}}
+            </p>
+            {{/if}}
+            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                <li>
+                    <a href="#tecnologias" class="label">Tecnologias</a>
+                </li>
+                <li>
+                    <a href="#frameworks" class="label">Frameworks</a>
+                </li>
+                <li>
+                    <a href="#ferramentas" class="label">Ferramentas</a>
+                </li>
+                <li>
+                    <a href="#testes" class="label">Testes</a>
+                </li>
+                <li>
+                    <a href="#no-code" class="label">No-Code</a>
+                </li>
+                <li>
+                    <a href="#design-grafico" class="label">Design Gráfico</a>
+                </li>
+            </ul>
+            {{/tag}}
+        </div>
+    </div>
+    <div class="section section--roomy-bottom print-padding-none">
+        <div class="container">
+            <div class="columns columns--4">
+                {{#get "posts" filter="tag:projetos" include="authors,tags" order="published_at ASC" limit="4" as |projects|}}
+                {{#each projects}}
+                <article class="post-card project-info {{#has tag="#cover"}}post-card--cover{{/has}}">
+                    <div class="post-card__content">
+                        <div>
+                            <a href="{{url}}" class="post-card__expanded-link link-unstyled">
+                                <header>
+                                    <h2 class="post-card__title">{{title}}</h2>
+                                </header>
+                                <div class="post-card__summary">
+                                    {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                    {{else}}
+                                    <p>{{excerpt words="30"}}</p>
+                                    {{/if}}
+                                </div>
+                            </a>
+                            <footer>
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
-                                    {{#foreach tags from=2}}
-                                        <li>
-                                            <a href="{{url}}" class="label">{{name}}</a>
-                                        </li>
-                                    {{/foreach}}
+                                    {{#foreach tags}}
+                                    {{#if @first}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/if}}
+                                {{/foreach}}
                                 </ul>
-                            </nav>
+                            </footer>
                         </div>
+                    </div>
+                    {{#has tag="#cover"}}
+                    {{#if feature_image}}
+                    <figure class="post-card__image cover__canvas print-hidden">
+                        <a href="{{url}}" class="link-unstyled">
+                            <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" class="cover__image" />
+                        </a>
+                    </figure>
                     {{/if}}
-
-                    <hr class="print-hidden" />
-
-                    {{> "share-and-comment"}}
-
-                </div>
+                    {{/has}}
+                </article>
+                {{/each}}
+                {{/get}}
             </div>
-
-        </article>
-
-        {{^has tag="#no-bottom-ad"}}
-            {{> "bottom-ad"}}
-        {{/has}}
-
-    {{/post}}
+        </div>
+    </div>
 
     {{#get "posts"
-        filter="primary_tag:{{post.primary_tag.slug}}+id:-{{post.id}}"
+        filter="primary_tag:artigo"
         include="authors,tags"
         order="published_at DESC"
         limit="3"
         as |recent|
     }}
-        {{#if recent}}
-            {{> "related-posts" posts=recent}}
-        {{/if}}
+    {{#if recent}}
+    {{> "related-posts" posts=recent}}
+    {{/if}}
     {{/get}}
-
 </main>
 
 {{> "footer"}}
-
-{{#contentFor "styles"}}
-    {{> "external/prism-css"}}
-{{/contentFor}}
-
-{{#contentFor "scripts"}}
-    {{> "external/prism-js"}}
-{{/contentFor}}
-
-{{#contentFor "snippets"}}
-    <template id="snippet__newsletter-signup__template">
-        {{> "snippets/newsletter-signup"}}
-    </template>
-    <template id="snippet__post-box-ad__template">
-        {{> "snippets/post-box-ad"}}
-    </template>
-    <template id="snippet__post-breakout-ad__template">
-        {{> "snippets/post-breakout-ad"}}
-    </template>
-{{/contentFor}}
