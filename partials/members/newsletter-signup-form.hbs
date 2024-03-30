@@ -1,17 +1,17 @@
 <form class="members-form" data-members-form="subscribe">
 
-    <h2>Odběr novinek</h2>
-    <p>Zadejte svůj e-mail a&nbsp;nenechte si ujít další nové články!</p>
+    <h2>Newsletter</h2>
+    <p>Digite seu e-mail e não perca mais novos artigos!</p>
 
-    {{> "members/email-box" action="Přihlásit k odběru" id_prefix="signup-in-footer"}}
+    {{> "members/email-box" action="Assine agora" id_prefix="signup-in-footer"}}
 
     <div class="spacing-bottom">
         {{> "members/agreement"}}
     </div>
 
     {{> "members/feedback-success"
-        title="Už jen krůček!"
-        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte své přihlášení kliknutím na&nbsp;odkaz."
+        title="Apenas um passo!"
+        message="Verifique a sua caixa de entrada de e-mail e confirme seu login clicando no link."
     }}
     {{> "members/feedback-error"}}
 
