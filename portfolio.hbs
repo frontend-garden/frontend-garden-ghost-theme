@@ -3,79 +3,76 @@
 <main class="site__content article">
     <div class="section background-alternate print-padding-none">
         <div class="container">
+
             {{#tag}}
-            <h1 class="article__title js-nbsp">{{name}}</h1>
-            {{#if description}}
-            <p class="article__summary spacing-bottom-small js-nbsp">
-                {{description}}
-            </p>
-            {{/if}}
-            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                <li>
-                    <a href="#tecnologias" class="label">Tecnologias</a>
-                </li>
-                <li>
-                    <a href="#frameworks" class="label">Frameworks</a>
-                </li>
-                <li>
-                    <a href="#ferramentas" class="label">Ferramentas</a>
-                </li>
-                <li>
-                    <a href="#testes" class="label">Testes</a>
-                </li>
-                <li>
-                    <a href="#no-code" class="label">No-Code</a>
-                </li>
-                <li>
-                    <a href="#design-grafico" class="label">Design Gráfico</a>
-                </li>
-            </ul>
+                <h1 class="article__title js-nbsp">{{name}}</h1>
+
+                {{#if description}}
+                    <p class="article__summary spacing-bottom-small js-nbsp">
+                        {{description}}
+                    </p>
+                {{/if}}
+
+                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                    <li>
+                        <a href="#tecnologias" class="label">Tecnologias</a>
+                    </li>
+                    <li>
+                        <a href="#frameworks" class="label">Frameworks</a>
+                    </li>
+                    <li>
+                        <a href="#ferramentas" class="label">Ferramentas</a>
+                    </li>
+                    <li>
+                        <a href="#testes" class="label">Testes</a>
+                    </li>
+                    <li>
+                        <a href="#no-code" class="label">No-Code</a>
+                    </li>
+                    <li>
+                        <a href="#design-grafico" class="label">Design Gráfico</a>
+                    </li>
+                </ul>
             {{/tag}}
+
         </div>
     </div>
     <div class="section section--roomy-bottom print-padding-none">
         <div class="container">
             <div class="columns columns--4">
-                {{#get "posts" filter="tag:projetos" include="authors,tags" order="published_at ASC" limit="4" as |projects|}}
-                {{#each projects}}
-                <article class="post-card project-info">
-                    <div class="post-card__content">
-                        <div>
-                            <a href="{{url}}" class="post-card__expanded-link link-unstyled">
-                                <header>
-                                    <h2 class="post-card__title">{{title}}</h2>
-                                </header>
-                                <div class="post-card__summary">
-                                    {{#if custom_excerpt}}
-                                    <p>{{custom_excerpt}}</p>
-                                    {{else}}
-                                    <p>{{excerpt words="30"}}</p>
-                                    {{/if}}
-                                </div>
-                            </a>
-                            <footer>
-                                <ul class="list-unstyled list-inline spacing-bottom-none">
+
+                {{!
+                    Loop through the original `posts` and group them.
+                    Pagination of `posts` is made impossible in `routes.yaml`.
+                }}
+                {{#get "posts"
+                    filter="tag:projetos"
+                    include="authors,tags"
+                    order="published_at ASC"
+                    limit="4"
+                    as |projects|
+                }}
+                    {{#each projects}}
+                        <div class="project-info">
+                            <a href="{{url}}">
+                                <h2>{{title}}</h2>
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
-                                    {{#if @first}}
-                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                    {{/if}}
-                                {{/foreach}}
+                                        {{#if @first}}
+                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{/if}}
+                                    {{/foreach}}
                                 </ul>
-                            </footer>
+                                {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                {{else}}
+                                    <p>{{excerpt words="30"}}</p>
+                                {{/if}}
+                            </a>
                         </div>
-                    </div>
-                    {{#has tag="#cover"}}
-                    {{#if feature_image}}
-                    <figure class="post-card__image cover__canvas print-hidden">
-                        <a href="{{url}}" class="link-unstyled">
-                            <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" class="cover__image" />
-                        </a>
-                    </figure>
-                    {{/if}}
-                    {{/has}}
-                </article>
-                {{/each}}
+                    {{/each}}
                 {{/get}}
+
             </div>
         </div>
     </div>
@@ -87,10 +84,11 @@
         limit="3"
         as |recent|
     }}
-    {{#if recent}}
-    {{> "related-posts" posts=recent}}
-    {{/if}}
+        {{#if recent}}
+            {{> "related-posts" posts=recent}}
+        {{/if}}
     {{/get}}
+
 </main>
 
 {{> "footer"}}
