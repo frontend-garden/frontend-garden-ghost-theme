@@ -39,18 +39,20 @@
                 {{#get "posts" filter="tag:projetos" include="authors,tags" order="published_at ASC" limit="4" as |projects|}}
                 {{#each projects}}
                 <article class="post-card project-info">
-                    <a href="{{url}}" class="post-card__expanded-link link-unstyled">
-                        <div class="post-card__content">
-                            <header>
-                                <h2 class="post-card__title">{{title}}</h2>
-                            </header>
-                            <div class="post-card__summary">
-                                {{#if custom_excerpt}}
-                                <p>{{custom_excerpt}}</p>
-                                {{else}}
-                                <p>{{excerpt words="30"}}</p>
-                                {{/if}}
-                            </div>
+                    <div class="post-card__content">
+                        <div>
+                            <a href="{{url}}" class="post-card__expanded-link link-unstyled">
+                                <header>
+                                    <h2 class="post-card__title">{{title}}</h2>
+                                </header>
+                                <div class="post-card__summary">
+                                    {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                    {{else}}
+                                    <p>{{excerpt words="30"}}</p>
+                                    {{/if}}
+                                </div>
+                            </a>
                             <footer>
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
                                     {{#foreach tags}}
@@ -61,7 +63,8 @@
                                 </ul>
                             </footer>
                         </div>
-                    </a>
+                    </div>
+                    {{#has tag="#cover"}}
                     {{#if feature_image}}
                     <figure class="post-card__image cover__canvas print-hidden">
                         <a href="{{url}}" class="link-unstyled">
@@ -69,6 +72,7 @@
                         </a>
                     </figure>
                     {{/if}}
+                    {{/has}}
                 </article>
                 {{/each}}
                 {{/get}}
