@@ -62,10 +62,8 @@
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                            {{#if has_preview_button}}
-                                {{#if url_da_pre_visualizacao}}
-                                    <a href="{{url_da_pre_visualizacao}}" class="kg-btn kg-btn-accent">Ir para o site</a>
-                                {{/if}}
+                            {{#if url_da_pre_visualizacao}}
+                                <a href="{{url_da_pre_visualizacao}}" class="kg-btn kg-btn-accent">Ir para o site</a>
                             {{/if}}
                         </div>
                     {{/each}}
