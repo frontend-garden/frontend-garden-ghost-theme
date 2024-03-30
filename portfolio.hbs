@@ -54,22 +54,19 @@
                 }}
                     {{#each projects}}
                         <div>
+                            <a href="{{url}}">
+                                <h2>{{title}}</h2>
+                            </a>
+                            <div class="featured-image">
+                                <img src="{{feature_image}}" alt="{{title}}" />
+                            </div>
                             {{#if custom_excerpt}}
-                                <a href="{{url}}">
-                                    <h2>{{title}}</h2>
-                                </a>
                                 <p>{{custom_excerpt}}</p>
-                                {{#if preview_button_link}}
-                                    <a href="{{preview_button_link}}" class="kg-btn kg-btn-accent">Preview</a>
-                                {{/if}}
                             {{else}}
-                                <a href="{{url}}">
-                                    <h2>{{title}}</h2>
-                                </a>
                                 <p>{{excerpt words="30"}}</p>
-                                {{#if preview_button_link}}
-                                    <a href="{{preview_button_link}}" class="kg-btn kg-btn-accent">Preview</a>
-                                {{/if}}
+                            {{/if}}
+                            {{#if has_preview_button}}
+                                <a href="{{url_da_pre_visualizacao}}" class="kg-btn kg-btn-accent">Preview</a>
                             {{/if}}
                         </div>
                     {{/each}}
@@ -80,7 +77,7 @@
     </div>
 
     {{#get "posts"
-        filter="primary_tag:artigos"
+        filter="primary_tag:projetos"
         include="authors,tags"
         order="published_at DESC"
         limit="3"
