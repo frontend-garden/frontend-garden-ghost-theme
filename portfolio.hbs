@@ -62,8 +62,10 @@
                             </a>
                             <footer>
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
-                                    {{#foreach tags}}
-                                    <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                   {{#foreach tags}}
+                                        {{#if @first}}
+                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{/if}}
                                     {{/foreach}}
                                 </ul>
                             </footer>
