@@ -15,7 +15,7 @@
 
                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                     <li>
-                        <a href="#wordpress" class="label">Wordpress</a>
+                        <a href="#tecnologias" class="label">Tecnologias</a>
                     </li>
                     <li>
                         <a href="#frameworks" class="label">Frameworks</a>
@@ -58,10 +58,10 @@
                                 <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
-                                        {{#if @index "===" 1}}
+                                        {{#if @first}}
                                             <li><a href="{{url}}" class="label">{{name}}</a></li>
                                         {{/if}}
-                                    {{/foreach}}}
+                                    {{/foreach}}
                                 </ul>
                                 {{#if custom_excerpt}}
                                     <p>{{custom_excerpt}}</p>
