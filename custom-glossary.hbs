@@ -28,9 +28,9 @@
                     <hr />
 
                     <p class="text-small-block text-italic">
-                        Poslední aktualizace:
-                        <time datetime="{{date format="YYYY-MM-DD"}}">
-                            {{date format="D. MMMM YYYY"}}
+                        Última atualização:
+                        <time datetime="{{date format="DD-MM-YYYY"}}">
+                            {{date format="DD/MM/YYYY HH:mm"}}
                         </time>
                     </p>
 
@@ -50,7 +50,7 @@
     {{/post}}
 
     {{#get "posts"
-        filter="primary_tag:clanky+tags:[{{post.tags}}]"
+        filter="primary_tag:artigo+tags:[{{post.tags}}]"
         include="authors,tags"
         order="published_at DESC"
         limit="3"
@@ -59,7 +59,7 @@
         {{#if related}}
             {{> "related-posts"
                 posts=related
-                headline="Související články"
+                headline="Artigos relacionados"
             }}
         {{/if}}
     {{/get}}
