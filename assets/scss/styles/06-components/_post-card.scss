@@ -112,8 +112,8 @@ $_post-card-padding-y: spacing.of(1);
 }
 
 .project-info {
-    overflow: hidden;
     padding: 30px;
+    overflow: hidden;
     border-radius: 20px;
     transition: 0.65s ease;
     display: block;
@@ -130,3 +130,4 @@ $_post-card-padding-y: spacing.of(1);
         transition: 0.65s ease;
     }
 }
+
