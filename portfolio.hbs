@@ -68,7 +68,7 @@
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
                             {{#if @last}}
-                                <a href="{{url}}" class="visit-website-button">Visit Website</a>
+                                <button class="visit-website-button">Visit Website</button>
                             {{/if}}
                         </div>
                     {{/each}}
@@ -104,6 +104,19 @@
                     window.location.href = url;
                 }
             });
+
+            const buttons = projectInfo.querySelectorAll('.visit-website-button');
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    const url = projectInfo.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                    event.stopPropagation();
+                });
+            });
+        });
+    });
 </script>
 
 <style>
