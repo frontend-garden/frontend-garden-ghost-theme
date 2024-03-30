@@ -58,7 +58,9 @@
                                 <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
-                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{#unless name "===" "Portfólio"}}
+                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{/unless}}
                                     {{/foreach}}
                                 </ul>
                                 {{#if custom_excerpt}}
