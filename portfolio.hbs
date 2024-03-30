@@ -46,7 +46,7 @@
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
                 {{#get "posts"
-                    filter="tag:projetos"
+                    filter="primary_tag:-projetos"
                     include="authors,tags"
                     order="published_at DESC"
                     limit="3"
@@ -59,7 +59,9 @@
                             </a>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
-                                    <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{#unless name "projetos"}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/unless}}
                                 {{/foreach}}
                             </ul>
                             {{#if custom_excerpt}}
@@ -76,7 +78,7 @@
     </div>
 
     {{#get "posts"
-        filter="tag:projetos"
+        filter="primary_tag:-projetos"
         include="authors,tags"
         order="published_at DESC"
         limit="3"
