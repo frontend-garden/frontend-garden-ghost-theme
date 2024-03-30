@@ -54,14 +54,16 @@
                 }}
                     {{#each projects}}
                         <div>
-                            <a href="{{url}}">
-                                <h2>{{title}}</h2>
-                            </a>
-                            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                {{#foreach tags}}
-                                    <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                {{/foreach}}
-                            </ul>
+                            <div class="project-info">
+                                <a href="{{url}}">
+                                    <h2>{{title}}</h2>
+                                </a>
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                    {{#foreach tags}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
                             {{#if custom_excerpt}}
                                 <p>{{custom_excerpt}}</p>
                             {{else}}
