@@ -57,7 +57,7 @@
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
-                                    {{#if @first}}
+                                    {{#if @last}}
                                         <li><a href="{{url}}" class="label">{{name}}</a></li>
                                     {{/if}}
                                 {{/foreach}}
@@ -66,6 +66,9 @@
                                 <p>{{custom_excerpt}}</p>
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
+                            {{/if}}
+                            {{#if @last}}
+                                <button class="visit-website-button">Visit Website</button>
                             {{/if}}
                         </div>
                     {{/each}}
@@ -100,6 +103,17 @@
                 if (url) {
                     window.location.href = url;
                 }
+            });
+
+            const buttons = projectInfo.querySelectorAll('.visit-website-button');
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    const url = projectInfo.getAttribute('data-url');
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                    event.stopPropagation();
+                });
             });
         });
     });
