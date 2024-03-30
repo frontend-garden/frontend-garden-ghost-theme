@@ -60,15 +60,15 @@
                                 </a>
                                 <p>{{custom_excerpt}}</p>
                                 {{#if preview_button_link}}
-                                    <a href="{{preview_button_link}}" class="button">Preview</a>
+                                    <a href="{{preview_button_link}}" class="kg-btn kg-btn-accent">Preview</a>
                                 {{/if}}
                             {{else}}
                                 <a href="{{url}}">
                                     <h2>{{title}}</h2>
                                 </a>
-                                <p>{{excerpt}}</p>
+                                <p>{{excerpt words="30"}}</p>
                                 {{#if preview_button_link}}
-                                    <a href="{{preview_button_link}}" class="button">Preview</a>
+                                    <a href="{{preview_button_link}}" class="kg-btn kg-btn-accent">Preview</a>
                                 {{/if}}
                             {{/if}}
                         </div>
