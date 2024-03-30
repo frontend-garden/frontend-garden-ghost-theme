@@ -67,11 +67,12 @@
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                            {{#foreach tags}}
-                                {{#if (matches name "([A-Za-z0-9-]+\\.)+[A-Za-z]{2,6}(/[^\\s]*)?")}}
-                                    <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
-                                {{/if}}
-                            {{/foreach}}
+                                {{#foreach tags}}
+                                    {{#if (is "2" @index)}} <!-- Verifica se é a terceira tag (0-indexed) -->
+                                            <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/foreach}}
                         </div>
                     {{/each}}
                 {{/get}}
