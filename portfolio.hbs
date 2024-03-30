@@ -40,13 +40,6 @@
                 {{#each projects}}
                 <article class="post-card project-info">
                     <div class="post-card__content">
-                        {{#if feature_image}}
-                        <figure class="post-card__image cover__canvas print-hidden">
-                            <a href="{{url}}" class="link-unstyled">
-                                <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" class="cover__image" />
-                            </a>
-                        </figure>
-                        {{/if}}
                         <div>
                             <a href="{{url}}" class="post-card__expanded-link link-unstyled">
                                 <header>
@@ -62,14 +55,21 @@
                             </a>
                             <footer>
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
-                                   {{#foreach tags}}
-                                        {{#if @first}}
-                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                        {{/if}}
-                                    {{/foreach}}
+                                    {{#foreach tags}}
+                                    {{#if @first}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/if}}
+                                {{/foreach}}
                                 </ul>
                             </footer>
                         </div>
+                        {{#if feature_image}}
+                        <figure class="post-card__image cover__canvas print-hidden">
+                            <a href="{{url}}" class="link-unstyled">
+                                <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" class="cover__image" />
+                            </a>
+                        </figure>
+                        {{/if}}
                     </div>
                 </article>
                 {{/each}}
