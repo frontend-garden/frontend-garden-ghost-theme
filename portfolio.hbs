@@ -46,7 +46,7 @@
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
                 {{#get "posts"
-                    filter="primary_tag:#projetos"
+                    filter="tag:portifolio+slug:projetos"
                     include="authors,tags"
                     order="published_at DESC"
                     limit="4"
