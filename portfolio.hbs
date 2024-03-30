@@ -54,8 +54,23 @@
                 }}
                     {{#each projects}}
                         <div>
-                            <h2>{{title}}</h2>
-                            <p>{{excerpt}}</p>
+                            {{#if custom_excerpt}}
+                                <a href="{{url}}">
+                                    <h2>{{title}}</h2>
+                                </a>
+                                <p>{{custom_excerpt}}</p>
+                                {{#if preview_button_link}}
+                                    <a href="{{preview_button_link}}" class="button">Preview</a>
+                                {{/if}}
+                            {{else}}
+                                <a href="{{url}}">
+                                    <h2>{{title}}</h2>
+                                </a>
+                                <p>{{excerpt}}</p>
+                                {{#if preview_button_link}}
+                                    <a href="{{preview_button_link}}" class="button">Preview</a>
+                                {{/if}}
+                            {{/if}}
                         </div>
                     {{/each}}
                 {{/get}}
