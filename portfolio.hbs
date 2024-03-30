@@ -53,7 +53,7 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info" data-url="{{url}}">
+                        <div class="post-card" data-url="{{url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -98,10 +98,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const projectInfos = document.querySelectorAll('.project-info');
-        projectInfos.forEach(function(projectInfo) {
-            projectInfo.addEventListener('click', function() {
-                const url = projectInfo.getAttribute('data-url');
+        const postCards = document.querySelectorAll('.post-card');
+        postCards.forEach(function(postCard) {
+            postCard.addEventListener('click', function() {
+                const url = postCard.getAttribute('data-url');
                 if (url) {
                     window.location.href = url;
                 }
@@ -112,7 +112,7 @@
 </script>
 
 <style>
-    .project-info {
+    .post-card {
         cursor: pointer;
     }
 </style>
