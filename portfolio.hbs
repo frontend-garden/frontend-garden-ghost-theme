@@ -68,7 +68,8 @@
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
                             {{#foreach tags}}
-                                <a href="{{name}}" class="visit-website-link">Visit Website</a>
+                                {{#if @last}}
+                                <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
                             {{/foreach}}
                         </div>
                     {{/each}}
