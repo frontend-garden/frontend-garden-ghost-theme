@@ -46,7 +46,7 @@
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
                 {{#get "posts"
-                    filter="primary_tag:-projetos"
+                    filter="primary_tag:projetos"
                     include="authors,tags"
                     order="published_at DESC"
                     limit="3"
@@ -78,7 +78,7 @@
     </div>
 
     {{#get "posts"
-        filter="primary_tag:-projetos"
+        filter="primary_tag:projetos"
         include="authors,tags"
         order="published_at DESC"
         limit="3"
