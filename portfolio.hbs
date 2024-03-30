@@ -68,7 +68,9 @@
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
                             {{#foreach tags}}
-                                <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
+                                {{#if (matches name "([A-Za-z0-9-]+\\.)+[A-Za-z]{2,6}(/[^\\s]*)?")}}
+                                    <a href="https://{{name}}" class="visit-website-link">Visit Website</a>
+                                {{/if}}
                             {{/foreach}}
                         </div>
                     {{/each}}
