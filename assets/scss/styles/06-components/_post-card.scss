@@ -126,8 +126,9 @@ $_post-card-padding-y: spacing.of(1);
 
     &:hover {
         background: #bbb9ba;
-        opacity: 0.2;
         border-radius: 20px;        
+        opacity: 0.2;
         transition: 0.65s ease;
+        
     }
 }
