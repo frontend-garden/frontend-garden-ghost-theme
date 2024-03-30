@@ -39,7 +39,7 @@
     </div>
     <div class="section section--roomy-bottom print-padding-none">
         <div class="container">
-            <div class="projects-wrapper">
+            <div class="columns columns--4">
 
                 {{!
                     Loop through the original `posts` and group them.
@@ -53,15 +53,17 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info">
-                            <a href="{{url}}">
-                                <h2>{{title}}</h2>
-                            </a>
-                            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                {{#foreach tags}}
-                                    <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                {{/foreach}}
-                            </ul>
+                        <div>
+                            <div class="project-info">
+                                <a href="{{url}}">
+                                    <h2>{{title}}</h2>
+                                </a>
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                    {{#foreach tags}}
+                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                    {{/foreach}}
+                                </ul>
+                            </div>
                             {{#if custom_excerpt}}
                                 <p>{{custom_excerpt}}</p>
                             {{else}}
