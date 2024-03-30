@@ -53,7 +53,7 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info" data-url="{{url}}">
+                        <div class="project-info" data-url="{{url}}" data-url-site-project="{{custom_site_url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -108,7 +108,7 @@
             const buttons = projectInfo.querySelectorAll('.visit-website-button');
             buttons.forEach(function(button) {
                 button.addEventListener('click', function(event) {
-                    const url = projectInfo.getAttribute('data-url');
+                    const url = projectInfo.getAttribute('data-url-site-project');
                     if (url) {
                         window.open(url, '_blank');
                     }
