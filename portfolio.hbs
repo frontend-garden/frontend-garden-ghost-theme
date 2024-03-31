@@ -75,6 +75,14 @@
         </div>
     </div>
 
+    {{#get "tags"}}
+        {{#unless tags}}
+            <div class="container">
+                <p class="no-projects-message" style="text-align: center;">Ainda não tenho nenhum projeto nessa categoria.</p>
+            </div>
+        {{/unless}}
+    {{/get}}
+
     {{#get "posts"
         filter="primary_tag:artigo"
         include="authors,tags"
