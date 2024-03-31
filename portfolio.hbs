@@ -57,7 +57,7 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info" data-tags="{{tags}}">
+                        <div class="project-info">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -71,11 +71,7 @@
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                                {{#foreach tags}}
-                                    {{#if @first}}
-                                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
-                                    {{/if}}
-                                {{/foreach}}
+                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
                         </div>
                     {{/each}}
                 {{/get}}
@@ -115,8 +111,8 @@
         function filterProjects(filter) {
             const projectInfos = document.querySelectorAll('.project-info');
             projectInfos.forEach(function(projectInfo) {
-                const tags = projectInfo.getAttribute('data-tags').toLowerCase(); // Obtém as tags do projeto
-                if (tags.includes(filter)) {
+                const tags = projectInfo.querySelector('.list-unstyled a.label').textContent.toLowerCase(); // Obtém a tag do projeto
+                if (tags === filter) {
                     projectInfo.style.display = 'block';
                 } else {
                     projectInfo.style.display = 'none';
