@@ -113,7 +113,7 @@
             const projectInfos = document.querySelectorAll('.project-info');
             projectInfos.forEach(function(projectInfo) {
                 const tags = projectInfo.querySelector('.list-unstyled a.label');
-                if (filter === "todos" || tags.textContent.toLowerCase() === filter) {
+                if (filter === "projetos" || tags.textContent.toLowerCase() === filter) {
                     projectInfo.style.display = 'block';
                 } else {
                     projectInfo.style.display = 'none';
