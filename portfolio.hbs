@@ -46,16 +46,18 @@
                     {{#if projects.length}}
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
-                                <h2>{{title}}</h2>
+                                <h2>
+                                    {{title}}
+                                    {{#if title 'includes' 'WIP'}}
+                                        <i class="fas fa-circle-notch fa-spin wip-icon" style="color: purple;" data-tooltip="tooltip" title="Work in Progress"></i>
+                                    {{/if}}
+                                </h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
                                         {{#if @last}}
                                             <li><a href="{{url}}" class="label">{{name}}</a></li>
                                         {{/if}}
                                     {{/foreach}}
-                                    {{#if name '===' 'WIP'}}
-                                        <li class="wip-icon" style="color: purple; margin-left: 5px;"><i class="fas fa-circle-notch fa-spin" data-tooltip="tooltip" title="Work in Progress"></i></li>
-                                    {{/if}}
                                 </ul>
                                 {{#if custom_excerpt}}
                                     <p>{{custom_excerpt}}</p>
