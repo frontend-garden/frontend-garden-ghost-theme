@@ -49,7 +49,7 @@
                     filter="tag:projetos"
                     include="authors,tags"
                     order="published_at ASC"
-                    limit="4"
+                    limit="12"
                     as |projects|
                 }}
                     {{#each projects}}
@@ -83,7 +83,7 @@
     {{#get "posts"
         filter="primary_tag:artigo"
         include="authors,tags"
-        order="published_at DESC"
+        order="published_at ASC"
         limit="3"
         as |recent|
     }}
@@ -110,9 +110,3 @@
     });
 
 </script>
-
-<style>
-    .project-info {
-        cursor: pointer;
-    }
-</style>
