@@ -47,22 +47,14 @@
                         <div class="project-info" data-url="{{url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                {{#foreach tags}}
-                                    {{#if @last}}
-                                        <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                    {{/if}}
-                                {{/foreach}}
+                                <li><a href="{{url}}" class="label">{{tags.[0].name}}</a></li>
                             </ul>
                             {{#if custom_excerpt}}
                                 <p>{{custom_excerpt}}</p>
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                                {{#foreach tags}}
-                                    {{#if @first}}
-                                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
-                                    {{/if}}
-                                {{/foreach}}
+                            <a href="https://{{tags.[0].name}}" class="visit-website-link">Visitar Website</a>
                         </div>
                     {{/each}}
                 {{/get}}
