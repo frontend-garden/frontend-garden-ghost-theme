@@ -47,7 +47,7 @@
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
                                 <h2>{{title}}</h2>
-                                <span class="wip-icon" style="color: purple;" title="Work in Progress" data-wip="{{title.includes('WIP') ? 'true' : 'false'}}">🚧</span>
+                                <span class="wip-icon" style="color: purple;" title="Work in Progress" data-wip="{{#isWIP title}}true{{else}}false{{/isWIP}}">🚧</span>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
                                         {{#if @last}}
@@ -152,4 +152,9 @@
         }
     });
 
+</script>
+<script>
+    Handlebars.registerHelper('isWIP', function(title, options) {
+        return title.includes('WIP') ? options.fn(this) : options.inverse(this);
+    });
 </script>
