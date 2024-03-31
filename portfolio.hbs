@@ -15,6 +15,9 @@
 
                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                     <li>
+                        <a href="#projetos" class="label">Todos</a>
+                    </li>
+                    <li>
                         <a href="#wordpress" class="label">Wordpress</a>
                     </li>
                     <li>
@@ -50,10 +53,8 @@
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
                 {{#get "posts"
-                    filter="tag:projetos"
                     include="authors,tags"
                     order="published_at ASC"
-                    limit="4"
                     as |projects|
                 }}
                     {{#each projects}}
@@ -111,8 +112,8 @@
         function filterProjects(filter) {
             const projectInfos = document.querySelectorAll('.project-info');
             projectInfos.forEach(function(projectInfo) {
-                const tags = projectInfo.querySelector('.list-unstyled a.label').textContent.toLowerCase(); // Obtém a tag do projeto
-                if (tags === filter) {
+                const tags = projectInfo.querySelector('.list-unstyled a.label');
+                if (filter === "todos" || tags.textContent.toLowerCase() === filter) {
                     projectInfo.style.display = 'block';
                 } else {
                     projectInfo.style.display = 'none';
