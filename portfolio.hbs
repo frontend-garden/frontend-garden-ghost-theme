@@ -53,7 +53,7 @@
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="post-card" data-url="{{url}}">
+                        <div class="project-info" data-url="{{url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -98,10 +98,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const postCards = document.querySelectorAll('.post-card');
-        postCards.forEach(function(postCard) {
-            postCard.addEventListener('click', function() {
-                const url = postCard.getAttribute('data-url');
+        const projectInfos = document.querySelectorAll('.project-info');
+        projectInfos.forEach(function(projectInfo) {
+            projectInfo.addEventListener('click', function() {
+                const url = projectInfo.getAttribute('data-url');
                 if (url) {
                     window.location.href = url;
                 }
@@ -112,35 +112,7 @@
 </script>
 
 <style>
-    .post-card {
+    .project-info {
         cursor: pointer;
     }
-
-.post-card {
-	overflow: hidden;
-	padding: 30px;
-	border-radius: 20px;
-	transition: 0.2s ease;
-	display: block;
-
-	ul {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	&:hover {
-		background: rgba(187,185,186,0.22);
-		border-radius: 20px;
-		transition: 0.2s ease;
-	}
-}
-
-.project-info p {
-    margin-left: 5px;
-}
-
-.visit-website-link:hover {
-    color: #373737;
-    cursor: pointer;
-}    
 </style>
