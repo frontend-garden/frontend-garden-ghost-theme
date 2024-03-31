@@ -47,11 +47,9 @@
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
                                 <h2>
+                                    {{title}}
                                     {{#if titleWIP title}}
-                                        {{title}}
                                         <span class="wip-icon" style="color: purple;" title="Work in Progress">🚧</span>
-                                    {{else}}
-                                        {{title}}
                                     {{/if}}
                                 </h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
