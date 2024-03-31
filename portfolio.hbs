@@ -47,26 +47,26 @@
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
                                 <h2>{{title}}</h2>
-                                {{#foreach tags}}
-                                    {{#if @last}}
-                                        <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                    {{#foreach tags}}
+                                        {{#if @last}}
                                             <li><a href="{{url}}" class="label">{{name}}</a></li>
-                                            {{#if name '===' 'WIP'}}
-                                                <li class="wip-icon" style="color: purple; margin-left: 5px;"><i class="fas fa-circle-notch fa-spin" data-tooltip="tooltip" title="Work in Progress"></i></li>
-                                            {{/if}}
-                                        </ul>
+                                        {{/if}}
+                                    {{/foreach}}
+                                    {{#if name '===' 'WIP'}}
+                                        <li class="wip-icon" style="color: purple; margin-left: 5px;"><i class="fas fa-circle-notch fa-spin" data-tooltip="tooltip" title="Work in Progress"></i></li>
                                     {{/if}}
-                                {{/foreach}}
+                                </ul>
                                 {{#if custom_excerpt}}
                                     <p>{{custom_excerpt}}</p>
                                 {{else}}
                                     <p>{{excerpt words="30"}}</p>
                                 {{/if}}
-                                    {{#foreach tags}}
-                                        {{#if @first}}
-                                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
-                                        {{/if}}
-                                    {{/foreach}}
+                                {{#foreach tags}}
+                                    {{#if @first}}
+                                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                    {{/if}}
+                                {{/foreach}}
                             </div>
                         {{/each}}
                     {{else}}
