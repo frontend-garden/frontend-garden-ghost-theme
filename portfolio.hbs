@@ -67,7 +67,7 @@
                             </div>
                         {{/each}}
                     {{else}}
-                        <p class="no-projects-message" style="text-align: center;">Ainda não tenho nenhum projeto nessa categoria.</p>
+                        <p class="no-projects-message" style="display: none;">Ainda não tenho nenhum projeto nessa categoria.</p>
                     {{/if}}
                 {{/get}}
 
@@ -133,15 +133,14 @@
                 }
             });
 
-            // Exibe ou oculta a mensagem se nenhum projeto for encontrado
+            // Se nenhum projeto for encontrado, exibe a mensagem
             const noProjectsMessage = document.querySelector('.no-projects-message');
-            if (noProjectsMessage) {
-                noProjectsMessage.style.display = projectsFound ? 'none' : 'block';
+            if (!projectsFound && noProjectsMessage) {
+                noProjectsMessage.style.display = 'block';
+            } else if (projectsFound && noProjectsMessage) {
+                noProjectsMessage.style.display = 'none';
             }
         }
-        
-        // Chama a função filterProjects para garantir que a mensagem seja exibida corretamente na inicialização
-        filterProjects(window.location.hash.slice(1));
     });
 
 </script>
