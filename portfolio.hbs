@@ -40,7 +40,7 @@
                     filter="tag:projetos"
                     include="authors,tags"
                     order="published_at ASC"
-                    limit="12"
+                    limit="4"
                     as |projects|
                 }}
                     {{#if projects.length}}
@@ -67,7 +67,7 @@
                             </div>
                         {{/each}}
                     {{else}}
-                        <p class="no-projects-message";">Ainda não tenho nenhum projeto nessa categoria.</p>
+                        <p class="no-projects-message" style="display: none; text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Ainda não tenho nenhum projeto nessa categoria.</p>
                     {{/if}}
                 {{/get}}
 
