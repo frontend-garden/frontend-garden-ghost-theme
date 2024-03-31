@@ -43,20 +43,32 @@
                     limit="4"
                     as |projects|
                 }}
-                    {{#each projects}}
-                        <div class="project-info" data-url="{{url}}">
-                            <h2>{{title}}</h2>
-                            <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                                <li><a href="{{url}}" class="label">{{tags.[0].name}}</a></li>
-                            </ul>
-                            {{#if custom_excerpt}}
-                                <p>{{custom_excerpt}}</p>
-                            {{else}}
-                                <p>{{excerpt words="30"}}</p>
-                            {{/if}}
-                            <a href="https://{{tags.[0].name}}" class="visit-website-link">Visitar Website</a>
-                        </div>
-                    {{/each}}
+                    {{#if projects.length}}
+                        {{#each projects}}
+                            <div class="project-info" data-url="{{url}}">
+                                <h2>{{title}}</h2>
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                    {{#foreach tags}}
+                                        {{#if @last}}
+                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                                {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                {{else}}
+                                    <p>{{excerpt words="30"}}</p>
+                                {{/if}}
+                                    {{#foreach tags}}
+                                        {{#if @first}}
+                                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                        {{/if}}
+                                    {{/foreach}}
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <p>Ainda não tenho nenhum projeto nessa categoria.</p>
+                    {{/if}}
                 {{/get}}
 
             </div>
@@ -104,6 +116,7 @@
         // Função para filtrar os projetos
         function filterProjects(tag) {
             const projectInfos = document.querySelectorAll('.project-info');
+            let projectsFound = false;
             projectInfos.forEach(function(projectInfo) {
                 const tags = projectInfo.querySelectorAll('.label');
                 let showProject = false;
@@ -114,17 +127,21 @@
                 });
                 if (showProject || tag === 'todos') {
                     projectInfo.style.display = 'block';
+                    projectsFound = true;
                 } else {
                     projectInfo.style.display = 'none';
                 }
             });
+
+            // Se nenhum projeto for encontrado, exibe a mensagem
+            if (!projectsFound) {
+                const noProjectsMessage = document.createElement('p');
+                noProjectsMessage.textContent = "Ainda não tenho nenhum projeto nessa categoria.";
+                const projectContainer = document.querySelector('.columns--4');
+                projectContainer.innerHTML = ''; // Limpa o conteúdo anterior
+                projectContainer.appendChild(noProjectsMessage);
+            }
         }
     });
 
 </script>
-
-<style>
-    .project-info {
-        cursor: pointer;
-    }
-</style>
