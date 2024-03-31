@@ -67,7 +67,7 @@
                             </div>
                         {{/each}}
                     {{else}}
-                        <p class="no-projects-message">Ainda não tenho nenhum projeto nessa categoria.</p>
+                        <p class="no-projects-message" style="display: none;">Ainda não tenho nenhum projeto nessa categoria.</p>
                     {{/if}}
                 {{/get}}
 
@@ -134,19 +134,11 @@
             });
 
             // Se nenhum projeto for encontrado, exibe a mensagem
-            if (!projectsFound) {
-                const noProjectsMessage = document.createElement('p');
-                noProjectsMessage.textContent = "Ainda não tenho nenhum projeto nessa categoria.";
-                noProjectsMessage.classList.add('no-projects-message'); // Adiciona uma classe para identificar a mensagem
-                const projectContainer = document.querySelector('.columns--4');
-                projectContainer.innerHTML = ''; // Limpa o conteúdo anterior
-                projectContainer.appendChild(noProjectsMessage);
-            } else {
-                // Se projetos forem encontrados, remove a mensagem se existir
-                const noProjectsMessage = document.querySelector('.no-projects-message');
-                if (noProjectsMessage) {
-                    noProjectsMessage.remove();
-                }
+            const noProjectsMessage = document.querySelector('.no-projects-message');
+            if (!projectsFound && noProjectsMessage) {
+                noProjectsMessage.style.display = 'block';
+            } else if (projectsFound && noProjectsMessage) {
+                noProjectsMessage.style.display = 'none';
             }
         }
     });
