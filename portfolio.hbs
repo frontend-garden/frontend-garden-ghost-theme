@@ -13,32 +13,16 @@
                     </p>
                 {{/if}}
 
-                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                    <li>
-                        <a href="#projetos" class="label">Todos</a>
-                    </li>
-                    <li>
-                        <a href="#wordpress" class="label">Wordpress</a>
-                    </li>
-                    <li>
-                        <a href="#php" class="label">PHP</a>
-                    </li>
-                    <li>
-                        <a href="#css3" class="label">CSS3</a>
-                    </li>
-                    <li>
-                        <a href="#laravel" class="label">Laravel</a>
-                    </li>
-                    <li>
-                        <a href="#mysql" class="label">MySQL</a>
-                    </li>
-                    <li>
-                        <a href="#vue" class="label">Vue</a>
-                    </li>
-                    <li>
-                        <a href="#no-code" class="label">No Code</a>
-                    </li>
-                    <!-- Adicione outros filtros conforme necessário -->
+                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden filter-tags">
+                    <li><a href="#todos" class="label">Todos</a></li>
+                    <li><a href="#Wordpress" class="label">Wordpress</a></li>
+                    <li><a href="#PHP" class="label">PHP</a></li>
+                    <li><a href="#CSS3" class="label">CSS3</a></li>
+                    <li><a href="#Laravel" class="label">Laravel</a></li>
+                    <li><a href="#MySQL" class="label">MySQL</a></li>
+                    <li><a href="#Vue" class="label">Vue</a></li>
+                    <li><a href="#No-Code" class="label">No Code</a></li>
+                    <!-- Adicione outras tags conforme necessário -->
                 </ul>
             {{/tag}}
 
@@ -53,12 +37,14 @@
                     Pagination of `posts` is made impossible in `routes.yaml`.
                 }}
                 {{#get "posts"
+                    filter="tag:projetos"
                     include="authors,tags"
                     order="published_at ASC"
+                    limit="4"
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info">
+                        <div class="project-info" data-url="{{url}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -72,7 +58,11 @@
                             {{else}}
                                 <p>{{excerpt words="30"}}</p>
                             {{/if}}
-                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                {{#foreach tags}}
+                                    {{#if @first}}
+                                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                    {{/if}}
+                                {{/foreach}}
                         </div>
                     {{/each}}
                 {{/get}}
@@ -99,21 +89,38 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const filterLinks = document.querySelectorAll('.list-unstyled a.label');
-
-        filterLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const filter = link.textContent.toLowerCase(); // Obtém o texto do filtro
-                filterProjects(filter);
+        const projectInfos = document.querySelectorAll('.project-info');
+        projectInfos.forEach(function(projectInfo) {
+            projectInfo.addEventListener('click', function() {
+                const url = projectInfo.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
             });
         });
 
-        function filterProjects(filter) {
+        // Adiciona event listener para os filtros
+        const filterTags = document.querySelectorAll('.filter-tags a');
+        filterTags.forEach(function(filterTag) {
+            filterTag.addEventListener('click', function(event) {
+                event.preventDefault();
+                const tag = filterTag.getAttribute('href').slice(1); // Remove o '#'
+                filterProjects(tag);
+            });
+        });
+
+        // Função para filtrar os projetos
+        function filterProjects(tag) {
             const projectInfos = document.querySelectorAll('.project-info');
             projectInfos.forEach(function(projectInfo) {
-                const tags = projectInfo.querySelector('.list-unstyled a.label');
-                if (filter === "projetos" || tags.textContent.toLowerCase() === filter) {
+                const tags = projectInfo.querySelectorAll('.label');
+                let showProject = false;
+                tags.forEach(function(tagElement) {
+                    if (tagElement.textContent.trim() === tag || tag === 'todos') {
+                        showProject = true;
+                    }
+                });
+                if (showProject || tag === 'todos') {
                     projectInfo.style.display = 'block';
                 } else {
                     projectInfo.style.display = 'none';
@@ -121,6 +128,7 @@
             });
         }
     });
+
 </script>
 
 <style>
