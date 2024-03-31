@@ -139,6 +139,9 @@
                 noProjectsMessage.style.display = projectsFound ? 'none' : 'block';
             }
         }
+        
+        // Chama a função filterProjects para garantir que a mensagem seja exibida corretamente na inicialização
+        filterProjects(window.location.hash.slice(1));
     });
 
 </script>
