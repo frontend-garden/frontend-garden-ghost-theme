@@ -15,23 +15,27 @@
 
                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                     <li>
-                        <a href="#tecnologias" class="label">Tecnologias</a>
+                        <a href="#wordpress" class="label">Wordpress</a>
                     </li>
                     <li>
-                        <a href="#frameworks" class="label">Frameworks</a>
+                        <a href="#php" class="label">PHP</a>
                     </li>
                     <li>
-                        <a href="#ferramentas" class="label">Ferramentas</a>
+                        <a href="#css3" class="label">CSS3</a>
                     </li>
                     <li>
-                        <a href="#testes" class="label">Testes</a>
+                        <a href="#laravel" class="label">Laravel</a>
                     </li>
                     <li>
-                        <a href="#no-code" class="label">No-Code</a>
+                        <a href="#mysql" class="label">MySQL</a>
                     </li>
                     <li>
-                        <a href="#design-grafico" class="label">Design Gráfico</a>
+                        <a href="#vue" class="label">Vue</a>
                     </li>
+                    <li>
+                        <a href="#no-code" class="label">No Code</a>
+                    </li>
+                    <!-- Adicione outros filtros conforme necessário -->
                 </ul>
             {{/tag}}
 
@@ -49,11 +53,11 @@
                     filter="tag:projetos"
                     include="authors,tags"
                     order="published_at ASC"
-                    limit="12"
+                    limit="4"
                     as |projects|
                 }}
                     {{#each projects}}
-                        <div class="project-info" data-url="{{url}}">
+                        <div class="project-info" data-tags="{{tags}}">
                             <h2>{{title}}</h2>
                             <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                 {{#foreach tags}}
@@ -83,7 +87,7 @@
     {{#get "posts"
         filter="primary_tag:artigo"
         include="authors,tags"
-        order="published_at ASC"
+        order="published_at DESC"
         limit="3"
         as |recent|
     }}
@@ -98,15 +102,32 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const projectInfos = document.querySelectorAll('.project-info');
-        projectInfos.forEach(function(projectInfo) {
-            projectInfo.addEventListener('click', function() {
-                const url = projectInfo.getAttribute('data-url');
-                if (url) {
-                    window.location.href = url;
-                }
+        const filterLinks = document.querySelectorAll('.list-unstyled a.label');
+
+        filterLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const filter = link.textContent.toLowerCase(); // Obtém o texto do filtro
+                filterProjects(filter);
             });
         });
-    });
 
+        function filterProjects(filter) {
+            const projectInfos = document.querySelectorAll('.project-info');
+            projectInfos.forEach(function(projectInfo) {
+                const tags = projectInfo.getAttribute('data-tags').toLowerCase(); // Obtém as tags do projeto
+                if (tags.includes(filter)) {
+                    projectInfo.style.display = 'block';
+                } else {
+                    projectInfo.style.display = 'none';
+                }
+            });
+        }
+    });
 </script>
+
+<style>
+    .project-info {
+        cursor: pointer;
+    }
+</style>
