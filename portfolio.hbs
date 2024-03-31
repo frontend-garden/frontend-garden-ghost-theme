@@ -46,7 +46,14 @@
                     {{#if projects.length}}
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
-                                <h2>{{title}}</h2>
+                                <h2>
+                                    {{#if titleWIP title}}
+                                        {{title}}
+                                        <span class="wip-icon" style="color: purple;" title="Work in Progress">🚧</span>
+                                    {{else}}
+                                        {{title}}
+                                    {{/if}}
+                                </h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
                                         {{#if @last}}
@@ -148,6 +155,11 @@
             } else if (projectsFound && noProjectsMessage) {
                 noProjectsMessage.style.display = 'none';
             }
+        }
+
+        // Helper para verificar se o título contém "WIP"
+        function titleWIP(title) {
+            return title.includes('WIP');
         }
     });
 
