@@ -13,9 +13,11 @@
                 <h2 class="print-hidden">Todos os Temas</h2>
                 <ul class="footer__list list-unstyled list-inline spacing-bottom-large print-hidden">
                     {{#foreach tags}}
-                        <li class="list-item-decorated">
-                            <a href="{{url}}" class="text-nowrap">{{name}}</a>
-                        </li>
+                        {{#unless (or (eq name "rammonguilherme.com.br") (eq name "marthon.adv.br") (eq name "ascon.com.br"))}}
+                            <li class="list-item-decorated">
+                                <a href="{{url}}" class="text-nowrap">{{name}}</a>
+                            </li>
+                        {{/unless}}
                     {{/foreach}}
                 </ul>
             {{/get}}
@@ -46,4 +48,4 @@
         </p>
 
     </div>
-</footer> 
+</footer>
