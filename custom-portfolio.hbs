@@ -30,11 +30,11 @@
                     <h3>Características do Projeto</h3>
                     <table>
                         <tbody>
-                            {{#foreach features}}
-                            <tr>
-                                <td>{{this}}</td>
-                            </tr>
-                            {{/foreach}}
+                            {{#if custom_excerpt}}
+                                <p>{{custom_excerpt}}</p>
+                            {{else}}
+                                <p>{{excerpt words="30"}}</p>
+                            {{/if}}
                         </tbody>
                     </table>
 
