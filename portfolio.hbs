@@ -66,6 +66,9 @@
                                     {{/foreach}}
                             </div>
                         {{/each}}
+                    {{else}}
+                        <p>Não há projetos disponíveis.</p>
+                    {{/if}}
                 {{/get}}
 
             </div>
@@ -129,6 +132,11 @@
                     projectInfo.style.display = 'none';
                 }
             });
+            if (!projectsFound) {
+                const noProjectsMessage = document.createElement('p');
+                noProjectsMessage.textContent = 'Não há projetos disponíveis.';
+                document.querySelector('.columns').appendChild(noProjectsMessage);
+            }
         }
     });
 
