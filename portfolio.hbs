@@ -66,11 +66,13 @@
                                     {{/foreach}}
                             </div>
                         {{/each}}
+                    {{else}}
+                        <p class="no-projects-message">Não há projetos disponíveis.</p>
                     {{/if}}
                 {{/get}}
 
                 {{#unless projects.length}}
-                    <p>Não há projetos disponíveis.</p>
+                    <p class="no-projects-message">Não há projetos disponíveis.</p>
                 {{/unless}}
 
             </div>
@@ -135,9 +137,13 @@
                 }
             });
             if (!projectsFound) {
-                const noProjectsMessage = document.createElement('p');
-                noProjectsMessage.textContent = 'Não há projetos disponíveis.';
-                document.querySelector('.columns').appendChild(noProjectsMessage);
+                const noProjectsMessage = document.querySelector('.no-projects-message');
+                if (!noProjectsMessage) {
+                    const newNoProjectsMessage = document.createElement('p');
+                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis.';
+                    newNoProjectsMessage.classList.add('no-projects-message');
+                    document.querySelector('.columns').appendChild(newNoProjectsMessage);
+                }
             }
         }
     });
