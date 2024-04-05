@@ -46,14 +46,7 @@
                     {{#if projects.length}}
                         {{#each projects}}
                             <div class="project-info" data-url="{{url}}">
-                                <h2>
-                                    {{#if (contains tags "WIP")}}
-                                        <span class="wip-icon" data-tooltip="Work in Progress">
-                                            <i class="fas fa-spinner fa-pulse"></i>
-                                        </span>
-                                    {{/if}}
-                                    {{title}}
-                                </h2>
+                                <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
                                     {{#foreach tags}}
                                         {{#if @last}}
