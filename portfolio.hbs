@@ -66,10 +66,12 @@
                                     {{/foreach}}
                             </div>
                         {{/each}}
-                    {{else}}
-                        <p>Não há projetos disponíveis.</p>
                     {{/if}}
                 {{/get}}
+
+                {{#unless projects.length}}
+                    <p>Não há projetos disponíveis.</p>
+                {{/unless}}
 
             </div>
         </div>
