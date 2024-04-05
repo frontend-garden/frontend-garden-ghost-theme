@@ -67,13 +67,9 @@
                             </div>
                         {{/each}}
                     {{else}}
-                        <p class="no-projects-message">Não há projetos disponíveis.1</p>
+                        <p>Não há projetos disponíveis.1</p>
                     {{/if}}
                 {{/get}}
-
-                {{#unless projects.length}}
-                    <p class="no-projects-message">Não há projetos disponíveis.2</p>
-                {{/unless}}
 
             </div>
         </div>
@@ -137,13 +133,9 @@
                 }
             });
             if (!projectsFound) {
-                const noProjectsMessage = document.querySelector('.no-projects-message');
-                if (!noProjectsMessage) {
-                    const newNoProjectsMessage = document.createElement('p');
-                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis.3';
-                    newNoProjectsMessage.classList.add('no-projects-message');
-                    document.querySelector('.columns').appendChild(newNoProjectsMessage);
-                }
+                const noProjectsMessage = document.createElement('p');
+                noProjectsMessage.textContent = 'Não há projetos disponíveis.2';
+                document.querySelector('.columns').appendChild(noProjectsMessage);
             }
         }
     });
