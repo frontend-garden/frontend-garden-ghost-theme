@@ -66,9 +66,6 @@
                                     {{/foreach}}
                             </div>
                         {{/each}}
-                    {{else}}
-                        <p>Não há projetos disponíveis.1</p>
-                    {{/if}}
                 {{/get}}
 
             </div>
@@ -137,7 +134,7 @@
                 if (!noProjectsMessage) {
                     const newNoProjectsMessage = document.createElement('p');
                     newNoProjectsMessage.classList.add('no-projects-message');
-                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis.2';
+                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis nessa categoria.';
                     document.querySelector('.columns').appendChild(newNoProjectsMessage);
                 }
             } else {
