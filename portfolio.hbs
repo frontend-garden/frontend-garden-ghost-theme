@@ -143,9 +143,9 @@
 
             // Se nenhum projeto for encontrado, exibe a mensagem
             const noProjectsMessage = document.querySelector('.no-projects-message');
-            if (!projectsFound && noProjectsMessage) {
+            if (!projectsFound && noProjectsMessage && tag !== 'todos') {
                 noProjectsMessage.style.display = 'block';
-            } else if (projectsFound && noProjectsMessage) {
+            } else if ((projectsFound || tag === 'todos') && noProjectsMessage) {
                 noProjectsMessage.style.display = 'none';
             }
         }
