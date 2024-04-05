@@ -66,22 +66,11 @@
                                     {{/foreach}}
                             </div>
                         {{/each}}
-                    {{else}}
-                        <p class="no-projects-message" style="display: none;">Ainda não tenho nenhum projeto nessa categoria.</p>
-                    {{/if}}
                 {{/get}}
 
             </div>
         </div>
     </div>
-
-    {{#get "tags"}}
-        {{#unless tags}}
-            <div class="container">
-                <p class="no-projects-message" style="text-align: center;">Ainda não tenho nenhum projeto nessa categoria.</p>
-            </div>
-        {{/unless}}
-    {{/get}}
 
     {{#get "posts"
         filter="primary_tag:artigo"
@@ -140,20 +129,6 @@
                     projectInfo.style.display = 'none';
                 }
             });
-
-            // Se nenhum projeto for encontrado, exibe a mensagem
-            const noProjectsMessage = document.querySelector('.no-projects-message');
-            if (!projectsFound && noProjectsMessage && tag !== 'todos') {
-                noProjectsMessage.style.display = 'block';
-            } else if ((projectsFound || tag === 'todos') && noProjectsMessage) {
-                noProjectsMessage.style.display = 'none';
-            } else if (!noProjectsMessage && tag !== 'todos') {
-                const container = document.querySelector('.container');
-                const newNoProjectsMessage = document.createElement('p');
-                newNoProjectsMessage.classList.add('no-projects-message');
-                newNoProjectsMessage.textContent = 'Ainda não tenho nenhum projeto nessa categoria.';
-                container.appendChild(newNoProjectsMessage);
-            }
         }
     });
 
