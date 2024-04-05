@@ -133,7 +133,7 @@
                         showProject = true;
                     }
                 });
-                if (showProject || tag === 'todos') {
+                if (showProject) {
                     projectInfo.style.display = 'block';
                     projectsFound = true;
                 } else {
@@ -143,12 +143,16 @@
 
             // Se nenhum projeto for encontrado, exibe a mensagem
             const noProjectsMessage = document.querySelector('.no-projects-message');
-            if (!projectsFound && noProjectsMessage) {
+            if (!projectsFound) {
+                noProjectsMessage.textContent = 'Nenhum projeto nessa categoria';
                 noProjectsMessage.style.display = 'block';
-            } else if (projectsFound && noProjectsMessage) {
+            } else {
                 noProjectsMessage.style.display = 'none';
             }
         }
+    });
+
+</script>
     });
 
 </script>
