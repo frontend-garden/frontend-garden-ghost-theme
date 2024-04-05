@@ -4,7 +4,7 @@
 <script>
     window.addEventListener('DOMContentLoaded', function () {
         initLmcCookieConsentManager(
-            'frontend-garden',
+            'ramonguilherme-com-br',
             {
                 consentCollectorApiUrl: null,
                 displayMode: 'soft',
@@ -22,34 +22,34 @@
                         }
                     },
                     languages: {
-                        cs: {
+                        pt_BR: {
                             consent_modal: {
-                                title: 'Cookies… 🙈',
-                                description: `Ne že by to bez nich nešlo. Ale je fér říct, že nám pomáhají tvořit kvalitní obsah zdarma.<br />
-                                    <a href="" data-cc="c-settings">OK, ale nechte mě vybrat</a>.`,
+                                title: 'Cookies... 🙈',
+                                description: `Não que seja impossível sem eles. Mas é justo dizer que eles nos ajudam a criar conteúdo de qualidade de graça.<br />
+                                    <a href="" data-cc="c-settings">OK, mas deixe-me escolher</a>.`,
                                 primary_btn: {
-                                    text: 'Přijmout všechny',
+                                    text: 'Aceitar todos',
                                     role: 'accept_all',
                                 },
                                 secondary_btn: {
-                                    text: 'Přijmout nezbytné',
+                                    text: 'Aceitar apenas os necessários',
                                     role: 'accept_necessary',
                                 },
                             },
                             settings_modal: {
-                                title: 'Přizpůsobit nastavení Cookies',
-                                accept_all_btn: 'Přijmout všechny',
-                                reject_all_btn: 'Přijmout nezbytné',
-                                save_settings_btn: 'Uložit nastavení',
+                                title: 'Personalizar configurações de Cookies',
+                                accept_all_btn: 'Aceitar todos',
+                                reject_all_btn: 'Aceitar apenas os necessários',
+                                save_settings_btn: 'Salvar configurações',
                                 blocks: [
                                     {
-                                        description: `Kliknutím na tlačítko „Přijmout všechny“ dáte Frontend Garden souhlas s využíváním souborů Cookies pro účely analýzy a marketingu.
-                                            Díky analýze návštěvnosti budeme vědět, jaká témata vás nejvíce zajímají. A úspěšný marketing komerčních záležitostí zajistí čas potřebný na tvorbu kvalitního obsahu zdarma pro všechny.`,
+                                        description: `Ao clicar em "Aceitar todos", você concorda que o Frontend Garden use cookies para fins de análise e marketing.
+                                            A análise de visitas nos ajudará a saber quais tópicos são mais interessantes para você. E o marketing bem-sucedido de assuntos comerciais garantirá o tempo necessário para criar conteúdo de qualidade gratuito para todos.`,
                                     },
                                     {
-                                        title: 'Technicky nezbytné Cookies',
-                                        description: `Tyto Cookies jsou pro správné fungování našeho webu nezbytné, proto není možné je vypnout.
-                                            Bez nich by na našich stránkách nefungovalo přihlášení k newsletteru a do členské sekce.`,
+                                        title: 'Cookies tecnicamente necessários',
+                                        description: `Esses cookies são essenciais para o funcionamento correto do nosso site e não podem ser desativados.
+                                            Sem eles, o login na newsletter e na área de membros não funcionará em nosso site.`,
                                         toggle: {
                                             value: 'necessary',
                                             enabled: true,
@@ -57,9 +57,9 @@
                                         },
                                     },
                                     {
-                                        title: 'Analytické Cookies',
-                                        description: `Pomocí nich sledujeme, kolik lidí náš web navštěvuje, jak ho používají a co je nejvíc zajímá.
-                                            Díky tomu můžeme web neustále vylepšovat.`,
+                                        title: 'Cookies analíticos',
+                                        description: `Com eles, acompanhamos quantas pessoas visitam nosso site, como o utilizam e o que mais interessa.
+                                            Isso nos permite melhorar constantemente o site.`,
                                         toggle: {
                                             value: 'analytics',
                                             enabled: false,
@@ -67,9 +67,9 @@
                                         },
                                     },
                                     {
-                                        title: 'Marketingové Cookies',
-                                        description: `S těmito Cookies můžeme měřit, jak efektivní je naše reklama.
-                                            Marketingové Cookies nám umožní vás na Internetu upozornit na novinky, které vás můžou zajímat.`,
+                                        title: 'Cookies de marketing',
+                                        description: `Com esses cookies, podemos medir a eficácia de nossos anúncios.
+                                            Os cookies de marketing nos permitem mostrar a você novidades que possam ser do seu interesse na Internet.`,
                                         toggle: {
                                             value: 'ads',
                                             enabled: false,

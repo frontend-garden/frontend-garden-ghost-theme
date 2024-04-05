@@ -1,9 +1,9 @@
-{{! DEAD CODE, THE TEMPLATE IS NOT ACTUALLY INVOKED ANYWHERE (YET). }}
+{{! CÓDIGO INATIVO, O TEMPLATE NÃO É REALMENTE INVOCADO EM NENHUM LUGAR (AINDA). }}
 
 <section class="post-full-authors">
 
     <div class="post-full-authors-content">
-        <p>Článek vznikl za spolupráce autorů:</p>
+        <p>Artigo criado em colaboração com os autores:</p>
         <p>{{authors}}</p>
     </div>
 
@@ -31,9 +31,9 @@
                     <div class="bio">
                         {{#if bio}}
                             <p>{{bio}}</p>
-                            <p><a href="{{url}}">Další články</a> od autora {{name}}.</p>
+                            <p><a href="{{url}}">Mais artigos</a> do autor {{name}}.</p>
                         {{else}}
-                            <p><a href="{{url}}">Další články</a> od autora</p>
+                            <p><a href="{{url}}">Mais artigos</a> do autor</p>
                         {{/if}}
                     </div>
                 </div>
@@ -62,10 +62,9 @@
 
 {{#contentFor "scripts"}}
 <script>
-// Adds delay to author card dropups to disappear. This gives enough
-// time for the user to interact with the author card while they move
-// the mouse from the avatar to the card. Also makes space for the
-// interacted avatar.
+// Adiciona um atraso para que os cartões de autor desapareçam. Isso dá tempo suficiente
+// para o usuário interagir com o cartão de autor enquanto move o mouse do avatar para o cartão.
+// Também cria espaço para o avatar interagido.
 $(document).ready(function () {
 
     var hoverTimeout;

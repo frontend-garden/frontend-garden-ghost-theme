@@ -5,17 +5,17 @@
 
         {{#if @member}}
 
-            {{!-- Logged in: Redirect home --}}
+            {{!-- Logado: Redirecionar para a página inicial --}}
             <script>window.location = '{{@site.url}}';</script>
 
         {{else}}
             <div class="container container--article">
 
-                {{!-- Not logged in: Sign up --}}
+                {{!-- Não logado: Cadastre-se --}}
                 <form class="members-form" data-members-form="signup">
-                    <h1>Registrace</h1>
+                    <h1>Cadastro</h1>
 
-                    {{> "members/email-box" action="Pokračovat"}}
+                    {{> "members/email-box" action="Continuar"}}
 
                     <div class="spacing-bottom-small">
                         {{> "members/agreement"}}
@@ -23,18 +23,18 @@
 
                     <div class="spacing-bottom">
                         <small>
-                            Již máte svůj účet?
-                            <a href="{{@site.url}}/prihlaseni/">Přihlaste se</a>.
+                            Já possui uma conta?
+                            <a href="{{@site.url}}/login/">Faça login</a>.
                         </small>
                     </div>
 
                     {{> "members/feedback-success"
-                        title="Už jen krůček!"
-                        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte registraci kliknutím na&nbsp;odkaz."
+                        title="Só mais um passo!"
+                        message="Verifique sua caixa de entrada e confirme o cadastro clicando no link."
                     }}
 
                     {{> "members/feedback-error"
-                        message="Zadejte prosím platnou e-mailovou adresu."
+                        message="Por favor, insira um endereço de e-mail válido."
                     }}
                 </form>
 
@@ -42,6 +42,7 @@
         {{/if}}
 
     </section>
+</main>
 </main>
 
 {{> "footer" hideSubscribeForm=true}}

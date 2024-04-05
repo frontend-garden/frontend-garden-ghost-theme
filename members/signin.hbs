@@ -6,32 +6,32 @@
 
             {{#if @member}}
 
-                {{!-- Logged in: Redirect home --}}
+                {{!-- Logado: Redirecionar para a página inicial --}}
                 <script>window.location = '{{@site.url}}';</script>
 
             {{else}}
 
-                {{!-- Not logged in: Signin form --}}
+                {{!-- Não logado: Formulário de login --}}
                 <form class="members-form" data-members-form="signin">
-                    <h1>Vítejte zpět!</h1>
-                    <p>Pro úplný přístup k&nbsp;obsahu se prosím přihlaste.</p>
+                    <h1>Bem-vindo de volta!</h1>
+                    <p>Para ter acesso completo ao conteúdo, faça login.</p>
 
-                    {{> "members/email-box" action="Přihlásit"}}
+                    {{> "members/email-box" action="Entrar"}}
 
                     <div class="spacing-bottom">
                         <small>
-                            Ještě nemáte účet?
-                            <a href="{{@site.url}}/registrace/">Registrujte se</a>.
+                            Ainda não tem uma conta?
+                            <a href="{{@site.url}}/registro/">Registre-se</a>.
                         </small>
                     </div>
 
                     {{> "members/feedback-success"
-                        title="Už jen krůček!"
-                        message="Zkontrolujte svoji e-mailovou schránku a&nbsp;potvrďte své přihlášení kliknutím na&nbsp;odkaz."
+                        title="Só mais um passo!"
+                        message="Verifique sua caixa de entrada e confirme seu login clicando no link."
                     }}
 
                     {{> "members/feedback-error"
-                        message="Zadejte prosím platnou e-mailovou adresu."
+                        message="Por favor, insira um endereço de e-mail válido."
                     }}
                 </form>
 

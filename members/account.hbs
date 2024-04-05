@@ -6,17 +6,17 @@
 
             {{#if @member}}
 
-                {{!-- Logged in --}}
-                <h1>Vítejte!</h1>
+                {{!-- Logado --}}
+                <h1>Bem-vindo!</h1>
                 <p>
-                    Jste přihlášeni pod e-mailovou adresou <strong>{{@member.email}}</strong>.
+                    Você está logado com o endereço de e-mail <strong>{{@member.email}}</strong>.
                 </p>
-                <a href="#signout" data-members-signout>Odhlásit</a>
+                <a href="#signout" data-members-signout>Sair</a>
 
             {{else}}
 
-                {{!-- Not logged in: Redirect to signin --}}
-                <script>window.location = '{{@site.url}}/prihlaseni/';</script>
+                {{!-- Não logado: Redirecionar para o login --}}
+                <script>window.location = '{{@site.url}}/login/';</script>
 
             {{/if}}
 
