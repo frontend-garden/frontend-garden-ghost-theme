@@ -28,33 +28,45 @@
                     <hr />
 
                     <h3>Características do Projeto</h3>
-                    <ul>
-                        {{#foreach features}}
-                            <li>{{this}}</li>
-                        {{/foreach}}
-                    </ul>
+                    <table>
+                        <tbody>
+                            {{#foreach features}}
+                            <tr>
+                                <td>{{this}}</td>
+                            </tr>
+                            {{/foreach}}
+                        </tbody>
+                    </table>
 
                     <hr />
 
                     <h3>Tecnologia Usada</h3>
-                    <ul>
-                        {{#foreach tags}}
-                            {{#if @last}}
-                                <li><a href="{{url}}" class="label">{{name}}</a></li>
-                            {{/if}}
-                        {{/foreach}}
-                    </ul>
+                    <table>
+                        <tbody>
+                            {{#foreach tags}}
+                            <tr>
+                                {{#if @last}}
+                                <td><a href="{{url}}" class="label">{{name}}</a></td>
+                                {{/if}}
+                            </tr>
+                            {{/foreach}}
+                        </tbody>
+                    </table>
 
                     <hr />
 
                     <h3>Link do Projeto</h3>
-                    <ul>
-                    {{#foreach tags}}
-                        {{#if @first}}
-                            <a href="https://{{name}}" class="visit-website-link">{{name}}</a>
-                        {{/if}}
-                    {{/foreach}}
-                    </ul>
+                    <table>
+                        <tbody>
+                            {{#foreach tags}}
+                            <tr>
+                                {{#if @first}}
+                                <td><a href="https://{{name}}" class="visit-website-link">{{name}}</a></td>
+                                {{/if}}
+                            </tr>
+                            {{/foreach}}
+                        </tbody>
+                    </table>
 
                     <hr />
 
