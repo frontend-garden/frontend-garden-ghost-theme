@@ -27,46 +27,48 @@
 
                     <hr />
 
-                    <h3>Características do Projeto</h3>
-                    <table>
-                        <tbody>
-                            {{#if custom_excerpt}}
-                                <p>{{custom_excerpt}}</p>
-                            {{else}}
-                                <p>{{excerpt words="30"}}</p>
-                            {{/if}}
-                        </tbody>
-                    </table>
-
-                    <hr />
-
-                    <h3>Tecnologia Usada</h3>
-                    <table>
-                        <tbody>
-                            {{#foreach tags}}
-                            <tr>
-                                {{#if @last}}
-                                <td><a href="{{url}}" class="label">{{name}}</a></td>
-                                {{/if}}
-                            </tr>
-                            {{/foreach}}
-                        </tbody>
-                    </table>
-
-                    <hr />
-
-                    <h3>Link do Projeto</h3>
-                    <table>
-                        <tbody>
-                            {{#foreach tags}}
-                            <tr>
-                                {{#if @first}}
-                                <td><a href="https://{{name}}" class="visit-website-link">{{name}}</a></td>
-                                {{/if}}
-                            </tr>
-                            {{/foreach}}
-                        </tbody>
-                    </table>
+                    <div class="table-container">
+                        <div class="table-column">
+                            <h3>Características do Projeto</h3>
+                            <table>
+                                <tbody>
+                                    {{#if custom_excerpt}}
+                                        <p>{{custom_excerpt}}</p>
+                                    {{else}}
+                                        <p>{{excerpt words="30"}}</p>
+                                    {{/if}}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-column">
+                            <h3>Tecnologia Usada</h3>
+                            <table>
+                                <tbody>
+                                    {{#foreach tags}}
+                                    <tr>
+                                        {{#if @last}}
+                                        <td><a href="{{url}}" class="label">{{name}}</a></td>
+                                        {{/if}}
+                                    </tr>
+                                    {{/foreach}}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-column">
+                            <h3>Link do Projeto</h3>
+                            <table>
+                                <tbody>
+                                    {{#foreach tags}}
+                                    <tr>
+                                        {{#if @first}}
+                                        <td><a href="https://{{name}}" class="visit-website-link">{{name}}</a></td>
+                                        {{/if}}
+                                    </tr>
+                                    {{/foreach}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                     <hr />
 
