@@ -147,6 +147,12 @@
                 noProjectsMessage.style.display = 'block';
             } else if ((projectsFound || tag === 'todos') && noProjectsMessage) {
                 noProjectsMessage.style.display = 'none';
+            } else if (!noProjectsMessage && tag !== 'todos') {
+                const container = document.querySelector('.container');
+                const newNoProjectsMessage = document.createElement('p');
+                newNoProjectsMessage.classList.add('no-projects-message');
+                newNoProjectsMessage.textContent = 'Ainda não tenho nenhum projeto nessa categoria.';
+                container.appendChild(newNoProjectsMessage);
             }
         }
     });
