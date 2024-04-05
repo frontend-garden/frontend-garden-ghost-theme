@@ -13,7 +13,7 @@
                     </div>
 
                     <h1 class="article__title js-nbsp">{{title}}</h1>
-                    <h2 class="article__summary js-nbsp">{{excerpt}}</h2>
+                    <h2 class="article__summary js-nbsp">{{custom_excerpt}}</h2>
 
                 </div>
             </header>
@@ -24,6 +24,37 @@
                     <div class="editor js-nbsp js-external-links js-heading-anchors">
                         {{content}}
                     </div>
+
+                    <hr />
+
+                    <h3>Características do Projeto</h3>
+                    <ul>
+                        {{#foreach features}}
+                            <li>{{this}}</li>
+                        {{/foreach}}
+                    </ul>
+
+                    <hr />
+
+                    <h3>Tecnologia Usada</h3>
+                    <ul>
+                        {{#foreach tags}}
+                            {{#if @last}}
+                                <li><a href="{{url}}" class="label">{{name}}</a></li>
+                            {{/if}}
+                        {{/foreach}}
+                    </ul>
+
+                    <hr />
+
+                    <h3>Link do Projeto</h3>
+                    <ul>
+                    {{#foreach tags}}
+                        {{#if @first}}
+                            <a href="https://{{name}}" class="visit-website-link">{{name}}</a>
+                        {{/if}}
+                    {{/foreach}}
+                    </ul>
 
                     <hr />
 
