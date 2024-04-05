@@ -29,8 +29,8 @@
 
                     <div class="table-container">
                         <div class="table-column">
-                            <h3>Características do Projeto</h3>
-                            <table>
+                            <h3 class="table-title">Características do Projeto</h3>
+                            <table class="table"></table>
                                 <tbody>
                                     {{#if custom_excerpt}}
                                         <p>{{custom_excerpt}}</p>
@@ -41,8 +41,8 @@
                             </table>
                         </div>
                         <div class="table-column">
-                            <h3>Tecnologia Usada</h3>
-                            <table>
+                            <h3 class="table-title">Tecnologia Usada</h3>
+                            <table class="table"></table>
                                 <tbody>
                                     {{#foreach tags}}
                                     <tr>
@@ -55,8 +55,8 @@
                             </table>
                         </div>
                         <div class="table-column">
-                            <h3>Link do Projeto</h3>
-                            <table>
+                            <h3 class="table-title">Link do Projeto</h3>
+                            <table class="table"></table>
                                 <tbody>
                                     {{#foreach tags}}
                                     <tr>
@@ -115,6 +115,30 @@
 
 {{#contentFor "styles"}}
     {{> "external/prism-css"}}
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-title {
+            margin-bottom: 10px;
+        }
+        .table td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .label {
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #333;
+            text-decoration: none;
+        }
+        .visit-website-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
 {{/contentFor}}
 
 {{#contentFor "scripts"}}
