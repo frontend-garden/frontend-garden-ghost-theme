@@ -1,32 +1,25 @@
 {
-  "name": "ramonguilherme.com.br-ghost-theme",
-  "description": "A fork Frontend Garden Ghost theme for ramonguilherme.com.br",
+  "name": "ramonguilherme-ghost-theme",
+  "description": "A fork Frontend Garden (frontend.garden) Ghost theme for ramonguilherme.com.br",
   "version": "6.5.2",
   "license": "Apache-2.0",
-  "author": [
-    {
-      "name": "Adam Kudrna",
-      "email": "adam@adamkudrna.cz",
-      "url": "https://www.adamkudrna.com"
-    },
-    {
-      "name": "Ramon Guilherme",
-      "email": "ramon@ramonguilherme.com.br",
-      "url": "https://ramonguilherme.com.br"
-    }
-  ],
+  "author": {
+    "name": "Adam Kudrna",
+    "email": "adam@adamkudrna.cz",
+    "url": "https://www.adamkudrna.com"
+  },
   "keywords": [
     "ghost",
     "theme",
     "ghost-theme"
   ],
-  "homepage": "https://framonguilherme.com.br",
+  "homepage": "https://ramonguilherme.com.br",
   "bugs": {
-    "url": "https://github.com/frontend-garden/frontend-garden-ghost-theme/issues"
+    "url": "https://github.com/ram0ng1/ghost-theme/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/frontend-garden/frontend-garden-ghost-theme"
+    "url": "https://github.com/ram0ng1/ghost-theme"
   },
   "engines": {
     "ghost": ">=5.1.0",
