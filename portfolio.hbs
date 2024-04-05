@@ -1,60 +1,152 @@
-{{#get "posts"
-    filter="tag:projetos"
-    include="authors,tags"
-    order="published_at ASC"
-    limit="4"
-    as |projects|
-}}
-    {{#if projects.length}}
-        {{#each projects}}
-            <div class="project-info" data-url="{{url}}">
-                <h2>{{title}}</h2>
-                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
-                    {{#foreach tags}}
-                        {{#if @last}}
-                            <li><a href="{{url}}" class="label">{{name}}</a></li>
-                        {{/if}}
-                    {{/foreach}}
-                </ul>
-                {{#if custom_excerpt}}
-                    <p>{{custom_excerpt}}</p>
-                {{else}}
-                    <p>{{excerpt words="30"}}</p>
+{{!< default}}
+
+<main class="site__content article">
+    <div class="section background-alternate print-padding-none">
+        <div class="container">
+
+            {{#tag}}
+                <h1 class="article__title js-nbsp">{{name}}</h1>
+
+                {{#if description}}
+                    <p class="article__summary spacing-bottom-small js-nbsp">
+                        {{description}}
+                    </p>
                 {{/if}}
-                {{#foreach tags}}
-                    {{#if @first}}
-                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+
+                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden filter-tags">
+                    <li><a href="#todos" class="label">Todos</a></li>
+                    <li><a href="#Wordpress" class="label">Wordpress</a></li>
+                    <li><a href="#PHP" class="label">PHP</a></li>
+                    <li><a href="#CSS3" class="label">CSS3</a></li>
+                    <li><a href="#Laravel" class="label">Laravel</a></li>
+                    <li><a href="#MySQL" class="label">MySQL</a></li>
+                    <li><a href="#Vue" class="label">Vue</a></li>
+                    <li><a href="#No-Code" class="label">No Code</a></li>
+                    <!-- Adicione outras tags conforme necessário -->
+                </ul>
+            {{/tag}}
+
+        </div>
+    </div>
+    <div class="section section--roomy-bottom print-padding-none">
+        <div class="container">
+            <div class="columns columns--4">
+
+                {{!
+                    Loop through the original `posts` and group them.
+                    Pagination of `posts` is made impossible in `routes.yaml`.
+                }}
+                {{#get "posts"
+                    filter="tag:projetos"
+                    include="authors,tags"
+                    order="published_at ASC"
+                    limit="4"
+                    as |projects|
+                }}
+                    {{#if projects.length}}
+                        {{#each projects}}
+                            <div class="project-info" data-url="{{url}}">
+                                <h2>{{title}}</h2>
+                                <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
+                                    {{#foreach tags}}
+                                        {{#if @last}}
+                                            <li><a href="{{url}}" class="label">{{name}}</a></li>
+                                        {{/if}}
+                                    {{/foreach}}
+                                </ul>
+                                {{#if custom_excerpt}}
+                                    <p>{{custom_excerpt}}</p>
+                                {{else}}
+                                    <p>{{excerpt words="30"}}</p>
+                                {{/if}}
+                                    {{#foreach tags}}
+                                        {{#if @first}}
+                                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                        {{/if}}
+                                    {{/foreach}}
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <p>Não há projetos disponíveis.1</p>
                     {{/if}}
-                {{/foreach}}
+                {{/get}}
+
             </div>
-        {{/each}}
-    {{else}}
-        {{#unless projectsFound}}
-            <p class="no-projects-message">Não há projetos disponíveis.2</p>
-        {{/unless}}
-    {{/if}}
-{{/get}}
+        </div>
+    </div>
+
+    {{#get "posts"
+        filter="primary_tag:artigo"
+        include="authors,tags"
+        order="published_at DESC"
+        limit="3"
+        as |recent|
+    }}
+        {{#if recent}}
+            {{> "related-posts" posts=recent}}
+        {{/if}}
+    {{/get}}
+
+</main>
+
+{{> "footer"}}
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // ...
+        const projectInfos = document.querySelectorAll('.project-info');
+        projectInfos.forEach(function(projectInfo) {
+            projectInfo.addEventListener('click', function() {
+                const url = projectInfo.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
+        });
+
+        // Adiciona event listener para os filtros
+        const filterTags = document.querySelectorAll('.filter-tags a');
+        filterTags.forEach(function(filterTag) {
+            filterTag.addEventListener('click', function(event) {
+                event.preventDefault();
+                const tag = filterTag.getAttribute('href').slice(1); // Remove o '#'
+                filterProjects(tag);
+            });
+        });
 
         // Função para filtrar os projetos
         function filterProjects(tag) {
             const projectInfos = document.querySelectorAll('.project-info');
             let projectsFound = false;
             projectInfos.forEach(function(projectInfo) {
-                // ...
+                const tags = projectInfo.querySelectorAll('.label');
+                let showProject = false;
+                tags.forEach(function(tagElement) {
+                    if (tagElement.textContent.trim() === tag || tag === 'todos') {
+                        showProject = true;
+                    }
+                });
+                if (showProject || tag === 'todos') {
+                    projectInfo.style.display = 'block';
+                    projectsFound = true;
+                } else {
+                    projectInfo.style.display = 'none';
+                }
             });
             if (!projectsFound) {
                 const noProjectsMessage = document.querySelector('.no-projects-message');
                 if (!noProjectsMessage) {
                     const newNoProjectsMessage = document.createElement('p');
-                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis.2';
                     newNoProjectsMessage.classList.add('no-projects-message');
+                    newNoProjectsMessage.textContent = 'Não há projetos disponíveis.2';
                     document.querySelector('.columns').appendChild(newNoProjectsMessage);
+                }
+            } else {
+                const noProjectsMessage = document.querySelector('.no-projects-message');
+                if (noProjectsMessage) {
+                    noProjectsMessage.remove();
                 }
             }
         }
     });
+
 </script>
