@@ -101,6 +101,27 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const projectInfos = document.querySelectorAll('.project-info');
+        projectInfos.forEach(function(projectInfo) {
+            projectInfo.addEventListener('click', function() {
+                const url = projectInfo.getAttribute('data-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            });
+        });
+
+        // Adiciona event listener para os filtros
+        const filterTags = document.querySelectorAll('.filter-tags a');
+        filterTags.forEach(function(filterTag) {
+            filterTag.addEventListener('click', function(event) {
+                event.preventDefault();
+                const tag = filterTag.getAttribute('href').slice(1); // Remove o '#'
+                filterProjects(tag);
+            });
+        });
+
+        // Função para filtrar os projetos
         function filterProjects(tag) {
             const projectInfos = document.querySelectorAll('.project-info');
             let projectsFound = false;
@@ -123,14 +144,22 @@
             // Se nenhum projeto for encontrado, exibe a mensagem
             const noProjectsMessage = document.querySelector('.no-projects-message');
             if (!projectsFound) {
-                noProjectsMessage.textContent = 'Ainda não tenho nenhum projeto nessa categoria.';
+                noProjectsMessage.textContent = 'Nenhum projeto nessa categoria';
                 noProjectsMessage.style.display = 'block';
             } else {
                 noProjectsMessage.style.display = 'none';
             }
         }
 
-        // Aqui você pode adicionar o código para chamar a função filterProjects quando necessário
-        // Por exemplo, quando um botão é clicado ou uma tag é selecionada
+        // Verifica se há projetos na tag ao carregar a página
+        const noProjectsMessage = document.querySelector('.no-projects-message');
+        const projectInfos = document.querySelectorAll('.project-info');
+        if (projectInfos.length === 0) {
+            noProjectsMessage.textContent = 'Nenhum projeto nessa categoria';
+            noProjectsMessage.style.display = 'block';
+        } else {
+            noProjectsMessage.style.display = 'none';
+        }
     });
+
 </script>
