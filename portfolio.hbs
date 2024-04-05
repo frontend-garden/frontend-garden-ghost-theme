@@ -133,7 +133,7 @@
                         showProject = true;
                     }
                 });
-                if (showProject) {
+                if (showProject || tag === 'todos') {
                     projectInfo.style.display = 'block';
                     projectsFound = true;
                 } else {
@@ -143,22 +143,11 @@
 
             // Se nenhum projeto for encontrado, exibe a mensagem
             const noProjectsMessage = document.querySelector('.no-projects-message');
-            if (!projectsFound) {
-                noProjectsMessage.textContent = 'Nenhum projeto nessa categoria';
+            if (!projectsFound && noProjectsMessage) {
                 noProjectsMessage.style.display = 'block';
-            } else {
+            } else if (projectsFound && noProjectsMessage) {
                 noProjectsMessage.style.display = 'none';
             }
-        }
-
-        // Verifica se há projetos na tag ao carregar a página
-        const noProjectsMessage = document.querySelector('.no-projects-message');
-        const projectInfos = document.querySelectorAll('.project-info');
-        if (projectInfos.length === 0) {
-            noProjectsMessage.textContent = 'Nenhum projeto nessa categoria';
-            noProjectsMessage.style.display = 'block';
-        } else {
-            noProjectsMessage.style.display = 'none';
         }
     });
 
