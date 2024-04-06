@@ -25,7 +25,6 @@
     }],
     "object-curly-spacing": ["error", "always"],
     "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": false }],
-    "sort-keys": ["error", "asc"],
-    "linebreak-style": 0
+    "sort-keys": ["error", "asc"]
   }
 }
