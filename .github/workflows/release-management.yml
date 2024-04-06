@@ -90,11 +90,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: assets/built/*
-          tag_name: ${{ steps.create_tag.outputs.tag }}
-          name: Release ${{ steps.determine_version.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.tag }}
+          name: Release ${{ steps.create_tag.outputs.tag }}
           body: |
             This is an automatic release triggered by a commit.
-          draft: false
+          draft: true
           prerelease: false
 
       - name: Generate Release Notes
