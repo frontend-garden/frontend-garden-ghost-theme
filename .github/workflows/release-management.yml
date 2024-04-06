@@ -81,8 +81,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.check_package_version.outputs.version }}
+          release_name: Release ${{ steps.check_package_version.outputs.version }}
           body: |
             This is an automatic release triggered by a commit.
             Version: ${{ steps.check_package_version.outputs.version }}
