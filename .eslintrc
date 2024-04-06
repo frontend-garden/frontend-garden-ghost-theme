@@ -26,6 +26,6 @@
     "object-curly-spacing": ["error", "always"],
     "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": false }],
     "sort-keys": ["error", "asc"],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": 0
   }
 }
