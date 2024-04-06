@@ -72,7 +72,7 @@ jobs:
   publish_release:
     name: Publish release
     needs: [deploy_theme]
-    if: needs.deploy_theme.result == 'success' && contains(github.event.head_commit.message, 'Release v.')
+    if: needs.deploy_theme.result == 'success' && contains(github.event.head_commit.message, 'Release v.') && !contains(github.event.head_commit.message, 'WIP') && needs.build_and_test.outputs.version_changed == 'true'
     runs-on: ubuntu-20.04
     steps:
       - name: Create Release
