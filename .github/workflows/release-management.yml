@@ -104,14 +104,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag: ${{ steps.create_tag.outputs.tag }}
-          config-name: 'default'
-          name: 'Release ${{ steps.determine_version.outputs.version }}'
-          version: ${{ steps.determine_version.outputs.version }}
-          publish: 'true'
-          latest: 'true'
-          prerelease: 'false'
-          commitish: 'main'
-          header: '## Release Notes'
-          footer: ''
-          disable-releaser: 'false'
-          disable-autolabeler: 'false'
