@@ -107,14 +107,6 @@ jobs:
           tag: ${{ steps.create_tag.outputs.tag }}
           previous-tag: ${{ steps.create_tag.outputs.tag }}
           next-tag: ${{ steps.create_tag.outputs.tag }}
-          config-name: .github/release-drafter.yml
-          tag: ${{ steps.create_tag.outputs.tag }}
-          version: ${{ steps.create_tag.outputs.tag }}
-          publish: false
-          latest: false
-          prerelease: false
-          commitish: ${{ github.sha }}
-          header: |
           template: |
             ## Changes
             $CHANGES
