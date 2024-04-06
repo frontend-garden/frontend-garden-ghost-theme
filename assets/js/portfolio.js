@@ -1,4 +1,3 @@
-<script>
     document.addEventListener('DOMContentLoaded', function() {
         const projectInfos = document.querySelectorAll('.project-info');
         projectInfos.forEach(function(projectInfo) {
@@ -53,4 +52,3 @@
             }
         }
     });
-</script>
