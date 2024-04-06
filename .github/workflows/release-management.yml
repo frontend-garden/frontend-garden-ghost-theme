@@ -68,3 +68,26 @@ jobs:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
           exclude: '.* assets/scss/* dist/* postcss.config.js'
+
+  publish_release:
+    name: Publish release
+    needs: [deploy_theme]
+    if: needs.deploy_theme.result == 'success' && contains(github.event.head_commit.message, 'Release v.')
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            This is an automatic release triggered by a commit.
+            Version: ${{ steps.check_package_version.outputs.version }}
+            Features: ${{ steps.check_package_version.outputs.commits_features }}
+            Fixes: ${{ steps.check_package_version.outputs.commits_fixes }}
+            Bugs: ${{ steps.check_package_version.outputs.commits_bugs }}
+          draft: false
+          prerelease: false
