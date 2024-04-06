@@ -103,11 +103,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          config-path: .github/release-drafter.yml
           tag: ${{ steps.create_tag.outputs.tag }}
-          previous-tag: ${{ steps.create_tag.outputs.tag }}
-          next-tag: ${{ steps.create_tag.outputs.tag }}
-          template: |
-            ## Changes
-            $CHANGES
-            ${{ steps.generate_release_notes.outputs.changes }}
+          config-name: 'default'
+          name: 'Release ${{ steps.determine_version.outputs.version }}'
+          version: ${{ steps.determine_version.outputs.version }}
+          publish: 'true'
+          latest: 'true'
+          prerelease: 'false'
+          commitish: 'main'
+          header: '## Release Notes'
+          footer: ''
+          disable-releaser: 'false'
+          disable-autolabeler: 'false'
