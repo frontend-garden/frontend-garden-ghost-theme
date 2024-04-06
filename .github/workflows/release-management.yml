@@ -49,7 +49,7 @@ jobs:
 
   deploy_theme:
     name: Deploy theme to Ghost instance
-    needs: [build_and_test, publish_release_draft_on_version_bump]
+    needs: [build_and_test]
     if: needs.build_and_test.outputs.version_changed == 'true'
     runs-on: ubuntu-20.04
     steps:
