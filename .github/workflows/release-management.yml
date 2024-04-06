@@ -69,56 +69,34 @@ jobs:
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
           exclude: '.* assets/scss/* dist/* postcss.config.js'
 
-  needs: [deploy_theme]
-  on:
-    push:
-      branches:
-        - main
-      tags:
-        - '${{ steps.check_package_version.outputs.version }}' # Push events to matching the version in package.json
+  publish_release:
+    name: Publish release
+    needs: [deploy_theme]
+    if: needs.deploy_theme.result == 'success' && github.event.head_commit.message =~ '^Release\\ v[0-9]+\\.[0-9]+\\.[0-9]+$' && !contains(github.event.head_commit.message, 'WIP') && needs.build_and_test.outputs.version_changed == 'true'
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Determine package.json version
+        id: determine_version
+        run: echo "::set-output name=version::$(node -p -e \"require('./ram0ng1/ghost-theme/package.json').version\")"
 
-  name: Create Release
+      - name: Create Tag
+        id: create_tag
+        run: echo "::set-output name=tag::v${{ steps.determine_version.outputs.version }}"
 
-  jobs:
-    build:
-      name: Create Release
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Check commit message format
-          id: check_commit_format
-          run: |
-            if [[ ! ${{ github.event.head_commit.message }} =~ ^Release\ v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-              echo "Commit message format is not valid. Skipping release creation."
-              exit 0
-            fi
-        - name: Create release
-          id: create_release
-          uses: actions/create-release@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-          with:
-            tag_name: ${{ steps.check_package_version.outputs.version }}
-            release_name: Release ${{ steps.check_package_version.outputs.version }}
-            body: |
-              Changes in this Release
-              - First Change
-              - Second Change
-            draft: true
-            prerelease: false
-        - name: Upload release asset
-          uses: actions/upload-release-asset@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: /home/runner/work/ghost-theme/ghost-theme/ramonguilherme-ghost-theme.zip
-            asset_name: ramonguilherme-ghost-theme.zip
-            asset_content_type: application/zip
-        - name: Publish release
-          uses: StuYarrow/publish-release@v1.1.2
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            id: ${{ steps.create_release.outputs.id }}
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2.0.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: assets/built/*
+          tag_name: ${{ steps.determine_version.outputs.version }}
+          name: Release ${{ steps.determine_version.outputs.version }}
+          body: |
+            This is an automatic release triggered by a commit.
+            Version: ${{ steps.determine_version.outputs.version }}
+            Features: ${{ steps.check_package_version.outputs.commits_features }}
+            Fixes: ${{ steps.check_package_version.outputs.commits_fixes }}
+            Bugs: ${{ steps.check_package_version.outputs.commits_bugs }}
+          draft: false
+          prerelease: false
