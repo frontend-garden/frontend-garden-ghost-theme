@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function init() {
+document.addEventListener('DOMContentLoaded', () => {
     const projectInfos = document.querySelectorAll('.project-info');
-    projectInfos.forEach(function handleProjectInfoClick(projectInfo) {
-        projectInfo.addEventListener('click', function handleProjectClick() {
+    projectInfos.forEach((projectInfo) => {
+        projectInfo.addEventListener('click', () => {
             const url = projectInfo.getAttribute('data-url');
             if (url) {
                 window.location.href = url;
@@ -9,33 +9,33 @@ document.addEventListener('DOMContentLoaded', function init() {
         });
     });
 
-    // Add event listener for filters
     const filterTags = document.querySelectorAll('.filter-tags a');
-    filterTags.forEach(function handleFilterTagClick(filterTag) {
-        filterTag.addEventListener('click', function handleFilterClick(event) {
+    filterTags.forEach((filterTag) => {
+        filterTag.addEventListener('click', (event) => {
             event.preventDefault();
-            const tag = filterTag.getAttribute('href').slice(1); // Remove the '#'
+            const tag = filterTag.getAttribute('href').slice(1);
             filterProjects(tag);
         });
     });
 
-    // Function to filter projects
     function filterProjects(tag) {
         const projectInfosInner = document.querySelectorAll('.project-info');
         let projectsFound = false;
-        projectInfosInner.forEach(function handleProjectInfo(projectInfo) {
+        projectInfosInner.forEach((projectInfo) => {
             const tags = projectInfo.querySelectorAll('.label');
             let showProject = false;
-            tags.forEach(function handleTag(tagElement) {
+            tags.forEach((tagElement) => {
                 if (tagElement.textContent.trim() === tag || tag === 'todos') {
                     showProject = true;
                 }
             });
             if (showProject || tag === 'todos') {
-                projectInfo.style.display = 'block';
+                const projectInfoElement = projectInfo;
+                projectInfoElement.style.display = 'block';
                 projectsFound = true;
             } else {
-                projectInfo.style.display = 'none';
+                const projectInfoElement = projectInfo;
+                projectInfoElement.style.display = 'none';
             }
         });
         if (!projectsFound) {
