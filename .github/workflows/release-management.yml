@@ -75,28 +75,6 @@ jobs:
     if: needs.deploy_theme.result == 'success' && contains(github.event.head_commit.message, 'Release v.') && !contains(github.event.head_commit.message, 'WIP') && needs.build_and_test.outputs.version_changed == 'true'
     runs-on: ubuntu-20.04
     steps:
-      - name: Determine package.json version
-        id: determine_version
-        run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
-
-      - name: Create Tag
-        id: create_tag
-        run: echo "::set-output name=tag::v${{ steps.determine_version.outputs.version }}"
-
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v2.0.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: assets/built/*
-          tag: ${{ steps.create_tag.outputs.tag }}
-          name: Release ${{ steps.create_tag.outputs.tag }}
-          body: |
-            This is an automatic release triggered by a commit.
-          draft: true
-          prerelease: false
-
       - name: Generate Release Notes
         id: generate_release_notes
         uses: release-drafter/release-drafter@v6.0.0
