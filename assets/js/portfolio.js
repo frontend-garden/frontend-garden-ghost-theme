@@ -1,7 +1,7 @@
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function init() {
         const projectInfos = document.querySelectorAll('.project-info');
-        projectInfos.forEach(function(projectInfo) {
-            projectInfo.addEventListener('click', function() {
+        projectInfos.forEach(function handleProjectInfoClick(projectInfo) {
+            projectInfo.addEventListener('click', function handleProjectClick() {
                 const url = projectInfo.getAttribute('data-url');
                 if (url) {
                     window.location.href = url;
@@ -9,24 +9,24 @@
             });
         });
 
-        // Adiciona event listener para os filtros
+        // Add event listener for filters
         const filterTags = document.querySelectorAll('.filter-tags a');
-        filterTags.forEach(function(filterTag) {
-            filterTag.addEventListener('click', function(event) {
+        filterTags.forEach(function handleFilterTagClick(filterTag) {
+            filterTag.addEventListener('click', function handleFilterClick(event) {
                 event.preventDefault();
-                const tag = filterTag.getAttribute('href').slice(1); // Remove o '#'
+                const tag = filterTag.getAttribute('href').slice(1); // Remove the '#'
                 filterProjects(tag);
             });
         });
 
-        // Função para filtrar os projetos
+        // Function to filter projects
         function filterProjects(tag) {
-            const projectInfos = document.querySelectorAll('.project-info');
+            const projectInfosInner = document.querySelectorAll('.project-info');
             let projectsFound = false;
-            projectInfos.forEach(function(projectInfo) {
+            projectInfosInner.forEach(function handleProjectInfo(projectInfo) {
                 const tags = projectInfo.querySelectorAll('.label');
                 let showProject = false;
-                tags.forEach(function(tagElement) {
+                tags.forEach(function handleTag(tagElement) {
                     if (tagElement.textContent.trim() === tag || tag === 'todos') {
                         showProject = true;
                     }
