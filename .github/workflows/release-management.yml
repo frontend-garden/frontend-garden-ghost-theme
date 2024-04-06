@@ -87,7 +87,7 @@ jobs:
         with:
           files: assets/built/*
           tag_name: ${{ steps.determine_version.outputs.version }}
-          release_name: Release ${{ steps.determine_version.outputs.version }}
+          name: Release ${{ steps.determine_version.outputs.version }}
           body: |
             This is an automatic release triggered by a commit.
             Version: ${{ steps.determine_version.outputs.version }}
