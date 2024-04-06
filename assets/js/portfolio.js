@@ -8,6 +8,7 @@
                 }
             });
         });
+
         // Adiciona event listener para os filtros
         const filterTags = document.querySelectorAll('.filter-tags a');
         filterTags.forEach(function(filterTag) {
@@ -17,6 +18,7 @@
                 filterProjects(tag);
             });
         });
+
         // Função para filtrar os projetos
         function filterProjects(tag) {
             const projectInfos = document.querySelectorAll('.project-info');
