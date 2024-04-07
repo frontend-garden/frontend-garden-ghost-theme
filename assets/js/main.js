@@ -251,4 +251,3 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
     }
   }
 });
-
