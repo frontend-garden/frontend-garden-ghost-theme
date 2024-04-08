@@ -62,11 +62,12 @@
                                 {{else}}
                                     <p>{{excerpt words="30"}}</p>
                                 {{/if}}
-                                    {{#foreach tags}}
-                                        {{#if @first}}
-                                            <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
-                                        {{/if}}
-                                    {{/foreach}}
+                                {{#foreach tags}}
+                                    {{#if @first}}
+                                        <a href="https://{{name}}" class="visit-website-link">Visitar Website</a>
+                                        <span id="github-status-{{@index}}"></span>
+                                    {{/if}}
+                                {{/foreach}}
                             </div>
                         {{/each}}
                     {{else}}
@@ -94,3 +95,25 @@
 {{> "footer"}}
 
 <script src="{{asset "js/portfolio.js"}}"></script>
+<script>
+    // Função para obter o status do projeto no GitHub
+    function getGitHubStatus(repoName, elementId) {
+        fetch(`https://api.github.com/repos/${repoName}`)
+            .then(response => response.json())
+            .then(data => {
+                const status = data.status;
+                document.getElementById(elementId).textContent = `Status: ${status}`;
+            })
+            .catch(error => {
+                console.error('Erro ao obter o status do projeto:', error);
+            });
+    }
+
+    // Chamar a função para cada projeto
+    const projects = document.querySelectorAll('.project-info');
+    projects.forEach((project, index) => {
+        const repoName = project.querySelector('.visit-website-link').getAttribute('href').replace('https://', '');
+        const elementId = `github-status-${index}`;
+        getGitHubStatus(repoName, elementId);
+    });
+</script>
