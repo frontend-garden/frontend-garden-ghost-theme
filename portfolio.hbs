@@ -47,7 +47,7 @@
                     as |projects|
                 }}
                     {{#if projects.length}}
-                        {{#each projects}}
+                        {{#foreach projects}}
                             <div class="project-info" data-url="{{url}}">
                                 <h2>{{title}}</h2>
                                 <ul class="list-unstyled list-inline spacing-bottom-none print-hidden">
@@ -76,7 +76,7 @@
                                         {{/if}}
                                     {{/foreach}}
                             </div>
-                        {{/each}}
+                        {{/foreach}}
                     {{else}}
                     {{/if}}
                 {{/get}}
