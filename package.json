@@ -23,8 +23,8 @@
   },
   "engines": {
     "ghost": ">=5.1.0",
-    "node": ">=16.14.0",
-    "npm": ">=8.3.0"
+    "node": ">=18",
+    "npm": ">=10"
   },
   "scripts": {
     "build": "concurrently \"npm run css\" \"npm run js\"",
