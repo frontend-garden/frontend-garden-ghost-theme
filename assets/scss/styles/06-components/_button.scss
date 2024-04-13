@@ -45,6 +45,7 @@
 }
 
 .button--small {
+    column-gap: button-settings.$column-gap-small;
     height: button-settings.$height-small;
     padding: button-settings.$padding-block-small button-settings.$padding-inline-small;
     line-height: button-settings.$line-height-small;

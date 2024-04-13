@@ -2,40 +2,43 @@
 @use "../../tools/spacing";
 
 .section {
-    padding-top: spacing.of(1);
-    padding-bottom: spacing.of(1);
+    --section-padding-top: #{spacing.of(1)};
+    --section-padding-bottom: #{spacing.of(1)};
+
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
 
     @include breakpoint.up(lg) {
-        padding-top: spacing.of(1.5);
-        padding-bottom: spacing.of(1.5);
+        --section-padding-top: #{spacing.of(1.5)};
+        --section-padding-bottom: #{spacing.of(1.5)};
     }
 
     @include breakpoint.up(xl) {
-        padding-top: spacing.of(2);
-        padding-bottom: spacing.of(2);
+        --section-padding-top: #{spacing.of(2)};
+        --section-padding-bottom: #{spacing.of(2)};
     }
 }
 
 .section--dense-top {
-    padding-top: spacing.of(0.5);
+    --section-padding-top: #{spacing.of(0.5)};
 
     @include breakpoint.up(md) {
-        padding-top: spacing.of(0.75);
+        --section-padding-top: #{spacing.of(0.75)};
     }
 
     @include breakpoint.up(lg) {
-        padding-top: spacing.of(1);
+        --section-padding-top: #{spacing.of(1)};
     }
 }
 
 .section--only-top:not(:last-child) {
-    padding-bottom: 0;
+    --section-padding-bottom: 0;
 }
 
 .section--roomy-bottom {
-    padding-bottom: spacing.of(1.5);
+    --section-padding-bottom: #{spacing.of(1.5)};
 
     @include breakpoint.up(xl) {
-        padding-bottom: spacing.of(2);
+        --section-padding-bottom: #{spacing.of(2)};
     }
 }

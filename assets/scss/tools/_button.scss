@@ -12,6 +12,7 @@
     position: relative;
     appearance: none;
     display: inline-flex;
+    column-gap: button.$column-gap;
     align-items: center;
     justify-content: center;
     height: button.$height;
