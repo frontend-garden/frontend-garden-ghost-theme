@@ -2,6 +2,10 @@
 
 // stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
 
+.spacing-left-1 {
+    margin-left: 0.5em !important;
+}
+
 .spacing-right-1 {
     margin-right: 0.5em !important;
 }

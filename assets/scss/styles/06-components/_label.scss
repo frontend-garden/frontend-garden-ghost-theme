@@ -34,6 +34,6 @@
     line-height: typography.line-height(medium);
 }
 
-.label--new {
+.label--warning {
     background-color: map.get(colors.$ui, warning);
 }

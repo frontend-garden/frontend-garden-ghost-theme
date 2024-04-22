@@ -45,7 +45,20 @@
                                 {{date format="D. MMMM YYYY"}}
                             </time>
                             —
-                            {{tags from=2}}
+                            {{#if tags}}
+                                <ul class="article__tags list-inline list-unstyled">
+                                    {{#foreach tags from="2"}}
+                                        <li>
+                                            <a
+                                                href="{{url}}"
+                                                {{#has slug="spoluprace"}}
+                                                    class="label label--warning"
+                                                {{/has}}
+                                            >{{name}}</a>{{#unless @last}},{{/unless}}
+                                        </li>
+                                    {{/foreach}}
+                                </ul>
+                            {{/if}}
                             —
                             {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
                         </div>
