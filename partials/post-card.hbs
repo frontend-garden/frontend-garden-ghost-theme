@@ -37,6 +37,9 @@
             <div class="post-card__meta">
                 {{#has tag="count:>1"}}
                     {{tags from=2 to=2}}
+                    {{#has tag="Spolupráce"}}
+                        <a href="/tema/spoluprace" class="label label--warning spacing-left-1">Spolupráce</a>
+                    {{/has}}
                     —
                 {{/has}}
                 {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}

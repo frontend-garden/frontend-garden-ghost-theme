@@ -36,6 +36,10 @@
     margin-top: 0.25em; // 1.
 }
 
+.article__tags {
+    display: inline-flex;
+}
+
 .article__author {
     max-width: 42rem;
     margin-left: -0.15em; // 2.
