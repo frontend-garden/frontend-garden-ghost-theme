@@ -148,7 +148,15 @@
                                 <ul class="list-unstyled list-inline spacing-bottom-none">
                                     {{#foreach tags from=2}}
                                         <li>
-                                            <a href="{{url}}" class="label">{{name}}</a>
+                                            <a
+                                                href="{{url}}"
+                                                class="
+                                                    label
+                                                    {{#has slug="spoluprace"}}
+                                                        label--warning
+                                                    {{/has}}
+                                                "
+                                            >{{name}}</a>
                                         </li>
                                     {{/foreach}}
                                 </ul>
