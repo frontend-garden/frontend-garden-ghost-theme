@@ -18,7 +18,7 @@
         {{#is "tag"}}
             {{tag.name}} | {{@site.title}}
         {{else}}
-            {{meta_title}} | {{@site.title}}
+            {{meta_title page=(t " (Page %)")}} | {{@site.title}}
         {{/is}}
     </title>
 
