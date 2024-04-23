@@ -1,5 +1,7 @@
 // Basic styling for all Ghost content blocks.
 // Ghost docs: https://ghost.org/docs/themes/content/#figure-and-figcaption
+//
+// 1. Get rid of the extra paragraph tag that is randomly inserted by Ghost to wrap the caption text.
 
 @use "../../tools/breakpoint";
 @use "../../tools/content-block";
@@ -15,6 +17,10 @@
     @include breakpoint.up(md) {
         margin-top: spacing.of(1);
     }
+}
+
+.kg-card figcaption > p {
+    display: contents; // 1.
 }
 
 .kg-embed-card {
