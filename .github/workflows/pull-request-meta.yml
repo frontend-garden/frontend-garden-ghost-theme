@@ -2,18 +2,16 @@ name: Pull Request Meta
 
 on:
   pull_request:
-    types: [opened]
+    types: [ opened ]
 
 jobs:
   process_pr_meta:
     runs-on: ubuntu-20.04
     steps:
       - name: Assign to author
-        uses: samspills/assign-pr-to-author@v1.0
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+        uses: kentaro-m/auto-assign-action@v2.0.0 # Specify also the minor version because v2 does not exist
 
       - name: Add labels
-        uses: TimonVS/pr-labeler-action@v3.1.0
+        uses: TimonVS/pr-labeler-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
