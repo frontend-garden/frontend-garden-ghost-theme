@@ -1,0 +1,11 @@
+// 1. Mirror the section padding bottom to the pagination top margin.
+
+@use "../../settings/navigation";
+
+.pagination {
+    display: flex;
+    gap: navigation.$item-padding-big;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--section-padding-bottom, 0); // 1.
+}

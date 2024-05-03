@@ -78,6 +78,7 @@ $_post-card-padding-y: spacing.of(1);
 .post-card__title,
 .post-card__summary {
     max-width: 30rem;
+    text-wrap: balance;
 }
 
 .post-card__title {

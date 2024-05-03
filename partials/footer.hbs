@@ -1,7 +1,7 @@
 <footer class="site__footer footer print-padding-none">
 
     {{#unless hideSubscribeForm}}
-        <div class="container container--article spacing-bottom-large print-hidden">
+        <div id="newsletter" class="container container--article spacing-bottom-large print-hidden">
             {{> "members/newsletter-signup-form"}}
         </div>
     {{/unless}}
@@ -22,10 +22,10 @@
         {{/unless}}
 
         {{#unless hideInternalLinks}}
-            {{navigation type="secondary" in_footer=true}}
+            {{navigation type="secondary" isInFooter=true}}
         {{/unless}}
 
-        {{> "social-links" in_footer=true}}
+        {{> "social-links" isInFooter=true}}
 
         <hr class="print-only" />
 

@@ -11,10 +11,17 @@
         {{#is "home"}}
             {{@site.title}} — {{@site.description}}
         {{/is}}
+        {{#is "author"}}
+            {{! Obtain author name from the author template to bypass the following Gscan error: }}
+            {{! Error: The \{\{#author\}\} block helper should be replaced with \{\{#primary_author\}\} or \{\{#foreach authors\}\}...\{\{/foreach\}\} }}
+            {{! https://github.com/TryGhost/gscan/issues/365 }}
+            {{{block "title"}}}{{#is "paged"}} {{t "(Page {page})" page=pagination.page}}{{/is}} | {{@site.title}}
+        {{/is}}
         {{#is "tag"}}
-            {{tag.name}} | {{@site.title}}
-        {{else}}
-            {{meta_title}} | {{@site.title}}
+            {{tag.name}}{{#is "paged"}} {{t "(Page {page})" page=pagination.page}}{{/is}} | {{@site.title}}
+        {{/is}}
+        {{^is "home, author, tag"}}
+            {{meta_title page=(t " (Page %)")}} | {{@site.title}}
         {{/is}}
     </title>
 

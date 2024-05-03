@@ -1,6 +1,6 @@
 BC: bc/*
 feature: feature/*
-bug: bugfix/*
+fix: ['fix/*', 'bug/*', 'bugfix/*']
 
 dependencies: dependencies/*
 documentation: ['docs/*', 'documentation/*']

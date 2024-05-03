@@ -1,0 +1,11 @@
+@use "../../tools/breakpoint";
+
+// stylelint-disable declaration-no-important -- Only allow `!important` for utility classes.
+
+.hidden-sm {
+    display: none !important;
+
+    @include breakpoint.up(md) {
+        display: initial !important;
+    }
+}

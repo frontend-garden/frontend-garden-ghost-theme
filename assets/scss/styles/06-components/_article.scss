@@ -7,6 +7,7 @@
 .article__title,
 .article__summary {
     max-width: 50rem;
+    text-wrap: balance;
 }
 
 .article__title {
@@ -33,6 +34,10 @@
 
 .article__meta + .article__title {
     margin-top: 0.25em; // 1.
+}
+
+.article__tags {
+    display: inline-flex;
 }
 
 .article__author {

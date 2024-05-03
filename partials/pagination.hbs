@@ -1,0 +1,31 @@
+{{#match pages ">" 1}}
+    <nav class="pagination">
+
+        {{#if prev}}
+            <a href="{{page_url prev}}" class="button button--secondary button--small">
+                <span aria-hidden="true">&larr;</span>
+                <span>
+                    Novější
+                    <span class="hidden-sm">články</span>
+                </span>
+            </a>
+        {{/if}}
+
+        {{^is "home"}}
+            <span class="text-nowrap">
+                {{page}} / {{pages}}
+            </span>
+        {{/is}}
+
+        {{#if next}}
+            <a href="{{page_url next}}" class="button button--secondary button--small">
+                <span>
+                    Starší
+                    <span class="hidden-sm">články</span>
+                </span>
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        {{/if}}
+
+    </nav>
+{{/match}}
