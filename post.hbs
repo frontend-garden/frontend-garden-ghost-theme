@@ -40,13 +40,13 @@
                 <div class="{{#has tag="#cover"}}cover__text{{/has}}">
                     <div class="container {{^has tag="#cover"}}container--article{{/has}}">
 
-                        <div class="article__meta">
+                        <div class="article__meta spacing-bottom-small">
                             <time datetime="{{date format="YYYY-MM-DD"}}">
                                 {{date format="D. MMMM YYYY"}}
                             </time>
                             —
                             {{#if tags}}
-                                <ul class="article__tags list-inline list-unstyled">
+                                <ul class="article__tags list-inline list-unstyled spacing-bottom-none">
                                     {{#foreach tags from="2"}}
                                         <li>
                                             <a
@@ -60,7 +60,9 @@
                                 </ul>
                             {{/if}}
                             —
-                            {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                            <span class="text-nowrap">
+                                {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                            </span>
                         </div>
 
                         <h1 class="article__title js-nbsp">{{title}}</h1>
