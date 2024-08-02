@@ -5,7 +5,8 @@
   },
   "globals": {
     "gtag": false,
-    "snippetsData": false
+    "snippetsData": false,
+    "tocbot": false
   },
   "parserOptions": {
     "ecmaVersion": 2020,
