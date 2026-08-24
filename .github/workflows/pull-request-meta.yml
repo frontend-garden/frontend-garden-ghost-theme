@@ -7,9 +7,10 @@ on:
 jobs:
   process_pr_meta:
     runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
     steps:
       - name: Assign to author
-        uses: kentaro-m/auto-assign-action@v2.0.0 # Specify also the minor version because v2 does not exist
+        uses: kentaro-m/auto-assign-action@v2.0.2 # Specify also the minor version because v2 does not exist
 
       - name: Add labels
         uses: TimonVS/pr-labeler-action@v5

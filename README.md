@@ -13,7 +13,7 @@ Minimalist theme for the 🍀 [Frontend Garden] online magazine powered by
 
 ## Theme Build and Activation
 
-Requirements: [node] v16 or newer.
+Requirements: [node] v22 or newer.
 
 1. Clone the theme:
 

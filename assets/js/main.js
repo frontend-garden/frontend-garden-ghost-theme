@@ -111,13 +111,11 @@ document.querySelectorAll('[data-snippet]').forEach((element) => {
   const snippetName = snippetEl.getAttribute('data-snippet');
 
   if (!snippetName) {
-    // eslint-disable-next-line no-console -- Warn for undefined snippet name.
     console.warn('Warning: No snippet name set!');
   } else {
     const snippetTemplate = document.getElementById(`snippet__${snippetName}__template`);
 
     if (!snippetTemplate) {
-      // eslint-disable-next-line no-console -- Warn for non-existing snippet template.
       console.warn(`Warning: No template found for snippet "${snippetName}"!`);
     } else {
       const snippet = snippetTemplate.content.cloneNode(true);
@@ -164,17 +162,14 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
   if (typeof snippetsData === 'undefined') {
     hideSnippet();
 
-    // eslint-disable-next-line no-console -- Input data is managed in admin, warning is useful.
     console.warn('Warning: `snippetsData` not configured! Calling snippet is now hidden.');
   } else if (!snippetName) {
     hideSnippet();
 
-    // eslint-disable-next-line no-console -- Warn for a misconfigured snippet.
     console.warn('Warning: No populate name set for snippet! The snippet is now hidden.');
   } else if (!snippetsData[snippetName]) {
     hideSnippet();
 
-    // eslint-disable-next-line no-console -- Input data is managed in admin, warning is useful.
     console.warn(`Warning: No data found for snippet "${snippetName}"! The snippet is now hidden.`);
   } else {
     const dataToPopulate = snippetsData[snippetName];
@@ -204,7 +199,6 @@ document.querySelectorAll('[data-populate]').forEach((element) => {
         if (!dataToPopulate.image.src) {
           hideSnippet();
 
-          // eslint-disable-next-line no-console -- Warn for a misconfigured snippet.
           console.warn('Warning! Image "src" attribute is required. Whole snippet is now hidden.');
         } else {
           const imageEl = imageField.querySelector('img');

@@ -18,20 +18,14 @@
 
 .cover__canvas {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     z-index: 1;
     margin-bottom: 0;
 
     &::after {
         content: "";
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        inset: 0;
         z-index: 1;
         background-color: color.adjust(colors.$black, $alpha: -0.333);
     }

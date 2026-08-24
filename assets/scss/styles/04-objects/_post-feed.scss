@@ -42,7 +42,7 @@
 
 // stylelint-disable selector-max-specificity -- Post feed grid design requires higher specificity.
 .post-feed--articles .post-feed__item:first-child,
-.post-feed--articles .post-feed__item--large:not(:nth-child(2)):not(:nth-child(3)) {
+.post-feed--articles .post-feed__item--large:not(:nth-child(2), :nth-child(3)) {
     @include breakpoint.up(md) {
         grid-column: span 2;
     }

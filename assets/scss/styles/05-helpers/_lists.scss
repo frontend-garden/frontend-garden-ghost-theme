@@ -10,8 +10,7 @@
 .list-inline {
     display: flex;
     flex-wrap: wrap;
-    column-gap: grid.$gap-small;
-    row-gap: 0.25em;
+    gap: 0.25em grid.$gap-small;
     align-items: baseline;
 }
 
