@@ -7,7 +7,7 @@ on:
 jobs:
   build_and_test:
     name: Build and test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     outputs:
       version_changed: ${{ steps.check_package_version.outputs.changed }}
     steps:
@@ -51,7 +51,7 @@ jobs:
     name: Update release draft
     needs: [build_and_test]
     if: needs.build_and_test.outputs.version_changed == 'false'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Draft release on GitHub
         uses: release-drafter/release-drafter@v6
@@ -62,7 +62,7 @@ jobs:
     name: Publish release draft
     needs: [build_and_test]
     if: needs.build_and_test.outputs.version_changed == 'true'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
@@ -87,7 +87,7 @@ jobs:
     name: Deploy theme to Ghost cloud
     needs: [build_and_test, publish_release_draft_on_version_bump]
     if: needs.build_and_test.outputs.version_changed == 'true'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v4

@@ -4,7 +4,7 @@ on: [pull_request]
 
 jobs:
   block_merge_with_autosquash_commits:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Block Merge with Autosquash Commits
