@@ -6,7 +6,7 @@ on:
 
 jobs:
   process_pr_meta:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Assign to author
         uses: kentaro-m/auto-assign-action@v2.0.0 # Specify also the minor version because v2 does not exist
