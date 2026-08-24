@@ -7,23 +7,23 @@
 
 @keyframes highlight {
     0% {
-        outline-color: transparent;
         background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -1);
+        outline-color: transparent;
     }
 
     15% {
-        outline-color: map.get(colors.$ui, info);
         background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -0.9);
+        outline-color: map.get(colors.$ui, info);
     }
 
     66% {
-        outline-color: map.get(colors.$ui, info);
         background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -0.9);
+        outline-color: map.get(colors.$ui, info);
     }
 
     100% {
-        outline-color: transparent;
         background-color: color.adjust(map.get(colors.$ui, info-light), $alpha: -1);
+        outline-color: transparent;
     }
 }
 
