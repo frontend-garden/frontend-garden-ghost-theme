@@ -48,7 +48,10 @@ Requirements: [node] v22 or newer.
 ## Contributing
 
 See [Contributing guidelines][contributing] and
-[Releasing instructions][releasing].
+[Releasing instructions][releasing]. Local development for Frontend Garden
+team members runs in the sibling [`ghost-dev`][ghost-dev] repo (private), a
+Dockerized Ghost environment built for this theme; see the contributing
+guidelines for a manual-install alternative.
 
 ## License
 
@@ -59,4 +62,5 @@ Licensed under [Apache 2.0 license][license].
 [node]: https://nodejs.org
 [contributing]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/CONTRIBUTING.md
 [releasing]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/RELEASING.md
+[ghost-dev]: https://github.com/frontend-garden/ghost-dev
 [license]: https://github.com/frontend-garden/frontend-garden-ghost-theme/blob/main/LICENSE.md
