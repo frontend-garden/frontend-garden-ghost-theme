@@ -13,7 +13,7 @@ general-purpose/portable Ghost theme.
 ## Commands
 
 ```bash
-npm install          # install deps (Node >=18, npm >=10 — see .nvmrc)
+npm install          # install deps (Node >=22, npm >=10 — see .nvmrc)
 npm run build         # compile CSS (lint, compile, prefix, minify) + lint JS
 npm test              # gscan (Ghost theme validation) + markdown lint + css lint + js lint — this is CI's "Test" step
 npm start / npm run watch   # watch SCSS and JS, rebuild on change
@@ -28,9 +28,12 @@ There is no JS/CSS unit test suite — "tests" means linting + gscan validation.
 There is no single-file test runner; lint commands run across the whole
 `assets/` tree.
 
-To see the theme rendered, it must be built and activated inside a real Ghost
-installation (see CONTRIBUTING.md) — there's no standalone dev server in this
-repo.
+To see the theme rendered, build it here, then run it inside the sibling
+[`ghost-dev`](https://github.com/frontend-garden/ghost-dev) repo (private —
+see CONTRIBUTING.md for a manual-install alternative if you don't have
+access) — a Dockerized Ghost environment that bind-mounts this directory and
+reloads template/SCSS/JS edits live. There's no standalone dev server in this
+repo itself.
 
 ## Architecture
 
@@ -93,6 +96,14 @@ snippet/populate system), `members.js` (Members forms), `register-sw.js` /
 - `gscan` (`npm run gscan` / part of `npm test`) enforces Ghost's own theme
   compatibility rules — a change that breaks gscan will fail CI even if the
   page renders fine locally.
+- Edit `routes.yaml`/`redirects.yaml` here, in git — never through Ghost
+  Admin. In `ghost-dev` these files are bind-mounted read-only into the
+  running instance specifically so an Admin-side edit fails loudly instead of
+  silently diverging from what's committed.
+- A major bump of `engines.ghost` in `package.json` is a paired change with
+  `ghost-dev`, not something to land here alone: its pinned Ghost image tag
+  has to move too, and its `smoke.yml` needs to pass against the new major
+  before either side merges.
 
 ## Git workflow
 
